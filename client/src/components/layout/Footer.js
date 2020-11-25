@@ -9,8 +9,8 @@ export const Footer = () => {
     return (
         <div className="footer">
             <div className="footerlinks">
-            <Link to='/' >Privacy Policy</Link>
-            <Link to='/Plan'>Terms &amp; Conditions </Link>
+            <Link to='/privacy' >Privacy Policy</Link>
+            <Link to='/termsconditions'>Terms &amp; Conditions </Link>
             </div>
             <div className="copyright">2020 Bea Better Eating, LLC </div>
         </div>

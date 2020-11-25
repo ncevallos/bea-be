@@ -8,6 +8,10 @@ import Dashboard from './components/layout/Dashboard';
 import Meditate from './components/layout/Meditate';
 import Motivate from './components/layout/Motivate';
 import Plan from './components/layout/Plan';
+import Helpcenter from './components/layout/Helpcenter';
+import Settings from './components/layout/Settings';
+import Termsconditions from './components/layout/Termsconditions';
+import Privacy from './components/layout/Privacy';
 import Login from './components/auth/Login';
 
 const App = () =>
@@ -22,6 +26,10 @@ const App = () =>
           <Route exact path="/meditate" component={Meditate} />
           <Route exact path="/motivate" component={Motivate} />
           <Route exact path="/plan" component={Plan} />
+          <Route exact path="/privacy" component={Privacy} />
+          <Route exact path="/termsconditions" component={Termsconditions} />
+          <Route exact path="/helpcenter" component={Helpcenter} />
+          <Route exact path="/settings" component={Settings} />
         </Switch>
       </section>
       <Footer/>

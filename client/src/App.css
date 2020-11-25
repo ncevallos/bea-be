@@ -81,7 +81,7 @@
   left: 0;
   background-color: #e6e6e6;
   overflow-x: hidden;
-  padding-top: 68px;
+  padding-top: 67px;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -141,4 +141,7 @@
 }
 .sbspace {
   padding-left: 215px;
+}
+.notop {
+  margin-top: none !important;
 }

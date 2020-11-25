@@ -17,7 +17,7 @@ export const NavBar = () => {
             </li>
             </ul>  */}
                 </div>
-            <div className="mx-auto my-2 order-0 order-md-1 position-relative">
+            <div className="mx-auto my-2 order-0 order-md-1 position-relative notop">
         <img src={wave} 
             alt='Bea'/>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
