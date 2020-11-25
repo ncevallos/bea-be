@@ -1,0 +1,25 @@
+{
+  "name": "bea-better-eating",
+  "version": "1.0.0",
+  "description": "chat bot to help with eating patterns",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "ncevallos",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "concurrently": "^5.3.0",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.7.0",
+    "mongoose": "^5.10.15",
+    "nodemon": "^2.0.6",
+    "normalize-url": "^5.3.0"
+  }
+}
