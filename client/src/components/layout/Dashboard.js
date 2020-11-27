@@ -1,4 +1,5 @@
 import React from 'react'
+import Login from '../auth/Login';
 
 export const Dashboard = () => {
     return (
@@ -9,6 +10,7 @@ export const Dashboard = () => {
                     <p>This is the Dashboard Page</p>
                 </div>
             </div>
+            <Login/>
         </section>
     )
 }
