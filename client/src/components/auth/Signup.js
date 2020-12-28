@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import FacebookLogin from 'react-facebook-login';
 import { Card, Image } from 'react-bootstrap';
 
-export const Signup = ({register}) => {
+export const Signup = ({ register }) => {
     const [login, setLogin] = useState(false);
     const [data, setData] = useState({});
     const [picture, setPicture] = useState('');
