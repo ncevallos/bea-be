@@ -1,5 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import dashicon from '../../img/dashboard-icon.png';
+import meditateicon from '../../img/meditate-icon.png';
+import motivateicon from '../../img/motivate-icon.png';
+import planicon from '../../img/plan-icon.png';
 
 export const Footer = () => {
     return (

@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import FacebookLogin from 'react-facebook-login';
 import { Card, Image } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { setAlert } from '../../actions/alert';
-import { register } from '../../actions/auth';
-import PropTypes from 'prop-types';
 
-export const Login = ({ setAlert, register}) => {
+export const Login = () => {
     const [login, setLogin] = useState(false);
     const [data, setData] = useState({});
     const [picture, setPicture] = useState('');
+<<<<<<< HEAD
     // const [name, setName] = useState('');
     const [formData, setFormData] = useState({
       // name: 'default',
@@ -26,10 +23,14 @@ export const Login = ({ setAlert, register}) => {
     const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+=======
+  
+>>>>>>> parent of a75ca79... Adds a user to DB
     const responseFacebook = (response) => {
       console.log(response);
       setData(response);
       setPicture(response.picture.data.url);
+<<<<<<< HEAD
       // setName(response.name);
 
       if (response.accessToken) {
@@ -45,6 +46,10 @@ export const Login = ({ setAlert, register}) => {
         console.log("ID is... ", fbid);
         console.log("Profile Image ID is... ", profileimageURL);
         console.log('data contains', data);
+=======
+      if (response.accessToken) {
+        setLogin(true);
+>>>>>>> parent of a75ca79... Adds a user to DB
       } else {
         setLogin(false);
       }
@@ -76,7 +81,7 @@ export const Login = ({ setAlert, register}) => {
 
     };
     return (
-      <div className="container">
+      <div class="container">
         <Card style={{ width: '600px' }}>
           <Card.Header>
             { !login && 
@@ -142,16 +147,6 @@ export const Login = ({ setAlert, register}) => {
       </form>
       </div>
     );
-};
+}
 
-Login.propTypes = {
-  setAlert: PropTypes.func.isRequired,
-  register: PropTypes.func.isRequired
-};
-
-const mapStateToProps = (state) => ({
-  // isAuthenticated: state.auth.isAuthenticated
-});
-
-export default connect(mapStateToProps, { setAlert, register})(Login);
-// export default Login;
+export default Login;

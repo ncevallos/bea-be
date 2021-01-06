@@ -10,7 +10,7 @@ export const NavBar = () => {
             src={logo}
             alt='Bea'
             /> 
-             <div className="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0"> 
+             <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0"> 
         {/* <ul className="navbar-nav ml-auto">
             <li className="nav-item active">
                 <Link className="nav-link" to='Dashboard' >Help Center</Link>

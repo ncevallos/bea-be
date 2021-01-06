@@ -10,6 +10,7 @@ export const Dashboard = () => {
                     <p>This is the Dashboard Page</p>
                 </div>
             </div>
+            <Login/>
         </section>
     )
 }
