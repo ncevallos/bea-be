@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.7bf5e5ed.chunk.css",
-    "main.js": "/static/js/main.33bd3635.chunk.js",
-    "main.js.map": "/static/js/main.33bd3635.chunk.js.map",
+    "main.css": "/static/css/main.e7a07f2e.chunk.css",
+    "main.js": "/static/js/main.39923fba.chunk.js",
+    "main.js.map": "/static/js/main.39923fba.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.bb14b5da.js",
     "runtime-main.js.map": "/static/js/runtime-main.bb14b5da.js.map",
-    "static/css/2.1a02f21c.chunk.css": "/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.08c63a1d.chunk.js": "/static/js/2.08c63a1d.chunk.js",
-    "static/js/2.08c63a1d.chunk.js.map": "/static/js/2.08c63a1d.chunk.js.map",
+    "static/css/2.bf09e7d8.chunk.css": "/static/css/2.bf09e7d8.chunk.css",
+    "static/js/2.06a400c4.chunk.js": "/static/js/2.06a400c4.chunk.js",
+    "static/js/2.06a400c4.chunk.js.map": "/static/js/2.06a400c4.chunk.js.map",
     "static/js/3.fa75e595.chunk.js": "/static/js/3.fa75e595.chunk.js",
     "static/js/3.fa75e595.chunk.js.map": "/static/js/3.fa75e595.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.1a02f21c.chunk.css.map": "/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.7bf5e5ed.chunk.css.map": "/static/css/main.7bf5e5ed.chunk.css.map",
-    "static/js/2.08c63a1d.chunk.js.LICENSE.txt": "/static/js/2.08c63a1d.chunk.js.LICENSE.txt",
-    "static/media/meditate-icon-large.632c57dc.svg": "/static/media/meditate-icon-large.632c57dc.svg"
+    "static/css/2.bf09e7d8.chunk.css.map": "/static/css/2.bf09e7d8.chunk.css.map",
+    "static/css/main.e7a07f2e.chunk.css.map": "/static/css/main.e7a07f2e.chunk.css.map",
+    "static/js/2.06a400c4.chunk.js.LICENSE.txt": "/static/js/2.06a400c4.chunk.js.LICENSE.txt",
+    "static/media/meditate-icon-large.632c57dc.svg": "/static/media/meditate-icon-large.632c57dc.svg",
+    "static/media/mountain-stream.cb3d9efc.svg": "/static/media/mountain-stream.cb3d9efc.svg",
+    "static/media/pesky-patterns.90b3f16e.svg": "/static/media/pesky-patterns.90b3f16e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.bb14b5da.js",
-    "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.08c63a1d.chunk.js",
-    "static/css/main.7bf5e5ed.chunk.css",
-    "static/js/main.33bd3635.chunk.js"
+    "static/css/2.bf09e7d8.chunk.css",
+    "static/js/2.06a400c4.chunk.js",
+    "static/css/main.e7a07f2e.chunk.css",
+    "static/js/main.39923fba.chunk.js"
   ]
 }
