@@ -43,7 +43,7 @@ const App = () => {
         <Fragment>
           <Navbar />
         <Sidebar/>
-        <section className="sbspace">
+        <section>
           <Alert />
           <Switch>
             <Route exact path='/' component={Dashboard} />

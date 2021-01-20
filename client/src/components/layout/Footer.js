@@ -12,7 +12,7 @@ export const Footer = () => {
         // </div>
         
         //Anders' layout below 
-        <div className="lg:bg-gray-200 p-4 mb-20 lg:mb-0">
+        <div className="lg:bg-gray-200 p-4 mb-20 lg:mb-0 lg:ml-52">
         <div className="flex items-center flex-col lg:flex-row">
         <div className="ml-3 flex-1 md:flex md:justify-between">
             <p className="text-sm text-blue-700 hidden lg:block">
