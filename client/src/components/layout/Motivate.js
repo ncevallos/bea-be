@@ -1,4 +1,5 @@
 import React from 'react'
+import Testpopuptwo from "./Testpopuptwo"; 
 
 export const Motivate = () => {
     return (
@@ -7,6 +8,7 @@ export const Motivate = () => {
                 <div>
                     <h1>BEA Better Eating</h1>
                     <p>This is the Motivate Page</p>
+                    <Testpopuptwo/>
                 </div>
             </div>
         </section>

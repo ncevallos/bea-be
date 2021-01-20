@@ -7,20 +7,7 @@ import planicon from '../../img/plan-icon.png';
 
 export const Sidebar = () => {
     return (
-        // <div className="sidenav">
-        //     <Link className="nav-link" to='/' >
-        //      <img src={dashicon} alt='Dashboard'/>  Dashboard</Link>
-        //     <Link className="nav-link" to='/Plan'>
-        //     <img src={planicon} alt='Plan'/>  Plan</Link>
-        //     <Link className="nav-link" to='/Meditate'>
-        //     <img src={meditateicon} alt='Meditate'/>  Meditate</Link>
-        //     <Link className="nav-link" to='/Motivate'>
-        //     <img src={motivateicon} alt='Motivate'/>  Motivate</Link>
-        // </div>
 
-        //Anders' layout below
-        // <div className="flex-grow w-full mx-auto lg:px-0 flex">
-        // <div className="flex-1 min-w-0 lg:flex">
         <div className="flex-grow w-full mx-auto lg:px-0 flex">
         <div className="flex-1 min-w-0 lg:flex">
         <div className="fixed flex lg:top-16 lg:left-0 lg:w-52 w-full h-auto bottom-0 lg:h-full md:flex-shrink-0 py-1 bg-beaGrey content-center border-t lg:border-r border-gray-200 z-50">
@@ -58,8 +45,6 @@ export const Sidebar = () => {
           </div>
         </div>
         </div></div>
-        // {/* Closing divs of the added divs for the outside container */}
-        // </div></div>
     )
 }
 
