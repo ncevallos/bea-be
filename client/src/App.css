@@ -145,3 +145,11 @@
 .notop {
   margin-top: none !important;
 }
+.popup-arrow {
+  display:none;
+}
+.popup-content {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
