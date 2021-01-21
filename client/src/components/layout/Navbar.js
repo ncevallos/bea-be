@@ -1,46 +1,13 @@
 import React from 'react'
 import logo from '../../img/bea-logo.png';
+import Popup from 'reactjs-popup';
 import wave from '../../img/dashboard-navbarwave.jpg';
 import meditateIconLarge from '../../img/meditate-icon-large.svg';
 import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
     return ( 
-//         <nav className="navbar navbar-expand-lg">
-//              <img
-//             src={logo}
-//             alt='Bea'
-//             /> 
-//              <div className="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0"> 
-//         {/* <ul className="navbar-nav ml-auto">
-//             <li className="nav-item active">
-//                 <Link className="nav-link" to='Dashboard' >Help Center</Link>
-//             </li>
-//             </ul>  */}
-//                 </div>
-//             <div className="mx-auto my-2 order-0 order-md-1 position-relative notop">
-//         <img src={wave} 
-//             alt='Bea'/>
-//     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-//         <span className="navbar-toggler-icon"></span>
-//     </button>
-// </div>
-//             <div className="navbar-collapse w-100 dual-collapse2 order-2 order-md-2">
-//         <ul className="navbar-nav ml-auto">
-//             <li className="nav-item active">
-//                 <Link className="nav-link" to='/Helpcenter' >Help Center</Link>
-//             </li>
-//             <li className="nav-item">
-//                 <Link className="nav-link" to='/Settings'>Settings</Link>
-//             </li>
-//             <li className="nav-item">
-//                 <Link className="nav-link" to='/'>...</Link>
-//             </li>
-//         </ul>
-//     </div>
 
-//          </nav>
-//Anders' layout below
         <nav className="fixed w-screen top-0 flex-shrink-0 bg-beaPurple z-40">
         <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
@@ -73,7 +40,13 @@ export const NavBar = () => {
             <div className="flex items-center justify-end">
                 <div className="flex">
                 <Link to='/' className="px-8 py-2 rounded-md text-sm font-bold tracking-wide text-white hover:text-white">Help Center</Link>
-                <Link to='/' className="px-8 py-2 rounded-md text-sm font-bold tracking-wide text-white hover:text-white">Settings</Link>
+                <Popup trigger={<div className="px-8 py-2 rounded-md text-sm font-bold tracking-wide text-white hover:text-white"> Settings</div>} position="bottom center">
+                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                    <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">View Profile</Link>
+                    <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</Link>
+                    <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</Link>
+                </div> 
+                </Popup>
                 </div>
 
                 <div className="ml-4 relative flex-shrink-0">
@@ -97,12 +70,6 @@ export const NavBar = () => {
 
                     </button>
                 </div>
-
-                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-                    <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">View Profile</Link>
-                    <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</Link>
-                    <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</Link>
-                </div> 
 
                 </div>
             </div>
