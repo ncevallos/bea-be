@@ -18,10 +18,6 @@ export const NavBar = () => {
             </div>
             </div>
 
-            <div className="flex flex-col items-center justify-end h-full -ml-24 lg:ml-32 xl:ml-96 bg-arc bg-contain bg-no-repeat bg-bottom w-72 py-0">
-            <img src={meditateIconLarge} className="w-8" alt="Meditate"/>
-            </div>
-
             <div className="flex xl:hidden">
 
             <button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white" aria-expanded="false">
