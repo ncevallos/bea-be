@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { Videomodal } from './Videomodal';
+import Videomodal from './Videomodal';
 
-export const Videoselection = () => {
+export const Videoselection = (props) => {
     return (
         <li className="col-span-1 flex flex-col text-center bg-white rounded-lg">
             {/* <Link to="/Meditate#" className="group"> */}
@@ -20,8 +20,8 @@ export const Videoselection = () => {
                     </svg>            
                     </button> 
                     <div className="flex flex-col ml-3">
-                        <span className="text-left">Clouds</span>
-                        <span className="text-left">5 minutes</span>
+                        <span className="text-left">{props.title}</span>
+                        <span className="text-left">{props.length}</span>
                     </div>
                 </div>
                 </div>
