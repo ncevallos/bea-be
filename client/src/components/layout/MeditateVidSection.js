@@ -9,15 +9,15 @@ import Videoselection from './Videoselection';
 class MeditateVidSection extends Component {
     state = {
         videolist: [
-            {title: 'Clouds', length: '5 minutes'},
-            {title: 'Monks', length: '7 minutes'},
-            {title: 'Woods', length: '3 minutes'},
-            {title: 'Moonlight', length: '3 minutes'},
-            {title: 'Lazy Afternoon', length: '3 minutes'},
-            {title: 'Crackling Fire', length: '3 minutes'},
-            {title: 'Sailboat', length: '5 minutes'},
-            {title: 'Two Women', length: '7 minutes'},
-            {title: 'Orange Grove', length: '7 minutes'}
+            {id: "1", title: 'Clouds', length: '5 minutes'},
+            {id: "2", title: 'Monks', length: '7 minutes'},
+            {id: "3", title: 'Woods', length: '3 minutes'},
+            {id: "4", title: 'Moonlight', length: '3 minutes'},
+            {id: "5", title: 'Lazy Afternoon', length: '3 minutes'},
+            {id: "6", title: 'Crackling Fire', length: '3 minutes'},
+            {id: "7", title: 'Sailboat', length: '5 minutes'},
+            {id: "8", title: 'Two Women', length: '7 minutes'},
+            {id: "9", title: 'Orange Grove', length: '7 minutes'}
         ]
     }
     render() {
@@ -43,15 +43,15 @@ class MeditateVidSection extends Component {
 
             <div className="flex md:flex-row flex-col">
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mr-4 gap-4 w-full">
-                <Videoselection title={this.state.videolist[0].title} length={this.state.videolist[0].length} />
-                <Videoselection title={this.state.videolist[1].title} length={this.state.videolist[1].length}  />
-                <Videoselection title={this.state.videolist[2].title} length={this.state.videolist[2].length}  />
-                <Videoselection title={this.state.videolist[3].title} length={this.state.videolist[3].length}  />
-                <Videoselection title={this.state.videolist[4].title} length={this.state.videolist[4].length} />
-                <Videoselection title={this.state.videolist[5].title} length={this.state.videolist[5].length}  />
-                <Videoselection title={this.state.videolist[6].title} length={this.state.videolist[6].length}  />
-                <Videoselection title={this.state.videolist[7].title} length={this.state.videolist[7].length}  />
-                <Videoselection title={this.state.videolist[8].title} length={this.state.videolist[8].length}  />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[0].title} length={this.state.videolist[0].length} />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[1].title} length={this.state.videolist[1].length}  />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[2].title} length={this.state.videolist[2].length}  />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[3].title} length={this.state.videolist[3].length}  />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[4].title} length={this.state.videolist[4].length} />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[5].title} length={this.state.videolist[5].length}  />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[6].title} length={this.state.videolist[6].length}  />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[7].title} length={this.state.videolist[7].length}  />
+                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[8].title} length={this.state.videolist[8].length}  />
             </ul>
             <ul className="md:w-96 w-full">
             <li className="col-span-1 flex flex-col text-center border border-beaBorderGrey border-opacity-50 py-6 bg-white rounded-lg divide-y divide-gray-200">

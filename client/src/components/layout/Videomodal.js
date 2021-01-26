@@ -9,14 +9,19 @@ class Videomodal extends React.Component {
         return null;
     }
     return (
-      <div className="modal2">
-      <div>Hello test modal</div>
+      <div className="modal3">
+        <div className="modal-content3">
+      <div>Hello test modal<br/>
+      Video Title: {this.props.title}<br/>
+      Length: {this.props.length}<br/>
+      </div>
       <div>
         <button  onClick={this.onClose}  >
           Close
         </button>
       </div>
     </div>
+      </div>
 
       // <div className="modal" id="modal">
       // <h2>Modal Window</h2>

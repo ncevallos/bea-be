@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from 'react';
 import Testpopuptwo from "./Testpopuptwo"; 
 import Videomodal from './Videomodal';
+import Videoselection from './Videoselection';
 
 
 class Motivate extends Component {
@@ -43,6 +44,9 @@ class Motivate extends Component {
                                 this.showModal();
                             }}
                             > show Modal </button>
+                            {/* <Videoselection  onClick={e => {
+                                this.showModal();
+                            }} /> */}
                             <Videomodal onClose={this.showModal} show={this.state.show} />
                         </nav>
                         </div>

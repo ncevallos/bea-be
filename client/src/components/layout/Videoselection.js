@@ -1,14 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import Videomodal from './Videomodal';
 
-export const Videoselection = (props) => {
+
+class Videoselection extends React.Component {
+// export const Videoselection = (props) => {
+    state = {
+        show: false
+      };
+      showModal = e => {
+        this.setState({
+          show: !this.state.show
+        });
+      };
+      onClose = e => {
+        this.props.onClose && this.props.onClose(e);
+      };
+
+  render() {
     return (
         <li className="col-span-1 flex flex-col text-center bg-white rounded-lg">
-            {/* <Link to="/Meditate#" className="group"> */}
-            <div className="flex-1 flex flex-col p-8 bg-beaLightBlue rounded-lg h-40">
+            {/* <div  onClick={() => {alert("Hello from here")}}> */}
+            <div id="1" onClick={e => {
+                this.showModal(e.target.id);
+            }}>
+            <div id="{this.props.id}" className="flex-1 flex flex-col p-8 bg-beaLightBlue rounded-lg h-40">
 
             </div>
             <div>
@@ -20,15 +36,17 @@ export const Videoselection = (props) => {
                     </svg>            
                     </button> 
                     <div className="flex flex-col ml-3">
-                        <span className="text-left">{props.title}</span>
-                        <span className="text-left">{props.length}</span>
+                        <span className="text-left">{this.props.title}</span>
+                        <span className="text-left">{this.props.length}</span>
                     </div>
                 </div>
                 </div>
             </div>
-            {/* </Link> */}
+            </div>
+
+            <Videomodal onClose={this.showModal} show={this.state.show} title={this.props.title} length={this.props.length}/>
         </li>
-    )
+    )}
 }
 
 
