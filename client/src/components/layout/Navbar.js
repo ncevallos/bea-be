@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../img/bea-logo.png';
+import logo from '../../img/logo.svg';
 import Popup from 'reactjs-popup';
 import wave from '../../img/dashboard-navbarwave.jpg';
 import meditateIconLarge from '../../img/meditate-icon-large.svg';
