@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export const NavBar = () => {
     return ( 
 
-        <nav className="fixed w-screen top-0 flex-shrink-0 bg-beaPurple z-40 px-6">
+        <nav className="fixed w-screen top-0 flex-shrink-0 bg-beaPurpleCorrected backdrop-blur bg-opacity-60 z-40 px-6">
         <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
 

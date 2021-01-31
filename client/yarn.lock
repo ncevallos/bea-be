@@ -11123,6 +11123,13 @@
     "slice-ansi" "^2.1.0"
     "string-width" "^3.0.0"
 
+"tailwindcss-filters@^3.0.0":
+  "integrity" "sha512-xhortqs8fSp9id17EnneYhmruA5DfU6K0zvN6/mgDlEXKaHthjXlR74Ta+4lrX5Lp7tp6YigB09WO0TOWn7VEQ=="
+  "resolved" "https://registry.npmjs.org/tailwindcss-filters/-/tailwindcss-filters-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "lodash" "^4.17.15"
+
 "tailwindcss@npm:@tailwindcss/postcss7-compat@^2.0.2":
   "integrity" "sha512-KM8kjG5dd8qoXBX2a6r3r1TOqhFh8NtFBheG9qpVPwSjrD8wRdoM7s+Xz56HEA1XmeN64gEKqjmY6vm55DiS3Q=="
   "resolved" "https://registry.npmjs.org/@tailwindcss/postcss7-compat/-/postcss7-compat-2.0.2.tgz"

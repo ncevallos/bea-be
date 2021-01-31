@@ -30,7 +30,7 @@ export const Meditate = () => {
                         3 minutes
                         </h4>
                     </div>
-                    <button type="button" className="relative group transition-all hover:bg-transparent hover:text-beaDarkPurple hover:border-beaDarkPurple inline-flex items-center px-6 py-2 border border-transparent shadow-none text-sm font-medium rounded-full text-white bg-beaDarkPurple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <button type="button" className="relative group text-white transition-all hover:bg-transparent hover:text-beaDarkPurple hover:border-beaDarkPurple inline-flex items-center px-6 py-2 border border-transparent shadow-none text-sm font-medium rounded-full bg-beaDarkPurple focus:outline-none">
                         <svg className="w-3.5 mr-2" fill="currentColor" viewBox="0 0 24 24" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 210 210">
                         <path d="M179.07,105L30.93,210V0L179.07,105z"/>
                         </svg>           
