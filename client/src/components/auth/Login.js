@@ -1,83 +1,80 @@
 import React, {useState} from 'react';
-import FacebookLogin from 'react-facebook-login';
-import { Card, Image } from 'react-bootstrap';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
-import { register } from '../../actions/auth';
+import { login } from '../../actions/auth';
 import PropTypes from 'prop-types';
 
-export const Login = ({ setAlert, register}) => {
-    const [login, setLogin] = useState(false);
-    const [data, setData] = useState({});
-    const [picture, setPicture] = useState('');
+export const Login = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
-      name: 'Natasha',
-      email: 'nc@123.com',
-      fbid: '23123456',
-      profileimageURL: 'http://www.test345.com'
+      email: '',
+      password: ''
     });
-
-    const { name, email, fbid, profileimageURL } = formData;
-    const responseFacebook = (response) => {
-      console.log(response);
-      setData(response);
-      setPicture(response.picture.data.url);
-
-      if (response.accessToken) {
-        setLogin(true);
-        setAlert('FB Login Success', 'success');
-        // setFormData ({name: ('response.name')});
-        // setFormData ({email: (response.email)});
-        // setFormData ({fbid: (response.id)});
-        // setFormData ({profileimageURL: (response.picture.data.url)});
-        console.log("email is ... ", email);
-        console.log("Name is ... ", name);
-        console.log("ID is... ", fbid);
-        console.log("Profile Image ID is... ", profileimageURL);
-        register({ name, email, fbid, profileimageURL });
-      } else {
-        setLogin(false);
-      }
+  
+    const { email, password } = formData;
+  
+    const onChange = e =>
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+  
+    const onSubmit = e => {
+      e.preventDefault();
+      login(email, password);
+    };
+  
+    if (isAuthenticated) {
+      return <Redirect to="/dashboard" />;
     }
   
     return (
-      <div className="container">
-        <Card style={{ width: '600px' }}>
-          <Card.Header>
-            { !login && 
-              <FacebookLogin
-                appId="1012841372568288"
-                autoLoad={true}
-                fields="name,email,picture"
-                scope="public_profile,user_friends"
-                callback={responseFacebook}
-                icon="fa-facebook" />
-            }
-            { login &&
-              <Image src={picture} roundedCircle />
-            }
-          </Card.Header>
-          { login &&
-            <Card.Body>
-              <Card.Title>{data.name}</Card.Title>
-              <Card.Text>
-                {data.email}
-              </Card.Text>
-            </Card.Body>
-          }
-        </Card>
-      </div>
+
+                  <div className="block">
+                      <div>
+                          
+                    <h1 className="large text-primary">Sign In</h1>
+                    <p className="lead">
+                      <i className="fas fa-user" /> Sign Into Your Account
+                    </p>
+                    <form className="form" onSubmit={onSubmit}>
+                      <div className="form-group">
+                        <input
+                          type="email"
+                          placeholder="Email Address"
+                          name="email"
+                          value={email}
+                          onChange={onChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <input
+                          type="password"
+                          placeholder="Password"
+                          name="password"
+                          value={password}
+                          onChange={onChange}
+                          minLength="6"
+                        />
+                      </div>
+                      <input type="submit" className="btn btn-primary" value="Login" />
+                    </form>
+                    <p className="my-1">
+                      Don't have an account? <Link to="/register">Sign Up</Link>
+                    </p>
+                    </div>
+                  </div>
     );
 };
 
 Login.propTypes = {
   setAlert: PropTypes.func.isRequired,
-  register: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
 };
 
 const mapStateToProps = (state) => ({
-  // isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { setAlert, register})(Login);
+// export default connect(mapStateToProps, { setAlert, register})(Login);
+export default connect(mapStateToProps, { setAlert, login })(Login);
 // export default Login;

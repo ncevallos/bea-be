@@ -23,18 +23,20 @@ import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 const App = () => {
   // useEffect(() => {
   //   // check for token in LS
-  //   if (localStorage.token) {
-  //     setAuthToken(localStorage.token);
-  //   }
+
   //   store.dispatch(loadUser());
 
   //   // log user out from all tabs if they log out in one tab
-  //   window.addEventListener('storage', () => {
-  //     if (!localStorage.token) store.dispatch({ type: LOGOUT });
-  //   });
+  //   // window.addEventListener('storage', () => {
+  //   //   if (!localStorage.token) store.dispatch({ type: LOGOUT });
+  //   // });
   // }, []);
 
   return (
@@ -43,10 +45,20 @@ const App = () => {
         <Fragment>
           <Navbar />
         <Sidebar/>
-        <section>
+        <section >
+      <div className="flex-grow w-full mx-auto lg:px-0 flex">
+      <div className="flex-1 min-w-0 lg:flex">
+      <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
+
+              <div className="flex px-6 py-6">
+              <div className="flex flex-col w-full">
+  
+  
+                  <div className="mb-2">
           <Alert />
           <Switch>
             <Route exact path='/' component={Dashboard} />
+            <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/meditate" component={Meditate} />
@@ -58,7 +70,13 @@ const App = () => {
             <Route exact path="/settings" component={Settings} />
             <Route exact path="/register" component={Register} />
           </Switch>
-        </section>
+          </div>
+              </div>
+              </div>
+          </div>
+          </div>
+          </div>
+      </section>
         <Footer/>
         </Fragment>
       </Router>

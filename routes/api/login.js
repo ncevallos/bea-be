@@ -29,12 +29,11 @@ router.post(
   '/',
   [
     check('name', 'Name is required').not().isEmpty(),
-    check('fbid', 'Facebook ID is required').not().isEmpty(),
-    // check('email', 'Please include a valid email').isEmail(),
-    // check(
-    //   'password',
-    //   'Please enter a password with 6 or more characters'
-    // ).isLength({ min: 6 })
+    check('email', 'Please include a valid email').isEmail(),
+    check(
+      'password',
+      'Please enter a password with 6 or more characters'
+    ).isLength({ min: 6 })
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -42,10 +41,10 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, fbid, email, profileimageURL } = req.body;
+    const { name, email, password } = req.body;
 
     try {
-      let user = await User.findOne({ fbid });
+      let user = await User.findOne({ email });
 
       if (user) {
           const payload = {
@@ -70,14 +69,13 @@ router.post(
 
         user = new User({
             name,
-            profileimageURL,
             email,
-            fbid
+            password
         });
 
-        //   const salt = await bcrypt.genSalt(10);
+          const salt = await bcrypt.genSalt(10);
 
-        //   user.password = await bcrypt.hash(password, salt);
+          user.password = await bcrypt.hash(password, salt);
         await user.save();
 
         const payload = {

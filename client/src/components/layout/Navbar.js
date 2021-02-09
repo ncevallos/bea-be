@@ -68,9 +68,8 @@ export const NavBar = () => {
 
                 <div className="ml-4 relative flex-shrink-0">
                 <div>
-                    <button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
+                    <Popup trigger={<button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
                     <span className="sr-only">Open user menu</span>
-
                     <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <g id="Designs-for-Development" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="Meditate-Landing-(Paid-Member---recent)" transform="translate(-1383.000000, -31.000000)">
@@ -85,7 +84,19 @@ export const NavBar = () => {
                     </svg>
 
 
-                    </button>
+                    </button>} position="bottom right">
+                    <div className="px-2 pt-2 pb-3">
+                        <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</Link>
+                        <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</Link>
+                    </div>
+                    <div className="pt-4 pb-3 border-t border-indigo-800">
+                        <div className="px-2">
+                        <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Your Profile</Link>
+                        <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Settings</Link>
+                        <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign out</Link>
+                        </div>
+                    </div>
+                    </Popup>
                 </div>
 
                 </div>
