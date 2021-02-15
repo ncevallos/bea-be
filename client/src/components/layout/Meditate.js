@@ -7,7 +7,7 @@ export const Meditate = () => {
         <section >
             <div className="flex-grow w-full mx-auto lg:px-0 flex">
             <div className="flex-1 min-w-0 lg:flex">
-            <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
+            <div className="bg-white lg:min-w-0 lg:flex-1 z-20 ml-0 mt-16">
 
                 <div className="flex md:flex justify-center mt-0">
                 <div className="flex flex-col min-w-0 items-center mt-0">

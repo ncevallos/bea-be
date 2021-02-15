@@ -50,7 +50,7 @@ export const NavBar = () => {
                 <div className="flex">
                 <Link to='/' className="px-8 py-2 rounded-md text-sm font-bold tracking-wide text-white hover:text-white">Help Center</Link>
                 <Popup trigger={<div className="px-8 py-2 text-sm font-bold tracking-wide text-white hover:text-white cursor-pointer select-none"> Settings</div>} position="bottom center">
-                    <div className="origin-top-right fixed right-4 -mt-1 w-48 py-1 bg-white border-t-4 border-beaDarkPurple ring-inset ring-1 ring-beaBorderGrey divide-y divide-beaBorderGrey" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                    <div className="origin-top-right fixed right-4 -mt-1 w-48 py-1 border-t-4 border-beaDarkPurple ring-inset ring-1 ring-beaBorderGrey divide-y divide-beaBorderGrey bg-gray-50 backdrop-blur bg-opacity-60" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
                         <div>
                             <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5 hover:no-underline" role="menuitem">How Bea Works</Link>
                             <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">About the Bea Team</Link>
@@ -81,34 +81,37 @@ export const NavBar = () => {
 
                 <div className="ml-4 relative flex-shrink-0">
                 <div>
-                    <Popup trigger={<button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
+                    <Popup trigger={<button className="flex text-sm rounded-full text-white focus:outline-none" id="user-menu" aria-haspopup="true">
                     <span className="sr-only">Open user menu</span>
-                    <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                        <g id="Designs-for-Development" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                            <g id="Meditate-Landing-(Paid-Member---recent)" transform="translate(-1383.000000, -31.000000)">
-                                <path d="M0,-1 L1440,-1 L1440,66 C1174.88262,66 1016.78219,66 965.698713,66 C889.073495,66 870.259441,23.70292 816,23.70292 C761.740559,23.70292 748.575215,66 653.741049,66 C590.518272,66 372.271256,66 -1,66 L0,-1 Z" id="header" fill="#AD79E2"></path>
-                                <g id="more" transform="translate(1383.000000, 31.000000)" fill="#FFFFFF">
-                                    <circle id="Oval" cx="2" cy="2" r="2"></circle>
-                                    <circle id="Oval-Copy" cx="10" cy="2" r="2"></circle>
-                                    <circle id="Oval-Copy-2" cx="18" cy="2" r="2"></circle>
+                    <div className="flex items-center h-6 bg-transparent">
+                        <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Designs-for-Development" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                                <g id="Meditate-Landing-(Paid-Member---recent)" transform="translate(-1383.000000, -31.000000)">
+                                    <path d="M0,-1 L1440,-1 L1440,66 C1174.88262,66 1016.78219,66 965.698713,66 C889.073495,66 870.259441,23.70292 816,23.70292 C761.740559,23.70292 748.575215,66 653.741049,66 C590.518272,66 372.271256,66 -1,66 L0,-1 Z" id="header" fill="#AD79E2"></path>
+                                    <g id="more" transform="translate(1383.000000, 31.000000)" fill="#FFFFFF">
+                                        <circle id="Oval" cx="2" cy="2" r="2"></circle>
+                                        <circle id="Oval-Copy" cx="10" cy="2" r="2"></circle>
+                                        <circle id="Oval-Copy-2" cx="18" cy="2" r="2"></circle>
+                                    </g>
                                 </g>
                             </g>
-                        </g>
-                    </svg>
+                        </svg>
+                    </div>
 
 
                     </button>} position="bottom right">
-                    <div className="px-2 pt-2 pb-3">
-                        <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</Link>
-                        <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</Link>
-                    </div>
-                    <div className="pt-4 pb-3 border-t border-indigo-800">
-                        <div className="px-2">
-                        <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Your Profile</Link>
-                        <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Settings</Link>
-                        <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign out</Link>
+
+                    <div className="origin-top-right fixed right-4 mt-0.5 w-48 py-1 border-t-4 border-beaDarkPurple ring-inset ring-1 ring-beaBorderGrey divide-y divide-beaBorderGrey bg-gray-50 backdrop-blur bg-opacity-60" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                        <div>
+                            <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5 hover:no-underline" role="menuitem">Dashboard</Link>
+                            <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Support</Link>
                         </div>
-                    </div>
+                        <div>
+                            <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5 hover:no-underline" role="menuitem">Your Profile</Link>
+                            <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Settings</Link>
+                            <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Sign Out</Link>
+                        </div>
+                    </div> 
                     </Popup>
                 </div>
 

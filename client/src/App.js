@@ -50,7 +50,7 @@ const App = () => {
       <div className="flex-1 min-w-0 lg:flex">
       <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
 
-              <div className="flex px-6 py-6">
+              <div className="flex px-0 py-0">
               <div className="flex flex-col w-full">
   
   
