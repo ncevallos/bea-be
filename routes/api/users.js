@@ -51,11 +51,6 @@ router.post(
         return res
           .status(400)
           .json({ errors: [{ msg: 'User already exists' }] });
-          // const payload = {
-          //   user: {
-          //     id: user.id
-          //   }
-          // };
       }
 
       user = new User({

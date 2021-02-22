@@ -24,6 +24,14 @@ const botName = "Bea";
 
 const config = {
     botName: botName,
+    customStyles: {
+        botMessageBox: {
+        backgroundColor: "#b58fe1",
+        },
+        chatButton: {
+        backgroundColor: "#b58fe1",
+        },
+        },
     initialMessages: [createChatBotMessage(`Welcome. It’s time to Motivate!`), 
     createChatBotMessage(`This is the Activity to do when you’re struggling to make the right food choice in the moment.`, {
         delay: 2000,

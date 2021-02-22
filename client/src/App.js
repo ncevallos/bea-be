@@ -8,6 +8,7 @@ import Dashboard from './components/layout/Dashboard';
 import Meditate from './components/layout/Meditate';
 import Motivate from './components/layout/Motivate';
 import Plan from './components/layout/Plan';
+import Plan2 from './components/layout/Plan2';
 import Helpcenter from './components/layout/Helpcenter';
 import Settings from './components/layout/Settings';
 import Termsconditions from './components/layout/Termsconditions';
@@ -50,7 +51,11 @@ const App = () => {
       <div className="flex-1 min-w-0 lg:flex">
       <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
 
+<<<<<<< Updated upstream
               <div className="flex px-0 py-0">
+=======
+              <div className="flex">
+>>>>>>> Stashed changes
               <div className="flex flex-col w-full">
   
   
@@ -64,6 +69,7 @@ const App = () => {
             <Route exact path="/meditate" component={Meditate} />
             <Route exact path="/motivate" component={Motivate} />
             <Route exact path="/plan" component={Plan} />
+            <Route exact path="/plan2" component={Plan2} />
             <Route exact path="/privacy" component={Privacy} />
             <Route exact path="/termsconditions" component={Termsconditions} />
             <Route exact path="/helpcenter" component={Helpcenter} />

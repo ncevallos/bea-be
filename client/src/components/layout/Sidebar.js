@@ -27,6 +27,12 @@ export const Sidebar = () => {
                       <span className="text-sm text-beaTextGrey font-medium">Plan</span>
                     </div>
                   </NavLink>
+                  <NavLink to='/Plan2' className="group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline">
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
+                      <img src={planicon} className="w-6" alt='Plan' />
+                      <span className="text-sm text-beaTextGrey font-medium">Plan2</span>
+                    </div>
+                  </NavLink>
                   <NavLink to='/Motivate' className="group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline">
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={motivateicon} className="w-6" alt='Motivate'/>

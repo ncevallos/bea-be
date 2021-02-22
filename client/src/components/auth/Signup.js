@@ -7,25 +7,25 @@ export const Signup = ({register}) => {
     const [data, setData] = useState({});
     const [picture, setPicture] = useState('');
   
-    const responseFacebook = (response) => {
-      console.log(response);
-      setData(response);
-      if (response.accessToken) {
-        setLogin(true);
-        setPicture(response.picture.data.url);
-        console.log("Picture is ... ", response.picture.data.url);
-        console.log("Name is ... ", response.name);
-        console.log("ID is... ", response.id);
-        console.log("User ID is... ", response.userID);
-      } else {
-        setLogin(false);
-      }
-    }
+    // const responseFacebook = (response) => {
+    //   console.log(response);
+    //   setData(response);
+    //   if (response.accessToken) {
+    //     setLogin(true);
+    //     setPicture(response.picture.data.url);
+    //     console.log("Picture is ... ", response.picture.data.url);
+    //     console.log("Name is ... ", response.name);
+    //     console.log("ID is... ", response.id);
+    //     console.log("User ID is... ", response.userID);
+    //   } else {
+    //     setLogin(false);
+    //   }
+    // }
   
     return (
       <div class="container">
         <Card style={{ width: '600px' }}>
-          <Card.Header>
+          {/* <Card.Header>
             { !login && 
               <FacebookLogin
                 appId="1012841372568288"
@@ -38,7 +38,7 @@ export const Signup = ({register}) => {
             { login &&
               <Image src={picture} roundedCircle />
             }
-          </Card.Header>
+          </Card.Header> */}
           { login &&
             <Card.Body>
               <Card.Title>{data.name}</Card.Title>

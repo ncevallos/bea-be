@@ -5,8 +5,8 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  // //LOGIN_FAIL,
-  // LOGOUT,
+  //LOGIN_FAIL,
+  LOGOUT,
   // ACCOUNT_DELETED
 } from '../actions/types';
 
@@ -40,12 +40,13 @@ export default function (state = initialState, action) {
       case AUTH_ERROR:
       case REGISTER_FAIL:
       case LOGIN_FAIL:
+      case LOGOUT:
         localStorage.removeItem('token');
         return {
           ...state,
           // ...payload,
           token: null,
-          isAuthenticated: true,
+          isAuthenticated: false,
           loading: false
         };
     // case LOGIN_SUCCESS:

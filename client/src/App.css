@@ -227,3 +227,17 @@
     text-decoration: none;
     cursor: pointer;
 }
+.circle-div {
+  background-color: #329CCC;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 121px;
+  right: 150px;
+  border: 2px solid gray;
+}
+.chatbubble {
+  width:40px;
+  padding-left:7px;
+}

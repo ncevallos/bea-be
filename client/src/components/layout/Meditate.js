@@ -1,8 +1,12 @@
 import React from 'react'
 import mountainStream from '../../img/mountain-stream.svg';
 import MeditateVidSection from './MeditateVidSection';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 
 export const Meditate = () => {
+
     return (
         <section >
             <div className="flex-grow w-full mx-auto lg:px-0 flex">
@@ -14,7 +18,6 @@ export const Meditate = () => {
 
                 </div>
                 </div>
-
 
                 <div className="flex items-center px-4 border-b border-gray-200 sm:px-6 md:h-80 py-8 bg-gradient-to-t from-beaBlue to-white">
                 <div className="md:pl-10 h-full w-full flex md:flex-row flex-col-reverse items-center">
@@ -38,7 +41,7 @@ export const Meditate = () => {
                     </button>
                     </div>
                     <div className="lg:ml-4 ml-0 flex flex-column h-full items-end">
-                    <img src={mountainStream} className="w-96" />
+                    <img src={mountainStream} alt="Mountain Stream" className="w-96" />
                     </div>
                 </div>
                 </div>

@@ -1,0 +1,574 @@
+import React from 'react'
+
+// ActionProvider starter code
+class ActionProvider {
+    constructor(createChatBotMessage, setStateFunc, createClientMessage) {
+      this.createChatBotMessage = createChatBotMessage;
+      this.setState = setStateFunc;
+      this.createClientMessage = createClientMessage;
+    }
+    greet() {
+        const greetingMessage = this.createChatBotMessage("Hello friend");
+        this.updateChatbotState(greetingMessage)
+    }
+    chatblock1 = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Great! 👍`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`For this Activity, we will first Reflect on your past eating.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Next, we will decide upon a main Goal for the day and find ways to help you reach that Goal.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Finally, we will decide upon an Action to take if the urge to overindulge arises.`, {
+            delay: 8000,
+            widget: "optionsblock2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    chatblock2 = () => {
+        const randblock = ["Welcome back!",
+         "I'm glad you’re ready to create a new Plan for the day!", 
+         "Welcome back! You've been doing great so far."]
+         const randblock2 = ["Let’s jump right in and come up with a new Plan for today.",
+          "Let’s begin by Reflecting briefly on your past before moving forward.", 
+          "Let's create a new Plan and see where we can do some fine tuning."]
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`This will be a random block`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`This will be a random block2`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`To get started, how do you feel about what you ate in the past day?`, {
+            delay: 6000,
+            widget: "optionsblock3",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    plangood = () => {
+        const randblock = ["Doesn't it feel great to know that you stayed on track?",
+         "Nothing is as (ful)filling as staying on track!"]
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`I'm happy to hear that!`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`This will be a random block2`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`What do you think helped you stay on track?`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`This can be something emotional like feeling positive or something physical such starting the day with a filling meal.`, {
+            delay: 8000,
+            widget: "plangoodblock",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    plangoodjournal = () => {
+        const randblock = ["Doesn't it feel great to know that you stayed on track?",
+         "Nothing is as (ful)filling as staying on track!"]
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Can you tell me more about what helped you stay on track?`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`You can type a brief response below:`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Thanks! `, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`😁`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`I’ll save your entry in your Plan Journal so you can look back on it later.`, {
+            delay: 10000,
+            widget: "plangoal",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    planbad = () => {
+        const randblock = ["Welcome back!",
+         "I'm glad you’re ready to create a new Plan for the day!", 
+         "Welcome back! You've been doing great so far."]
+         const randblock2 = ["Let’s jump right in and come up with a new Plan for today.",
+          "Let’s begin by Reflecting briefly on your past before moving forward.", 
+          "Let's create a new Plan and see where we can do some fine tuning."]
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`This will be a random block`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`This will be a random block2`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`To get started, how do you feel about what you ate in the past day?`, {
+            delay: 6000,
+            widget: "planbadblock",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+
+    plangoal = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Now that we’ve Reflected upon the past, let’s focus on moving forward.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`In general, what feels like the most important Goal for you to have today?`, {
+            delay: 4000,
+            widget: "plangoal2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    smallerportions = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Great! I can help you find ways to eat smaller amounts.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Would you prefer to stop eating when you’re full, or to choose foods that are more filling so you aren't as hungry?`, {
+            delay: 4000,
+            widget: "smallerportions",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    stopfull = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`I know - it can be hard to stop when it tastes so good!`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Sometimes we get confused by cravings and emotions and we forget to listen to our bodies.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Luckily, I've found an article that can help you learn to listen to your body again.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Read Article`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`When you’re ready, let me know and we can continue.`, {
+            delay: 10000,
+            widget: "stopfull2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    stopfull2 = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Remember, your main Goal for today is to stop eating when you’re full.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Imagine how good that will feel in your body at the end of the day.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Tomorrow, we can expand on this same Goal or choose a new one.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`When you’re ready, we can move on to the Action you will take if you get a craving that doesn’t align with your Goal.`, {
+            delay: 8000,
+            widget: "smallerportions",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    morefilling = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`That's always a great choice!`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`😎`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Research shows that when we choose more filling foods, we’re less likely to overeat.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Luckily, I've located a great article that can help you find more filling foods.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`15 Filling Foods`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`Let me know when you’re done reading and we can continue.`, {
+            delay: 10000,
+            widget: "morefilling",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    morefilling2 = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Remember, your main Goal for today is to choose more filling foods.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Think about what kind of filling foods you would enjoy.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Imagine how good it will feel to make these healthy choices.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Tomorrow, we can continue to work on choosing more filling foods, or we can create a new Goal for the day.`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`Let me know when you’re ready to come up with an Action to take if the urge to overindulge strikes.`, {
+            delay: 10000,
+            widget: "morefilling2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    lessfat = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Why do fattening foods taste so good?`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`I know, you thought I was asking a rhetorical question . . . 😉`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`But there's actually a good reason!`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Why Fat Tastes So Good WEBLINK`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`This article tells us that we can’t trick our bodies.`, {
+            delay: 10000,
+        }),
+        this.createChatBotMessage(`But we can choose less fattening foods that still taste great!`, {
+            delay: 12000,
+        }),
+        this.createChatBotMessage(`Here’s an article that can give you some ideas for foods that taste good and are healthy!`, {
+            delay: 14000,
+        }),
+        this.createChatBotMessage(`15 Healthy Foods `, {
+            delay: 16000,
+        }),
+        this.createChatBotMessage(`Let me know when you’re ready and we can continue.`, {
+            delay: 18000,
+            widget: "lessfat",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    lessfat2 = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Take some time now to reflect on your Goal of eating less fat today.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Hopefully the articles gave you some good ideas!`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Tomorrow, we can come back to eating less fattening foods, or choose a different goal for the day.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Let me know when you’re ready and we can move on to your Action for today.`, {
+            delay: 8000,
+            widget: "lessfat2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    lesssugar = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`I know it can be tough to cut down on sugar if you have a sweet tooth, but it's a great Goal for today! 😊`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Would you prefer to avoid sugar altogether, or to find healthy foods that taste sweet but are low in sugar?`, {
+            delay: 4000,
+            widget: "lesssugar",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    avoidsugar = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Avoiding sugar altogether can be tough!`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`But . . .`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`If sugar sets you off on a bad cycle, it's a great temporary goal to get you out of the habit of eating sweets.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`I've found an article that can help you transform your sugar addiction.`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`Sugar Addiction Tips WEBLINK`, {
+            delay: 10000,
+        }),
+        this.createChatBotMessage(`When you’re done reading, let me know and we can continue.`, {
+            delay: 12000,
+            widget: "avoidsugar",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    avoidsugar2 = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Now that you’ve chosen avoiding sugar as your main Goal, take a moment to imagine feeling peaceful and whole without it.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Tomorrow, we can choose again to avoid sugar, or try a different Goal for the day.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Let me know when you’re ready to move on to your Action for today.`, {
+            delay: 6000,
+            widget: "avoidsugar2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    foodchoices = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Our food choices don't need to be perfect, but it's great to start out with a general plan.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`What would you like to be the main focus of your food choices for today?`, {
+            delay: 4000,
+            widget: "foodchoices",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    sweetfoods = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Great choice! 😀`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`If you’re craving sugar, I always think it's helpful to find an alternative so you don't feel deprived.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Here’s an article that will help you find sweet snacks under 50 calories.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Find Sweet Snacks WEBLINK`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`Let me know when you’re done reading and we can continue.`, {
+            delay: 10000,
+            widget: "sweetfoods",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    sweetfoods2 = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Take a moment to think about what foods you’d like to eat today that taste sweet but don't have a lot of sugar.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Eating some of these foods instead of sugary foods is your main Goal for today.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Tomorrow, we can expand on this same Goal, or choose a new one for the day.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Next, we’ll make an Action plan for what to do if the urge strikes. Let me know when you’re ready to move on.`, {
+            delay: 8000,
+            widget: "sweetfoods2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    fewercarbs = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Remember, no foods are bad, including carbohydrates.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`However, if you find that you don’t feel great when you eat too many carbs, then gradually cutting back is a great Goal!`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`So let's find some foods that make you feel better than indulging in those high in carbohydrates.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Here is a great article of great low-carb substitutes for your favorite full-carb foods!`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`Low Carb Foods  WEBLINK`, {
+            delay: 10000,
+        }),
+        this.createChatBotMessage(`When you’re ready, let me know and we can continue.`, {
+            delay: 12000,
+            widget: "fewercarbs",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    fewercarbs2 = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Take a moment to think about which foods will taste great and make you feel great too!`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Although your Goal is to eat fewer carbs, the best way to accomplish this is Goal is to focus on the foods you ‘want’ to eat, and not the foods that you don’t.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Tomorrow, we can come back to this or make a new Goal for the day.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Let me know when you are ready to move on to your Action for today.`, {
+            delay: 8000,
+            widget: "fewercarbs2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    fewercalories = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Great! Let's take a more specific look at how much less you should aim to eat.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Many people try to cut out too much, but then they fall off track and overindulge.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Instead, I recommend making small, incremental changes so you’ll be more likely to stay on track.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`This interactive article will help you find out how many calories you should consume based on your current weight.`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`Calorie Calculator WEBLINK`, {
+            delay: 10000,
+        }),
+        this.createChatBotMessage(`When you’re ready, let me know and we can continue.`, {
+            delay: 12000,
+            widget: "fewercalories",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    fewercalories2 = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`After reading this article, take a moment to think about how you’ll accomplish your Goal of eating fewer calories, and how good that will feel.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`I don't suggest counting calories unless that's something you already do.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Instead, I recommend being mindful of your intake in general.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Tomorrow, we can come back to this or make a new Goal for the day.`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`Let me know when you are ready to move on to your Action for today.`, {
+            delay: 10000,
+            widget: "fewercalories2",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    somethingelse = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Great! It sounds like you have something else in mind, so let's work on it together.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`What would you like to be your goal for today?`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`You can type briefly below:`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Thank you for sharing! Let's work on making this Goal a reality.`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`First, take a moment to visualize how nice it would feel to accomplish this Goal.`, {
+            delay: 10000,
+        }),
+        this.createChatBotMessage(`Next, take a moment to think about what you need to do differently today to accomplish this Goal.`, {
+            delay: 12000,
+        }),
+        this.createChatBotMessage(`What is it that you need to do differently? You can type briefly below:`, {
+            delay: 14000,
+        }),
+        this.createChatBotMessage(`Okay! Make sure to do what you need to do to reach that Goal.`, {
+            delay: 16000,
+        }),
+        this.createChatBotMessage(`Tomorrow, we can attempt this Goal again, or choose a new one.`, {
+            delay: 18000,
+        }),
+        this.createChatBotMessage(`Let me know when you’re ready and we can move on to your Action for today.`, {
+            delay: 20000,
+            widget: "somethingelse",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    takeaction = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Let's decide on your Action for today.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`This Action will help you quiet your mind if you feel the urge to overindulge.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Research shows that when there’s no real need for food, cravings tend to last just a few minutes.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Distracting yourself with something positive can calm that craving.`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`If you feel that urge arising, which Action appeals the most to you today?`, {
+            delay: 10000,
+            widget: "takeaction",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    nofoulwords() {
+        const nofoulwordsMessage = 
+        [this.createChatBotMessage(`I can tell by what you just wrote that you are upset, and that is of course okay.`), 
+        this.createChatBotMessage(`Sometimes our language is a genuine expression of how we feel.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`For these meditations, I have included metaphors and analogies to help you listen to your body and think about food differently.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`That being said, I work best when you just press buttons.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Please scroll up to the last place you could make a selection in order to continue.`, {
+            delay: 8000,
+        })];
+        // this.updateChatbotState(nofoulwordsMessage)
+        this.addMessageToBotState(nofoulwordsMessage)
+    }
+    emergency() {
+        const emergencyMessage = 
+        [this.createChatBotMessage(`Oh no! I'm so sorry to hear that you’re feeling so badly.`), 
+        this.createChatBotMessage(`Please know that however down you feel, you are never alone.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Call the National Suicide Prevention Lifeline at 1-800-273-8255 to get help.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`If your need is more urgent, PLEASE call 911 right away or go to your nearest emergency room.`, {
+            delay: 6000,
+        })];
+        // this.updateChatbotState(emergencyMessage)
+        this.addMessageToBotState(emergencyMessage)
+    }
+    findtherapist() {
+        const therapyMessage = 
+        [this.createChatBotMessage(`I'm glad you’re ready to take that step!`), 
+        this.createChatBotMessage(`I've located a number of therapists in your area that specialize in issues with food and eating.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Please press below and I will redirect you.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`And if I can still be of help, we can continue at any time!`, {
+            delay: 6000,
+        })];
+        this.addMessageToBotState(therapyMessage)
+        // this.createChatBotMessage("I'm glad you’re ready to take that step!");
+        // this.updateChatbotState(therapyMessage)
+    }
+    updateChatbotState(message) {
+ 
+        // NOTE: This function is set in the constructor, and is passed in      
+        // from the top level Chatbot component. The setState function here     
+        // actually manipulates the top level state of the Chatbot, so it's     
+        // important that we make sure that we preserve the previous state.
+         
+            
+           this.setState(prevState => ({
+                ...prevState, messages: [...prevState.messages, message]
+            }))
+          }
+    addMessageToBotState = (messages) => {
+            if (Array.isArray(messages)) {
+              this.setState((prevState) => ({
+                ...prevState,
+                messages: [...prevState.messages, ...messages],
+              }));
+            } else {
+              this.setState((prevState) => ({
+                ...prevState,
+                messages: [...prevState.messages, messages],
+              }));
+            }
+          };
+  }
+  
+  export default ActionProvider;

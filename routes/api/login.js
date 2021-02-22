@@ -97,35 +97,6 @@ router.post(
         res.status(200).send('Register Success!');
       }
 
-    //   user = new User({
-    //     name,
-    //     profileimageURL,
-    //     email,
-    //     fbid
-    //   });
-
-    //   const salt = await bcrypt.genSalt(10);
-
-    //   user.password = await bcrypt.hash(password, salt);
-
-    //   await user.save();
-
-    //   const payload = {
-    //     user: {
-    //       id: user.id
-    //     }
-    //   };
-
-    //   jwt.sign(
-    //     payload,
-    //     config.get('jwtSecret'),
-    //     { expiresIn: '5 days' },
-    //     (err, token) => {
-    //       if (err) throw err;
-    //       res.json({ token });
-    //     }
-    //   );
-    //   res.status(200).send('Success!');
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server error');
