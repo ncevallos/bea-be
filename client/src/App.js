@@ -50,16 +50,10 @@ const App = () => {
       <div className="flex-grow w-full mx-auto lg:px-0 flex">
       <div className="flex-1 min-w-0 lg:flex">
       <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
+              
 
-<<<<<<< Updated upstream
-              <div className="flex px-0 py-0">
-=======
-              <div className="flex">
->>>>>>> Stashed changes
-              <div className="flex flex-col w-full">
-  
-  
-                  <div className="mb-2">
+        <div className="flex flex-col w-full">
+        <div className="mb-2">
           <Alert />
           <Switch>
             <Route exact path='/' component={Dashboard} />
@@ -78,7 +72,7 @@ const App = () => {
           </Switch>
           </div>
               </div>
-              </div>
+              
           </div>
           </div>
           </div>

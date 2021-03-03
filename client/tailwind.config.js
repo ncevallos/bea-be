@@ -24,13 +24,18 @@ module.exports = {
           beaGrey: '#F2F2F2',
           beaIconGrey: '#666666',
           beaBlue: '#E4F3FE',
+          beaLightBlue: '#C6E2F7',
           beaTextGrey: '#424142',
           beaTextLightGrey: '#999999',
           beaLightBlue: '#D7ECFC',
-          beaBorderGrey: '#BBBABA'
+          beaOrange: '#FF9A08',
+          beaBorderGrey: '#BBBABA',
+          purpleGradientStart: '#6D508B',
+          purpleGradientMiddle: '#AD79E2',
+          purpleGradientEnd: '#B1D0F4'
         },
         backgroundImage: theme => ({
-        //   'arc': "url('./img/arc.png')",
+             'planIllustration': "url('./img/plan-illustration.svg')",
         })
       },
     },

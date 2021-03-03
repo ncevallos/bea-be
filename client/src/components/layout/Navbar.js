@@ -170,14 +170,7 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
 
                 <div className="ml-4 relative flex-shrink-0">
                 <div>
-<<<<<<< Updated upstream
                     <Popup trigger={<button className="flex text-sm rounded-full text-white focus:outline-none" id="user-menu" aria-haspopup="true">
-=======
-
-                        {/* Code below will render options depending on whether user is or isn't logged in */}
-                        { (<div>{ isAuthenticated ? authLinks : guestLinks }</div>)}
-                    {/* <Popup trigger={<button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
->>>>>>> Stashed changes
                     <span className="sr-only">Open user menu</span>
                     <div className="flex items-center h-6 bg-transparent">
                         <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -202,7 +195,6 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
                             <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5 hover:no-underline" role="menuitem">Dashboard</Link>
                             <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Support</Link>
                         </div>
-<<<<<<< Updated upstream
                         <div>
                             <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5 hover:no-underline" role="menuitem">Your Profile</Link>
                             <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Settings</Link>
@@ -210,10 +202,6 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
                         </div>
                     </div> 
                     </Popup>
-=======
-                    </div>
-                    </Popup> */}
->>>>>>> Stashed changes
                 </div>
 
                 </div>

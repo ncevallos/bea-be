@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 export const Meditate = () => {
 
     return (
-        <section >
+        <section>
             <div className="flex-grow w-full mx-auto lg:px-0 flex">
             <div className="flex-1 min-w-0 lg:flex">
             <div className="bg-white lg:min-w-0 lg:flex-1 z-20 ml-0 mt-16">
