@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Fragment, useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, useLocation, withRouter } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
@@ -29,16 +29,35 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 const App = () => {
-  // useEffect(() => {
-  //   // check for token in LS
+  useEffect(() => {
+    // check for token in LS
 
-  //   store.dispatch(loadUser());
+    store.dispatch(loadUser());
 
-  //   // log user out from all tabs if they log out in one tab
-  //   // window.addEventListener('storage', () => {
-  //   //   if (!localStorage.token) store.dispatch({ type: LOGOUT });
-  //   // });
-  // }, []);
+    // log user out from all tabs if they log out in one tab
+    // window.addEventListener('storage', () => {
+    //   if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    // });
+  }, []);
+  const [color, setColor] = useState("#b084d8");
+  // const location = this.props.location.pathname;
+  // console.log("location contains ", location);
+  // const location = useLocation();
+  // console.log(location.pathname);
+  // const page = location.pathname;
+  // if(page === "/Plan"){
+  //     setColor("#2898ec");
+  //     console.log("In location is equal to plan");
+  // }
+  // switch (location) {
+  //     case "/Plan":
+  //         setColor("#2898ec");
+  //         break;
+  
+  //     default:
+  //         setColor("#b084d8");
+  //         break;
+  // }
 
   return (
     <Provider store={store}>
@@ -52,8 +71,16 @@ const App = () => {
       <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
               
 
+<<<<<<< HEAD
         <div className="flex flex-col w-full">
         <div className="mb-2">
+=======
+              <div className="flex px-0 py-0">
+              <div className="flex flex-col w-full">
+  
+  
+                  <div className="mb-2">
+>>>>>>> plan choices saved in states
           <Alert />
           <Switch>
             <Route exact path='/' component={Dashboard} />
@@ -62,7 +89,7 @@ const App = () => {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/meditate" component={Meditate} />
             <Route exact path="/motivate" component={Motivate} />
-            <Route exact path="/plan" component={Plan} />
+            <Route exact path="/plan" component={Plan} onClick={() => setColor("#2898ec")} />
             <Route exact path="/plan2" component={Plan2} />
             <Route exact path="/privacy" component={Privacy} />
             <Route exact path="/termsconditions" component={Termsconditions} />

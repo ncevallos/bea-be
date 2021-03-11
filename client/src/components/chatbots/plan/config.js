@@ -1,22 +1,26 @@
 import React from 'react'
 import { createChatBotMessage } from "react-chatbot-kit";
+import reflection from '../../../img/plan-reflection.png';
+import HowDoYouFeel from './HowDoYouFeel';
+import PlanGoodBlock from './PlanGoodBlock';
+import PlanBadBlock from './PlanBadBlock';
+import SmallerAmounts from './SmallerAmounts';
+import SmallerPortions from './SmallerPortions';
+import EmotionalBehavioral from './EmotionalBehavioral';
+import PlanGoal from './PlanGoal';
+import LessSugar from './LessSugar';
+import FoodChoices from './FoodChoices';
+// import SomethingElse from './SomethingElse';
 import {
-    OptionsBlock1,
-    OptionsBlock2,
-    OptionsBlock3,
-    PlanGoodBlock,
-    PlanBadBlock,
-    PlanGoal,
-    PlanGoal2,
-    SmallerPortions,
+    WelcomeBlock1,
+    WelcomeBlock2,
+    WelcomeBlock3,
     StopFull,
     StopFull2,
     MoreFilling,
     MoreFilling2,
-    FoodChoices,
     LessFat,
     LessFat2,
-    LessSugar,
     AvoidSugar,
     AvoidSugar2,
     SweetFoods,
@@ -29,7 +33,16 @@ import {
     TakeAction } from "./Options";
 
 const botName = "Bea";
-
+// const randomnumber = () =>{
+//     //random number generate for the random response blocks
+//     const min = 1;
+//     const max = 4;
+//     let rand = min + Math.random() * (max - min);
+//     console.log("random number produces equals", rand);
+//     rand = Math.round(rand);
+//     console.log("random number now contains", rand);
+//     return rand;
+// }
 const config = {
     botName: botName,
     customStyles: {
@@ -41,7 +54,8 @@ const config = {
         },
         },
     initialMessages: [createChatBotMessage(`Great! Let’s make a new Plan for the day!`), 
-    createChatBotMessage(`Image goes here`, {
+    createChatBotMessage(
+        <img src={reflection} alt="Workflow" />, {
         delay: 2000,
     }),
     createChatBotMessage(`This isn't a 'diet plan', but a way for us to reflect before making some general goals together.`, {
@@ -51,22 +65,46 @@ const config = {
         delay: 6000,
     }),
     createChatBotMessage(`Are you ready to start?`, {
-        widget: "optionsblock1",
+        // widget: "optionsblock1",
+        widget: "welcomeblock1",
         delay: 8000,
     }),
 ],
+state: {
+    waitingformsgflag: false,
+    lastblockvisited: "",
+    howdoyoufeel: "",
+    planjournal: "",
+    stayedontrack: "",
+    planbadblock: "",
+    what2change: "",
+    influencedeating: "",
+    whathappened: "",
+    somethingelsebad: "",
+    plangoal: "",
+    plangoal2: "",
+    plangoal3: "",
+    plangoal4: ""
+    // randomnum: randomnumber()
+},
 widgets: [
     {
-        widgetName: "optionsblock1",
-       widgetFunc: (props) => <OptionsBlock1 {...props} />,
+        widgetName: "howdoyoufeel",
+       widgetFunc: (props) => <HowDoYouFeel {...props} />,
+       mapStateToProps: ["waitingformsgflag", "lastblockvisited","howdoyoufeel","planjournal","stayedontrack","planbadblock", 
+       "what2change", "influencedeating", "whathappened", "plangoal", "plangoal2", "plangoal3"]
     },
     {
-        widgetName: "optionsblock2",
-       widgetFunc: (props) => <OptionsBlock2 {...props} />,
+        widgetName: "welcomeblock1",
+       widgetFunc: (props) => <WelcomeBlock1 {...props} />,
     },
     {
-        widgetName: "optionsblock3",
-       widgetFunc: (props) => <OptionsBlock3 {...props} />,
+        widgetName: "welcomeblock2",
+       widgetFunc: (props) => <WelcomeBlock2 {...props} />,
+    },
+    {
+        widgetName: "welcomeblock3",
+       widgetFunc: (props) => <WelcomeBlock3 {...props} />,
     },
     {
         widgetName: "plangoodblock",
@@ -80,13 +118,21 @@ widgets: [
         widgetName: "plangoal",
        widgetFunc: (props) => <PlanGoal {...props} />,
     },
-    {
-        widgetName: "plangoal2",
-       widgetFunc: (props) => <PlanGoal2 {...props} />,
-    },
+    // {
+    //     widgetName: "plangoal2",
+    //    widgetFunc: (props) => <PlanGoal2 {...props} />,
+    // },
     {
         widgetName: "smallerportions",
        widgetFunc: (props) => <SmallerPortions {...props} />,
+    },
+    {
+        widgetName: "smalleramounts",
+       widgetFunc: (props) => <SmallerAmounts {...props} />,
+    },
+    {
+        widgetName: "emotionalbehavioral",
+       widgetFunc: (props) => <EmotionalBehavioral {...props} />,
     },
     {
         widgetName: "stopfull",

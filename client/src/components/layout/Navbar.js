@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../img/logo.svg';
 import Popup from 'reactjs-popup';
 import wave from '../../img/dashboard-navbarwave.jpg';
 import meditateIconLarge from '../../img/meditate-icon-large.svg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 
 const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
+
+    const [color, setColor] = useState("#2898ec");
+    const location = useLocation();
+    console.log(location.pathname);
+    const page = location.pathname;
+    // if(page === "/Plan"){
+    //     setColor("#2898ec");
+    //     console.log("In location is equal to plan");
+    // }
+    // switch (location) {
+    //     case "/Plan":
+    //         setColor("#2898ec");
+    //         break;
+    
+    //     default:
+    //         setColor("#b084d8");
+    //         break;
+    // }
     const authLinks = (
         <Popup trigger={<button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
         <span className="sr-only">Open user menu</span>
@@ -68,7 +86,7 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
             </Popup>
             );
     return ( 
-        <nav className="fixed w-screen top-0 flex-shrink-0 bg-beaPurpleCorrected backdrop-blur bg-opacity-60 z-40 px-6">
+        <nav className="fixed w-screen top-0 flex-shrink-0 bg-beaPurpleCorrected backdrop-blur bg-opacity-60 z-40 px-6" style={{backgroundColor:{color}}}>
         <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
 
@@ -105,7 +123,7 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
                         <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Bea Blog</Link>
                         <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Contact Us</Link>
                         <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Privacy Policy</Link>
-                        <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Terms & Conditions</Link>
+                        <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Terms &amp; Conditions</Link>
                     </div>
                     <div className="space-y-2 py-2">
                         <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Sign Out</Link>

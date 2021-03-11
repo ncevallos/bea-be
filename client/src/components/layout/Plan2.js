@@ -38,8 +38,11 @@ export const Plan2 = ({user, userlevel}) =>  {
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                         { (<div>{ user ? levelone : leveltwo }</div>)}
                         </nav>
-                        <Popup trigger={<button className="circle-div"><img className="chatbubble" src={chatbubble} alt="Workflow" /></button>} position="top right">
+
                         <Chatbot config={config} actionProvider={ActionProvider} 	    messageParser={MessageParser} />
+                        <Popup trigger={<button className="circle-div"><img className="chatbubble" src={chatbubble} alt="Workflow" /></button>} position="top right">
+                        {/* <Chatbot config={config} actionProvider={ActionProvider} 	    messageParser={MessageParser} /> */}
+                        <div>TEst TES TES</div>
                         </Popup>
                         {/* <button class="circle-div">HI</button> */}
                         </div>

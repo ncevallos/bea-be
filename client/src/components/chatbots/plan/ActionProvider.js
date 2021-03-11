@@ -6,12 +6,26 @@ class ActionProvider {
       this.createChatBotMessage = createChatBotMessage;
       this.setState = setStateFunc;
       this.createClientMessage = createClientMessage;
+
+
+    }
+    randomnumber(){
+        //random number generator for the random response blocks
+        const min = 1;
+        const max = 4;
+        let rand = min + Math.random() * (max - min);
+        console.log("random number produces equals", rand);
+        rand = Math.round(rand);
+        console.log("random number now contains", rand);    
+        return (rand-1);
     }
     greet() {
         const greetingMessage = this.createChatBotMessage("Hello friend");
         this.updateChatbotState(greetingMessage)
     }
-    chatblock1 = () => {
+    welcomeblock1 = () => {
+        //A random number is produced in this first black that will run for the whole entirity
+        // this.randomnumber();
         const letsBeginMessage = 
         [this.createChatBotMessage(`Great! 👍`, {
             delay: 2000,
@@ -24,11 +38,14 @@ class ActionProvider {
         }),
         this.createChatBotMessage(`Finally, we will decide upon an Action to take if the urge to overindulge arises.`, {
             delay: 8000,
-            widget: "optionsblock2",
+            widget: "welcomeblock2",
         })];
         this.addMessageToBotState(letsBeginMessage)
     }
-    chatblock2 = () => {
+    welcomeblock2 = () => {
+        const randnum = this.randomnumber();
+        const randnum2 = this.randomnumber();
+        console.log("We should now be able to see global randnum", randnum);
         const randblock = ["Welcome back!",
          "I'm glad you’re ready to create a new Plan for the day!", 
          "Welcome back! You've been doing great so far."]
@@ -36,26 +53,27 @@ class ActionProvider {
           "Let’s begin by Reflecting briefly on your past before moving forward.", 
           "Let's create a new Plan and see where we can do some fine tuning."]
         const letsBeginMessage = 
-        [this.createChatBotMessage(`This will be a random block`, {
+        [this.createChatBotMessage(randblock[randnum], {
             delay: 2000,
         }),
-        this.createChatBotMessage(`This will be a random block2`, {
+        this.createChatBotMessage(randblock2[randnum2], {
             delay: 4000,
         }),
         this.createChatBotMessage(`To get started, how do you feel about what you ate in the past day?`, {
             delay: 6000,
-            widget: "optionsblock3",
+            widget: "howdoyoufeel",
         })];
         this.addMessageToBotState(letsBeginMessage)
     }
     plangood = () => {
+        const randnum = this.randomnumber();
         const randblock = ["Doesn't it feel great to know that you stayed on track?",
-         "Nothing is as (ful)filling as staying on track!"]
+         "Nothing is as (ful)filling as staying on track!", "Doesn't it feel great to know that you stayed on track?"]
         const letsBeginMessage = 
         [this.createChatBotMessage(`I'm happy to hear that!`, {
             delay: 2000,
         }),
-        this.createChatBotMessage(`This will be a random block2`, {
+        this.createChatBotMessage(randblock[randnum], {
             delay: 4000,
         }),
         this.createChatBotMessage(`What do you think helped you stay on track?`, {
@@ -68,44 +86,125 @@ class ActionProvider {
         this.addMessageToBotState(letsBeginMessage)
     }
     plangoodjournal = () => {
-        const randblock = ["Doesn't it feel great to know that you stayed on track?",
-         "Nothing is as (ful)filling as staying on track!"]
         const letsBeginMessage = 
         [this.createChatBotMessage(`Can you tell me more about what helped you stay on track?`, {
             delay: 2000,
         }),
         this.createChatBotMessage(`You can type a brief response below:`, {
             delay: 4000,
-        }),
-        this.createChatBotMessage(`Thanks! `, {
-            delay: 6000,
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    plangoodjournal2 = (message) => {
+        console.log("Message sent over to good journal is", message);
+        this.setState((state) => ({
+            ...state,
+            planjournal: message,
+            lastblockvisited: "Plan Good Journal",
+            waitingformsgflag: false
+          }));
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Thanks! `, {
+            delay: 2000,
         }),
         this.createChatBotMessage(`😁`, {
-            delay: 8000,
+            delay: 4000,
         }),
         this.createChatBotMessage(`I’ll save your entry in your Plan Journal so you can look back on it later.`, {
-            delay: 10000,
+            delay: 6000,
             widget: "plangoal",
         })];
         this.addMessageToBotState(letsBeginMessage)
     }
     planbad = () => {
-        const randblock = ["Welcome back!",
-         "I'm glad you’re ready to create a new Plan for the day!", 
-         "Welcome back! You've been doing great so far."]
-         const randblock2 = ["Let’s jump right in and come up with a new Plan for today.",
-          "Let’s begin by Reflecting briefly on your past before moving forward.", 
-          "Let's create a new Plan and see where we can do some fine tuning."]
+        const randnum = this.randomnumber();
+        const randnum2 = this.randomnumber();
+        const randblock = ["It's not about staying on the horse... PICTURE",
+         "But let's focus on moving forward.", 
+         "The goal isn't to be perfect, but to identify patterns and make gradual changes if you aren’t 100 percent happy with your eating right now."]
+         const randblock2 = ["It's about making sure you get back up after you fall!",
+          "The more we beat ourselves up, the more likely we are to repeat the same cycle.", 
+          "Change takes time, but you can do this!"]
         const letsBeginMessage = 
-        [this.createChatBotMessage(`This will be a random block`, {
+        [this.createChatBotMessage(`I'm sorry to hear that. 😞`, {
             delay: 2000,
         }),
-        this.createChatBotMessage(`This will be a random block2`, {
+        this.createChatBotMessage(randblock[randnum], {
             delay: 4000,
         }),
-        this.createChatBotMessage(`To get started, how do you feel about what you ate in the past day?`, {
+        this.createChatBotMessage(randblock2[randnum2], {
             delay: 6000,
+        }),
+        this.createChatBotMessage(`Let’s briefly discuss and then find ways to make sure you are happier tomorrow. `, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`If you were to do it differently, which of the options below would you choose?`, {
+            delay: 10000,
             widget: "planbadblock",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+
+    smalleramounts = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`How much less would have been ideal?`, {
+            delay: 2000,
+            widget: "smallerportions",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+
+    differentfoods = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`If you were to do it differently, what would you have changed about the foods that you chose?`, {
+            delay: 4000,
+            widget: "differentfoods",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+
+    planbadjournal = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Can you tell me a little bit more about what happened?`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`You can type a brief response below:`, {
+            delay: 4000,
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    planbadjournal2 = (message) => {
+        this.setState((state) => ({
+            ...state,
+            planjournal: message,
+            lastblockvisited: "Plan Bad Journal",
+            waitingformsgflag: false
+          }));
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Thanks for letting me know!`, {
+                delay: 2000,
+            }),
+            this.createChatBotMessage(`I’ll save your entry in your Plan Journal so you can look back and identify patterns.`, {
+                delay: 4000,
+            }),
+            this.createChatBotMessage(`Now that we’ve Reflected upon the past, let’s focus on moving forward.`, {
+                delay: 7000,
+            }),
+            this.createChatBotMessage(`In general, what feels like the most important Goal for you to have today?`, {
+                delay: 9000,
+                widget: "plangoal",
+            })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+
+    emotionalbehavioral = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Can you think of anything that happened recently that might have influenced your eating?`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`This can be something emotional like feeling sad after a conflict with a loved one, or something physical such as skipping breakfast.`, {
+            delay: 4000,
+            widget: "emotionalbehavioral",
         })];
         this.addMessageToBotState(letsBeginMessage)
     }
@@ -117,7 +216,7 @@ class ActionProvider {
         }),
         this.createChatBotMessage(`In general, what feels like the most important Goal for you to have today?`, {
             delay: 4000,
-            widget: "plangoal2",
+            widget: "plangoal",
         })];
         this.addMessageToBotState(letsBeginMessage)
     }
@@ -450,27 +549,46 @@ class ActionProvider {
         }),
         this.createChatBotMessage(`You can type briefly below:`, {
             delay: 6000,
-        }),
-        this.createChatBotMessage(`Thank you for sharing! Let's work on making this Goal a reality.`, {
-            delay: 8000,
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    somethingelse2 = (message) => {
+        this.setState((state) => ({
+            ...state,
+            plangoal3: message,
+            lastblockvisited: "Something Else"
+          }));
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Thank you for sharing! Let's work on making this Goal a reality.`, {
+            delay: 2000,
         }),
         this.createChatBotMessage(`First, take a moment to visualize how nice it would feel to accomplish this Goal.`, {
-            delay: 10000,
+            delay: 4000,
         }),
         this.createChatBotMessage(`Next, take a moment to think about what you need to do differently today to accomplish this Goal.`, {
-            delay: 12000,
+            delay: 6000,
         }),
         this.createChatBotMessage(`What is it that you need to do differently? You can type briefly below:`, {
-            delay: 14000,
-        }),
-        this.createChatBotMessage(`Okay! Make sure to do what you need to do to reach that Goal.`, {
-            delay: 16000,
+            delay: 8000,
+        }),];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    somethingelse3 = (message) => {
+        this.setState((state) => ({
+            ...state,
+            plangoal4: message,
+            lastblockvisited: "Something Else",
+            waitingformsgflag: false
+          }));
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Okay! Make sure to do what you need to do to reach that Goal.`, {
+            delay: 2000,
         }),
         this.createChatBotMessage(`Tomorrow, we can attempt this Goal again, or choose a new one.`, {
-            delay: 18000,
+            delay: 4000,
         }),
         this.createChatBotMessage(`Let me know when you’re ready and we can move on to your Action for today.`, {
-            delay: 20000,
+            delay: 6000,
             widget: "somethingelse",
         })];
         this.addMessageToBotState(letsBeginMessage)
@@ -497,18 +615,20 @@ class ActionProvider {
     }
     nofoulwords() {
         const nofoulwordsMessage = 
-        [this.createChatBotMessage(`I can tell by what you just wrote that you are upset, and that is of course okay.`), 
-        this.createChatBotMessage(`Sometimes our language is a genuine expression of how we feel.`, {
+        [this.createChatBotMessage(`I can tell by what you just wrote that you are upset, and that is of course okay.`, {
             delay: 2000,
         }),
-        this.createChatBotMessage(`For these meditations, I have included metaphors and analogies to help you listen to your body and think about food differently.`, {
+        this.createChatBotMessage(`Sometimes our language is a genuine expression of how we feel.`, {
             delay: 4000,
         }),
-        this.createChatBotMessage(`That being said, I work best when you just press buttons.`, {
+        this.createChatBotMessage(`For these meditations, I have included metaphors and analogies to help you listen to your body and think about food differently.`, {
             delay: 6000,
         }),
-        this.createChatBotMessage(`Please scroll up to the last place you could make a selection in order to continue.`, {
+        this.createChatBotMessage(`That being said, I work best when you just press buttons.`, {
             delay: 8000,
+        }),
+        this.createChatBotMessage(`Please scroll up to the last place you could make a selection in order to continue.`, {
+            delay: 10000,
         })];
         // this.updateChatbotState(nofoulwordsMessage)
         this.addMessageToBotState(nofoulwordsMessage)
