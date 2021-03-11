@@ -71,16 +71,8 @@ const App = () => {
       <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
               
 
-<<<<<<< HEAD
         <div className="flex flex-col w-full">
         <div className="mb-2">
-=======
-              <div className="flex px-0 py-0">
-              <div className="flex flex-col w-full">
-  
-  
-                  <div className="mb-2">
->>>>>>> plan choices saved in states
           <Alert />
           <Switch>
             <Route exact path='/' component={Dashboard} />
