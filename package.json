@@ -26,6 +26,7 @@
     "nodemon": "^2.0.6",
     "normalize-url": "^5.3.0",
     "postcss": "^8.2.2",
+    "react-player": "^2.9.0",
     "tailwindcss-filters": "^3.0.0"
   }
 }
