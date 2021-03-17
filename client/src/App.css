@@ -206,13 +206,28 @@
 /* Modal content */
 .modal-content3 {
     background-color: white;
-    width: 400px; /* Width in proportion to its parent container*/
-    max-width: 640px; /* Max width where it stops expanding */
+    width: 700px; /* Width in proportion to its parent container*/
+    max-width: 100%; /* Max width where it stops expanding */
     height: 600px; /* Height in proportion to its parent container */
     margin: auto; /* Auto margin according to the element width */
     padding: 10px;
     border: 1px solid black;
     border-radius: 20px; /* Optional. Rounds container corners */
+}
+.meditate-vid {
+    max-width: 100%;
+    margin:auto;
+    text-align: center;
+}
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 /* Close button */
 .close {

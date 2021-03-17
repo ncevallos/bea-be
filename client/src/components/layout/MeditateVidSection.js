@@ -3,24 +3,15 @@ import React from 'react'
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import peskyPatterns from '../../img/pesky-patterns.svg';
-import Videoselection from './Videoselection';
+import FeaturedVideos from './FeaturedVideos';
+import RecentVideos from './RecentVideos';
 
 
-class MeditateVidSection extends Component {
-    state = {
-        videolist: [
-            {id: "1", title: 'Clouds', length: '5 minutes'},
-            {id: "2", title: 'Monks', length: '7 minutes'},
-            {id: "3", title: 'Woods', length: '3 minutes'},
-            {id: "4", title: 'Moonlight', length: '3 minutes'},
-            {id: "5", title: 'Lazy Afternoon', length: '3 minutes'},
-            {id: "6", title: 'Crackling Fire', length: '3 minutes'},
-            {id: "7", title: 'Sailboat', length: '5 minutes'},
-            {id: "8", title: 'Two Women', length: '7 minutes'},
-            {id: "9", title: 'Orange Grove', length: '7 minutes'}
-        ]
-    }
-    render() {
+// class MeditateVidSection extends Component {
+    const MeditateVidSection =({}) => {
+        const [openTab, setOpenTab] = React.useState(2);
+
+    // render() {
     return (
         <div className="flex px-6 py-6">
         <div className="flex flex-col w-full">
@@ -30,29 +21,52 @@ class MeditateVidSection extends Component {
             <div className="block">
                 <div>
                 <nav className="-mb-px flex space-x-8" aria-label="Tabs">
-                    <Link to="/Meditate" className="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-t-4 font-medium text-sm">
-                    Recent
-                    </Link>
-                    <Link to="/Meditate" className="border-beaDarkPurple text-beaDarkPurple whitespace-nowrap py-4 px-1 border-t-4 font-medium text-sm" aria-current="page">
-                    Featured
-                    </Link>
+                    <a
+                        className={
+                        "hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-t-4 font-medium text-sm" +
+                        (openTab === 1
+                            ? "border-beaDarkPurple text-beaDarkPurple"
+                            : "border-transparent text-gray-500")
+                        }
+                        onClick={e => {
+                        e.preventDefault();
+                        setOpenTab(1);
+                        }}
+                        data-toggle="tab"
+                        href="#link1"
+                        role="tablist"
+                    >
+                        Recent
+                    </a>
+                    <a
+                        className={
+                        "hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-t-4 font-medium text-sm" +
+                        (openTab === 2
+                            ? "border-beaDarkPurple text-beaDarkPurple"
+                            : "border-transparent text-gray-500")
+                        }
+                        onClick={e => {
+                        e.preventDefault();
+                        setOpenTab(2);
+                        }}
+                        data-toggle="tab"
+                        href="#link1"
+                        role="tablist"
+                    >
+                        Featured
+                    </a>
                 </nav>
                 </div>
             </div>
             </div>
 
             <div className="flex md:flex-row flex-col">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mr-4 gap-4 w-full">
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[0].title} length={this.state.videolist[0].length} />
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[1].title} length={this.state.videolist[1].length}  />
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[2].title} length={this.state.videolist[2].length}  />
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[3].title} length={this.state.videolist[3].length}  />
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[4].title} length={this.state.videolist[4].length} />
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[5].title} length={this.state.videolist[5].length}  />
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[6].title} length={this.state.videolist[6].length}  />
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[7].title} length={this.state.videolist[7].length}  />
-                <Videoselection id={this.state.videolist[0].id} title={this.state.videolist[8].title} length={this.state.videolist[8].length}  />
-            </ul>
+            <div className={openTab === 1 ? "block" : "hidden"} id="link1">
+                    <RecentVideos /> 
+                </div>
+                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                    <FeaturedVideos /> 
+                </div>
             <ul className="md:w-96 w-full">
             <li className="col-span-1 flex flex-col text-center border border-beaBorderGrey border-opacity-50 py-6 bg-white rounded-lg divide-y divide-gray-200">
                 <div className="flex-1 flex flex-col">
@@ -77,6 +91,6 @@ class MeditateVidSection extends Component {
         </div>
 
     )}
-}
+// }
 
 export default MeditateVidSection;

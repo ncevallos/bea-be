@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactPlayer from "react-player"
 
 class Videomodal extends React.Component {
   onClose = e => {
@@ -11,6 +12,15 @@ class Videomodal extends React.Component {
     return (
       <div className="modal3">
         <div className="modal-content3">
+          <div className="player-wrapper">
+          <ReactPlayer
+            className="react-player"
+            url={this.props.vidurl}
+            controls = "true"
+            width="100%"
+            height="100%"
+          />
+          </div>
       <div>Hello test modal<br/>
       Video Title: {this.props.title}<br/>
       Length: {this.props.length}<br/>

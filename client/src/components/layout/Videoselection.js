@@ -1,6 +1,7 @@
 import React from 'react'
 import 'reactjs-popup/dist/index.css';
 import Videomodal from './Videomodal';
+import Clouds from '../../img/meditateimgs/clouds.png';
 
 
 class Videoselection extends React.Component {
@@ -24,8 +25,10 @@ class Videoselection extends React.Component {
             <div id="1" onClick={e => {
                 this.showModal(e.target.id);
             }}>
-            <div id="{this.props.id}" className="flex-1 flex flex-col p-8 bg-beaLightBlue rounded-lg h-40">
 
+
+            <div id="{this.props.id}" className="flex-1 flex flex-col p-8 bg-beaLightBlue rounded-lg h-40">
+                <img src={this.props.img}  alt={this.props.imgalt} />
             </div>
             <div>
                 <div className="-mt-px flex divide-x divide-gray-200">
@@ -44,7 +47,7 @@ class Videoselection extends React.Component {
             </div>
             </div>
 
-            <Videomodal onClose={this.showModal} show={this.state.show} title={this.props.title} length={this.props.length}/>
+            <Videomodal onClose={this.showModal} show={this.state.show} title={this.props.title} length={this.props.length} vidurl={this.props.vidurl}/>
         </li>
     )}
 }
