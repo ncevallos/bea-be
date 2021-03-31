@@ -10,6 +10,70 @@ import heartIcon from '../../img/heart-icon.svg';
 import bowlIcon from '../../img/bowl-icon.svg';
 import newspaperIcon from '../../img/newspaper-icon.svg';
 import smileyIconUnhappyRound from '../../img/smiley-icon-unhappy-round.svg';
+import {Line} from 'react-chartjs-2';
+import chartTrendline from "chartjs-plugin-trendline";
+
+
+const data = {
+    labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
+    datasets: [
+      {
+        label: 'Mood',
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: 'rgba(75,192,192,0.4)',
+        borderColor: 'rgba(128,128,128,1)',
+        borderCapStyle: 'butt',
+        borderWidth: 2,
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: 'rgba(75,192,192,1)',
+        pointBackgroundColor: 'rgba(75,192,192,1)',
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+        pointHoverBorderColor: 'rgba(220,220,220,1)',
+        pointHoverBorderWidth: 2,
+        pointRadius: 6,
+        pointHitRadius: 10,
+
+        trendlineLinear: {
+            style: "rgb(128, 55, 202, 1)",
+            lineStyle: "dotted|solid",
+            width: 2
+        },
+
+        data: [65, 59, null, 80, 81, 32, 56, 55, 40, 12, 45, 32, 23, 67, 32, 34, 21, 10, 8, 12, 56, null, 13, 18, 28, 64, 24, 31, 35, 19]
+      }
+    ]
+  };
+
+  const options = {
+    maintainAspectRatio: true,
+    spanGaps: false,
+    legend:
+    {
+        display: false,
+    },
+    scales:
+    {
+        yAxes: [{
+            display: false,
+            gridLines : {
+                display : false
+            }
+        }],
+        xAxes: [{
+            gridLines : {
+                display : true,
+                drawBorder: true,
+                lineWidth: 1,
+                drawOnChartArea: false
+            }
+        }]
+    }
+  };
 
 export const Plan = () => {
     return (
@@ -54,8 +118,14 @@ export const Plan = () => {
                             </div>
                         </div>
                     </div>
-
-
+                    <div className="mb-3">
+                        <Line
+                            data={data}
+                            width={100}
+                            height={15}
+                            options={options}
+                        />
+                    </div>
                     <div className="bg-beaYellow plan-interactive-state">
                         <div className="sm:p-6 flex-grow">
                             <h3 className="text-2xl leading-6 font-medium text-white">
