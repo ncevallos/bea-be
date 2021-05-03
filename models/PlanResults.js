@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const PlanResultsSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'user'
-  },
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'user'
+  // },
   lastblockvisited: {
     type: String
   },
@@ -50,4 +50,4 @@ const PlanResultsSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('planresults', PlanResultsSchema);
+module.exports = mongoose.model('planResults', PlanResultsSchema);

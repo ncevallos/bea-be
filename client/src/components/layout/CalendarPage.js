@@ -1,24 +1,41 @@
 import React from 'react'
-import Chatbot from 'react-chatbot-kit';
-import Popup from 'reactjs-popup';
-import chatbubble from '../../img/chat-icon.png';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Calendar from './Calendar';
+import Calendar from 'react-calendar';
+import { differenceInCalendarDays, format } from 'date-fns';
+import parseISO from 'date-fns/parseISO';
+
+const datesToAddClassTo = ["Sun May 02 2021 00:00:00 GMT-0400"];
+const dateFormat = "yyyy";
+function isSameDay(a, b) {
+    console.log("a contains", a);
+    // format(a, dateFormat);
+    // console.log("a now contains", a);
+    console.log("b contains", b);
+    // format(b, dateFormat);
+    let test = parseISO(b);
+    console.log("b now contains", test);
+    return differenceInCalendarDays(a, b) === 0;
+  }
+  function tileClassName({ date, view }) {
+    // Add class to tiles in month view only
+    if (view === 'month') {
+        console.log("date in tileclass function is", date);
+      // Check if a date React-Calendar wants to check is on the list of dates to add class to
+      if (datesToAddClassTo.find(dDate => isSameDay(dDate, date))) {
+        return 'myClassName';
+      }
+    }
+  }
 
 
-import ActionProvider from '../chatbots/plan/ActionProvider';
-import MessageParser from '../chatbots/plan/MessageParser';
-import config from '../chatbots/plan/config';
-
-
-export const Plan2 = ({user, userlevel}) =>  {
-        console.log("USer level contains", user.userlevel);
+export const CalendarPage = ({user, userlevel}) =>  {
+        console.log("USer level contains", userlevel);
         console.log("USer contains", user);
-        if (user.userlevel === 1){
+        if (userlevel === '1'){
             console.log("Paid User");
         }
-        if(user.userlevel === 0){
+        if(userlevel === '0'){
             console.log("Free User");
         }
         const levelone = (
@@ -39,21 +56,18 @@ export const Plan2 = ({user, userlevel}) =>  {
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                         { (<div>{ user ? levelone : leveltwo }</div>)}
                         </nav>
-
-                        <Chatbot config={config} actionProvider={ActionProvider} 	    messageParser={MessageParser} />
-                        <Popup trigger={<button className="circle-div"><img className="chatbubble" src={chatbubble} alt="Workflow" /></button>} position="top right">
-                        {/* <Chatbot config={config} actionProvider={ActionProvider} 	    messageParser={MessageParser} /> */}
-                        <div>TEst TES TES</div>
-                        </Popup>
+                        Test if page working
+                        <Calendar
+                        tileClassName={tileClassName}
+                        />
                         {/* <button class="circle-div">HI</button> */}
                         </div>
-                        {/* <Calendar /> */}
                     </div>
 
     )
 }
 
-Plan2.propTypes = {
+CalendarPage.propTypes = {
     user: PropTypes.object.isRequired,
     userlevel: PropTypes.number.isRequired
   };
@@ -62,4 +76,4 @@ const mapStateToProps = (state) => ({
     user: state.auth.user,
   });
 
-export default connect(mapStateToProps)(Plan2);
+export default connect(mapStateToProps)(CalendarPage);

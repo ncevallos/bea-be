@@ -50,6 +50,7 @@ export const Login = ({ login, isAuthenticated }) => {
                           type="password"
                           placeholder="Password"
                           name="password"
+                          autoComplete="password"
                           value={password}
                           onChange={onChange}
                           minLength="6"

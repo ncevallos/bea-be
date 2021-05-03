@@ -9,6 +9,7 @@ import Meditate from './components/layout/Meditate';
 import Motivate from './components/layout/Motivate';
 import Plan from './components/layout/Plan';
 import Plan2 from './components/layout/Plan2';
+import TestPlanSubmit from './components/layout/TestPlanSubmit';
 import Helpcenter from './components/layout/Helpcenter';
 import Settings from './components/layout/Settings';
 import Termsconditions from './components/layout/Termsconditions';
@@ -17,6 +18,8 @@ import Alert from './components/layout/Alert';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Register from './components/auth/Register';
+import CalendarPage from './components/layout/CalendarPage';
+import Routes from './components/routing/Routes';
 import { LOGOUT } from './actions/types';
 // Redux
 import { Provider } from 'react-redux';
@@ -39,25 +42,7 @@ const App = () => {
     //   if (!localStorage.token) store.dispatch({ type: LOGOUT });
     // });
   }, []);
-  const [color, setColor] = useState("#b084d8");
-  // const location = this.props.location.pathname;
-  // console.log("location contains ", location);
-  // const location = useLocation();
-  // console.log(location.pathname);
-  // const page = location.pathname;
-  // if(page === "/Plan"){
-  //     setColor("#2898ec");
-  //     console.log("In location is equal to plan");
-  // }
-  // switch (location) {
-  //     case "/Plan":
-  //         setColor("#2898ec");
-  //         break;
-  
-  //     default:
-  //         setColor("#b084d8");
-  //         break;
-  // }
+
 
   return (
     <Provider store={store}>
@@ -76,18 +61,21 @@ const App = () => {
           <Alert />
           <Switch>
             <Route exact path='/' component={Dashboard} />
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route component={Routes} />
+            {/* <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/meditate" component={Meditate} />
             <Route exact path="/motivate" component={Motivate} />
+            <Route exact path="/calendarpage" component={CalendarPage} />
             <Route exact path="/plan" component={Plan} onClick={() => setColor("#2898ec")} />
             <Route exact path="/plan2" component={Plan2} />
+            <Route exact path="/testplansubmit" component={TestPlanSubmit} />
             <Route exact path="/privacy" component={Privacy} />
             <Route exact path="/termsconditions" component={Termsconditions} />
             <Route exact path="/helpcenter" component={Helpcenter} />
             <Route exact path="/settings" component={Settings} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/register" component={Register} /> */}
           </Switch>
           </div>
               </div>
