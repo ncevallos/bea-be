@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer';
 import Dashboard from './components/layout/Dashboard';
 import Meditate from './components/layout/Meditate';
 import Motivate from './components/layout/Motivate';
+import Motivate2 from './components/layout/Motivate2';
 import Plan from './components/layout/Plan';
 import Plan2 from './components/layout/Plan2';
 import TestPlanSubmit from './components/layout/TestPlanSubmit';

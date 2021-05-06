@@ -18,6 +18,8 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
     useEffect(() => {
       if (location.pathname.startsWith('/Plan')) {
         setBGColor("#329CCC");
+      } else if (location.pathname.startsWith('/Motivate2')) {
+        setBGColor("#E56F06");
       } else if (location.pathname.startsWith('/Motivate')) {
         setBGColor("#AD79E2");
       } else if (location.pathname.startsWith('/Meditate')) {

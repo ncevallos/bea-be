@@ -29,6 +29,7 @@ module.exports = {
           beaTextLightGrey: '#999999',
           beaLightBlue: '#D7ECFC',
           beaOrange: '#FF9A08',
+          beaDarkOrange: '#E56F06',
           beaYellow: '#FFD00B',
           beaBlueGreen: '#11C5CE',
           beaDarkBlue: '#329CCC',

@@ -5,6 +5,7 @@ import Login from '../auth/Login';
 import Dashboard from '../layout/Dashboard';
 import Meditate from '../layout/Meditate';
 import Motivate from '../layout/Motivate';
+import Motivate2 from '../layout/Motivate2';
 import Plan from '../layout/Plan';
 import Plan2 from '../layout/Plan2';
 import TestPlanSubmit from '../layout/TestPlanSubmit';
@@ -39,6 +40,7 @@ const Routes = props => {
         <Route exact path="/register" component={Register} />
         <PrivateRoute exact path="/meditate" component={Meditate} />
         <PrivateRoute exact path="/motivate" component={Motivate} />
+        <PrivateRoute exact path="/motivate2" component={Motivate2} />
         <PrivateRoute exact path="/calendarpage" component={CalendarPage} />
         <PrivateRoute exact path="/plan" component={Plan} />
         <PrivateRoute exact path="/plan2" component={Plan2} />

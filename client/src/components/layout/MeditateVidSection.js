@@ -61,10 +61,10 @@ import RecentVideos from './RecentVideos';
             </div>
 
             <div className="flex md:flex-row flex-col">
-            <div className={openTab === 1 ? "block" : "hidden"} id="link1">
+            <div className={openTab === 1 ? "block w-full mr-3" : "hidden"} id="link1">
                     <RecentVideos /> 
                 </div>
-                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                <div className={openTab === 2 ? "block w-full mr-3" : "hidden"} id="link2">
                     <FeaturedVideos /> 
                 </div>
             <ul className="md:w-96 w-full">

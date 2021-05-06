@@ -21,6 +21,8 @@ export const Sidebar = () => {
       setActivePage("Plan");
     } else if (location.pathname.startsWith('/TestPlanSubmit')) {
       setActivePage("TestPlanSubmit");
+    } else if (location.pathname.startsWith('/Motivate2')) {
+      setActivePage("Motivate2");
     } else if (location.pathname.startsWith('/Motivate')) {
       setActivePage("Motivate");
     } else if (location.pathname.startsWith('/Meditate')) {
@@ -43,40 +45,46 @@ export const Sidebar = () => {
             <div className="flex justify-between w-full">
               <div className="flex space-y-8 w-full items-center lg:items-start lg:justify-start">
                 <div className="flex lg:flex-col xl:flex-col sm:flex-row space-y-0 space-x-0 lg:space-x-0 lg:space-y-1 lg:justify-start w-full justify-between px-0 lg:px-0" >
-                  <Link to='/Dashboard' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Dashboard") ? "bg-beaDarkBlue" : '')} >
+                  <Link to='/Dashboard' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Dashboard") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={dashicon} className="w-6" alt='Dashboard'/>
-                      <span className="text-sm text-beaTextGrey font-medium">Dashboard </span>
+                      <span className="text-sm font-medium">Dashboard </span>
                     </div>
                   </Link>
-                  <Link to='/Plan' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan") ? "bg-beaDarkBlue" : '')} >
+                  <Link to='/Plan' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={planicon} className="w-6" alt='Plan' />
-                      <span className="text-sm text-beaTextGrey font-medium">Plan</span>
+                      <span className="text-sm font-medium">Plan (UI)</span>
                     </div>
                   </Link>
-                  <Link to='/Plan2' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan2") ? "bg-beaDarkBlue" : '')}>
+                  <Link to='/Plan2' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan2") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={planicon} className="w-6" alt='Plan' />
-                      <span className="text-sm text-beaTextGrey font-medium">Plan2</span>
+                      <span className="text-sm font-medium">Plan</span>
                     </div>
                   </Link>
-                  <Link to='/TestPlanSubmit' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "TestPlanSubmit") ? "bg-beaDarkBlue" : '')} >
+                  <Link to='/TestPlanSubmit' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "TestPlanSubmit") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={planicon} className="w-6" alt='TestPlanSubmit' />
-                      <span className="text-sm text-beaTextGrey font-medium">Test Plan Submit</span>
+                      <span className="text-sm font-medium">Test Plan Submit</span>
                     </div>
                   </Link>
-                  <Link to='/Motivate' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate") ? "bg-beaPurple" : '')}>
+                  <Link to='/Motivate' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate") ? "bg-beaPurple text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={motivateicon} className="w-6" alt='Motivate'/>
-                      <span className="text-sm text-beaTextGrey font-medium">Motivate </span>
+                      <span className="text-sm font-medium">Motivate </span>
                     </div>
                   </Link>
-                  <Link to='/Meditate' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected" : '')}>
+                  <Link to='/Motivate2' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate2") ? "bg-beaDarkOrange text-white" : 'text-beaTextGrey')}>
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
+                      <img src={motivateicon} className="w-6" alt='Motivate2'/>
+                      <span className="text-sm font-medium">Motivate (UI)</span>
+                    </div>
+                  </Link>
+                  <Link to='/Meditate' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={meditateicon} className="w-6" alt='Meditate'/>
-                      <span className="text-sm text-beaTextGrey font-medium">Meditate</span>
+                      <span className="text-sm font-medium">Meditate</span>
                     </div>
                   </Link>
                 </div>
