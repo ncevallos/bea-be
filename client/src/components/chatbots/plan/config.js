@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import { createChatBotMessage } from "react-chatbot-kit";
 import reflection from '../../../img/plan-reflection.png';
 import HowDoYouFeel from './HowDoYouFeel';
 import PlanGoodBlock from './PlanGoodBlock';
 import PlanBadBlock from './PlanBadBlock';
+import PlanAction from './PlanAction';
 import SmallerAmounts from './SmallerAmounts';
 import SmallerPortions from './SmallerPortions';
 import EmotionalBehavioral from './EmotionalBehavioral';
+import DifferentFoods from './DifferentFoods';
 import PlanGoal from './PlanGoal';
 import LessSugar from './LessSugar';
 import FoodChoices from './FoodChoices';
+import PlanSubmit from './PlanSubmit';
 // import SomethingElse from './SomethingElse';
 import {
     WelcomeBlock1,
@@ -30,7 +33,8 @@ import {
     FewerCalories,
     FewerCalories2,
     SomethingElse,
-    TakeAction } from "./Options";
+    TakeAction,
+    EndActivity } from "./Options";
 
 const botName = "Bea";
 // const randomnumber = () =>{
@@ -70,6 +74,7 @@ const config = {
         delay: 8000,
     }),
 ],
+
 state: {
     waitingformsgflag: false,
     lastblockvisited: "",
@@ -84,7 +89,8 @@ state: {
     plangoal: "",
     plangoal2: "",
     plangoal3: "",
-    plangoal4: ""
+    plangoal4: "",
+    plangoal5: ""
     // randomnum: randomnumber()
 },
 widgets: [
@@ -92,7 +98,7 @@ widgets: [
         widgetName: "howdoyoufeel",
        widgetFunc: (props) => <HowDoYouFeel {...props} />,
        mapStateToProps: ["waitingformsgflag", "lastblockvisited","howdoyoufeel","planjournal","stayedontrack","planbadblock", 
-       "what2change", "influencedeating", "whathappened", "plangoal", "plangoal2", "plangoal3"]
+       "what2change", "influencedeating", "whathappened", "somethingelsebad", "plangoal", "plangoal2", "plangoal3", "plangoal4", "plangoal5"]
     },
     {
         widgetName: "welcomeblock1",
@@ -129,6 +135,10 @@ widgets: [
     {
         widgetName: "smalleramounts",
        widgetFunc: (props) => <SmallerAmounts {...props} />,
+    },
+    {
+        widgetName: "differentfoods",
+       widgetFunc: (props) => <DifferentFoods {...props} />,
     },
     {
         widgetName: "emotionalbehavioral",
@@ -204,7 +214,17 @@ widgets: [
     },
     {
         widgetName: "takeaction",
-       widgetFunc: (props) => <TakeAction {...props} />,
+       widgetFunc: (props) => <PlanAction {...props} />,
+    },
+    {
+        widgetName: "endactivity",
+       widgetFunc: (props) => <EndActivity {...props} />,
+    },
+    {
+        widgetName: "plansubmit",
+       widgetFunc: (props) => <PlanSubmit {...props} />,
+       mapStateToProps: ["waitingformsgflag", "lastblockvisited","howdoyoufeel","planjournal","stayedontrack","planbadblock", 
+       "what2change", "influencedeating", "whathappened", "somethingelsebad", "plangoal", "plangoal2", "plangoal3", "plangoal4", "plangoal5"]
     },
 ]
   }

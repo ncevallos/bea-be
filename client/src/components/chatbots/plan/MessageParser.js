@@ -23,6 +23,9 @@ class MessageParser {
         if(this.state.lastblockvisited === "Food Choices"){
           this.actionProvider.somethingelse2(message)
         }
+        if(this.state.lastblockvisited === "Different Foods"){
+          this.actionProvider.emotionalbehavioral(message)
+        }
         if(this.state.lastblockvisited === "Something Else"){
           this.actionProvider.somethingelse3(message)
         }

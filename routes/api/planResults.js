@@ -4,7 +4,7 @@ const config = require('config');
 const auth = require('../../middleware/auth');
 const jwt = require('jsonwebtoken');
 
-const User = require('../../models/User');
+const UserModel = require('../../models/User');
 const PlanResults = require('../../models/PlanResults');
 
 
@@ -13,8 +13,7 @@ const PlanResults = require('../../models/PlanResults');
 // @access   Public
 router.post(
   '/',
-  // [ auth
-  // ],
+  // auth,
   async (req, res) => {
       console.log("body contains", req.body);
     // const errors = validationResult(req);
@@ -23,6 +22,7 @@ router.post(
     // }
 
     const {
+        user,
         lastblockvisited,
         howdoyoufeel,
         planjournal,
@@ -35,6 +35,8 @@ router.post(
         plangoal,
         plangoal2,
         plangoal3,
+        plangoal4,
+        plangoal5,
     } = req.body;
     // const { name, email, password } = req.body;
 
@@ -55,7 +57,7 @@ router.post(
     //   else {
         console.log("in plan results");
         planResults = new PlanResults({
-            // user: req.user.id,
+            user,
             lastblockvisited,
             howdoyoufeel,
             planjournal,
@@ -68,6 +70,8 @@ router.post(
             plangoal,
             plangoal2,
             plangoal3,
+            plangoal4,
+            plangoal5
             
         });
         // user = new User({
@@ -97,9 +101,13 @@ router.post(
   }
 );
 
-router.get('/', auth, async (req, res) => {
+// @route    GET api/planResults
+// @desc     Get all plan results for associated user
+// @access   Public
+router.get('/', async (req, res) => {
   try {
-    const results = await PlanResults.findOne({ user : req.user.id});
+    // const results = await PlanResults.find({ user : req.user.id});
+    const results = await PlanResults.find({ user : "60217a517f2b961147d214f0"});
 
     if(!results){
       return res.status(400).json({msg: "There are no results for this user"});

@@ -405,16 +405,32 @@ const WelcomeBlock2 = (props) => {
     return <div className="learning-options-container">{optionsMarkup}</div>;
   };
 
-  const TakeAction = (props) => {
-    const options = [
-      { text: "Take a walk", handler: props.actionProvider.lessfat, id: 1 },
-      { text: "Meditate", handler: props.actionProvider.lesssugar, id: 2 },
-      { text: "Talk to a friend", handler: props.actionProvider.fewercarbs, id: 3 },
-      { text: "Eat something small", handler: props.actionProvider.fewercalories, id: 4 },
-      { text: "Read", handler: props.actionProvider.somethingelse, id: 5 },
-      { text: "Something else", handler: props.actionProvider.somethingelse, id: 6 }
-    ];
+  // const TakeAction = (props) => {
+  //   const options = [
+  //     { text: "Take a walk", handler: props.actionProvider.afteraction, id: 1 },
+  //     { text: "Meditate", handler: props.actionProvider.afteraction, id: 2 },
+  //     { text: "Talk to a friend", handler: props.actionProvider.afteraction, id: 3 },
+  //     { text: "Eat something small", handler: props.actionProvider.afteraction, id: 4 },
+  //     { text: "Read", handler: props.actionProvider.afteraction, id: 5 },
+  //     { text: "Something else", handler: props.actionProvider.afteraction, id: 6 }
+  //   ];
+  //   const optionsMarkup = options.map((option) => (
+  //     <button
+  //       className="learning-option-button"
+  //       key={option.id}
+  //       onClick={option.handler}
+  //     >
+  //       {option.text}
+  //     </button>
+  //   ));
   
+  //   return <div className="learning-options-container">{optionsMarkup}</div>;
+  // };
+
+  const EndActivity = (props) => {
+    const options = [
+      { text: "End Activity", handler: props.actionProvider.endactivity, id: 1 }
+    ];
     const optionsMarkup = options.map((option) => (
       <button
         className="learning-option-button"
@@ -448,6 +464,7 @@ export {
     FewerCalories,
     FewerCalories2,
     SomethingElse,
-    TakeAction
+    // TakeAction,
+    EndActivity
 
 };

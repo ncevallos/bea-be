@@ -222,7 +222,7 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
                         <div>
                             <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5 hover:no-underline" role="menuitem">Your Profile</Link>
                             <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Settings</Link>
-                            <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Sign Out</Link>
+                            <a onClick={logout} href="#!"k to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mx-0.5" role="menuitem">Sign Out</a>
                         </div>
                     </div> 
                     </Popup>

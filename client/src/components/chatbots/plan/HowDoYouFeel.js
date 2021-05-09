@@ -4,7 +4,9 @@ import "./Options.css";
 
 const HowDoYouFeel = (props) => {
   const { setState, actionProvider } = props;
-    console.log(props);
+    //uncommenting below will allow you to keep track ofthe state changes throughout
+    //the chat
+    // console.log(props);
   const setType1 = async (type) => {
     setState((state) => ({
       ...state,
@@ -41,7 +43,7 @@ const HowDoYouFeel = (props) => {
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType2("notgood")}
+          onClick={() => setType2("not good")}
         >
           Not Good 🙁
         </button>

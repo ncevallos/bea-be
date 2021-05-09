@@ -36,12 +36,15 @@ const App = () => {
   useEffect(() => {
     // check for token in LS
 
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
     store.dispatch(loadUser());
 
     // log user out from all tabs if they log out in one tab
-    // window.addEventListener('storage', () => {
-    //   if (!localStorage.token) store.dispatch({ type: LOGOUT });
-    // });
+    window.addEventListener('storage', () => {
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
   }, []);
 
 
@@ -92,32 +95,5 @@ const App = () => {
   );
 };
 
-
-// const App = () =>
-//   <Provider store={store}>
-//     <Router>
-//       <Fragment>
-//         <Navbar/>
-//         <Sidebar/>
-//         <section className="sbspace">
-//           <Alert />
-//           <Switch>
-//             <Route exact path='/' component={Dashboard} />
-//             <Route exact path="/login" component={Login} />
-//             <Route exact path="/signup" component={Signup} />
-//             <Route exact path="/meditate" component={Meditate} />
-//             <Route exact path="/motivate" component={Motivate} />
-//             <Route exact path="/plan" component={Plan} />
-//             <Route exact path="/privacy" component={Privacy} />
-//             <Route exact path="/termsconditions" component={Termsconditions} />
-//             <Route exact path="/helpcenter" component={Helpcenter} />
-//             <Route exact path="/settings" component={Settings} />
-//             <Route exact path="/register" component={Register} />
-//           </Switch>
-//         </section>
-//         <Footer/>
-//       </Fragment>
-//       </Router>
-//     </Provider>
 
 export default App;

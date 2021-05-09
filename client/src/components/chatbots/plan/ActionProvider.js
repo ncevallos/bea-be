@@ -7,7 +7,6 @@ class ActionProvider {
       this.setState = setStateFunc;
       this.createClientMessage = createClientMessage;
 
-
     }
     randomnumber(){
         //random number generator for the random response blocks
@@ -15,7 +14,7 @@ class ActionProvider {
         const max = 4;
         let rand = min + Math.random() * (max - min);
         console.log("random number produces equals", rand);
-        rand = Math.round(rand);
+        rand = Math.floor(rand);
         console.log("random number now contains", rand);    
         return (rand-1);
     }
@@ -149,7 +148,7 @@ class ActionProvider {
         const letsBeginMessage = 
         [this.createChatBotMessage(`How much less would have been ideal?`, {
             delay: 2000,
-            widget: "smallerportions",
+            widget: "smalleramounts",
         })];
         this.addMessageToBotState(letsBeginMessage)
     }
@@ -539,6 +538,32 @@ class ActionProvider {
         })];
         this.addMessageToBotState(letsBeginMessage)
     }
+    somethingelsefoods = () => {
+        const letsBeginMessage = 
+        [
+        this.createChatBotMessage(`Please write briefly below how you would have liked it to be different:`, {
+            delay: 2000,
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+
+    somethingelsefoods2 = (message) => {
+        this.setState((state) => ({
+            ...state,
+            somethingelsebad: message,
+            lastblockvisited: "Something Else Foods"
+          }));
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Can you think of anything that happened recently that might have influenced your eating?`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`This can be something emotional like feeling sad after a conflict with a loved one, or something physical such as skipping breakfast.`, {
+            delay: 4000,
+            widget: "emotionalbehavioral",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+
     somethingelse = () => {
         const letsBeginMessage = 
         [this.createChatBotMessage(`Great! It sounds like you have something else in mind, so let's work on it together.`, {
@@ -610,6 +635,23 @@ class ActionProvider {
         this.createChatBotMessage(`If you feel that urge arising, which Action appeals the most to you today?`, {
             delay: 10000,
             widget: "takeaction",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+    afteraction = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Great choice! If you feel tempted to eat in a way that is not healthy for you, go ahead and take that Action.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`You might be feeling better already!`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`So now we’ve Reflected upon your past eating, created a Goal for the day, and decided on the Action to take to quiet your cravings.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`What would you like to do next?`, {
+            delay: 8000,
+            widget: "plansubmit",
         })];
         this.addMessageToBotState(letsBeginMessage)
     }

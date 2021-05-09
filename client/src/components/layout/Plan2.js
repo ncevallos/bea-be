@@ -12,7 +12,7 @@ import MessageParser from '../chatbots/plan/MessageParser';
 import config from '../chatbots/plan/config';
 
 
-export const Plan2 = ({user, userlevel}) =>  {
+export const Plan2 = ({user}) =>  {
         console.log("USer level contains", user.userlevel);
         console.log("USer contains", user);
         if (user.userlevel === 1){
@@ -40,22 +40,21 @@ export const Plan2 = ({user, userlevel}) =>  {
                         { (<div>{ user ? levelone : leveltwo }</div>)}
                         </nav>
 
-                        <Chatbot config={config} actionProvider={ActionProvider} 	    messageParser={MessageParser} />
+                        <Chatbot config={config} actionProvider={ActionProvider}  messageParser={MessageParser} userid={user._id}/>
                         <Popup trigger={<button className="circle-div"><img className="chatbubble" src={chatbubble} alt="Workflow" /></button>} position="top right">
                         {/* <Chatbot config={config} actionProvider={ActionProvider} 	    messageParser={MessageParser} /> */}
                         <div>TEst TES TES</div>
                         </Popup>
                         {/* <button class="circle-div">HI</button> */}
                         </div>
-                        {/* <Calendar /> */}
                     </div>
 
     )
 }
 
 Plan2.propTypes = {
-    user: PropTypes.object.isRequired,
-    userlevel: PropTypes.number.isRequired
+    user: PropTypes.object.isRequired
+    // userlevel: PropTypes.number.isRequired
   };
   
 const mapStateToProps = (state) => ({

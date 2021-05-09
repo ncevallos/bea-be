@@ -20,7 +20,7 @@ const PlanBadBlock = (props) => {
       lastblockvisited: "Plan Goal 2"
     }));
 
-    actionProvider.foodchoices();
+    actionProvider.differentfoods();
   };
 
   return (

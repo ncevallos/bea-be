@@ -66,7 +66,7 @@ export const Sidebar = () => {
                   <Link to='/TestPlanSubmit' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "TestPlanSubmit") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={planicon} className="w-6" alt='TestPlanSubmit' />
-                      <span className="text-sm font-medium">Test Plan Submit</span>
+                      <span className="text-sm font-medium">Test Plan Results</span>
                     </div>
                   </Link>
                   <Link to='/Motivate' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate") ? "bg-beaPurple text-white" : 'text-beaTextGrey')}>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react';
-import * as d3 from "d3";
+// import * as d3 from "d3";
 import GaugeChart from 'react-gauge-chart';
 import appleIcon from '../../img/apple-icon.svg';
 import calendarIcon from '../../img/calendar-icon.svg';

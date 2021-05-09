@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const PlanResultsSchema = new mongoose.Schema({
-  // user: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'user'
-  // },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user'
+  },
   lastblockvisited: {
     type: String
   },
@@ -42,6 +42,9 @@ const PlanResultsSchema = new mongoose.Schema({
     type: String
   },
   plangoal4: {
+    type: String
+  },
+  plangoal5: {
     type: String
   },
   date: {

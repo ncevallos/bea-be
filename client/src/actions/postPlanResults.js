@@ -4,7 +4,9 @@ import { setAlert } from './alert';
 import {
   REGISTER_FAIL,
   LOGIN_SUCCESS,
-  LOGIN_FAIL
+  LOGIN_FAIL,
+  GET_PLAN_RESULTS,
+  PLAN_RESULTS_ERROR
 } from './types';
 
 
@@ -62,3 +64,24 @@ export const postPlanResults = formData => async dispatch => {
       });
     }
   };
+
+  // Get profile by ID
+export const getResultsById = userId => async dispatch => {
+  console.log("get results by id is called");
+  try {
+    
+    // const res = await api.get(`/planResults/${userId}`);
+    const res = await api.get(`/planResults/`);
+    console.log('in try for get results');
+    dispatch({
+      type: GET_PLAN_RESULTS,
+      payload: res.data
+    });
+  } catch (err) {
+    console.log('error reached');
+    dispatch({
+      type: PLAN_RESULTS_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};

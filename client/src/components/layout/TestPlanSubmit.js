@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import DisplayPlanResults from './DisplayPlanResults';
 import { postPlanResults } from '../../actions/postPlanResults';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 export const TestPlanSubmit = ({postPlanResults, user}) => {
+  console.log("USer contains", user);
+  console.log("user is found", user._id);
     const [formData, setFormData] = useState({
-        lastblockvisited: "",
-        howdoyoufeel: "",
-        planjournal: "",
-        stayedontrack: "",
+        user: user._id,
+        lastblockvisited: "this",
+        howdoyoufeel: "is",
+        planjournal: "a",
+        stayedontrack: "test",
         planbadblock: "",
         what2change: "",
         influencedeating: "",
@@ -82,10 +86,11 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
                           
                   <h1 className="large text-primary">Test submit information</h1>
                   <p className="lead">
-                    <i className="fas fa-user" /> This is a test submit form for backend work, if curious about what shows up 
-                    check console in inspect mode.
+                    {/* <i className="fas fa-user" /> This is a test submit form for backend work, if curious about what shows up 
+                    check console in inspect mode. */}
+                    This is a test page to display results from the Plan chat that have been completed by test user
                   </p>
-                   <form className="form" onSubmit={onSubmit}>
+                   {/* <form className="form" onSubmit={onSubmit}>
                     <div className="form-group">
                       <input
                         type="text"
@@ -96,8 +101,8 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
                       />
                     </div> 
                     <input type="submit" className="btn btn-primary" value="Submit" />
-                  </form>
-  
+                  </form> */}
+                    <DisplayPlanResults userid={user._id}/>
                 </div>
                   </div>
     );
