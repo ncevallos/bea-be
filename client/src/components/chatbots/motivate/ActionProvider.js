@@ -111,10 +111,21 @@ class ActionProvider {
     // }
     planningPhase = () => {
         const planningPhaseMessage = 
-        [this.createChatBotMessage(`Great! What are you planning to eat? Please type below: FOR TEST PURPOSES THIS IS NOT YET IMPLEMENTED`, {
+        [this.createChatBotMessage(`Great! What are you planning to eat? Please type below: `, {
             delay: 2000,
-        }),
-        this.createChatBotMessage(`Keeping that food in mind, let’s answer a few questions:`, {
+        })];
+        this.addMessageToBotState(planningPhaseMessage)
+    }
+    planningPhase2 = (message) => {
+        console.log("Message sent over to planning phase 2 is", message);
+        this.setState((state) => ({
+            ...state,
+            plan2eat: message,
+            lastblockvisited: "Planning Phase 2",
+            waitingformsgflag: false
+          }));
+        const planningPhaseMessage = 
+        [this.createChatBotMessage(`Keeping that food in mind, let’s answer a few questions:`, {
             delay: 4000,
         }),
         this.createChatBotMessage(`How do you feel during the Planning Phase, from when you first start thinking about food up until you take the first bite?`, {
@@ -194,30 +205,31 @@ class ActionProvider {
         })];
         this.addMessageToBotState(afterEatingLengthMessage)
     }
-    feelBest1 = () => {
-        const feelBest1Message = 
-        [this.createChatBotMessage(`If you decide to eat the food you listed previously, in which phase do you think you’d feel the best?`, {
-            delay: 2000,
-            widget: "feelBest1",
-        })];
-        this.addMessageToBotState(feelBest1Message)
-    }
-    feelBest2 = () => {
-        const feelBest2Message = 
-        [this.createChatBotMessage(`In which phase would you feel the worst?`, {
-            delay: 2000,
-            widget: "feelBest2",
-        })];
-        this.addMessageToBotState(feelBest2Message)
-    }
-    feelBest3 = () => {
-        const feelBest3Message = 
-        [this.createChatBotMessage(`Overall, how would you feel if you decide to eat the food you were planning to eat?`, {
-            delay: 2000,
-            widget: "feelBest3",
-        })];
-        this.addMessageToBotState(feelBest3Message)
-    }
+    //below was removed due to change in script
+    // feelBest1 = () => {
+    //     const feelBest1Message = 
+    //     [this.createChatBotMessage(`If you decide to eat the food you listed previously, in which phase do you think you’d feel the best?`, {
+    //         delay: 2000,
+    //         widget: "feelBest1",
+    //     })];
+    //     this.addMessageToBotState(feelBest1Message)
+    // }
+    // feelBest2 = () => {
+    //     const feelBest2Message = 
+    //     [this.createChatBotMessage(`In which phase would you feel the worst?`, {
+    //         delay: 2000,
+    //         widget: "feelBest2",
+    //     })];
+    //     this.addMessageToBotState(feelBest2Message)
+    // }
+    // feelBest3 = () => {
+    //     const feelBest3Message = 
+    //     [this.createChatBotMessage(`Overall, how would you feel if you decide to eat the food you were planning to eat?`, {
+    //         delay: 2000,
+    //         widget: "feelBest3",
+    //     })];
+    //     this.addMessageToBotState(feelBest3Message)
+    // }
     feelBest4 = () => {
         const feelBest4Message = 
         [this.createChatBotMessage(`Take a moment now to reflect on your answers.`, {
@@ -290,6 +302,7 @@ class ActionProvider {
         const thankYouDemoMessage = 
         [this.createChatBotMessage(`Thanks for participating in this demo with me!`, {
             delay: 2000,
+            widget: "plansubmit",
         })];
         this.addMessageToBotState(thankYouDemoMessage)
     }

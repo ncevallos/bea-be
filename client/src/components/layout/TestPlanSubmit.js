@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import DisplayPlanResults from './DisplayPlanResults';
+import DisplayMotivateResults from './DisplayMotivateResults';
 import { postPlanResults } from '../../actions/postPlanResults';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
@@ -103,6 +104,8 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
                     <input type="submit" className="btn btn-primary" value="Submit" />
                   </form> */}
                     <DisplayPlanResults userid={user._id}/>
+                    <br/><br/>
+                    <DisplayMotivateResults userid={user._id}/>
                 </div>
                   </div>
     );

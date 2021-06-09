@@ -19,6 +19,7 @@ import PlanningLength from './PlanningLength';
 import StartMindfulness from './StartMindfulness';
 import StretchMsgorVoice from './StretchMsgorVoice';
 import Visualization from './Visualization';
+import PlanSubmit from './PlanSubmit';
 
 const botName = "Bea";
 
@@ -54,6 +55,28 @@ const config = {
         delay: 12000,
     }),
 ],
+state: {
+    waitingformsgflag: false,
+    lastblockvisited: "",
+    temptedlevel: "",
+    vistype: "",
+    plan2eat: "", //open ended
+    whyhungry: "",
+    overindulgeresult: "", //possibly open ended
+    differentchoice: "",
+    differentchoice2: "",
+    planphasefeel: "",
+    planphaselength: "",
+    iephasefeel: "",
+    iephaselength: "",
+    fullphasefeel: "",
+    fullphaselength: "",
+    aefeel: "",
+    aelength: "",
+    mindfultype: "",
+    mindfulresult: ""
+    // randomnum: randomnumber()
+},
 widgets: [
     {
         widgetName: "areyouReady",
@@ -62,6 +85,9 @@ widgets: [
     {
         widgetName: "howtempted",
        widgetFunc: (props) => <HowTempted {...props} />,
+       mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel","vistype","plan2eat","whyhungry","overindulgeresult", 
+       "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "iephasefeel", "iephaselength", "fullphasefeel", "fullphaselength", "aefeel", "aelength",
+        "mindfultype", "mindfulresult"]
     },
     {
         widgetName: "visualization",
@@ -130,6 +156,13 @@ widgets: [
     {
         widgetName: "motivateAfterOptions",
        widgetFunc: (props) => <MotivateAfterOptions {...props} />,
+    },
+    {
+        widgetName: "plansubmit",
+       widgetFunc: (props) => <PlanSubmit {...props} />,
+       mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel","vistype","plan2eat","whyhungry","overindulgeresult", 
+       "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "iephasefeel", "iephaselength", "fullphasefeel", "fullphaselength", "aefeel", "aelength",
+        "mindfultype", "mindfulresult"]
     },
     
 ],
