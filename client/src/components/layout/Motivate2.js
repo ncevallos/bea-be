@@ -32,11 +32,11 @@ class Motivate2 extends Component {
               </div>
               <div className="flex flex-row w-full justify-between">
                   <div className="flex">
-                      <div class="flex flex-col w-48">
-                          <div class="flex w-16 h-16 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5 items-center">
+                      <div className="flex flex-col w-48">
+                          <div className="flex w-16 h-16 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5 items-center">
                             <img className="w-1/2 flex-shrink-0 mx-auto" src={appleIcon} alt="" />
                           </div>
-                          <div class="">
+                          <div className="">
                               <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
                                  Your urge to eat in a way that isn’t ideal for you right now
                               </h4>
@@ -47,26 +47,26 @@ class Motivate2 extends Component {
                       </div>
                   </div>
                   <div className="flex w-48">
-                      <div class="flex flex-col">
-                          <div class="flex w-16 h-16 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5 items-center">
+                      <div className="flex flex-col">
+                          <div className="flex w-16 h-16 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5 items-center">
                             <img className="w-1/2 flex-shrink-0 mx-auto" src={calendarIcon} alt="" />
                           </div>
-                          <div class="">
+                          <div className="">
                               <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
                                 You planned to eat
                               </h4>
                               <h5 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                                apples with peanut butter & kombucha
+                                apples with peanut butter &amp; kombucha
                               </h5>
                           </div>
                       </div>                            
                   </div>
                   <div className="flex w-48">
-                      <div class="flex flex-col">
-                          <div class="flex w-16 h-16 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5 items-center">
+                      <div className="flex flex-col">
+                          <div className="flex w-16 h-16 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5 items-center">
                             <img className="w-1/2 flex-shrink-0 mx-auto" src={hungryIcon} alt="" />
                           </div>
-                          <div class="">
+                          <div className="">
                               <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
                                 The reason why you chose the planned food
                               </h4>
@@ -78,11 +78,11 @@ class Motivate2 extends Component {
                   </div>
               </div>
           </div>
-          <div class="flex flex-shrink">
+          <div className="flex flex-shrink">
             <div className="bg-gray-200 rounded-full p-0 flex flex-shrink">
-                <div className="bg-beaPurpleCorrected text-white py-2 px-4 rounded-full">1W</div>
+                <div className=" py-2 px-4 rounded-full">1W</div>
                 <div className="py-2 px-4 rounded-full">1M</div>
-                <div className="py-2 px-4 rounded-full">3M</div>
+                <div className="bg-beaPurpleCorrected text-white py-2 px-4 rounded-full">3M</div>
                 <div className="py-2 px-4 rounded-full">1Y</div>
                 <div className="py-2 px-4 rounded-full">ALL</div>
             </div>
@@ -107,8 +107,8 @@ class Motivate2 extends Component {
             <div className="w-full bg-beaOrange p-2 rounded-full flex items-center justify-between">
                 <div className="bg-gray-50 bg-opacity-50 uppercase font-bold text-beaOrange py-3 px-4 text-xl rounded-full">BEA's Tips</div>
                 <div className="m-3 text-lg text-white">Oh no! It looks like you’re in the beginning stages of getting off track. Bea has some tips to make sure you don’t derail.</div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
             </div>
           </div>

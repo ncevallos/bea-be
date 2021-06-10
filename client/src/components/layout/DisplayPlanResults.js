@@ -20,6 +20,7 @@ const DisplayPlanResults = ({ getResultsById, planResult: { planResults } }) => 
                             <h2>Plan Results</h2>
                             <table>
                                 <thead>
+                                    <tr>
                                 <th>date</th>
                                 <th>how do you feel</th>
                                 <th>influenced eating</th>
@@ -32,7 +33,7 @@ const DisplayPlanResults = ({ getResultsById, planResult: { planResults } }) => 
                                 <th>plan goal 5</th>
                                 <th>plan journal</th>
                                 <th>stayed on track</th>
-                                <th>what to change</th></thead>
+                                <th>what to change</th></tr></thead>
                                 <tbody>
 
                                 {planResults.map((planResult) => (

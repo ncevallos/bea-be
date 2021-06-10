@@ -6,6 +6,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   GET_PLAN_RESULTS,
+  GET_TODAY_PLAN_RESULTS,
   PLAN_RESULTS_ERROR
 } from './types';
 
@@ -65,7 +66,7 @@ export const postPlanResults = formData => async dispatch => {
     }
   };
 
-  // Get profile by ID
+  // Get results by ID
 export const getResultsById = userId => async dispatch => {
   console.log("get results by id is called");
   try {
@@ -85,3 +86,24 @@ export const getResultsById = userId => async dispatch => {
     });
   }
 };
+
+  // Get profile by ID
+  export const getResultsByIdToday = userId => async dispatch => {
+    console.log("get results by id today is called");
+    try {
+      
+      // const res = await api.get(`/planResults/${userId}`);
+      const res = await api.get(`/planResults/today`);
+      console.log('in try for get results for today');
+      dispatch({
+        type: GET_TODAY_PLAN_RESULTS,
+        payload: res.data
+      });
+    } catch (err) {
+      console.log('error reached');
+      dispatch({
+        type: PLAN_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };

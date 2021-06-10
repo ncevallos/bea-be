@@ -8,6 +8,9 @@ import Motivate from '../layout/Motivate';
 import Motivate2 from '../layout/Motivate2';
 import Plan from '../layout/Plan';
 import Plan2 from '../layout/Plan2';
+import Plan3 from '../layout/Plan3';
+import PlanMonthly from '../layout/PlanMonthly';
+import PlanDaily from '../layout/PlanDaily';
 import TestPlanSubmit from '../layout/TestPlanSubmit';
 import Helpcenter from '../layout/Helpcenter';
 import Settings from '../layout/Settings';
@@ -44,6 +47,9 @@ const Routes = props => {
         <PrivateRoute exact path="/calendarpage" component={CalendarPage} />
         <PrivateRoute exact path="/plan" component={Plan} />
         <PrivateRoute exact path="/plan2" component={Plan2} />
+        <PrivateRoute exact path="/plan3" component={Plan3} />
+        <PrivateRoute exact path="/planmonthly" component={PlanMonthly} />
+        <PrivateRoute exact path="/plandaily" component={PlanDaily} />
         <PrivateRoute exact path="/testplansubmit" component={TestPlanSubmit} />
         <Route component={NoMatchPage} />
       </Switch>

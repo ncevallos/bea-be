@@ -1,11 +1,16 @@
 import {
   GET_PLAN_RESULTS,
+  GET_TODAY_PLAN_RESULTS,
   PLAN_RESULTS_ERROR
 } from '../actions/types';
 
 const initialState = {
+  todayPlanResults: [],
   planResults: [],
+  planResults2: [],
   planResult: null,
+  planResult2: null,
+  todayPlanResult: null,
   loading: true,
   error: {}
 };
@@ -14,12 +19,19 @@ export default function(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
+    case GET_TODAY_PLAN_RESULTS:
+      return {
+        ...state,
+        todayPlanResults: payload,
+        loading: false
+      };
     case GET_PLAN_RESULTS:
       return {
         ...state,
         planResults: payload,
         loading: false
       };
+
   //   case GET_POST:
   //     return {
   //       ...state,
