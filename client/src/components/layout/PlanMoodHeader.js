@@ -1,4 +1,5 @@
 import React from 'react'
+import smileyIcon from '../../img/smiley-icon.svg';
 import smileyIconExtraHappy from '../../img/smiley-icon-extrahappy.svg';
 import smileyIconNeutral from '../../img/smiley-icon-neutral.svg';
 import smileyIconUnhappy from '../../img/smiley-icon-unhappy.svg';

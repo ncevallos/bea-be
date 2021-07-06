@@ -13,9 +13,13 @@ import "./AreyouReady.css";
 
 
 
-const PlanSubmit = (props) => {
-  const { setState, actionProvider } = props;
-  console.log("props in motivate submit contains ", props);
+// const PlanSubmit = (props) => {
+//   const { setState, actionProvider } = props;
+//   console.log("props in motivate submit contains ", props);
+  export const PlanSubmit = ({ postMotivateResults, auth, ownProps}) => {
+    console.log("USer contains", auth.user);
+    console.log("user is found", auth.user._id);
+
 //   console.log("plan goal2 contains ", props.plangoal2);
 //   console.log("Spread state operator", ...state)
 //   const setType1 = async (type) => {
@@ -36,28 +40,29 @@ const PlanSubmit = (props) => {
 
 //     actionProvider.foodchoices();
 //   };
-    console.log("current entry state contains", props);
+    console.log("current entry state contains", ownProps);
   const [formData, setFormData] = useState({
-    user: "60217a517f2b961147d214f0",
+   // user: "60217a517f2b961147d214f0",
     // user: user._id,
 
-    lastblockvisited: props.lastblockvisited,
-    temptedlevel: props.temptedlevel,
-    vistype: props.vistype,
-    plan2eat: props.plan2eat, //open ended
-    whyhungry: props.whyhungry,
-    overindulgeresult: props.overindulgeresult, //possibly open ended
-    differentchoice: props.differentchoice,
-    differentchoice2: props.differentchoice2,
-    planphasefeel: props.planphasefeel,
-    planphaselength: props.planphaselength,
-    iephasefeel: props.iephasefeel,
-    iephaselength: props.iephaselength,
-    fullphasefeel: props.fullphasefeel,
-    fullphaselength: props.fullphaselength,
-    aefeel: props.aefeel,
-    aelength: props.aelength,
-    mindfultype: props.mindfultype,
+    user: auth.user._id,
+    lastblockvisited: ownProps.lastblockvisited,
+    temptedlevel: ownProps.temptedlevel,
+    vistype: ownProps.vistype,
+    plan2eat: ownProps.plan2eat, //open ended
+    whyhungry: ownProps.whyhungry,
+    overindulgeresult: ownProps.overindulgeresult, //possibly open ended
+    differentchoice: ownProps.differentchoice,
+    differentchoice2: ownProps.differentchoice2,
+    planphasefeel: ownProps.planphasefeel,
+    planphaselength: ownProps.planphaselength,
+    iephasefeel: ownProps.iephasefeel,
+    iephaselength: ownProps.iephaselength,
+    fullphasefeel: ownProps.fullphasefeel,
+    fullphaselength: ownProps.fullphaselength,
+    aefeel: ownProps.aefeel,
+    aelength: ownProps.aelength,
+    mindfultype: ownProps.mindfultype,
 });
 const onSubmit = async (e) => {
     console.log('in on submit command');
@@ -102,7 +107,7 @@ const onSubmit = async (e) => {
 };
 
 
-export default PlanSubmit;
+// export default PlanSubmit;
 
 // PlanSubmit.propTypes = {
 //     user: PropTypes.object.isRequired
@@ -113,3 +118,13 @@ export default PlanSubmit;
     
 //   });
 //   export default connect(mapStateToProps, { postPlanResults })(PlanSubmit);
+
+
+function mapStateToProps(state, ownProps) {
+  const { auth } = state;
+  console.log("auth contains ", auth);
+
+  console.log("ownprops contains ", ownProps);
+  return { ownProps, auth }
+}
+export default connect(mapStateToProps, { postMotivateResults })(PlanSubmit);

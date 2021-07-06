@@ -26,6 +26,7 @@ router.post(
         user,
         lastblockvisited,
         howdoyoufeel,
+        howdoyoufeelint,
         planjournal,
         stayedontrack,
         planbadblock,
@@ -61,6 +62,7 @@ router.post(
             user,
             lastblockvisited,
             howdoyoufeel,
+            howdoyoufeelint,
             planjournal,
             stayedontrack,
             planbadblock,
@@ -111,7 +113,7 @@ router.get('/', async (req, res) => {
     // const results = await PlanResults.find({ user : req.user.id});
     //user : "60217a517f2b961147d214f0", 
     const results = await PlanResults.find({ user : "60217a517f2b961147d214f0"}
-    );
+    ).sort( { date: -1 });
 
     if(!results){
       return res.status(400).json({msg: "There are no results for this user"});
@@ -149,3 +151,5 @@ router.get('/today', async (req, res) => {
   }
 });
 module.exports = router;
+
+//in the future will have to do findOne and if so findAndModify to today's entry

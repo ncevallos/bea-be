@@ -29,17 +29,8 @@ class Motivate extends Component {
                         <div>
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                             
-                            <p>This is the Motivate Page</p>
                             <Chatbot config={config} actionProvider={ActionProvider} 	    messageParser={MessageParser} />
-                            {/* <Testpopuptwo/>
-                            <button  onClick={e => {
-                                this.showModal();
-                            }}
-                            > show Modal </button> */}
-                            {/* <Videoselection  onClick={e => {
-                                this.showModal();
-                            }} /> */}
-                            {/* <Videomodal onClose={this.showModal} show={this.state.show} /> */}
+                      
                         </nav>
                         </div>
                     </div>

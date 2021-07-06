@@ -7,15 +7,17 @@ import axios from 'axios';
 import "./Options.css";
 
 //this code is for once it is understood how to merge global and local props
-// export const PlanSubmit = ({props, postPlanResults, user}) => {
-//     console.log("USer contains", user);
-//     console.log("user is found", user._id);
+export const PlanSubmit = ({props, postPlanResults, state, auth, ownProps}) => {
+     console.log("USer contains", auth.user);
+     console.log("user is found", auth.user._id);
 
 
 
-const PlanSubmit = (props) => {
-  const { setState, actionProvider } = props;
-  console.log("props in plan submit contains ", props);
+// const PlanSubmit = (props) => {
+//   const { setState, actionProvider } = props;
+//  console.log("props in plan submit contains ", props);
+  console.log("own props in plan submit contains ", ownProps);
+  console.log("auth in plan submit contains ", auth);
 //   console.log("plan goal2 contains ", props.plangoal2);
 //   console.log("Spread state operator", ...state)
 //   const setType1 = async (type) => {
@@ -36,24 +38,25 @@ const PlanSubmit = (props) => {
 
 //     actionProvider.foodchoices();
 //   };
-    console.log("current entry state contains", props);
+//    console.log("current entry state contains", state);
   const [formData, setFormData] = useState({
-    user: "60217a517f2b961147d214f0",
-    // user: user._id,
-    lastblockvisited: props.lastblockvisited,
-    howdoyoufeel: props.howdoyoufeel,
-    planjournal: props.planjournal,
-    stayedontrack: props.stayedontrack,
-    planbadblock: props.planbadblock,
-    what2change: props.what2change,
-    influencedeating: props.influencedeating,
-    whathappened: props.whathappened,
-    somethingelsebad: props.somethingelsebad,
-    plangoal: props.plangoal,
-    plangoal2: props.plangoal2,
-    plangoal3: props.plangoal3,
-    plangoal4: props.plangoal4,
-    plangoal5: props.plangoal5
+    //user: "60217a517f2b961147d214f0",
+    user: auth.user._id,
+    lastblockvisited: ownProps.lastblockvisited,
+    howdoyoufeel: ownProps.howdoyoufeel,
+    howdoyoufeelint: ownProps.howdoyoufeelint,
+    planjournal: ownProps.planjournal,
+    stayedontrack: ownProps.stayedontrack,
+    planbadblock: ownProps.planbadblock,
+    what2change: ownProps.what2change,
+    influencedeating: ownProps.influencedeating,
+    whathappened: ownProps.whathappened,
+    somethingelsebad: ownProps.somethingelsebad,
+    plangoal: ownProps.plangoal,
+    plangoal2: ownProps.plangoal2,
+    plangoal3: ownProps.plangoal3,
+    plangoal4: ownProps.plangoal4,
+    plangoal5: ownProps.plangoal5
 });
 const onSubmit = async (e) => {
     console.log('in on submit command');
@@ -97,14 +100,43 @@ const onSubmit = async (e) => {
 };
 
 
-export default PlanSubmit;
+// export default PlanSubmit;
 
 // PlanSubmit.propTypes = {
 //     user: PropTypes.object.isRequired
 //   };
-//   const mapStateToProps = (state, ownProps) => ({
-//     isAuthenticated: state.auth.isAuthenticated,
-//     user: state.auth.user
+  // const mapStateToProps = (state, ownProps) => ({
+  //   isAuthenticated: state.auth.isAuthenticated,
+  //   user: state.auth.user
     
-//   });
-//   export default connect(mapStateToProps, { postPlanResults })(PlanSubmit);
+  // },
+  // console.log("own props contains ", ownProps ),
+  // console.log("state props contains ", state ));
+  function mapStateToProps(state, ownProps) {
+    const { auth } = state
+    // ownProps would look like { "id" : 123 }
+    const { lastblockvisited,
+      howdoyoufeel,
+      howdoyoufeelint,
+      planjournal,
+      stayedontrack,
+      planbadblock,
+      what2change,
+      influencedeating,
+      whathappened,
+      somethingelsebad,
+      plangoal,
+      plangoal2,
+      plangoal3,
+      plangoal4,
+      plangoal5 } = ownProps
+ 
+   console.log("own props contains ", ownProps );
+    console.log("state props contains ", state );
+    // console.log("own props contains ", props );
+     console.log("state props contains ", auth );
+  
+    // component receives additionally:
+    return { ownProps, auth }
+  }
+  export default connect(mapStateToProps, { postPlanResults })(PlanSubmit);

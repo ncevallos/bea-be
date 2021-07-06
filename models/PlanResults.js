@@ -11,6 +11,9 @@ const PlanResultsSchema = new mongoose.Schema({
   howdoyoufeel: {
     type: String
   },
+  howdoyoufeelint: {
+    type: Number
+  },
   planjournal: {
     type: String
   },

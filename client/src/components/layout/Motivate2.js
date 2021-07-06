@@ -80,7 +80,7 @@ class Motivate2 extends Component {
           </div>
           <div className="flex flex-shrink">
             <div className="bg-gray-200 rounded-full p-0 flex flex-shrink">
-                <div className=" py-2 px-4 rounded-full">1W</div>
+                <div className="py-2 px-4 rounded-full">1W</div>
                 <div className="py-2 px-4 rounded-full">1M</div>
                 <div className="bg-beaPurpleCorrected text-white py-2 px-4 rounded-full">3M</div>
                 <div className="py-2 px-4 rounded-full">1Y</div>

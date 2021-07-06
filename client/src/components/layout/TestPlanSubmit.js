@@ -91,7 +91,7 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
                     check console in inspect mode. */}
                     This is a test page to display results from the Plan chat that have been completed by test user
                   </p>
-                   {/* <form className="form" onSubmit={onSubmit}>
+                   <form className="form" onSubmit={onSubmit}>
                     <div className="form-group">
                       <input
                         type="text"
@@ -102,10 +102,10 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
                       />
                     </div> 
                     <input type="submit" className="btn btn-primary" value="Submit" />
-                  </form> */}
-                    <DisplayPlanResults userid={user._id}/>
+                  </form>
+                    {/* <DisplayPlanResults userid={user._id}/> */}
                     <br/><br/>
-                    <DisplayMotivateResults userid={user._id}/>
+                    {/* <DisplayMotivateResults userid={user._id}/> */}
                 </div>
                   </div>
     );

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Links } from 'react-router-dom';
 import moment from 'moment';
 import smileyIconRound from '../../img/smiley-icon-round.svg';
 import heartIcon from '../../img/heart-icon.svg';
@@ -13,6 +14,8 @@ import chartTrendline from "chartjs-plugin-trendline";
 import PlanMoodHeader from './PlanMoodHeader';
 import PlanMoodHeaderFree from './PlanMoodHeaderFree';
 import PlanHeader from './PlanHeader';
+import PlanSmiley from './PlanSmiley';
+import PlanIcons from './PlanIcons';
 
 
 const data = {
@@ -111,54 +114,6 @@ const data = {
                             <div className="overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                 <table className="min-w-full divide-y divide-gray-200">
                                 <tbody className="bg-white divide-y divide-gray-200">
-                                    <tr>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center">
-                                                <div className="flex flex-col items-center">
-                                                        <div className="text-xs font-light text-gray-700">
-                                                        Today
-                                                        </div>
-                                                        <div className="text-3xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
-                                                        27
-                                                        </div>
-                                                </div>
-                                                <div className="flex ml-4 items-center justify-center">
-                                                    <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                                                            <img src={bowlIcon} alt="Bowl Icon" className="w-12" />
-                                                    </span>
-                                                    <div>
-                                                        <div className="text-sm font-light text-gray-700">
-                                                        Your main goal is to eat
-                                                        </div>
-                                                        <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
-                                                            smaller amounts and<br/>
-                                                            stop eating when full
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td className="px-2 py-4">
-                                            <div className="flex items-center">
-                                                <div className="flex ml-4 items-center justify-center">
-                                                    <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                                                            <img src={bowlIcon} alt="Bowl Icon" className="w-12" />
-                                                    </span>
-                                                    <div>
-                                                        <div className="text-sm font-light text-gray-700">
-                                                            When you feel the urge to eat
-                                                        </div>
-                                                        <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
-                                                            take a walk
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <img src={smileyIconUnhappyRound} alt="Unahppy Smiley Icon" className="w-14" />
-                                        </td>
-                                    </tr>
                                     {planResults.map((planResult) => (
 
                                     <tr key={planResult._id}>
@@ -166,6 +121,7 @@ const data = {
                                             <div className="flex items-center">
                                                 <div className="flex flex-col items-center">
                                                         <div className="text-xs font-light text-gray-700">
+                                                            {/* Need to implement a check for if today write today */}
                                                         {moment(planResult.date).format('ddd')}
                                                         </div>
                                                         <div className="text-3xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
@@ -174,7 +130,7 @@ const data = {
                                                 </div>
                                                 <div className="flex ml-4 items-center justify-center">
                                                     <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                                                            <img src={bowlIcon} alt="Bowl Icon" className="w-12" />
+                                                            <PlanIcons msg={planResult.plangoal} />
                                                     </span>
                                                     <div>
                                                         <div className="text-sm font-light text-gray-700">
@@ -192,7 +148,7 @@ const data = {
                                             <div className="flex items-center">
                                                 <div className="flex ml-4 items-center justify-center">
                                                     <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                                                            <img src={bowlIcon} alt="Bowl Icon" className="w-12" />
+                                                            <PlanIcons msg={planResult.plangoal5} />
                                                     </span>
                                                     <div>
                                                         <div className="text-sm font-light text-gray-700">
@@ -206,7 +162,9 @@ const data = {
                                             </div>
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <img src={smileyIconUnhappyRound} alt="Unhappy Smiley Icon" className="w-14" />
+                                            {/* <img src={smileyIconUnhappyRound} alt="Unhappy Smiley Icon" className="w-14" />
+                                             */}
+                                             <PlanSmiley mood={planResult.howdoyoufeel}/>
                                         </td>
                                     </tr>
                                 ))}

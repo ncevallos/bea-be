@@ -3,7 +3,7 @@ import React from "react";
 import "./AreyouReady.css";
 
 const HowTempted = (props) => {
-  console.log(props);
+ // console.log(props);
   const { setState, actionProvider } = props;
   const setType1 = async (type) => {
     setState((state) => ({

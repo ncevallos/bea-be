@@ -49,6 +49,19 @@ const botName = "Bea";
 // }
 const config = {
     botName: botName,
+    // Defines an object of custom components that will replace the stock chatbot components. 
+    customComponents: {
+       // Replaces the default header
+    //   header: () => <div style={{ backgroundColor: 'red', padding: "5px", borderRadius: "3px" }}>This is the header</div>,
+    //   // Replaces the default bot avatar
+    //   botAvatar: (props) => <FlightBotAvatar {...props} />,
+    //   // Replaces the default bot chat message container
+    //   botChatMessage: (props) => <CustomChatMessage {...props} />,
+    //   // Replaces the default user icon
+    //   userAvatar: (props) => <MyUserAvatar {...props} />,
+    //   // Replaces the default user chat message
+    //   userChatMessage: (props) => <MyUserChatMessage {...props} />
+    },
     customStyles: {
         botMessageBox: {
         backgroundColor: "#329CCC",
@@ -59,7 +72,7 @@ const config = {
         },
     initialMessages: [createChatBotMessage(`Great! Let’s make a new Plan for the day!`), 
     createChatBotMessage(
-        <img src={reflection} alt="Workflow" />, {
+        <img src={reflection} alt="Workflow" title="Workflow" style={{width: "250px"}} />, {
         delay: 2000,
     }),
     createChatBotMessage(`This isn't a 'diet plan', but a way for us to reflect before making some general goals together.`, {
@@ -79,6 +92,7 @@ state: {
     waitingformsgflag: false,
     lastblockvisited: "",
     howdoyoufeel: "",
+    howdoyoufeelint: "",
     planjournal: "",
     stayedontrack: "",
     planbadblock: "",
@@ -97,7 +111,7 @@ widgets: [
     {
         widgetName: "howdoyoufeel",
        widgetFunc: (props) => <HowDoYouFeel {...props} />,
-       mapStateToProps: ["waitingformsgflag", "lastblockvisited","howdoyoufeel","planjournal","stayedontrack","planbadblock", 
+       mapStateToProps: ["waitingformsgflag", "lastblockvisited","howdoyoufeel","howdoyoufeelint","planjournal","stayedontrack","planbadblock", 
        "what2change", "influencedeating", "whathappened", "somethingelsebad", "plangoal", "plangoal2", "plangoal3", "plangoal4", "plangoal5"]
     },
     {
@@ -223,7 +237,7 @@ widgets: [
     {
         widgetName: "plansubmit",
        widgetFunc: (props) => <PlanSubmit {...props} />,
-       mapStateToProps: ["waitingformsgflag", "lastblockvisited","howdoyoufeel","planjournal","stayedontrack","planbadblock", 
+       mapStateToProps: ["waitingformsgflag", "lastblockvisited","howdoyoufeel","howdoyoufeelint","planjournal","stayedontrack","planbadblock", 
        "what2change", "influencedeating", "whathappened", "somethingelsebad", "plangoal", "plangoal2", "plangoal3", "plangoal4", "plangoal5"]
     },
 ]

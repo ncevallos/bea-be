@@ -41,10 +41,6 @@ export const Plan2 = ({user}) =>  {
                         </nav>
 
                         <Chatbot config={config} actionProvider={ActionProvider}  messageParser={MessageParser} userid={user._id}/>
-                        <Popup trigger={<button className="circle-div"><img className="chatbubble" src={chatbubble} alt="Workflow" /></button>} position="top right">
-                        {/* <Chatbot config={config} actionProvider={ActionProvider} 	    messageParser={MessageParser} /> */}
-                        <div>TEst TES TES</div>
-                        </Popup>
                         {/* <button class="circle-div">HI</button> */}
                         </div>
                     </div>

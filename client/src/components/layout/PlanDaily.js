@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
 import smileyIconRound from '../../img/smiley-icon-round.svg';
 import heartIcon from '../../img/heart-icon.svg';
 import bowlIcon from '../../img/bowl-icon.svg';
@@ -8,21 +10,11 @@ import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResults';
 
 
- //  const PlanDaily = ({ user, getResultsByIdToday, planResult2: { planResults2 } }) => {
   const PlanDaily = ({ user, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
-      //planResult: { planResults }, 
-      //todayPlanResult: {todayPlanResults}
 
     useEffect(() => {
         getResultsByIdToday();
-        // if(planResults.length){
-        //     thisResults = planResults[0];
-        //     dataloaded = true;
-        //     console.log(thisResults);
-        // }
     }, [getResultsByIdToday]);
-    let dataloaded = false;
-    let thisResults = [];
   // console.log("plan results has", planResults2);
 
    console.log("today plan results has", todayPlanResults);
@@ -36,10 +28,13 @@ import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResul
             {/* {todayPlanResults.map((todayPlanResult) => ( */}
                 <div className="flex flex-col flex-grow">
 
-                    
-
+                    <button type="button" className="btn-darkPurple text-center items-center">       
+                    Today {moment(todayPlanResults.date).format('MMMM Do YYYY')}
+                                    </button>
 
                     <div className="flex bg-white overflow-hidden border border-gray-400 rounded-xl p-4 mb-3 items-start">
+                        {/* Below needs to implemented to go full width according to designs
+                        <div className="flex-1 flex flex-col p-8 text-center">Mood Eating</div> */}
                         <img src={smileyIconRound} alt="Round Smiley Icon" className="w-36" />
                         <div className="px-4 py-3 sm:px-6">
                             <p className="mt-1 max-w-2xl text-sm text-gray-500 mb-0">
@@ -48,7 +43,7 @@ import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResul
                             <h3 className="text-4xl font-medium text-gray-900 font-extralight mb-3">
                                 {todayPlanResults.howdoyoufeel}
                             </h3>
-                            <div className="rounded-md bg-beaLightBlue p-4">
+                            <div className="rounded-md bg-beaLightBlue  p-4">
                                 <div className="flex">
                                     <div className="flex-shrink-0">
                                         <img src={heartIcon} alt="Heart Icon" className="w-5" />
@@ -62,11 +57,6 @@ import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResul
                             </div>
                             <p className="mt-1 text-sm text-gray-700 max-w-prose leading-6">
                             {todayPlanResults.planjournal}
-                            {/* Having a better relationship with food and feeling good about making the right food choices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis rhoncus ipsum ac faucibus. Quisque lectus dui, dignissim non ligula vitae, commodo interdum dui. Integer consectetur ultrices tellus ac sodales. Cras efficitur ipsum risus. Sed laoreet sapien vel ex viverra faucibus. Maecenas at bibendum magna, sed aliquet nibh. Vivamus ac libero in augue maximus euismod vitae ut leo. Vestibulum quis metus malesuada, lobortis diam sit amet, lacinia velit. Donec sit amet nisl arcu. In hac habitasse platea dictumst. Cras aliquet laoreet dui vitae dignissim. Praesent laoreet pellentesque nunc accumsan scelerisque. Proin diam risus, sollicitudin at eros id, volutpat porta orci. Duis at erat quis quam mollis condimentum ut ac magna. Quisque non blandit dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In mauris felis, facilisis ut cursus vel, efficitur vitae est. Nam nec metus sodales, pretium nisi at, sollicitudin odio.
-                            <br/><br/>
-                            Duis volutpat malesuada ornare. Sed metus lorem, faucibus ac placerat nec, rutrum finibus dolor. Curabitur consequat rhoncus risus. Donec eleifend convallis tristique. Quisque tempus ligula eu massa auctor, a aliquam eros consequat. Aenean non est elit. Donec commodo purus nisi, eget gravida tellus lobortis et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris tincidunt, quam vitae feugiat gravida, metus diam elementum sem, eget ornare enim felis at nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas blandit, elit eget rhoncus laoreet, justo leo dictum purus, ac porta massa sapien non felis.
-                            <br/><br/>
-                            In tincidunt tellus quis lobortis efficitur. Aliquam vestibulum sapien id dui venenatis, non ornare nunc ornare. Ut rhoncus diam sed rhoncus posuere. Vivamus a nunc non elit lacinia efficitur. Mauris sit amet turpis met. */}
                             
                             </p>
                         </div>
@@ -118,8 +108,7 @@ import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResul
                     </div>
 
 
-
-
+                    <Link to='/PlanMonthly' className="btn-darkPurple">View July (Revisit to link)</Link>
 
 
 
