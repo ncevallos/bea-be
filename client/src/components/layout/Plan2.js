@@ -37,7 +37,7 @@ export const Plan2 = ({user}) =>  {
                     <div className="block">
                         <div>
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
-                        { (<div>{ user ? levelone : leveltwo }</div>)}
+                        {/* { (<div>{ user ? levelone : leveltwo }</div>)} */}
                         </nav>
 
                         <Chatbot config={config} actionProvider={ActionProvider}  messageParser={MessageParser} userid={user._id}/>

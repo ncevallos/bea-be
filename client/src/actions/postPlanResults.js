@@ -68,11 +68,11 @@ export const postPlanResults = formData => async dispatch => {
 
   // Get results by ID
 export const getResultsById = userId => async dispatch => {
-  console.log("get results by id is called");
+ // console.log("get results by id is called", userId);
   try {
     
     // const res = await api.get(`/planResults/${userId}`);
-    const res = await api.get(`/planResults/`);
+    const res = await api.get(`/planResults/${userId}`);
     console.log('in try for get results');
     dispatch({
       type: GET_PLAN_RESULTS,
@@ -93,7 +93,7 @@ export const getResultsById = userId => async dispatch => {
     try {
       
       // const res = await api.get(`/planResults/${userId}`);
-      const res = await api.get(`/planResults/today`);
+      const res = await api.get(`/planResults/today/${userId}`);
       console.log('in try for get results for today');
       dispatch({
         type: GET_TODAY_PLAN_RESULTS,

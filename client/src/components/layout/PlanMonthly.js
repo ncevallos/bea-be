@@ -81,16 +81,17 @@ const data = {
   const Plan3 = ({ user, getResultsById, getResultsByIdToday, planResult: { planResults } }) => {
       //planResult: { planResults }, 
       //todayPlanResult: {todayPlanResults}
-
+        console.log('user in plan monthly has', user._id);
     useEffect(() => {
-        getResultsByIdToday();
-        getResultsById();
+        getResultsById(user._id);
+        getResultsByIdToday(user._id);
         if(planResults.length){
             thisResults = planResults[0];
             dataloaded = true;
             console.log(thisResults);
         }
-    }, [getResultsByIdToday], [getResultsById]);
+    // }, [getResultsByIdToday, user._id], [getResultsById, user._id]);
+}, [getResultsByIdToday, getResultsById, user._id]);
     let dataloaded = false;
     let thisResults = [];
    console.log("plan results has", planResults);

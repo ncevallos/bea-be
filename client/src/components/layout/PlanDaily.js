@@ -13,8 +13,8 @@ import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResul
   const PlanDaily = ({ user, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
 
     useEffect(() => {
-        getResultsByIdToday();
-    }, [getResultsByIdToday]);
+        getResultsByIdToday(user._id);
+    }, [getResultsByIdToday, user._id]);
   // console.log("plan results has", planResults2);
 
    console.log("today plan results has", todayPlanResults);

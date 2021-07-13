@@ -6,11 +6,11 @@ import DisplayMotivateResults from './DisplayMotivateResults';
 import { postPlanResults } from '../../actions/postPlanResults';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-export const TestPlanSubmit = ({postPlanResults, user}) => {
-  console.log("USer contains", user);
-  console.log("user is found", user._id);
+export const Testpage = () => {
+
+
     const [formData, setFormData] = useState({
-        user: user._id,
+       // user: user._id,
         lastblockvisited: "this",
         howdoyoufeel: "is",
         howdoyoufeelint: 2,
@@ -50,8 +50,8 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
     const onSubmit = async (e) => {
       console.log('in on submit command');
       e.preventDefault();
-      postPlanResults(
-        formData
+    //   postPlanResults(
+    //     formData
         // lastblockvisited,
         // howdoyoufeel,
         // planjournal,
@@ -65,8 +65,8 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
         // plangoal2,
         // plangoal3,
         // plangoal4
-      );
-      console.log('in on submit command2', formData);
+     // );
+     // console.log('in on submit command2', formData);
       // try {
       //   const config = {
       //     headers: {
@@ -78,6 +78,30 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
       // } catch(err){
 
       // }
+      let dateArray = [];
+      let i = 0;
+      while (i < 31 ) {
+          let day = new Date();
+          console.log("day currently contains ", day);
+          dateArray.push(day);
+//        text += "The number is " + i;
+        i++;
+      }
+      console.log("date array contains ", dateArray);
+      // below code works for 30 days plus, needs to be modified for minus
+      var resolution = 30,
+      results = [],
+      start = Date.now(),
+      end = start + (30 * 86400000),
+      delta = start - end
+      // delta = end - start
+
+    for (let i = 0; i < resolution; i++) {
+      let t = (delta / resolution) * i
+      results.push(new Date(start + t))
+    }
+
+        console.log(results)
     };
   
   
@@ -92,7 +116,7 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
                     check console in inspect mode. */}
                     This is a test page to display results from the Plan chat that have been completed by test user
                   </p>
-                   {/* <form className="form" onSubmit={onSubmit}>
+                   <form className="form" onSubmit={onSubmit}>
                     <div className="form-group">
                       <input
                         type="text"
@@ -103,22 +127,22 @@ export const TestPlanSubmit = ({postPlanResults, user}) => {
                       />
                     </div> 
                     <input type="submit" className="btn btn-primary" value="Submit" />
-                  </form> */}
-                    <DisplayPlanResults userid={user._id}/>
+                  </form>
+                    {/* <DisplayPlanResults userid={user._id}/> */}
                     <br/><br/>
-                    <DisplayMotivateResults userid={user._id}/>
+                    {/* <DisplayMotivateResults userid={user._id}/> */}
                 </div>
                   </div>
     );
   };
   
 
-  // export default TestPlanSubmit;
-  TestPlanSubmit.propTypes = {
+ //  export default Testpage;
+ Testpage.propTypes = {
     user: PropTypes.object.isRequired
   };
   const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user
   });
-  export default connect(mapStateToProps, { postPlanResults })(TestPlanSubmit);
+  export default connect(mapStateToProps, { postPlanResults })(Testpage);

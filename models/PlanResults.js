@@ -53,6 +53,10 @@ const PlanResultsSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  userSubmission: {
+    type: Boolean,
+    default: true
   }
 });
 

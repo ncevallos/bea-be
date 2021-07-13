@@ -12,6 +12,7 @@ import Plan3 from '../layout/Plan3';
 import PlanMonthly from '../layout/PlanMonthly';
 import PlanDaily from '../layout/PlanDaily';
 import TestPlanSubmit from '../layout/TestPlanSubmit';
+import Testpage from '../layout/Testpage';
 import Helpcenter from '../layout/Helpcenter';
 import Settings from '../layout/Settings';
 import Termsconditions from '../layout/Termsconditions';
@@ -51,6 +52,7 @@ const Routes = props => {
         <PrivateRoute exact path="/planmonthly" component={PlanMonthly} />
         <PrivateRoute exact path="/plandaily" component={PlanDaily} />
         <PrivateRoute exact path="/testplansubmit" component={TestPlanSubmit} />
+        <PrivateRoute exact path="/testpage" component={Testpage} />
         <Route component={NoMatchPage} />
       </Switch>
   );
