@@ -51,7 +51,7 @@ export const Sidebar = () => {
                       <span className="text-sm font-medium">Dashboard </span>
                     </div>
                   </Link>
-                  <Link to='/PlanDaily' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
+                  <Link to='/Plan3' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={planicon} className="w-6" alt='Plan' />
                       <span className="text-sm font-medium">Plan (UI)</span>
@@ -63,12 +63,12 @@ export const Sidebar = () => {
                       <span className="text-sm font-medium">Plan</span>
                     </div>
                   </Link>
-                  <Link to='/TestPlanSubmit' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "TestPlanSubmit") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
+                  {/* <Link to='/TestPlanSubmit' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "TestPlanSubmit") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={planicon} className="w-6" alt='TestPlanSubmit' />
                       <span className="text-sm font-medium">Test Plan Results</span>
                     </div>
-                  </Link>
+                  </Link> */} 
                   <Link to='/Motivate' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate") ? "bg-beaPurple text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={motivateicon} className="w-6" alt='Motivate'/>
