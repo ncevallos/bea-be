@@ -29,19 +29,19 @@ export const Testpage = () => {
 
     // const { name, email, password, password2 } = formData;
     const {
-      lastblockvisited,
-      howdoyoufeel,
-      planjournal,
-      stayedontrack,
-      planbadblock,
-      what2change,
-      influencedeating,
-      whathappened,
-      somethingelsebad,
-      plangoal,
-      plangoal2,
-      plangoal3,
-      plangoal4
+      // lastblockvisited,
+      howdoyoufeel
+      // planjournal,
+      // stayedontrack,
+      // planbadblock,
+      // what2change,
+      // influencedeating,
+      // whathappened,
+      // somethingelsebad,
+      // plangoal,
+      // plangoal2,
+      // plangoal3,
+      // plangoal4
     } = formData
   
     const onChange = (e) =>

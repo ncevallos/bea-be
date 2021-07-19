@@ -9,76 +9,76 @@ import axios from 'axios';
 export const TestPlanSubmit = ({postPlanResults, user}) => {
   console.log("USer contains", user);
   console.log("user is found", user._id);
-    const [formData, setFormData] = useState({
-        user: user._id,
-        lastblockvisited: "this",
-        howdoyoufeel: "is",
-        howdoyoufeelint: 2,
-        planjournal: "a",
-        stayedontrack: "test",
-        planbadblock: "",
-        what2change: "",
-        influencedeating: "",
-        whathappened: "",
-        somethingelsebad: "",
-        plangoal: "",
-        plangoal2: "",
-        plangoal3: "",
-        plangoal4: ""
-    });
+    // const [formData, setFormData] = useState({
+    //     user: user._id,
+    //     lastblockvisited: "this",
+    //     howdoyoufeel: "is",
+    //     howdoyoufeelint: 2,
+    //     planjournal: "a",
+    //     stayedontrack: "test",
+    //     planbadblock: "",
+    //     what2change: "",
+    //     influencedeating: "",
+    //     whathappened: "",
+    //     somethingelsebad: "",
+    //     plangoal: "",
+    //     plangoal2: "",
+    //     plangoal3: "",
+    //     plangoal4: ""
+    // });
 
-    // const { name, email, password, password2 } = formData;
-    const {
-      lastblockvisited,
-      howdoyoufeel,
-      planjournal,
-      stayedontrack,
-      planbadblock,
-      what2change,
-      influencedeating,
-      whathappened,
-      somethingelsebad,
-      plangoal,
-      plangoal2,
-      plangoal3,
-      plangoal4
-    } = formData
+    // // const { name, email, password, password2 } = formData;
+    // const {
+    //   lastblockvisited,
+    //   howdoyoufeel,
+    //   planjournal,
+    //   stayedontrack,
+    //   planbadblock,
+    //   what2change,
+    //   influencedeating,
+    //   whathappened,
+    //   somethingelsebad,
+    //   plangoal,
+    //   plangoal2,
+    //   plangoal3,
+    //   plangoal4
+    // } = formData
   
-    const onChange = (e) =>
-      setFormData({ ...formData, [e.target.name]: e.target.value });
+    // const onChange = (e) =>
+    //   setFormData({ ...formData, [e.target.name]: e.target.value });
   
-    const onSubmit = async (e) => {
-      console.log('in on submit command');
-      e.preventDefault();
-      postPlanResults(
-        formData
-        // lastblockvisited,
-        // howdoyoufeel,
-        // planjournal,
-        // stayedontrack,
-        // planbadblock,
-        // what2change,
-        // influencedeating,
-        // whathappened,
-        // somethingelsebad,
-        // plangoal,
-        // plangoal2,
-        // plangoal3,
-        // plangoal4
-      );
-      console.log('in on submit command2', formData);
-      // try {
-      //   const config = {
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     }
-      //   }
-      //   const body = JSON.stringify(formData)
-      //   const res = await axios.post('/api/planResults', body, config)
-      // } catch(err){
+    // const onSubmit = async (e) => {
+    //   console.log('in on submit command');
+    //   e.preventDefault();
+    //   postPlanResults(
+    //     formData
+    //     // lastblockvisited,
+    //     // howdoyoufeel,
+    //     // planjournal,
+    //     // stayedontrack,
+    //     // planbadblock,
+    //     // what2change,
+    //     // influencedeating,
+    //     // whathappened,
+    //     // somethingelsebad,
+    //     // plangoal,
+    //     // plangoal2,
+    //     // plangoal3,
+    //     // plangoal4
+    //   );
+    //   console.log('in on submit command2', formData);
+    //   // try {
+    //   //   const config = {
+    //   //     headers: {
+    //   //       'Content-Type': 'application/json'
+    //   //     }
+    //   //   }
+    //   //   const body = JSON.stringify(formData)
+    //   //   const res = await axios.post('/api/planResults', body, config)
+    //   // } catch(err){
 
-      // }
-    };
+    //   // }
+    // };
   
   
     return (

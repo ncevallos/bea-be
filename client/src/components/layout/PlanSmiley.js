@@ -29,7 +29,6 @@ class PlanSmiley extends React.Component {
         <img src={smileyIconHorrible} alt="Horrible Smiley Icon" title="Horrible Smiley Icon" className="w-100" />
     }
     else {
-        console.log('nothing');
         iconurl = 
         <img src={noEntry} alt="No Entry Icon" title="No Entry Icon" className="w-100" />
     }

@@ -7,7 +7,7 @@ import bowlIcon from '../../img/bowl-icon.svg';
 import newspaperIcon from '../../img/newspaper-icon.svg';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResults';
+import { getResultsByIdToday } from '../../actions/postPlanResults';
 
 
   const PlanDaily = ({ user, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
@@ -108,8 +108,9 @@ import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResul
                     </div>
 
 
+                    <Link to='/PlanMonthly' className="btn-darkPurple">{moment(todayPlanResults.date).subtract(1, 'days').format('MMMM Do YYYY')}</Link>
                     <Link to='/PlanMonthly' className="btn-darkPurple">View July (Revisit to link)</Link>
-
+                    <Link to='/PlanMonthly' className="btn-darkPurple">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do YYYY')}</Link>
 
 
 

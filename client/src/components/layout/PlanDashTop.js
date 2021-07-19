@@ -12,7 +12,6 @@ import PlanHeader from './PlanHeader';
 import PlanMoodHeader from './PlanMoodHeader';
 import PlanMoodHeaderFree from './PlanMoodHeaderFree';
 
-
   const PlanDashTop = ({ user, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
 
     useEffect(() => {
@@ -20,8 +19,6 @@ import PlanMoodHeaderFree from './PlanMoodHeaderFree';
     }, [getResultsByIdToday, user._id]);
   // console.log("plan results has", planResults2);
 
-   console.log("today plan results has", todayPlanResults);
-  
 // export const Plan3 = () => {
     return (
         <Fragment>
