@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { getResultsById } from '../../actions/postPlanResults';
 
-const DisplayPlanResults = ({ getResultsById, planResult: { planResults } }) => {
+const DisplayPlanResults = ({ user, getResultsById, planResult: { planResults } }) => {
     useEffect(() => {
-        getResultsById();
-    }, [getResultsById]);
+        getResultsById(user._id);
+    }, [getResultsById, user._id]);
     console.log("plan results has", planResults);
 
 
@@ -73,11 +73,13 @@ const DisplayPlanResults = ({ getResultsById, planResult: { planResults } }) => 
 //   export default connect(mapStateToProps, { getResultsById })(PlanResults);
 DisplayPlanResults.propTypes = {
     getResultsById: PropTypes.func.isRequired,
-    planResult: PropTypes.object.isRequired
+    planResult: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
   };
   
   const mapStateToProps = (state) => ({
-    planResult: state.planResult
+    planResult: state.planResult,
+    user: state.auth.user
   });
   
   export default connect(mapStateToProps, { getResultsById })(DisplayPlanResults);

@@ -68,7 +68,7 @@ export const postPlanResults = formData => async dispatch => {
 
   // Get results by ID
 export const getResultsById = userId => async dispatch => {
- // console.log("get results by id is called", userId);
+  console.log("get results by id is called", userId);
   try {
     
     // const res = await api.get(`/planResults/${userId}`);
@@ -79,7 +79,7 @@ export const getResultsById = userId => async dispatch => {
       payload: res.data
     });
   } catch (err) {
-    console.log('error reached');
+    console.log('error reached', err.response.statusText);
     dispatch({
       type: PLAN_RESULTS_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }

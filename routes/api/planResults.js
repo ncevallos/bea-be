@@ -137,16 +137,17 @@ router.get('/:id', async (req, res) => {
 
         // let start = Date.now();
         // end = start + (30 * 86400000);
-        // console.log('end contains ', end);
-        // const results = await PlanResults.find({ user : req.user.id});
+      //  console.log('end contains ', end);
+        //const results = await PlanResults.find({ user : req.params.id}
         //user : "60217a517f2b961147d214f0", 
         // const results = await PlanResults.find({ user : "60217a517f2b961147d214f0"}
-        const results = await PlanResults.find({ user : req.params.id, date : {$gte: end}}
+       const results = await PlanResults.find({ user : req.params.id, date : {$gte: end}}
         ).sort( { date: -1 });
 
     if(!results){
       return res.status(400).json({msg: "There are no results for this user"});
     }
+  //  res.json(results);
     let results2 = fillInDates(results);
     res.json(results2);
   } catch(err){
@@ -205,9 +206,9 @@ fillInDates = (results) => {
   for (let i = 0; i < thirtyDayArray.length; i++) {
     if(rsltsArrayCounter >= results.length){
       let daysLeft = (thirtyDayArray.length - i);
-      while(daysLeft > 0){
+      while(daysLeft >= 0){
         finalArray.push({date:thirtyDayArray[i], howdoyoufeelint: 0, userSubmission: false});
-        //console.log("thirtyday array",thirtyDayArray[i])
+       // console.log("thirtyday array",thirtyDayArray[i])
         i++;
         daysLeft--;
       }
@@ -219,13 +220,14 @@ fillInDates = (results) => {
       rsltsArrayCounter++;
     }
     else {
-     // console.log('match not found in results');
+     //console.log('match not found in results');
       finalArray.push({date:thirtyDayArray[i], howdoyoufeelint: 0, userSubmission: false});
+     // rsltsArrayCounter++;
     }
    // let t = (delta / resolution) * i
    // thirtyDays.push(new Date(start + t))
   }
- //console.log(finalArray);
+//console.log("final array contains", finalArray);
   return finalArray;
 }
 

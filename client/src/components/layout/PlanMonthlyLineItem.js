@@ -8,7 +8,6 @@ import PlanIcons from './PlanIcons';
 
   class PlanMonthlyLineItem extends React.Component {
     render() {
-    
    let lineItem;
    if(this.props.userSubmission){
         lineItem =    
