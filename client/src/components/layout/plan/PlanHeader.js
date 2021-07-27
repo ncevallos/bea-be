@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getResultsByIdToday } from '../../../actions/postPlanResults';
 import planIllustration from '../../../img/plan-illustration.svg';
 import arrowRight from '../../../img/arrow-right.svg';
-import PlanIconsDash from './../PlanIconsDash';
+import PlanIconsDash from './PlanIconsDash';
 import { Link } from 'react-router-dom';
 
 

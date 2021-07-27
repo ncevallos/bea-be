@@ -96,7 +96,7 @@ export const getResultsById = userId => async dispatch => {
       
       // const res = await api.get(`/planResults/${userId}`);
       const res = await api.get(`/planResults/summary/${userId}`);
-      console.log('in try for get results');
+      console.log('in summary try for get results in postPlanResults');
       dispatch({
         type: GET_SUMMARY_PLAN_RESULTS,
         payload: res.data

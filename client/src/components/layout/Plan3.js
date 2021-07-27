@@ -1,16 +1,12 @@
 import React, { useEffect, Fragment } from 'react'
-import smileyIconRound from '../../img/smiley-icon-round.svg';
-import heartIcon from '../../img/heart-icon.svg';
 import bowlIcon from '../../img/bowl-icon.svg';
 import newspaperIcon from '../../img/newspaper-icon.svg';
-import smileyIconUnhappyRound from '../../img/smiley-icon-unhappy-round.svg';
 import {Line} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../actions/postPlanResults';
 import chartTrendline from "chartjs-plugin-trendline";
-import PlanMoodHeader from './PlanMoodHeader';
-import PlanMain from './plan/PlanMain';
+import PlanMoodHeader from './plan/PlanMoodHeader';
 import PlanMoodHeaderFree from './PlanMoodHeaderFree';
 import PlanHeader from './plan/PlanHeader';
 import CalendarPage from './plan/calendar';
@@ -85,11 +81,11 @@ const data = {
         getResultsByIdToday(user._id);
         getResultsById(user._id);
         getSummary(user._id);
-        if(planResults.length){
-            thisResults = planResults[0];
-            dataloaded = true;
-            console.log(thisResults);
-        }
+        // if(planResults.length){
+        //     thisResults = planResults[0];
+        //     dataloaded = true;
+        //     console.log(thisResults);
+        // }
     }, [getResultsByIdToday, getResultsById, user._id]);
     let dataloaded = false;
     let thisResults = [];

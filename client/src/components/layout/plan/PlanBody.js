@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
 import chartTrendline from "chartjs-plugin-trendline";
-import PlanMoodHeader from '../PlanMoodHeader';
+import PlanMoodHeader from './PlanMoodHeader';
 import PlanMain from './/PlanMain';
 import PlanMoodHeaderFree from '../PlanMoodHeaderFree';
 import PlanHeader from '../PlanHeader';
@@ -77,19 +77,18 @@ const data = {
         }]
     }
   };
-  const Plan3 = ({ user, getResultsById, getResultsByIdToday, planResult: { planResults } }) => {
+  const Plan3 = ({ user, getResultsById, getResultsByIdToday, planResult2: { planResults2 } }) => {
       //planResult: { planResults }, 
       //todayPlanResult: {todayPlanResults}
 
-   console.log("plan results has in plan body has", planResults);
+   console.log("plan results has in plan body has", planResults2);
    let headercontrol = 0;
-    headercontrol = planResults.summaryStats.avgMood;
+    headercontrol = planResults2.summaryStats.avgMood;
    // console.log("today plan results has", todayPlanResults);
 
-// export const Plan3 = () => {
     return (
         <Fragment>
-          {planResults === null ? (
+          {planResults2 === null ? (
             <Spinner />
           ) : (
             <Fragment>
@@ -100,7 +99,7 @@ const data = {
                             height={15}
                             options={options}
                         />
-                        <PlanMoodHeader avgMood={planResults.summaryStats.avgMood} />
+                        <PlanMoodHeader avgMood={planResults2.summaryStats.avgMood} />
                     <div>
                         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                             <li className="col-span-2 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
@@ -108,19 +107,19 @@ const data = {
                                     <span className="text-beaBlueText text-sm">Calendar</span>
                                     <CalendarPage />
                                     Great<br/>
-                                    {planResults.summaryStats.great}<br/>
+                                    {planResults2.summaryStats.great}<br/>
                                     Good<br/>
-                                    {planResults.summaryStats.good}<br/>
+                                    {planResults2.summaryStats.good}<br/>
                                     Not Good<br/>
-                                    {planResults.summaryStats.notgood}<br/>
+                                    {planResults2.summaryStats.notgood}<br/>
                                     Horrible<br/>
-                                    {planResults.summaryStats.horrible}<br/>
+                                    {planResults2.summaryStats.horrible}<br/>
                                     <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                                         <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
                                     </span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults.summaryStats.stayedontrackpct}%</h2>
+                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.stayedontrackpct}%</h2>
                                     <span className="mt-6 text-gray-700 text-sm font-thin">Why you stayed on track</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults.summaryStats.stayedontrack}</h2>
+                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.stayedontrack}</h2>
                                 </div>
                             </li>
                         </ul>
@@ -135,18 +134,18 @@ const data = {
                                     <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                                         <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
                                     </span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults.summaryStats.favgoalpct}%</h2>
+                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2>
                                     <span className="mt-6 text-gray-700 text-sm font-thin">Most important goal</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults.summaryStats.favgoal}</h2>
+                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal}</h2>
  
                                 </div>
                                 <div className="flex-1 flex flex-col p-8 items-center">
                                     <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                                         <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
                                     </span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults.summaryStats.favgoal2pct}%</h2>
+                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal2pct}%</h2>
                                     <span className="mt-6 text-gray-700 text-sm font-thin">Main focus offood choice</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults.summaryStats.favgoal2}</h2>
+                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal2}</h2>
                                 </div>
                             </li>
                             <li className="col-span-1 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
@@ -155,9 +154,9 @@ const data = {
                                     <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                                         <img src={bowlIcon}  alt="Bowl Icon" className="w-11" />
                                     </span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults.summaryStats.favactionpct}%</h2>
+                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favactionpct}%</h2>
                                     <span className="mt-6 text-gray-700 text-sm font-thin">The action that stopped unmindful eating</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults.summaryStats.favaction}</h2>
+                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favaction}</h2>
                                 </div>
                             </li>
                         </ul>
@@ -177,13 +176,13 @@ const data = {
     getResultsByIdToday: PropTypes.func.isRequired,
     getResultsById: PropTypes.func.isRequired,
     getSummary:  PropTypes.func.isRequired,
-    planResult: PropTypes.object.isRequired,
+    planResult2: PropTypes.object.isRequired,
     todayPlanResult: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
   };
   
   const mapStateToProps = (state) => ({
-    planResult: state.planResult,
+    planResult2: state.planResult2,
     todayPlanResult: state.todayPlanResult,
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user

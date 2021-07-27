@@ -45,7 +45,7 @@ export default function(state = initialState, action) {
       case GET_SUMMARY_PLAN_RESULTS:
         return {
           ...state,
-          planResults: payload,
+          planResults2: payload,
           loading: false
         };
   

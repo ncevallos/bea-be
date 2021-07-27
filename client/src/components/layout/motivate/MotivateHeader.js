@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getMotivResultsByIdToday } from '../../../actions/postMotivateResults';
 import planIllustration from '../../../img/plan-illustration.svg';
 import arrowRight from '../../../img/arrow-right.svg';
-import PlanIconsDash from './../PlanIconsDash';
+import PlanIconsDash from '../plan/PlanIconsDash';
 import { Link } from 'react-router-dom';
 import appleIcon from '../../../img/apple-icon.svg';
 import calendarIcon from '../../../img/calendar-icon.svg';

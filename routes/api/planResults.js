@@ -153,39 +153,6 @@ router.post(
 
 // CODE BELOW IS THE ORIGINAL GET RESULTS BY ID FOR 30 DAYS - COMMENTED OUT TO WORK ON DEVELOPING SUMMARY ALGORITHM
 
-// router.get('/:id', async (req, res) => {
-//   try {
-//         let end = moment().subtract(30, 'days');
-
-//         // let start = Date.now();
-//         // end = start + (30 * 86400000);
-//       //  console.log('end contains ', end);
-//         //const results = await PlanResults.find({ user : req.params.id}
-//         //user : "60217a517f2b961147d214f0", 
-//         // const results = await PlanResults.find({ user : "60217a517f2b961147d214f0"}
-//        const results = await PlanResults.find({ user : req.params.id, date : {$gte: end}}
-//         ).sort( { date: -1 });
-
-//     if(!results){
-//       return res.status(400).json({msg: "There are no results for this user"});
-//     }
-//   //  res.json(results);
-//     let results2 = fillInDates(results);
-//     res.json(results2);
-//   } catch(err){
-//     console.error(err.message);
-//     res.status(500).send('Server Error');
-//   }
-// });
-
-
-
-
-
-
-
-//this is the boilerplate for summary call
-
 router.get('/:id', async (req, res) => {
   try {
         let end = moment().subtract(30, 'days');
@@ -203,7 +170,7 @@ router.get('/:id', async (req, res) => {
       return res.status(400).json({msg: "There are no results for this user"});
     }
   //  res.json(results);
-    let results2 = createSummary(results);
+    let results2 = fillInDates(results);
     res.json(results2);
   } catch(err){
     console.error(err.message);
@@ -214,14 +181,48 @@ router.get('/:id', async (req, res) => {
 
 
 
+
+
+
+//this is the boilerplate for summary call
+
+// router.get('/:id', async (req, res) => {
+//   try {
+//         let end = moment().subtract(30, 'days');
+
+//         // let start = Date.now();
+//         // end = start + (30 * 86400000);
+//       //  console.log('end contains ', end);
+//         //const results = await PlanResults.find({ user : req.params.id}
+//         //user : "60217a517f2b961147d214f0", 
+//         // const results = await PlanResults.find({ user : "60217a517f2b961147d214f0"}
+//        const results = await PlanResults.find({ user : req.params.id, date : {$gte: end}}
+//         ).sort( { date: -1 });
+
+//     if(!results){
+//       return res.status(400).json({msg: "There are no results for this user"});
+//     }
+//   //  res.json(results);
+//     let results2 = createSummary(results);
+//     res.json(results2);
+//   } catch(err){
+//     console.error(err.message);
+//     res.status(500).send('Server Error');
+//   }
+// });
+
+
+
+
 // @route    GET api/planResults/summary
 // @desc     Get all plan results for associated user
 // @access   Public
 // will be plan 30 days back, after coding is done.
-router.get('summary/:id', async (req, res) => {
+router.get('/summary/:id', async (req, res) => {
+  console.log("made it to summary");
   try {
         let end = moment().subtract(30, 'days');
-
+      console.log("in the summary request of try");
       //  console.log('end contains ', end);
        const results = await PlanResults.find({ user : req.params.id, date : {$gte: end}}
         ).sort( { date: -1 });

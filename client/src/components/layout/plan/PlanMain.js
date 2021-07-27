@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
 import chartTrendline from "chartjs-plugin-trendline";
-import PlanMoodHeader from './../PlanMoodHeader';
+import PlanMoodHeader from './PlanMoodHeader';
 import PlanMoodHeaderFree from './../PlanMoodHeaderFree';
 import PlanHeader from './PlanHeader';
 import PlanBody from './PlanBody';
@@ -16,30 +16,39 @@ import Spinner from '../../layout/Spinner';
 import PlanLineGraph from '../PlanLineGraph';
 
 
-const PlanMain = ({ user, getResultsById, getResultsByIdToday, planResult: { planResults }, todayPlanResult: {todayPlanResults} }) => {
+const PlanMain = ({ user, 
+    // getResultsById, 
+    getResultsByIdToday,
+     getSummary, 
+    //  planResult: { planResults }, 
+     planResult2: { planResults2 }, 
+     todayPlanResult: {todayPlanResults} 
+    }) => {
     //planResult: { planResults }, 
-    //todayPlanResult: {todayPlanResults}
+    // todayPlanResult: {todayPlanResults}
 
   useEffect(() => {
-      getResultsByIdToday(user._id);
-      getResultsById(user._id);
+    //   getResultsByIdToday(user._id);
+    //   getResultsById(user._id);
+      getSummary(user._id);
     //   if(planResults.length){
     //       thisResults = planResults[0];
     //       dataloaded = true;
     //       console.log(thisResults);
     //   }
-  }, [getResultsByIdToday, getResultsById, user._id]);
-  console.log("plan results has", planResults);
+  }, [getResultsByIdToday, getResultsById, getSummary, user._id]);
+//   console.log("plan results has", planResults);
   console.log("today plan results has", todayPlanResults);
+  console.log("sumarry plan results has", planResults2);
   let planBodyResults = "";
-  if(planResults.summaryStats){
+  if(planResults2.summaryStats){
   
     planBodyResults = 
         <Fragment>
 
         <PlanHeader todayPlanResults={todayPlanResults}/>
-        <PlanLineGraph planResults={planResults} />
-        <PlanBody planResults={planResults}/>
+        {/* <PlanLineGraph planResults={planResults2} /> */}
+        <PlanBody planResults={planResults2}/>
         </Fragment>
   }
   else {
@@ -50,7 +59,7 @@ const PlanMain = ({ user, getResultsById, getResultsByIdToday, planResult: { pla
   
     return (
       <Fragment>
-        {planResults === null ? (
+        {planResults2 === null ? (
           <Spinner />
         ) : (
           <Fragment>
@@ -82,12 +91,14 @@ const PlanMain = ({ user, getResultsById, getResultsByIdToday, planResult: { pla
     getResultsById: PropTypes.func.isRequired,
     getSummary:  PropTypes.func.isRequired,
     planResult: PropTypes.object.isRequired,
+    planResult2: PropTypes.object.isRequired,
     todayPlanResult: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
   };
   
   const mapStateToProps = (state) => ({
     planResult: state.planResult,
+    planResult2: state.planResult2,
     todayPlanResult: state.todayPlanResult,
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user

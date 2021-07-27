@@ -1,21 +1,22 @@
 import React from 'react'
-import Login from '../auth/Login';
-import planIllustration from '../../img/plan-illustration.svg';
-import arrowRight from '../../img/arrow-right.svg';
-import smileyIcon from '../../img/smiley-icon.svg';
-import smileyIconExtraHappy from '../../img/smiley-icon-extrahappy.svg';
-import smileyIconNeutral from '../../img/smiley-icon-neutral.svg';
-import smileyIconUnhappy from '../../img/smiley-icon-unhappy.svg';
+// import Login from '../auth/Login';
+// import planIllustration from '../../img/plan-illustration.svg';
+// import arrowRight from '../../img/arrow-right.svg';
+// import smileyIcon from '../../img/smiley-icon.svg';
+// import smileyIconExtraHappy from '../../img/smiley-icon-extrahappy.svg';
+// import smileyIconNeutral from '../../img/smiley-icon-neutral.svg';
+// import smileyIconUnhappy from '../../img/smiley-icon-unhappy.svg';
 import smileyIconRound from '../../img/smiley-icon-round.svg';
 import planIconWhite from '../../img/plan-icon-white.svg';
-import heartIcon from '../../img/heart-icon.svg';
-import bowlIcon from '../../img/bowl-icon.svg';
-import newspaperIcon from '../../img/newspaper-icon.svg';
-import smileyIconUnhappyRound from '../../img/smiley-icon-unhappy-round.svg';
+// import heartIcon from '../../img/heart-icon.svg';
+// import bowlIcon from '../../img/bowl-icon.svg';
+// import newspaperIcon from '../../img/newspaper-icon.svg';
+// import smileyIconUnhappyRound from '../../img/smiley-icon-unhappy-round.svg';
 import {Line} from 'react-chartjs-2';
 import chartTrendline from "chartjs-plugin-trendline";
 import GaugeChart from 'react-gauge-chart';
 
+import DashboardSections from './dashboard/DashboardSections';
 import Videoselection from './Videoselection';
 import { Videodata } from "./Videodata";
 
@@ -120,16 +121,7 @@ export const Dashboard = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex flex-shrink mb-3">
-                        <div className="bg-gray-200 rounded-full p-0 flex flex-shrink">
-                            <div className="py-2 px-4 rounded-full">1W</div>
-                            <div className="py-2 px-4 rounded-full">1M</div>
-                            <div className="bg-beaGreenBlue text-white py-2 px-4 rounded-full">3M</div>
-                            <div className="py-2 px-4 rounded-full">1Y</div>
-                            <div className="py-2 px-4 rounded-full">ALL</div>
-                        </div>
-                    </div>
-                    
+                    <DashboardSections />
 
                     <div className="flex bg-white overflow-hidden border border-gray-400 rounded-xl mb-3 p-10 items-start">
                         <div className="flex flex-col items-center w-72">
