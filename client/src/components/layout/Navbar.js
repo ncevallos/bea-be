@@ -197,10 +197,10 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
                     <Popup trigger={<button className="flex text-sm rounded-full text-white focus:outline-none" id="user-menu" aria-haspopup="true">
                     <span className="sr-only">Open user menu</span>
                     <div className="flex items-center h-6 bg-transparent">
-                        <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="bg-transparent" width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <g id="Designs-for-Development" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                                 <g id="Meditate-Landing-(Paid-Member---recent)" transform="translate(-1383.000000, -31.000000)">
-                                    <path d="M0,-1 L1440,-1 L1440,66 C1174.88262,66 1016.78219,66 965.698713,66 C889.073495,66 870.259441,23.70292 816,23.70292 C761.740559,23.70292 748.575215,66 653.741049,66 C590.518272,66 372.271256,66 -1,66 L0,-1 Z" id="header" fill="#AD79E2"></path>
+                                    <path d="M0,-1 L1440,-1 L1440,66 C1174.88262,66 1016.78219,66 965.698713,66 C889.073495,66 870.259441,23.70292 816,23.70292 C761.740559,23.70292 748.575215,66 653.741049,66 C590.518272,66 372.271256,66 -1,66 L0,-1 Z" id="header"></path>
                                     <g id="more" transform="translate(1383.000000, 31.000000)" fill="#FFFFFF">
                                         <circle id="Oval" cx="2" cy="2" r="2"></circle>
                                         <circle id="Oval-Copy" cx="10" cy="2" r="2"></circle>
