@@ -28,9 +28,14 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
             {/* {todayPlanResults.map((todayPlanResult) => ( */}
                 <div className="flex flex-col flex-grow">
 
-                    <button type="button" className="btn-darkPurple text-center items-center">       
-                    Today {moment(todayPlanResults.date).format('MMMM Do YYYY')}
-                                    </button>
+                    <div className="dateHeader text-center items-center mb-3">
+                        <label className="flex content-center mb-0">   
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span className="align-middle pt-0.5">Today {moment(todayPlanResults.date).format('MMMM Do YYYY')}</span>
+                        </label>
+                    </div>
 
                     <div className="flex bg-white overflow-hidden border border-gray-400 rounded-xl p-4 mb-3 items-start">
                         {/* Below needs to implemented to go full width according to designs
@@ -107,16 +112,9 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                         </ul>
                     </div>
 
-
-                    <Link to='/PlanMonthly' className="btn-darkPurple">{moment(todayPlanResults.date).subtract(1, 'days').format('MMMM Do YYYY')}</Link>
-                    <Link to='/PlanMonthly' className="btn-darkPurple">View July (Revisit to link)</Link>
-                    <Link to='/PlanMonthly' className="btn-darkPurple">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do YYYY')}</Link>
-
-
-
-
-
-
+                    <Link to='/PlanMonthly' className="dateHeader mb-2">{moment(todayPlanResults.date).subtract(1, 'days').format('MMMM Do YYYY')}</Link>
+                    <Link to='/PlanMonthly' className="dateHeader mb-2">View July (Revisit to link)</Link>
+                    <Link to='/PlanMonthly' className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do YYYY')}</Link>
 
 
                 </div>

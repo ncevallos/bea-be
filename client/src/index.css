@@ -28,6 +28,10 @@
   @apply relative inline-flex items-center px-6 py-2 shadow-none text-sm font-medium rounded-full text-beaDarkPurple hover:bg-beaDarkPurple hover:text-white transition-all border-t border-b border-l border-r border-beaDarkPurple group focus:outline-none;
 }
 
+.dateHeader {
+  @apply relative flex justify-center justify-items-center content-center px-6 py-2 shadow-none text-sm font-medium rounded-full text-gray-600 transition-all border-t border-b border-l border-r border-gray-200 text-center group focus:outline-none text-center;
+}
+
 .btn-darkPurpleInvert {
   @apply relative group text-white transition-all hover:bg-transparent hover:text-beaDarkPurple hover:border-beaDarkPurple inline-flex items-center px-6 py-2 border border-transparent shadow-none text-sm font-medium rounded-full bg-beaDarkPurple focus:outline-none;  
 }
