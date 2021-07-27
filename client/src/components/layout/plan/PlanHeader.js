@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom';
         <div className="flex flex-row w-full justify-between">
         <div className="flex">
             <div className="flex flex-col w-48">
-                <div className="w-24 h-24 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5">
+                <div className="w-24 h-24 bg-opacity-50 rounded-3xl mb-2.5">
                     <PlanIconsDash msg={todayPlanResults.plangoal} />  
                 </div>
                 <div className="">
@@ -37,7 +37,7 @@ import { Link } from 'react-router-dom';
         </div>
         <div className="flex w-48">
             <div className="flex flex-col">
-                <div className="w-24 h-24 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5">
+                <div className="w-24 h-24 bg-opacity-50 rounded-3xl mb-2.5">
                     <PlanIconsDash msg={todayPlanResults.plangoal5} />  
                 </div>
                 <div className="">
