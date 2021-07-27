@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect } from 'react'
-import { Links } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import PlanSmiley from './PlanSmiley';
 import PlanIcons from './PlanIcons';
@@ -11,6 +11,7 @@ import PlanIcons from './PlanIcons';
    let lineItem;
    if(this.props.userSubmission){
         lineItem =    
+        // <Link to ={`/PlanDaily/${this.props.date}`}>
         <tr key={this.props._id}>
         <td className="px-6 py-4">
             <div className="flex items-center">
@@ -62,6 +63,7 @@ import PlanIcons from './PlanIcons';
              <PlanSmiley mood={this.props.howdoyoufeel}/>
         </td>
     </tr>
+    // </Link>
    } else {
     lineItem =    
         <tr key={this.props._id}>

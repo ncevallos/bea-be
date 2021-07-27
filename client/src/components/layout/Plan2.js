@@ -1,12 +1,7 @@
 import React from 'react'
 import Chatbot from 'react-chatbot-kit';
-import Popup from 'reactjs-popup';
-import chatbubble from '../../img/chat-icon.png';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Calendar from './Calendar';
-
-
 import ActionProvider from '../chatbots/plan/ActionProvider';
 import MessageParser from '../chatbots/plan/MessageParser';
 import config from '../chatbots/plan/config';

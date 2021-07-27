@@ -1,11 +1,14 @@
 import {
     GET_MOTIVATE_RESULTS,
+    GET_TODAY_MOTIVATE_RESULTS,
     MOTIVATE_RESULTS_ERROR
   } from '../actions/types';
   
   const initialState = {
     motivateResults: [],
+    todayMotivateResults: [],
     motivateResult: null,
+    todayMotivateResult: null,
     loading: true,
     error: {}
   };
@@ -14,6 +17,12 @@ import {
     const { type, payload } = action;
   
     switch (type) {
+      case GET_TODAY_MOTIVATE_RESULTS:
+        return {
+          ...state,
+          todayMotivateResults: payload,
+          loading: false
+        };
       case GET_MOTIVATE_RESULTS:
         return {
           ...state,

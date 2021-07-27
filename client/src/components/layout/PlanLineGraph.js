@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState} from 'react'
 import smileyIconGreat from '../../img/planimgs/icon-great.png';
 import smileyIconPrettyGood from '../../img/planimgs/icon-prettygood.png';
 import smileyIconHorrible from '../../img/planimgs/icon-horrible.png';
@@ -37,8 +37,8 @@ const data = {
             lineStyle: "dotted|solid",
             width: 2
         },
-        data: []
-     //   data: [65, 59, null, 80, 81, 32, 56, 55, 40, 12, 45, 32, 23, 67, 32, 34, 21, 10, 8, 12, 56, null, 13, 18, 28, 64, 24, 31, 35, 19]
+   //     data: []
+       data: [65, 59, null, 80, 81, 32, 56, 55, 40, 12, 45, 32, 23, 67, 32, 34, 21, 10, 8, 12, 56, null, 13, 18, 28, 64, 24, 31, 35, 19]
       }
     ]
   };
@@ -70,53 +70,34 @@ const data = {
   };
 
 class PlanLineGraph extends React.Component {
-
   render() {
-      console.log("props contains", this.props)
-      let loopCount = this.props.passedData.length;
+      console.log("props in Plan Line graph contains", this.props.planResults.dates)
+      let loopCount = this.props.planResults.dates.length;
       let loopincremet = 0;
       while(loopCount > 0){
    
-          data.labels.push(this.props.passedData[0]);
+          data.labels.push(this.props.planResults.dates);
 
-          data.datasets[0].data.push(this.props.passedData2[0])
+          data.datasets[0].data.push(this.props.planResults.values)
           loopCount--;
       }
-    //   let iconurl = "";
-    // if(this.props.mood === "Great" || this.props.mood === "great" ){
-
-    //     iconurl = 
-    //     <img src={smileyIconGreat} alt="Great Smiley Icon" title="Great Smiley Icon" className="w-100" />
-    // }
-    // else if(this.props.mood === "Good" || this.props.mood === "good"){
-
-    //     iconurl = 
-    //     <img src={smileyIconPrettyGood} alt="Pretty Good Smiley Icon" title="Pretty Good Smiley Icon" className="w-100" />
-    // }
-    // else if(this.props.mood === "Not good" || this.props.mood === "not good"){
-
-    //     iconurl = 
-    //     <img src={smileyIconNotGood} alt="Not Good Smiley Icon" title="Not Good Smiley Icon" className="w-100" />
-    // }
-    // else if(this.props.mood === "Horrible" || this.props.mood === "horrible"){
-    //     iconurl = 
-    //     <img src={smileyIconHorrible} alt="Horrible Smiley Icon" title="Horrible Smiley Icon" className="w-100" />
-    // }
-    // else {
-    //     console.log('nothing');
-    //     iconurl = 
-    //     <img src={noEntry} alt="No Entry Icon" title="No Entry Icon" className="w-100" />
-    // }
-    
+      let control = "";
     return (
+      <Fragment>
+        {control === null ? (
+          <div></div>
+        ) : (
         <Fragment>
             <Line
-                data={this.props.passedData}
+                // data={this.props.passedData}
+                data={data}
                 width={100}
                 height={15}
                 options={options}
                 />
         </Fragment>
+        )}
+      </Fragment>
 
     )
   }

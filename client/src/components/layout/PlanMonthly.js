@@ -1,21 +1,12 @@
 import React, { useEffect } from 'react'
 import { Links } from 'react-router-dom';
 import moment from 'moment';
-import smileyIconRound from '../../img/smiley-icon-round.svg';
-import heartIcon from '../../img/heart-icon.svg';
-import bowlIcon from '../../img/bowl-icon.svg';
-import newspaperIcon from '../../img/newspaper-icon.svg';
-import smileyIconUnhappyRound from '../../img/smiley-icon-unhappy-round.svg';
 import {Line} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResults';
 import chartTrendline from "chartjs-plugin-trendline";
 import PlanMoodHeader from './PlanMoodHeader';
-import PlanMoodHeaderFree from './PlanMoodHeaderFree';
-import PlanHeader from './PlanHeader';
-import PlanSmiley from './PlanSmiley';
-import PlanIcons from './PlanIcons';
 import PlanMonthlyLineItem from './PlanMonthlyLineItem';
 
 
@@ -116,7 +107,6 @@ const data = {
                             <div className="overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                 <table className="min-w-full divide-y divide-gray-200">
                                 <tbody className="bg-white divide-y divide-gray-200">
-                                    <PlanMonthlyLineItem />
                                      {planResults.map((planResult) => (
 
                                             <PlanMonthlyLineItem 
@@ -128,56 +118,6 @@ const data = {
                                             plangoal5 = {planResult.plangoal5}
                                             howdoyoufeel = {planResult.howdoyoufeel}
                                             />
-                                    // <tr key={planResult._id}>
-                                    //     <td className="px-6 py-4">
-                                    //         <div className="flex items-center">
-                                    //             <div className="flex flex-col items-center">
-                                    //                     <div className="text-xs font-light text-gray-700">
-                                    //                      {moment(planResult.date).format('ddd')}
-                                    //                     </div>
-                                    //                     <div className="text-3xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
-                                    //                     {moment(planResult.date).format('D')}
-                                    //                     </div>
-                                    //             </div>
-                                    //             <div className="flex ml-4 items-center justify-center">
-                                    //                 <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                                    //                         <PlanIcons msg={planResult.plangoal} />
-                                    //                 </span>
-                                    //                 <div>
-                                    //                     <div className="text-sm font-light text-gray-700">
-                                    //                     Your main goal is to eat
-                                    //                     </div>
-                                    //                     <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
-                                    //                     {planResult.plangoal} and<br/>
-                                    //                     {planResult.plangoal2}
-                                    //                     </div>
-                                    //                 </div>
-                                    //             </div>
-                                    //         </div>
-                                    //     </td>
-                                    //     <td className="px-2 py-4">
-                                    //         <div className="flex items-center">
-                                    //             <div className="flex ml-4 items-center justify-center">
-                                    //                 <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                                    //                         <PlanIcons msg={planResult.plangoal5} />
-                                    //                 </span>
-                                    //                 <div>
-                                    //                     <div className="text-sm font-light text-gray-700">
-                                    //                         When you feel the urge to eat
-                                    //                     </div>
-                                    //                     <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
-                                    //                     {planResult.plangoal5}
-                                    //                     </div>
-                                    //                 </div>
-                                    //             </div>
-                                    //         </div>
-                                    //     </td>
-                                    //     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    //          <img src={smileyIconUnhappyRound} alt="Unhappy Smiley Icon" className="w-14" />
-                                             
-                                    //          <PlanSmiley mood={planResult.howdoyoufeel}/>
-                                    //     </td>
-                                    // </tr>
                                 ))} 
                                 </tbody>
                                 </table>

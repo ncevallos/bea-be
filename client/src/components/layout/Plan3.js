@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import smileyIconRound from '../../img/smiley-icon-round.svg';
 import heartIcon from '../../img/heart-icon.svg';
 import bowlIcon from '../../img/bowl-icon.svg';
@@ -7,12 +7,14 @@ import smileyIconUnhappyRound from '../../img/smiley-icon-unhappy-round.svg';
 import {Line} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getResultsByIdToday, getResultsById } from '../../actions/postPlanResults';
+import { getResultsByIdToday, getResultsById, getSummary } from '../../actions/postPlanResults';
 import chartTrendline from "chartjs-plugin-trendline";
-import PlanDashTop from './PlanDashTop';
 import PlanMoodHeader from './PlanMoodHeader';
+import PlanMain from './plan/PlanMain';
 import PlanMoodHeaderFree from './PlanMoodHeaderFree';
-import PlanHeader from './PlanHeader';
+import PlanHeader from './plan/PlanHeader';
+import CalendarPage from './plan/calendar';
+import Spinner from '../layout/Spinner';
 
 
 const data = {
@@ -82,6 +84,7 @@ const data = {
     useEffect(() => {
         getResultsByIdToday(user._id);
         getResultsById(user._id);
+        getSummary(user._id);
         if(planResults.length){
             thisResults = planResults[0];
             dataloaded = true;
@@ -96,11 +99,15 @@ const data = {
 
 // export const Plan3 = () => {
     return (
+        <Fragment>
+          {planResults === null ? (
+            <Spinner />
+          ) : (
+            <Fragment>
         <section>
             <div className="flex mx-auto p-4">
                 <div className="flex flex-col flex-grow">
-                    <PlanDashTop />
-
+                    <PlanHeader />
                     <Line
                             data={data}
                             width={100}
@@ -112,19 +119,7 @@ const data = {
                             <li className="col-span-2 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
                                 <div className="flex-1 flex flex-col p-8 items-center">
                                     <span className="text-beaBlueText text-sm">Calendar</span>
-                                    <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
-                                        <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
-                                    </span>
-                                    <span className="mt-6 text-gray-700 text-sm font-thin">The most important goal for you to have today</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">Smaller amounts and stop eating when full</h2>
-                                    <span className="mt-6 p-2 border-2 border-beaLightBlue rounded-2xl flex items-center justify-center">
-                                        <img src={newspaperIcon} alt="Newspaper Icon" className="w-7" />
-                                    </span>
-                                    <span className="mt-1 text-gray-700 text-sm font-bold uppercase tracking-wider">BEA’S RECOMMENDED READ</span>
-                                    <span className="mt-1 mb-3 text-gray-700 text-sm font-light">Healthy Eating: Recognizing Your Hunger Signals</span>
-                                    <button type="button" className="btn-darkPurple">       
-                                        Read Article
-                                    </button>
+                                    <CalendarPage />
                                 </div>
                             </li>
                         </ul>
@@ -197,6 +192,9 @@ const data = {
                 </div>  
             </div>
         </section>
+        </Fragment>
+      )}
+    </Fragment>
     )
 }
 
@@ -206,6 +204,7 @@ const data = {
   Plan3.propTypes = {
     getResultsByIdToday: PropTypes.func.isRequired,
     getResultsById: PropTypes.func.isRequired,
+    getSummary:  PropTypes.func.isRequired,
     planResult: PropTypes.object.isRequired,
     todayPlanResult: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
@@ -218,4 +217,4 @@ const data = {
     user: state.auth.user
   });
   
-  export default connect(mapStateToProps, { getResultsById, getResultsByIdToday })(Plan3);
+  export default connect(mapStateToProps, { getResultsById, getResultsByIdToday, getSummary })(Plan3);

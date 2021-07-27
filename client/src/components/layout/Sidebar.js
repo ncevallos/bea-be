@@ -51,7 +51,7 @@ export const Sidebar = () => {
                       <span className="text-sm font-medium">Dashboard </span>
                     </div>
                   </Link>
-                  <Link to='/Plan3' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
+                  <Link to='/PlanMain' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={planicon} className="w-6" alt='Plan' />
                       <span className="text-sm font-medium">Plan (UI)</span>
@@ -75,7 +75,7 @@ export const Sidebar = () => {
                       <span className="text-sm font-medium">Motivate </span>
                     </div>
                   </Link>
-                  <Link to='/Motivate2' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate2") ? "bg-beaDarkOrange text-white" : 'text-beaTextGrey')}>
+                  <Link to='/MotivateMain' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate2") ? "bg-beaDarkOrange text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
                       <img src={motivateicon} className="w-6" alt='Motivate2'/>
                       <span className="text-sm font-medium">Motivate (UI)</span>

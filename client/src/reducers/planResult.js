@@ -1,13 +1,17 @@
 import {
   GET_PLAN_RESULTS,
   GET_TODAY_PLAN_RESULTS,
+  GET_PREVIOUSDAY_PLAN_RESULTS,
+  GET_SUMMARY_PLAN_RESULTS,
   PLAN_RESULTS_ERROR
 } from '../actions/types';
 
 const initialState = {
+  previousPlanResults: [],
   todayPlanResults: [],
   planResults: [],
   planResults2: [],
+  previousPlanResult: null,
   planResult: null,
   planResult2: null,
   todayPlanResult: null,
@@ -25,6 +29,12 @@ export default function(state = initialState, action) {
         todayPlanResults: payload,
         loading: false
       };
+      case GET_PREVIOUSDAY_PLAN_RESULTS:
+        return {
+          ...state,
+          previousPlanResults: payload,
+          loading: false
+        };
     case GET_PLAN_RESULTS:
       return {
         ...state,
@@ -32,6 +42,13 @@ export default function(state = initialState, action) {
         loading: false
       };
 
+      case GET_SUMMARY_PLAN_RESULTS:
+        return {
+          ...state,
+          planResults: payload,
+          loading: false
+        };
+  
   //   case GET_POST:
   //     return {
   //       ...state,

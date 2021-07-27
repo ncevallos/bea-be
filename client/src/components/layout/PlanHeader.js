@@ -9,7 +9,8 @@ class PlanHeader extends React.Component {
 
     render() {
         let planHeader = "";
-      if(this.props.results ){
+        console.log("plan header props has", this.props.results)
+      if(this.props.results){
   
         planHeader = 
           <div className="flex flex-row w-full justify-between">
@@ -64,6 +65,11 @@ class PlanHeader extends React.Component {
                       </h5>
                   </div>
               </div>
+          </div>
+          <div className="flex w-48 justify-end pr-10">
+              
+          <Link to='/PlanDaily'>
+              <img src={arrowRight} alt="arrow right" className="w-24" /></Link>
           </div>
       </div>
       }

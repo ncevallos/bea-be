@@ -7,6 +7,8 @@ import {
   LOGIN_FAIL,
   GET_PLAN_RESULTS,
   GET_TODAY_PLAN_RESULTS,
+  GET_PREVIOUSDAY_PLAN_RESULTS,
+  GET_SUMMARY_PLAN_RESULTS,
   PLAN_RESULTS_ERROR
 } from './types';
 
@@ -79,7 +81,7 @@ export const getResultsById = userId => async dispatch => {
       payload: res.data
     });
   } catch (err) {
-    console.log('error reached', err.response.statusText);
+    console.log('error reached', err.response);
     dispatch({
       type: PLAN_RESULTS_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }
@@ -87,16 +89,63 @@ export const getResultsById = userId => async dispatch => {
   }
 };
 
-  // Get profile by ID
-  export const getResultsByIdToday = userId => async dispatch => {
-    console.log("get results by id today is called");
+  // Get results by ID
+  export const getSummary = userId => async dispatch => {
+    console.log("get summary by id is called", userId);
     try {
       
       // const res = await api.get(`/planResults/${userId}`);
-      const res = await api.get(`/planResults/today/${userId}`);
+      const res = await api.get(`/planResults/summary/${userId}`);
+      console.log('in try for get results');
+      dispatch({
+        type: GET_SUMMARY_PLAN_RESULTS,
+        payload: res.data
+      });
+    } catch (err) {
+      //console.log('error reached', err.response.statusText);
+      dispatch({
+        type: PLAN_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
+
+  // Get today's plan results
+  export const getResultsByIdToday = (userId, date) => async dispatch => {
+    console.log("get results by id today is called");
+ //   const date = new Date();
+
+    try {
+      
+      // const res = await api.get(`/planResults/${userId}`);
+      const res = await api.get(`/planResults/today/${userId}/${date}`);
       console.log('in try for get results for today');
       dispatch({
         type: GET_TODAY_PLAN_RESULTS,
+        payload: res.data
+      });
+    } catch (err) {
+      console.log('error reached');
+      dispatch({
+        type: PLAN_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
+
+
+  // Get profile by ID
+  export const getPastDayResults = postId => async dispatch => {
+    console.log("results for getting a specific day is called");
+    console.log("params for past day contains", postId)
+ //   const date = new Date();
+    try {
+      
+      // const res = await api.get(`/previousDay/${userId}`);
+      const res = await api.get(`/planResults/previousDay/${postId}`);
+      console.log('in try for get results for getting a specific day', res.data);
+      dispatch({
+        type: GET_PREVIOUSDAY_PLAN_RESULTS,
         payload: res.data
       });
     } catch (err) {

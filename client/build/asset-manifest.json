@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.747db370.chunk.css",
-    "main.js": "/static/js/main.e85440d0.chunk.js",
-    "main.js.map": "/static/js/main.e85440d0.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.e66f9fdf.js",
-    "runtime-main.js.map": "/static/js/runtime-main.e66f9fdf.js.map",
+    "main.css": "/static/css/main.fbf5bdec.chunk.css",
+    "main.js": "/static/js/main.e1648f66.chunk.js",
+    "main.js.map": "/static/js/main.e1648f66.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0577cd4b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0577cd4b.js.map",
     "static/css/2.93928abc.chunk.css": "/static/css/2.93928abc.chunk.css",
-    "static/js/2.eca1e01e.chunk.js": "/static/js/2.eca1e01e.chunk.js",
-    "static/js/2.eca1e01e.chunk.js.map": "/static/js/2.eca1e01e.chunk.js.map",
-    "static/js/3.d4499980.chunk.js": "/static/js/3.d4499980.chunk.js",
-    "static/js/3.d4499980.chunk.js.map": "/static/js/3.d4499980.chunk.js.map",
+    "static/js/2.9eb0eb51.chunk.js": "/static/js/2.9eb0eb51.chunk.js",
+    "static/js/2.9eb0eb51.chunk.js.map": "/static/js/2.9eb0eb51.chunk.js.map",
+    "static/js/3.dce9b3b7.chunk.js": "/static/js/3.dce9b3b7.chunk.js",
+    "static/js/3.dce9b3b7.chunk.js.map": "/static/js/3.dce9b3b7.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.93928abc.chunk.css.map": "/static/css/2.93928abc.chunk.css.map",
-    "static/css/main.747db370.chunk.css.map": "/static/css/main.747db370.chunk.css.map",
-    "static/js/2.eca1e01e.chunk.js.LICENSE.txt": "/static/js/2.eca1e01e.chunk.js.LICENSE.txt",
+    "static/css/main.fbf5bdec.chunk.css.map": "/static/css/main.fbf5bdec.chunk.css.map",
+    "static/js/2.9eb0eb51.chunk.js.LICENSE.txt": "/static/js/2.9eb0eb51.chunk.js.LICENSE.txt",
     "static/media/apple-icon.59aa66a6.svg": "/static/media/apple-icon.59aa66a6.svg",
     "static/media/arrow-right.34a2e747.svg": "/static/media/arrow-right.34a2e747.svg",
     "static/media/bowl-icon.ae91fe3c.svg": "/static/media/bowl-icon.ae91fe3c.svg",
@@ -50,10 +50,10 @@
     "static/media/woods.c291fec7.png": "/static/media/woods.c291fec7.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.e66f9fdf.js",
+    "static/js/runtime-main.0577cd4b.js",
     "static/css/2.93928abc.chunk.css",
-    "static/js/2.eca1e01e.chunk.js",
-    "static/css/main.747db370.chunk.css",
-    "static/js/main.e85440d0.chunk.js"
+    "static/js/2.9eb0eb51.chunk.js",
+    "static/css/main.fbf5bdec.chunk.css",
+    "static/js/main.e1648f66.chunk.js"
   ]
 }

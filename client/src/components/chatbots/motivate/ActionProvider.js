@@ -116,6 +116,24 @@ class ActionProvider {
         })];
         this.addMessageToBotState(planningPhaseMessage)
     }
+    planningPhas2ealt = (message) => {
+        console.log("Message sent over to planning phase 2 is", message);
+        this.setState((state) => ({
+            ...state,
+            plan2eat: message,
+            lastblockvisited: "Planning Phase 2 alt",
+            waitingformsgflag: false
+          }));
+        const planningPhaseMessage = 
+        [this.createChatBotMessage(`Keeping that food in mind, let’s answer a few questions:`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`How do you feel during the Planning Phase, from when you first start thinking about food up until you take the first bite?`, {
+            delay: 6000,
+            widget: "planningFeel",
+        })];
+        this.addMessageToBotState(planningPhaseMessage)
+    }
     planningPhase2 = (message) => {
         console.log("Message sent over to planning phase 2 is", message);
         this.setState((state) => ({

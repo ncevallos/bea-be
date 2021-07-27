@@ -132,7 +132,7 @@ export const Dashboard = () => {
                     
 
                     <div className="flex bg-white overflow-hidden border border-gray-400 rounded-xl mb-3 p-10 items-start">
-                        <div class="flex flex-col items-center w-72">
+                        <div className="flex flex-col items-center w-72">
                             <img src={smileyIconRound} alt="Round Smiley Icon" className="w-36 mb-3" />
                             <p className="mt-1 max-w-2xl text-sm text-gray-500 mb-0">
                                 You've been feeling 52%
@@ -164,7 +164,7 @@ export const Dashboard = () => {
 
 
                     <div className="flex bg-white overflow-hidden border border-gray-400 rounded-xl mb-3 p-10 items-start">
-                        <div class="flex flex-col items-center w-72">
+                        <div className="flex flex-col items-center w-72">
                         <div className="w-48 mb-3">
                             <GaugeChart id="gauge-chart3"
                                 nrOfLevels={2} 
