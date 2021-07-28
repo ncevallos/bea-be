@@ -41,6 +41,9 @@ module.exports = {
           purpleGradientEnd: '#B1D0F4',
           beaBlueText: '#056895',
         },
+        transitionProperty: {
+          'spacing': 'margin, padding',
+         },
         backgroundImage: theme => ({
              'planIllustration': "url('./img/plan-illustration.svg')",
         })

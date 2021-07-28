@@ -2,10 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 import { Link, Nav, NavLink, useLocation } from 'react-router-dom';
-import dashicon from '../../img/dashboard-icon.svg';
-import meditateicon from '../../img/meditate-icon.svg';
-import motivateicon from '../../img/motivate-icon.svg';
-import planicon from '../../img/plan-icon.svg';
+import dashIcon from '../../img/dashboard-icon.svg';
+import dashIconWhite from '../../img/dashboard-icon-white.svg';
+import meditateIcon from '../../img/meditate-icon.svg';
+import meditateIconWhite from '../../img/meditate-icon-white.svg';
+import motivateIcon from '../../img/motivate-icon.svg';
+import motivateIconWhite from '../../img/motivate-icon-white.svg';
+import planIcon from '../../img/plan-icon.svg';
+import planIconWhite from '../../img/plan-icon-white.svg';
 
 export const Sidebar = () => {    
   const location = useLocation();
@@ -21,8 +25,8 @@ export const Sidebar = () => {
       setActivePage("Plan");
     } else if (location.pathname.startsWith('/TestPlanSubmit')) {
       setActivePage("TestPlanSubmit");
-    } else if (location.pathname.startsWith('/Motivate2')) {
-      setActivePage("Motivate2");
+    } else if (location.pathname.startsWith('/MotivateMain')) {
+      setActivePage("MotivateMain");
     } else if (location.pathname.startsWith('/Motivate')) {
       setActivePage("Motivate");
     } else if (location.pathname.startsWith('/Meditate')) {
@@ -46,20 +50,20 @@ export const Sidebar = () => {
               <div className="flex space-y-8 w-full items-center lg:items-start lg:justify-start">
                 <div className="flex lg:flex-col xl:flex-col sm:flex-row space-y-0 space-x-0 lg:space-x-0 lg:space-y-1 lg:justify-start w-full justify-between px-0 lg:px-0" >
                   <Link to='/Dashboard' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Dashboard") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
-                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
-                      <img src={dashicon} className="w-6" alt='Dashboard'/>
-                      <span className="text-sm font-medium">Dashboard </span>
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
+                      <img src={activePage === "Dashboard" ? dashIconWhite  : dashIcon} className="w-6" alt='Dashboard'/>
+                      <span className="text-sm font-medium">Dashboard</span>
                     </div>
                   </Link>
                   <Link to='/PlanMain' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
-                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
-                      <img src={planicon} className="w-6" alt='Plan' />
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
+                      <img src={activePage === "Plan" ? planIconWhite  : planIcon} className="w-6" alt='Plan' />
                       <span className="text-sm font-medium">Plan (UI)</span>
                     </div>
                   </Link>
                   <Link to='/Plan2' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan2") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')}>
-                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
-                      <img src={planicon} className="w-6" alt='Plan' />
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
+                      <img src={activePage === "Plan2" ? planIconWhite  : planIcon} className="w-6" alt='Plan' />
                       <span className="text-sm font-medium">Plan</span>
                     </div>
                   </Link>
@@ -70,20 +74,20 @@ export const Sidebar = () => {
                     </div>
                   </Link> */} 
                   <Link to='/Motivate' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate") ? "bg-beaPurple text-white" : 'text-beaTextGrey')}>
-                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
-                      <img src={motivateicon} className="w-6" alt='Motivate'/>
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
+                      <img src={activePage === "Motivate" ? motivateIconWhite  : motivateIcon} className="w-6" alt='Motivate'/>
                       <span className="text-sm font-medium">Motivate </span>
                     </div>
                   </Link>
-                  <Link to='/MotivateMain' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate2") ? "bg-beaDarkOrange text-white" : 'text-beaTextGrey')}>
-                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
-                      <img src={motivateicon} className="w-6" alt='Motivate2'/>
+                  <Link to='/MotivateMain' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "MotivateMain") ? "bg-beaDarkOrange text-white" : 'text-beaTextGrey')}>
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
+                      <img src={activePage === "MotivateMain" ? motivateIconWhite  : motivateIcon} className="w-6" alt='Motivate2'/>
                       <span className="text-sm font-medium">Motivate (UI)</span>
                     </div>
                   </Link>
                   <Link to='/Meditate' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
-                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
-                      <img src={meditateicon} className="w-6" alt='Meditate'/>
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
+                      <img src={activePage === "Meditate" ? meditateIconWhite  : meditateIcon} className="w-6" alt='Meditate'/>
                       <span className="text-sm font-medium">Meditate</span>
                     </div>
                   </Link>
