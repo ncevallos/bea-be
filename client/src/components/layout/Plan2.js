@@ -29,7 +29,7 @@ export const Plan2 = ({user}) =>  {
             <div><h1>YOU ARE NOT LOGGED IN</h1></div>
         );
         return (
-                    <div className="block">
+                    <div className="block m-2">
                         <div>
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                         {/* { (<div>{ user ? levelone : leveltwo }</div>)} */}

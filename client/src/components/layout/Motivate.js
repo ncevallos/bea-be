@@ -25,7 +25,7 @@ class Motivate extends Component {
     render() {
     return (
 
-                    <div className="block">
+                    <div className="block m-2">
                         <div>
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                             
