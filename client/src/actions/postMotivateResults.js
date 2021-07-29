@@ -7,6 +7,7 @@ import {
   LOGIN_FAIL,
   GET_MOTIVATE_RESULTS,
   GET_TODAY_MOTIVATE_RESULTS,
+  GET_SUMMARY_MOTIVATE_RESULTS,
   MOTIVATE_RESULTS_ERROR
 } from './types';
 
@@ -94,7 +95,7 @@ export const getResultsById = userId => async dispatch => {
 
     try {
       
-      // const res = await api.get(`/motivate/${userId}`);
+      // const res = await api.get(`/motivateResults/${userId}`);
       const res = await api.get(`/motivateResults/today/${userId}/`);
       console.log('in try for get motivate results for today');
       dispatch({
@@ -109,3 +110,24 @@ export const getResultsById = userId => async dispatch => {
       });
     }
   };
+
+    // Get results by ID
+    export const getMotivateSummary = userId => async dispatch => {
+      console.log("get summary by id is called", userId);
+      try {
+        
+        // const res = await api.get(`/motivateResults/${userId}`);
+        const res = await api.get(`/motivateResults/summary/${userId}`);
+        console.log('in summary try for get results in motivateResults');
+        dispatch({
+          type: GET_SUMMARY_MOTIVATE_RESULTS,
+          payload: res.data
+        });
+      } catch (err) {
+        //console.log('error reached', err.response.statusText);
+        dispatch({
+          type: MOTIVATE_RESULTS_ERROR,
+          payload: { msg: err.response.statusText, status: err.response.status }
+        });
+      }
+    };

@@ -1,14 +1,18 @@
 import {
     GET_MOTIVATE_RESULTS,
     GET_TODAY_MOTIVATE_RESULTS,
+    GET_SUMMARY_MOTIVATE_RESULTS,
     MOTIVATE_RESULTS_ERROR
   } from '../actions/types';
   
   const initialState = {
     motivateResults: [],
+    todayPlanResults: [],
     todayMotivateResults: [],
+    summaryMotivateResults: [],
     motivateResult: null,
     todayMotivateResult: null,
+    summaryMotivateResult: null,
     loading: true,
     error: {}
   };
@@ -27,6 +31,12 @@ import {
         return {
           ...state,
           motivateResults: payload,
+          loading: false
+        };
+      case GET_SUMMARY_MOTIVATE_RESULTS:
+        return {
+          ...state,
+          summaryMotivateResults: payload,
           loading: false
         };
     //   case GET_POST:

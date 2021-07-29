@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.fbf5bdec.chunk.css",
-    "main.js": "/static/js/main.395dd7b5.chunk.js",
-    "main.js.map": "/static/js/main.395dd7b5.chunk.js.map",
+    "main.css": "/static/css/main.8f3fbe36.chunk.css",
+    "main.js": "/static/js/main.f6f223de.chunk.js",
+    "main.js.map": "/static/js/main.f6f223de.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.0577cd4b.js",
     "runtime-main.js.map": "/static/js/runtime-main.0577cd4b.js.map",
     "static/css/2.93928abc.chunk.css": "/static/css/2.93928abc.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.dce9b3b7.chunk.js.map": "/static/js/3.dce9b3b7.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.93928abc.chunk.css.map": "/static/css/2.93928abc.chunk.css.map",
-    "static/css/main.fbf5bdec.chunk.css.map": "/static/css/main.fbf5bdec.chunk.css.map",
+    "static/css/main.8f3fbe36.chunk.css.map": "/static/css/main.8f3fbe36.chunk.css.map",
     "static/js/2.50d68e9d.chunk.js.LICENSE.txt": "/static/js/2.50d68e9d.chunk.js.LICENSE.txt",
     "static/media/apple-icon.59aa66a6.svg": "/static/media/apple-icon.59aa66a6.svg",
     "static/media/arrow-right.34a2e747.svg": "/static/media/arrow-right.34a2e747.svg",
@@ -20,15 +20,18 @@
     "static/media/calendar-icon.809b13bb.svg": "/static/media/calendar-icon.809b13bb.svg",
     "static/media/clouds.fe3d8740.png": "/static/media/clouds.fe3d8740.png",
     "static/media/cracklingfire.4704d17b.png": "/static/media/cracklingfire.4704d17b.png",
+    "static/media/dashboard-icon-white.dffcd207.svg": "/static/media/dashboard-icon-white.dffcd207.svg",
     "static/media/dashboard-icon.0c599b42.svg": "/static/media/dashboard-icon.0c599b42.svg",
     "static/media/heart-icon.5df0290a.svg": "/static/media/heart-icon.5df0290a.svg",
     "static/media/hungry-icon.64a3118e.svg": "/static/media/hungry-icon.64a3118e.svg",
     "static/media/lazyafternoon.6738f57d.png": "/static/media/lazyafternoon.6738f57d.png",
     "static/media/logo.57dd6dae.svg": "/static/media/logo.57dd6dae.svg",
     "static/media/meditate-icon-large.632c57dc.svg": "/static/media/meditate-icon-large.632c57dc.svg",
+    "static/media/meditate-icon-white.5dbbec2f.svg": "/static/media/meditate-icon-white.5dbbec2f.svg",
     "static/media/meditate-icon.d9e41478.svg": "/static/media/meditate-icon.d9e41478.svg",
     "static/media/monks.f2ba32e1.png": "/static/media/monks.f2ba32e1.png",
     "static/media/moonlight.cb8e7de2.png": "/static/media/moonlight.cb8e7de2.png",
+    "static/media/motivate-icon-white.9e60638c.svg": "/static/media/motivate-icon-white.9e60638c.svg",
     "static/media/motivate-icon.1b034710.svg": "/static/media/motivate-icon.1b034710.svg",
     "static/media/mountain-stream.cb3d9efc.svg": "/static/media/mountain-stream.cb3d9efc.svg",
     "static/media/mountainstream.623e86fc.png": "/static/media/mountainstream.623e86fc.png",
@@ -53,7 +56,7 @@
     "static/js/runtime-main.0577cd4b.js",
     "static/css/2.93928abc.chunk.css",
     "static/js/2.50d68e9d.chunk.js",
-    "static/css/main.fbf5bdec.chunk.css",
-    "static/js/main.395dd7b5.chunk.js"
+    "static/css/main.8f3fbe36.chunk.css",
+    "static/js/main.f6f223de.chunk.js"
   ]
 }
