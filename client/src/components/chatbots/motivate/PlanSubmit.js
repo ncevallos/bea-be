@@ -48,6 +48,7 @@ import "./AreyouReady.css";
     user: auth.user._id,
     lastblockvisited: ownProps.lastblockvisited,
     temptedlevel: ownProps.temptedlevel,
+    temptedlevelint: ownProps.temptedlevelint,
     vistype: ownProps.vistype,
     plan2eat: ownProps.plan2eat, //open ended
     whyhungry: ownProps.whyhungry,
@@ -56,12 +57,16 @@ import "./AreyouReady.css";
     differentchoice2: ownProps.differentchoice2,
     planphasefeel: ownProps.planphasefeel,
     planphaselength: ownProps.planphaselength,
+    planphaseint: ownProps.planphaseint,
     iephasefeel: ownProps.iephasefeel,
     iephaselength: ownProps.iephaselength,
+    iephaseint: ownProps.iephaseint,
     fullphasefeel: ownProps.fullphasefeel,
     fullphaselength: ownProps.fullphaselength,
+    fullphaseint: ownProps.fullphaseint,
     aefeel: ownProps.aefeel,
     aelength: ownProps.aelength,
+    aeint: ownProps.aeint,
     mindfultype: ownProps.mindfultype,
 });
 const onSubmit = async (e) => {

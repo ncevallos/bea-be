@@ -68,12 +68,13 @@ export const postMotivateResults = formData => async dispatch => {
   };
 
   // Get motivate resuts for 30 days
-export const getResultsById = userId => async dispatch => {
+export const getResultsById = (userId, days) => async dispatch => {
   console.log("get results by id is called");
   try {
     
-    const res = await api.get(`/motivateResults/`);
-    console.log('in try for get motivate results');
+    const res = await api.get(`/motivateResults/${userId}/${days}`);
+    console.log('in try for get motivate results', userId);
+    console.log("days contains this in try for get motivate results", days)
     dispatch({
       type: GET_MOTIVATE_RESULTS,
       payload: res.data

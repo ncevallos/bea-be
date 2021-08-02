@@ -11,6 +11,9 @@ const MotivateResultsSchema = new mongoose.Schema({
   temptedlevel: {
     type: String
   },
+  temptedlevelint: {
+    type: Number
+  },
   vistype: {
     type: String
   },
@@ -35,11 +38,17 @@ const MotivateResultsSchema = new mongoose.Schema({
   planphaselength: {
     type: String
   },
+  planphaseint: {
+    type: Number
+  },
   iephasefeel: {
     type: String
   },
   iephaselength: {
     type: String
+  },
+  iephaseint: {
+    type: Number
   },
   fullphasefeel: {
     type: String
@@ -47,11 +56,17 @@ const MotivateResultsSchema = new mongoose.Schema({
   fullphaselength: {
     type: String
   },
+  fullphaseint: {
+    type: Number
+  },
   aefeel: {
     type: String
   },
   aelength: {
     type: String
+  },
+  aeint: {
+    type: Number
   },
   mindfultype: {
     type: String

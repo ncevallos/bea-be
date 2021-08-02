@@ -4,10 +4,11 @@ import "./AreyouReady.css";
 
 const AfterEatingFeel = (props) => {
   const { setState, actionProvider } = props;
-  const setType = async (type) => {
+  const setType = async (type, type2) => {
     setState((state) => ({
       ...state,
       aefeel: type,
+      aeint: type2,
       lastblockvisited: "After Eating Feel"
     }));
 
@@ -19,31 +20,31 @@ const AfterEatingFeel = (props) => {
       <div className="learning-options-container">
         <button
           className="learning-option-button"
-          onClick={() => setType("Great")}
+          onClick={() => setType("Great", 5)}
         >
           Great 😁
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType("Good")}
+          onClick={() => setType("Good", 4)}
         >
           Good 🙂
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType("Neutral")}
+          onClick={() => setType("Neutral", 3)}
         >
           Neutral 😐
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType("Bad")}
+          onClick={() => setType("Bad", 2)}
         >
           Bad 🙁
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType("Really bad")}
+          onClick={() => setType("Really bad", 1)}
         >
           Really bad 😩
         </button>

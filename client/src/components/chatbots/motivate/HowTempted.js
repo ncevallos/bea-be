@@ -5,28 +5,31 @@ import "./AreyouReady.css";
 const HowTempted = (props) => {
  // console.log(props);
   const { setState, actionProvider } = props;
-  const setType1 = async (type) => {
+  const setType1 = async (type, type2) => {
     setState((state) => ({
       ...state,
       temptedlevel: type,
+      temptedlevelint: type2,
       lastblockvisited: "How Tempted"
     }));
 
     actionProvider.notAtAll();
   };
-  const setType2 = async (type) => {
+  const setType2 = async (type, type2) => {
     setState((state) => ({
       ...state,
       temptedlevel: type,
+      temptedlevelint: type2,
       lastblockvisited: "How Tempted"
     }));
 
     actionProvider.slightSomewhat();
   };
-  const setType3 = async (type) => {
+  const setType3 = async (type, type2) => {
     setState((state) => ({
       ...state,
       temptedlevel: type,
+      temptedlevelint: type2,
       lastblockvisited: "How Tempted",
       waitingformsgflag: true
     }));
@@ -39,31 +42,31 @@ const HowTempted = (props) => {
       <div className="learning-options-container">
         <button
           className="learning-option-button"
-          onClick={() => setType1("Not at all")}
+          onClick={() => setType1("Not at all", 0)}
         >
           Not at all
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType2("Slightly")}
+          onClick={() => setType2("Slightly", 1)}
         >
           Slightly
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType2("Somewhat")}
+          onClick={() => setType2("Somewhat", 2)}
         >
           Somewhat
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType3("Very")}
+          onClick={() => setType3("Very", 3)}
         >
           Very
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType3("Extremely - Help!")}
+          onClick={() => setType3("Extremely - Help!", 4)}
         >
           Extremely - Help!
         </button>

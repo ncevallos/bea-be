@@ -4,6 +4,10 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import peskyPatterns from '../../../img/pesky-patterns.svg';
 import MotivateWeekly from './MotivateWeekly';
+import MotivateMonth from './MotivateMonth';
+import MotivateThreeMonth from './MotivateThreeMonth';
+import MotivateYear from './MotivateYear';
+
 
 
 
@@ -113,12 +117,15 @@ import MotivateWeekly from './MotivateWeekly';
                 </div>
                 <div className={openTab === 2 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab two
+                     {/* <MotivateMonth /> */}
                 </div>
                 <div className={openTab === 3 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab three
+                     {/* <MotivateThreeMonth /> */}
                 </div>
                 <div className={openTab === 4 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab four
+                     {/* <MotivateYear /> */}
                 </div>
                 <div className={openTab === 5 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab five

@@ -59,6 +59,7 @@ state: {
     waitingformsgflag: false,
     lastblockvisited: "",
     temptedlevel: "",
+    temptedlevelint: "",
     vistype: "",
     plan2eat: "", //open ended
     whyhungry: "",
@@ -67,12 +68,16 @@ state: {
     differentchoice2: "",
     planphasefeel: "",
     planphaselength: "",
+    planphaseint: "",
     iephasefeel: "",
     iephaselength: "",
+    iephaseint: "",
     fullphasefeel: "",
     fullphaselength: "",
+    fullphaseint: "",
     aefeel: "",
     aelength: "",
+    aeint: "",
     mindfultype: "",
     mindfulresult: ""
     // randomnum: randomnumber()
@@ -85,9 +90,9 @@ widgets: [
     {
         widgetName: "howtempted",
        widgetFunc: (props) => <HowTempted {...props} />,
-       mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel","vistype","plan2eat","whyhungry","overindulgeresult", 
-       "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "iephasefeel", "iephaselength", "fullphasefeel", "fullphaselength", "aefeel", "aelength",
-        "mindfultype", "mindfulresult"]
+       mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel", "temptedlevelint","vistype","plan2eat","whyhungry","overindulgeresult", 
+       "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "planphaseint", "iephasefeel", "iephaselength", "iephaseint", "fullphasefeel", "fullphaselength", 
+       "fullphaseint", "aefeel", "aelength", "aeint", "mindfultype", "mindfulresult"]
     },
     {
         widgetName: "visualization",
@@ -160,9 +165,9 @@ widgets: [
     {
         widgetName: "plansubmit",
        widgetFunc: (props) => <PlanSubmit {...props} />,
-       mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel","vistype","plan2eat","whyhungry","overindulgeresult", 
-       "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "iephasefeel", "iephaselength", "fullphasefeel", "fullphaselength", "aefeel", "aelength",
-        "mindfultype", "mindfulresult"]
+       mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel", "temptedlevelint","vistype","plan2eat","whyhungry","overindulgeresult", 
+       "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "planphaseint", "iephasefeel", "iephaselength", "iephaseint", "fullphasefeel", "fullphaselength", 
+       "fullphaseint", "aefeel", "aelength", "aeint", "mindfultype", "mindfulresult"]
     },
     
 ],

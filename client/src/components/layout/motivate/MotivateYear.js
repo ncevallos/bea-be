@@ -12,11 +12,11 @@ import hungryIcon from '../../../img/hungry-icon.svg';
 import MotivateSections from './MotivateSections';
 import Spinner from '../../layout/Spinner';
 
-const MotivateWeekly = ({ user, getResultsById, motivateResult: { motivateResults } }) => {
+const MotivateYear = ({ user, getResultsById, motivateResult: { motivateResults } }) => {
 
 
   useEffect(() => {
-    getResultsById(user._id, 7);
+    getResultsById(user._id, 365);
   }, [getResultsById, user._id]);
   console.log("motivate weekly has", motivateResults );
   let motivateBodyResults = "";
@@ -113,7 +113,7 @@ const MotivateWeekly = ({ user, getResultsById, motivateResult: { motivateResult
 
 
 
-MotivateWeekly.propTypes = {
+MotivateYear.propTypes = {
   getResultsById: PropTypes.func.isRequired,
   motivateResult: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired
@@ -125,4 +125,4 @@ const mapStateToProps = (state) => ({
   user: state.auth.user
 });
 
-export default connect(mapStateToProps, { getResultsById })(MotivateWeekly);
+export default connect(mapStateToProps, { getResultsById })(MotivateYear);
