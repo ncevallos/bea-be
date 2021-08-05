@@ -155,7 +155,7 @@ router.get('/today/:id/', async (req, res) => {
 });
 
 // @route    GET api/motivateResults
-// @desc     Get all motivate results for associated user
+// @desc     Get all motivate results for associated user within the specified amount of days
 // @access   Public
 router.get('/:id/:days', async (req, res) => {
   try {        

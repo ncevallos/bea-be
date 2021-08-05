@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 // ActionProvider starter code
 class ActionProvider {
@@ -241,7 +242,7 @@ class ActionProvider {
         this.createChatBotMessage(`Luckily, I've found an article that can help you learn to listen to your body again.`, {
             delay: 6000,
         }),
-        this.createChatBotMessage(`Read Article`, {
+        this.createChatBotMessage(<a href='https://www.mottchildren.org/health-library/zx3292' style={{color: "white"}} target="_blank" rel="noreferrer">Read Article</a>, {
             delay: 8000,
         }),
         this.createChatBotMessage(`When you’re ready, let me know and we can continue.`, {
@@ -273,19 +274,21 @@ class ActionProvider {
             delay: 2000,
         }),
         this.createChatBotMessage(`😎`, {
-            delay: 2000,
-        }),
-        this.createChatBotMessage(`Research shows that when we choose more filling foods, we’re less likely to overeat.`, {
             delay: 4000,
         }),
-        this.createChatBotMessage(`Luckily, I've located a great article that can help you find more filling foods.`, {
+        this.createChatBotMessage(`Research shows that when we choose more filling foods, we’re less likely to overeat.`, {
             delay: 6000,
         }),
-        this.createChatBotMessage(`15 Filling Foods`, {
+        this.createChatBotMessage(`Luckily, I've located a great article that can help you find more filling foods.`, {
             delay: 8000,
         }),
-        this.createChatBotMessage(`Let me know when you’re done reading and we can continue.`, {
+        this.createChatBotMessage(
+            <a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "white"}} target="_blank" rel="noreferrer">15 Filling Foods</a>, {
+            // `15 Filling Foods`
             delay: 10000,
+        }),
+        this.createChatBotMessage(`Let me know when you’re done reading and we can continue.`, {
+            delay: 12000,
             widget: "morefilling",
         })];
         this.addMessageToBotState(letsBeginMessage)
@@ -321,7 +324,7 @@ class ActionProvider {
         this.createChatBotMessage(`But there's actually a good reason!`, {
             delay: 6000,
         }),
-        this.createChatBotMessage(`Why Fat Tastes So Good WEBLINK`, {
+        this.createChatBotMessage(<a href='https://www.psychologytoday.com/us/blog/your-brain-food/201201/why-does-fat-taste-so-good' style={{color: "white"}} target="_blank" rel="noreferrer">Why Fat Tastes So Good </a>, {
             delay: 8000,
         }),
         this.createChatBotMessage(`This article tells us that we can’t trick our bodies.`, {
@@ -333,7 +336,7 @@ class ActionProvider {
         this.createChatBotMessage(`Here’s an article that can give you some ideas for foods that taste good and are healthy!`, {
             delay: 14000,
         }),
-        this.createChatBotMessage(`15 Healthy Foods `, {
+        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-health-foods-that-taste-better-than-junk-foods#section10' style={{color: "white"}} target="_blank" rel="noreferrer">15 Healthy Foods </a>, {
             delay: 16000,
         }),
         this.createChatBotMessage(`Let me know when you’re ready and we can continue.`, {
@@ -384,7 +387,7 @@ class ActionProvider {
         this.createChatBotMessage(`I've found an article that can help you transform your sugar addiction.`, {
             delay: 8000,
         }),
-        this.createChatBotMessage(`Sugar Addiction Tips WEBLINK`, {
+        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "white"}} target="_blank" rel="noreferrer">Sugar Addiction Tips</a>, {
             delay: 10000,
         }),
         this.createChatBotMessage(`When you’re done reading, let me know and we can continue.`, {
@@ -429,7 +432,7 @@ class ActionProvider {
         this.createChatBotMessage(`Here’s an article that will help you find sweet snacks under 50 calories.`, {
             delay: 6000,
         }),
-        this.createChatBotMessage(`Find Sweet Snacks WEBLINK`, {
+        this.createChatBotMessage(<a href='https://www.bhg.com/recipes/healthy/snacks/20-sweet-snacks-for-50-calories-or-less/' style={{color: "white"}} target="_blank" rel="noreferrer">Find Sweet Snacks</a>, {
             delay: 8000,
         }),
         this.createChatBotMessage(`Let me know when you’re done reading and we can continue.`, {
@@ -469,7 +472,7 @@ class ActionProvider {
         this.createChatBotMessage(`Here is a great article of great low-carb substitutes for your favorite full-carb foods!`, {
             delay: 8000,
         }),
-        this.createChatBotMessage(`Low Carb Foods  WEBLINK`, {
+        this.createChatBotMessage(<a href='https://www.verywellfit.com/low-carb-substitutes-for-high-carb-food-2242524' style={{color: "white"}} target="_blank" rel="noreferrer">Low Carb Foods</a>, {
             delay: 10000,
         }),
         this.createChatBotMessage(`When you’re ready, let me know and we can continue.`, {
@@ -509,7 +512,7 @@ class ActionProvider {
         this.createChatBotMessage(`This interactive article will help you find out how many calories you should consume based on your current weight.`, {
             delay: 8000,
         }),
-        this.createChatBotMessage(`Calorie Calculator WEBLINK`, {
+        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/how-many-calories-per-day' style={{color: "white"}} target="_blank" rel="noreferrer">Calorie Calculator</a>, {
             delay: 10000,
         }),
         this.createChatBotMessage(`When you’re ready, let me know and we can continue.`, {

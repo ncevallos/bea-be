@@ -182,38 +182,6 @@ router.get('/:id', async (req, res) => {
 
 
 
-
-
-//this is the boilerplate for summary call
-
-// router.get('/:id', async (req, res) => {
-//   try {
-//         let end = moment().subtract(30, 'days');
-
-//         // let start = Date.now();
-//         // end = start + (30 * 86400000);
-//       //  console.log('end contains ', end);
-//         //const results = await PlanResults.find({ user : req.params.id}
-//         //user : "60217a517f2b961147d214f0", 
-//         // const results = await PlanResults.find({ user : "60217a517f2b961147d214f0"}
-//        const results = await PlanResults.find({ user : req.params.id, date : {$gte: end}}
-//         ).sort( { date: -1 });
-
-//     if(!results){
-//       return res.status(400).json({msg: "There are no results for this user"});
-//     }
-//   //  res.json(results);
-//     let results2 = createSummary(results);
-//     res.json(results2);
-//   } catch(err){
-//     console.error(err.message);
-//     res.status(500).send('Server Error');
-//   }
-// });
-
-
-
-
 // @route    GET api/planResults/summary
 // @desc     Get all plan results for associated user
 // @access   Public
@@ -222,7 +190,7 @@ router.get('/summary/:id', async (req, res) => {
   console.log("made it to summary");
   try {
         let end = moment().subtract(30, 'days');
-      console.log("in the summary request of try");
+      console.log("in the summary request of try in plan results");
       //  console.log('end contains ', end);
        const results = await PlanResults.find({ user : req.params.id, date : {$gte: end}}
         ).sort( { date: -1 });
@@ -231,7 +199,7 @@ router.get('/summary/:id', async (req, res) => {
       return res.status(400).json({msg: "There are no results for this user"});
     }
   //  res.json(results);
-    let results2 = createSummary(results);
+    let results2 = createPlanSummary(results);
   //  let results2 = fillInDates(results);
     res.json(results2);
   } catch(err){
@@ -303,7 +271,8 @@ router.get('/previousDay/:id/', async (req, res) => {
   }
 });
 
-createSummary = (results) => {
+createPlanSummary = (results) => {
+  // console.log("in create summary");
   summaryArray = 
     {summaryStats: {
       avgMood: 0,

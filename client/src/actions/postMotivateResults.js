@@ -118,7 +118,7 @@ export const getResultsById = (userId, days) => async dispatch => {
       try {
         
         // const res = await api.get(`/motivateResults/${userId}`);
-        const res = await api.get(`/motivateResults/summary/${userId}`);
+        const res = await api.get(`/motivateResults/msummary/${userId}`);
         console.log('in summary try for get results in motivateResults');
         dispatch({
           type: GET_SUMMARY_MOTIVATE_RESULTS,
