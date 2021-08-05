@@ -15,31 +15,31 @@
     margin-bottom: 0px;
   }
   .react-chatbot-kit-chat-btn-send-icon{
-    margin:auto;
+    margin:auto !important;
   }
 
 .chatbubble {
-  width:40px;
-  padding-left:7px;
+  width:40px !important;
+  padding-left:7px !important;
 }
 .react-chatbot-kit-chat-container {
-  width: 100%;
+  width: 100% !important;
 }
 .react-chatbot-kit-chat-header{
-  display: none;
+  display: none  !important;
 }
 .react-chatbot-kit-chat-input {
-  border-radius: 3px;
-  background-color: #e2e2e2;
+  border-radius: 3px !important;
+  background-color: #e2e2e2 !important;
 }
 .react-chatbot-kit-chat-bot-message {
-  width: 75%;
-  border-radius: 15px 15px 15px 0px;
-  margin-left: 5px;
+  width: 75% !important;
+  border-radius: 15px 15px 15px 0px !important;
+  margin-left: 5px !important;
 }
 .react-chatbot-kit-user-chat-message {
-  border-radius: 15px 15px 0px 15px;
+  border-radius: 15px 15px 0px 15px !important;
 }
 .react-chatbot-kit-chat-btn-send-icon {
-  fill: #000;
+  fill: #000 !important;
 }

@@ -112,9 +112,9 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                         </ul>
                     </div>
 
-                    <Link to='/PlanMonthly' className="dateHeader mb-2">{moment(todayPlanResults.date).subtract(1, 'days').format('MMMM Do YYYY')}</Link>
+                    <Link to='/PlanMonthly' className="dateHeader mb-2">{moment(todayPlanResults.date).subtract(1, 'days').format('MMMM Do')}</Link>
                     <Link to='/PlanMonthly' className="dateHeader mb-2">View July (Revisit to link)</Link>
-                    <Link to='/PlanMonthly' className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do YYYY')}</Link>
+                    <Link to='/PlanMonthly' className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}</Link>
 
 
                 </div>
