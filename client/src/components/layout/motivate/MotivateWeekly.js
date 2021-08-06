@@ -2,7 +2,7 @@
 import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getResultsById } from '../../../actions/postMotivateResults';
+import { getResultsByIdOneWeek } from '../../../actions/postMotivateResults';
 import { Component } from 'react';
 import * as d3 from "d3";
 import GaugeChart from 'react-gauge-chart';
@@ -12,19 +12,19 @@ import hungryIcon from '../../../img/hungry-icon.svg';
 import MotivateSections from './MotivateSections';
 import Spinner from '../../layout/Spinner';
 
-const MotivateWeekly = ({ user, getResultsById, motivateResult: { motivateResults } }) => {
+const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summaryMotivateResults1wk } }) => {
 
 
   useEffect(() => {
-    getResultsById(user._id, 7);
-  }, [getResultsById, user._id]);
-  console.log("motivate weekly has", motivateResults );
+    getResultsByIdOneWeek(user._id, 7);
+  }, [getResultsByIdOneWeek, user._id]);
+  console.log("motivate weekly has", summaryMotivateResults1wk );
   let motivateBodyResults = "";
-  if(motivateResults.summaryStats){
+  if(summaryMotivateResults1wk.summaryStats){
   
     motivateBodyResults = 
     <Fragment>
-    {motivateResults === null ? (
+    {summaryMotivateResults1wk === null ? (
       <Spinner />
     ) : (
       <Fragment>
@@ -50,7 +50,7 @@ const MotivateWeekly = ({ user, getResultsById, motivateResult: { motivateResult
                         </div>
                     <div className="w-48">
                         <p>below is the data to be graphed</p><br/>
-                      {motivateResults.templvl.map((item, index) => (
+                      {summaryMotivateResults1wk.templvl.map((item, index) => (
                         <p key={index}>{item.date} Tempted Level was {item.temptedlevel}!</p>
                     ))}
                       </div>
@@ -67,7 +67,7 @@ const MotivateWeekly = ({ user, getResultsById, motivateResult: { motivateResult
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Triggers</div>
                         <p>Favorite food you planned to eat next</p><br/>
                         <p>(below is the data to be graphed)</p><br/>
-                      {motivateResults.planned2eat.map((item, index) => (
+                      {summaryMotivateResults1wk.planned2eat.map((item, index) => (
                         <p key={index}>{item} - (one entry)</p>
                     ))}
                     </div>
@@ -75,16 +75,16 @@ const MotivateWeekly = ({ user, getResultsById, motivateResult: { motivateResult
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Evaluating Mood</div>
                         <p>Favorite food you planned to eat next</p><br/>
                         <p>How you usually felt during each eating phase (below is the data to be graphed)</p><br/>
-                        Planning: {motivateResults.summaryStats.planPhaseAvg}<br/>
-                        Initial Eating: {motivateResults.summaryStats.ieAvg}<br/>
-                        Fullness: {motivateResults.summaryStats.fullnessAvg}<br/>
-                        After Eating: {motivateResults.summaryStats.aeplanningAvg}<br/>
+                        Planning: {summaryMotivateResults1wk.summaryStats.planPhaseAvg}<br/>
+                        Initial Eating: {summaryMotivateResults1wk.summaryStats.ieAvg}<br/>
+                        Fullness: {summaryMotivateResults1wk.summaryStats.fullnessAvg}<br/>
+                        After Eating: {summaryMotivateResults1wk.summaryStats.aeplanningAvg}<br/>
                         <p>How long you thought each eating phase lasted (below is the data to be graphed)</p><br/>
-                        Planning: {motivateResults.summaryStats.lessThanTen}<br/>
-                        Initial Eating: {motivateResults.summaryStats.tenToThirty}<br/>
-                        Fullness: {motivateResults.summaryStats.thirtyToOne}<br/>
-                        Fullness: {motivateResults.summaryStats.oneToTwo}<br/>
-                        After Eating: {motivateResults.summaryStats.overTwoHr}<br/>
+                        Planning: {summaryMotivateResults1wk.summaryStats.lessThanTen}<br/>
+                        Initial Eating: {summaryMotivateResults1wk.summaryStats.tenToThirty}<br/>
+                        Fullness: {summaryMotivateResults1wk.summaryStats.thirtyToOne}<br/>
+                        Fullness: {summaryMotivateResults1wk.summaryStats.oneToTwo}<br/>
+                        After Eating: {summaryMotivateResults1wk.summaryStats.overTwoHr}<br/>
                     </div>
                   </div>
               {/* </div>
@@ -114,7 +114,7 @@ const MotivateWeekly = ({ user, getResultsById, motivateResult: { motivateResult
 
 
 MotivateWeekly.propTypes = {
-  getResultsById: PropTypes.func.isRequired,
+  getResultsByIdOneWeek: PropTypes.func.isRequired,
   motivateResult: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired
 };
@@ -125,4 +125,4 @@ const mapStateToProps = (state) => ({
   user: state.auth.user
 });
 
-export default connect(mapStateToProps, { getResultsById })(MotivateWeekly);
+export default connect(mapStateToProps, { getResultsByIdOneWeek })(MotivateWeekly);

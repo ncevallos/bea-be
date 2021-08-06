@@ -8,30 +8,14 @@ import {
   GET_MOTIVATE_RESULTS,
   GET_TODAY_MOTIVATE_RESULTS,
   GET_SUMMARY_MOTIVATE_RESULTS,
+  GET_SUMMARY_MOTIVATE_RESULTS_1WK,
+  GET_SUMMARY_MOTIVATE_RESULTS_1M,
+  GET_SUMMARY_MOTIVATE_RESULTS_3M,
+  GET_SUMMARY_MOTIVATE_RESULTS_1Y,
   MOTIVATE_RESULTS_ERROR
 } from './types';
 
 
-
-// Register User
-// export const postPlanResults = formData => async dispatch => {
-//     console.log("in post plan results/actions ");
-//   try {
-//     const res = await api.post('/planResults', formData);
-//     console.log("made it to post plan results in actions");
-//   } catch (err) {
-//     const errors = err.response.data.errors;
-
-//     console.log("made it to post plan results in actions");
-//     if (errors) {
-//       errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
-//     }
-
-//     dispatch({
-//       type: REGISTER_FAIL
-//     });
-//   }
-// };
 
 export const postMotivateResults = formData => async dispatch => {
     console.log("in post motivate results/actions ", formData);
@@ -66,29 +50,110 @@ export const postMotivateResults = formData => async dispatch => {
       });
     }
   };
+  // Get motivate resuts for 1 year
+  export const getResultsByIdOneYear = (userId, days) => async dispatch => {
+    console.log("get results by id is called");
+    try {
+      
+      const res = await api.get(`/motivateResults/${userId}/${days}`);
+      // console.log('in try for get motivate results', userId);
+      // console.log("days contains this in try for get motivate results", days)
+      dispatch({
+        type: GET_SUMMARY_MOTIVATE_RESULTS_1Y,
+        payload: res.data
+      });
+    } catch (err) {
+      console.log('error reached');
+      dispatch({
+        type: MOTIVATE_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
+  
+  // Get motivate resuts for 3 months
+  export const getResultsByIdThreeMonths = (userId, days) => async dispatch => {
+    console.log("get results by id is called");
+    try {
+      
+      const res = await api.get(`/motivateResults/${userId}/${days}`);
+      // console.log('in try for get motivate results', userId);
+      // console.log("days contains this in try for get motivate results", days)
+      dispatch({
+        type: GET_SUMMARY_MOTIVATE_RESULTS_3M,
+        payload: res.data
+      });
+    } catch (err) {
+      console.log('error reached');
+      dispatch({
+        type: MOTIVATE_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
+  // Get motivate resuts for  one month
+  export const getResultsByIdOneMonth = (userId, days) => async dispatch => {
+    console.log("get results by id one month is called");
+    try {
+      
+      const res = await api.get(`/motivateResults/${userId}/${days}`);
+      console.log('in try for get motivate results', userId);
+      console.log("days contains this in try for get motivate results", days)
+      dispatch({
+        type: GET_SUMMARY_MOTIVATE_RESULTS_1M,
+        payload: res.data
+      });
+    } catch (err) {
+      console.log('error reached');
+      dispatch({
+        type: MOTIVATE_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
+  // Get motivate resuts for one week
+  export const getResultsByIdOneWeek = (userId, days) => async dispatch => {
+    console.log("get results by id is called");
+    try {
+      
+      const res = await api.get(`/motivateResults/${userId}/${days}`);
+      // console.log('in try for get motivate results', userId);
+      // console.log("days contains this in try for get motivate results", days)
+      dispatch({
+        type: GET_SUMMARY_MOTIVATE_RESULTS_1WK,
+        payload: res.data
+      });
+    } catch (err) {
+      console.log('error reached');
+      dispatch({
+        type: MOTIVATE_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
+      
+
 
   // Get motivate resuts for 30 days
-export const getResultsById = (userId, days) => async dispatch => {
-  console.log("get results by id is called");
-  try {
-    
-    const res = await api.get(`/motivateResults/${userId}/${days}`);
-    console.log('in try for get motivate results', userId);
-    console.log("days contains this in try for get motivate results", days)
-    dispatch({
-      type: GET_MOTIVATE_RESULTS,
-      payload: res.data
-    });
-  } catch (err) {
-    console.log('error reached');
-    dispatch({
-      type: MOTIVATE_RESULTS_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
-    });
-  }
-};
-
-
+  export const getResultsById = (userId, days) => async dispatch => {
+    console.log("get results by id is called");
+    try {
+      
+      const res = await api.get(`/motivateResults/${userId}/${days}`);
+      // console.log('in try for get motivate results', userId);
+      // console.log("days contains this in try for get motivate results", days)
+      dispatch({
+        type: GET_MOTIVATE_RESULTS,
+        payload: res.data
+      });
+    } catch (err) {
+      console.log('error reached');
+      dispatch({
+        type: MOTIVATE_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
   // Get today's plan results
   export const getMotivResultsByIdToday = userId=> async dispatch => {
     console.log("get motivate results by id today is called", userId);
@@ -98,7 +163,7 @@ export const getResultsById = (userId, days) => async dispatch => {
       
       // const res = await api.get(`/motivateResults/${userId}`);
       const res = await api.get(`/motivateResults/today/${userId}/`);
-      console.log('in try for get motivate results for today');
+      // console.log('in try for get motivate results for today');
       dispatch({
         type: GET_TODAY_MOTIVATE_RESULTS,
         payload: res.data

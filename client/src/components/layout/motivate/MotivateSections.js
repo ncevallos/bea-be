@@ -116,16 +116,13 @@ import MotivateYear from './MotivateYear';
                      <MotivateWeekly />
                 </div>
                 <div className={openTab === 2 ? "block w-full mr-3" : "hidden"} id="link2">
-                    This will display the content within tab two
-                     {/* <MotivateMonth /> */}
+                     <MotivateMonth />
                 </div>
                 <div className={openTab === 3 ? "block w-full mr-3" : "hidden"} id="link2">
-                    This will display the content within tab three
-                     {/* <MotivateThreeMonth /> */}
+                     <MotivateThreeMonth />
                 </div>
                 <div className={openTab === 4 ? "block w-full mr-3" : "hidden"} id="link2">
-                    This will display the content within tab four
-                     {/* <MotivateYear /> */}
+                     <MotivateYear />
                 </div>
                 <div className={openTab === 5 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab five

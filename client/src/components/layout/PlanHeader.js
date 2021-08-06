@@ -13,6 +13,13 @@ class PlanHeader extends React.Component {
       if(this.props.results){
   
         planHeader = 
+
+        <div style={{ backgroundImage: "url(" + planIllustration + "), linear-gradient(rgba(177, 201, 243, 0.9), rgba(173, 126, 227, 0.9), rgba(139, 99, 178, 0.9))" }} className="flex rounded-xl mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6">
+        <div className="mb-4">
+            <h3 className="text-sm leading-6 font-medium text-white uppercase font-black tracking-widest mb-1">
+                Your Plan Today
+            </h3>                        
+        </div>
           <div className="flex flex-row w-full justify-between">
           <div className="flex">
               <div className="flex flex-col w-48">
@@ -50,40 +57,43 @@ class PlanHeader extends React.Component {
               <img src={arrowRight} alt="arrow right" className="w-24" /></Link>
           </div>
       </div>
+      </div>
       }
       else {
         planHeader = 
-          <div className="flex flex-row w-full justify-between">
-          <div className="flex">
-              <div className="flex flex-col w-96">
-                  <div className="">
-                      <h4 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                          It looks like you didn't create a plan for today.
-                      </h4>
-                      <h5 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                      Chat with Bea now
-                      </h5>
-                  </div>
-              </div>
-          </div>
-          <div className="flex w-48 justify-end pr-10">
-              
-          <Link to='/PlanDaily'>
-              <img src={arrowRight} alt="arrow right" className="w-24" /></Link>
-          </div>
-      </div>
-      }
-    console.log("plan mood header has this for props", this.props.results);
-    return (
-        <div style={{ backgroundImage: "url(" + planIllustration + "), linear-gradient(rgba(177, 201, 243, 0.9), rgba(173, 126, 227, 0.9), rgba(139, 99, 178, 0.9))" }} className="flex rounded-xl mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6">
+
+        <div style={{ backgroundImage: "linear-gradient(rgba(177, 201, 243, 0.9), rgba(173, 126, 227, 0.9), rgba(139, 99, 178, 0.9))" }} className="flex rounded-xl mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6">
         <div className="mb-4">
             <h3 className="text-sm leading-6 font-medium text-white uppercase font-black tracking-widest mb-1">
                 Your Plan Today
             </h3>                        
         </div>
-        {planHeader}
-
+            <div className="flex flex-row w-full justify-between">
+            <div className="flex">
+                <div className="flex flex-col w-96">
+                    <div className="">
+                        <h4 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
+                            It looks like you didn't create a plan for today.
+                        </h4>
+                        <h5 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
+                        Chat with Bea now
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div className="flex w-48 justify-end pr-10">
+                
+            <Link to='/PlanDaily'>
+                <img src={arrowRight} alt="arrow right" className="w-24" /></Link>
+            </div>
         </div>
+        </div>
+      }
+    console.log("plan mood header has this for props", this.props.results);
+    return (
+        <framgent>
+        {planHeader}
+        </framgent>
 
 
     )
