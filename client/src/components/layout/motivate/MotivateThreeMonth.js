@@ -3,13 +3,8 @@ import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdThreeMonths } from '../../../actions/postMotivateResults';
-import { Component } from 'react';
 import * as d3 from "d3";
 import GaugeChart from 'react-gauge-chart';
-import appleIcon from '../../../img/apple-icon.svg';
-import calendarIcon from '../../../img/calendar-icon.svg';
-import hungryIcon from '../../../img/hungry-icon.svg';
-import MotivateSections from './MotivateSections';
 import Spinner from '../../layout/Spinner';
 
 const MotivateThreeMonth = ({ user, getResultsByIdThreeMonths, motivateResult: { summaryMotivateResults3m } }) => {
@@ -18,7 +13,7 @@ const MotivateThreeMonth = ({ user, getResultsByIdThreeMonths, motivateResult: {
   useEffect(() => {
     getResultsByIdThreeMonths(user._id, 90);
   }, [getResultsByIdThreeMonths, user._id]);
-  console.log("motivate weekly has", summaryMotivateResults3m );
+ // console.log("motivate weekly has", summaryMotivateResults3m );
   let motivateBodyResults = "";
   if(summaryMotivateResults3m.summaryStats){
   

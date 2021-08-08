@@ -230,3 +230,51 @@ main {
   flex-basis: calc(100%/7);
   width: calc(100%/7);
 }
+.react-calendar__tile::after {
+  content: url('img/calendarimgs/noentry.png');
+  display: block;
+}
+
+.exhappy::after {
+  content: url('img/calendarimgs/exhappy.png');
+  display: block;
+}
+
+.happy::after {
+  content: url('img/calendarimgs/happy.png');
+  display: block;
+}
+
+.notgood::after {
+  content: url('img/calendarimgs/notgood.png');
+  display: block;
+}
+
+.sad::after {
+  content: url('img/calendarimgs/bad.png');
+  display: block;
+}
+.progress-bar{
+  width: 200px;
+}
+.progress {
+  width: 200px;
+  
+}
+.planprogress .progress .bg-danger {
+  background-color: #FFD00B !important;
+  border-radius: .5rem;
+}
+.planprogress .progress .bg-warning {
+  background-color: #FF9A08 !important;
+  border-radius: .5rem;
+}
+.planprogress .progress .bg-success {
+  background-color: #11C5CE !important;
+  border-radius: .5rem;
+}
+.planprogress .progress .bg-info {
+  background-color: #329CCC !important;    
+  border-radius: .5rem;
+
+}

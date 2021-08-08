@@ -3,7 +3,8 @@ const router = express.Router();
 const config = require('config');
 const auth = require('../../middleware/auth');
 const jwt = require('jsonwebtoken');
-const moment = require('moment');
+//const moment = require('moment');
+const moment = require('moment-timezone');
 const UserModel = require('../../models/User');
 const PlanResults = require('../../models/PlanResults');
 // const { getDate } = require('date-fns');
@@ -517,7 +518,7 @@ fillInLineGraph = (results) => {
       let daysLeft = (thirtyDayArray.length - i);
       while(daysLeft >= 0){
         finalArray[0].dates.push(thirtyDayArray[i]);
-        finalArray[0].values.push(0);
+        finalArray[0].values.push(null);
        // console.log("thirtyday array",thirtyDayArray[i])
         i++;
         daysLeft--;
@@ -526,7 +527,12 @@ fillInLineGraph = (results) => {
     }
     if(moment(thirtyDayArray[i]).format("MMM Do YYYY") === moment(results[rsltsArrayCounter].date).format("MMM Do YYYY")){
      // console.log('match found in results');
-        finalArray[0].dates.push(thirtyDayArray[i]);
+        thirtyDayArray[i].setHours(0,0,0,0);
+        let tempdate = moment(thirtyDayArray[i]).format("ddd MMM DD YYYY HH:mm:ss");
+        let tempdate2 = tempdate + " GMT-0400 (Eastern Daylight Time)"
+ //       thirtyDayArray[i].toGMTString();
+ //       finalArray[0].dates.push(thirtyDayArray[i]);
+        finalArray[0].dates.push(tempdate2);
         finalArray[0].values.push(results[rsltsArrayCounter].howdoyoufeelint);
      // finalArray.push(results[rsltsArrayCounter])
       rsltsArrayCounter++;
@@ -534,7 +540,7 @@ fillInLineGraph = (results) => {
     else {
      //console.log('match not found in results');
       finalArray[0].dates.push(thirtyDayArray[i]);
-      finalArray[0].values.push(0);
+      finalArray[0].values.push(null);
      // rsltsArrayCounter++;
     }
    // let t = (delta / resolution) * i

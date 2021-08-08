@@ -6,37 +6,23 @@ import { format, compareAsc, isMonday } from 'date-fns'
 
 
 
-//const datesToAddClassTo = ["Sun Jun 06 2021 00:00:00 GMT-0400"];
-// const datesToAddClassTo = ["Sun Jun 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
-// //const dateFormat = "yyyy";
-// function isSameDay(a, b) {
-//     //console.log("a contains", a);
-//     // format(a, dateFormat);
-//     // console.log("a now contains", a);
-//     //console.log("b contains", b);
-//     // format(b, dateFormat);
-//     // let test = parseISO(b);
-//     // console.log("b now contains", test);
-//     return a === b
-//   }
-//   function tileClassName(date, view ) {
-//     console.log('date and view = ', date, view);
-//     // Add class to tiles in month view only
-//     if (view === 'month') {
-//         //console.log("date in tileclass function is", date);
-//       // Check if a date React-Calendar wants to check is on the list of dates to add class to
-//       if (datesToAddClassTo.find(dDate => isSameDay(dDate, date))) {
-//         console.log("Match found!");
-//         return 'myClassName';
-//       }
-//     }
-//     return 'myClassName';
-//   }
 
+export const CalendarPage = (props) =>  {
+  console.log('props in calendar.js has', props);
+//  let testString = props.dates[0].[2].toString();
+ console.log('test subject will be', props.dates[2]);
+ // console.log("test string contains", testString);
+  // "2021-08-02T04:00:00.000Z"
+  
+  // const dates2 = []
+  // for (let i = 0; i < props.dates[0].length; i++) {
 
-export const CalendarPage = () =>  {
-  const dates = ["Thu May 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)", "Fri May 07 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
-  "Fri May 21 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
+  //   dates2.push(props.dates[0].[i]);
+  // //  console.log("this was pushed", props.dates[0].[i]);
+  // }
+  const dates = ["2021-08-02T04:00:00.000Z", "Thu Aug 05 2021 00:00:00 GMT-0400 (Eastern Daylight Time)", "Fri Aug 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
+  "Fri Aug 20 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
+  console.log('test subject2 will be', dates[2]);
   const [value, setValue] = useState(new Date());
 
   function parseDate (date) {
@@ -65,28 +51,64 @@ export const CalendarPage = () =>  {
     let day = date.substring(9,11).concat(',');
     let d = months[month]+ " " + day + " " + year;
     const dateTemp = new Date(d);
-   // console.log(dateTemp);
+    console.log("what is date temp log for", dateTemp);
     return 'lit';
   }
 
   function tileClassName({date, view}) {
 
-    getDayOfWeek("<2021-07-24THH:MM:ssZ>");
-    if (dates.find(dDate => dDate === date.toString())) {
-  //    console.log("Match found!!!!!");
-      return 'myClassName';
+    if (props.dates.find(dDate => dDate === date.toString('yyyy-MM-dd'))) {
+     // console.log("Match found!!!!!");
+      let matchLocation = props.dates.indexOf(date.toString('yyyy-MM-dd'));
+      let moodValue = props.values[matchLocation];
+      switch(moodValue){
+      case 3:
+        return 'exhappy';
+      case 2:
+        return 'happy';
+      case 1:
+        return 'notgood';
+      case 0:
+        return 'sad';
+      default:
+        return
+      }
     }
    
   }
-  
+  function onClick(value) {
+  //  console.log('valeu in onclick is', value);
+  //  alert('New date is: ', value)
+  }
+  function onClickDay(value, event) {
+    let now = new Date();
+    if(value <= now){
+        // code to direct user to the daily page will be inserted here
+    }
+    else {
+
+      alert('This date has not happened yet')
+    }
+  }
   function onChange(nextValue) {
   }
-
+  function onActiveStartDateChange(activeStartDate, value, view)
+{
+  console.log('onActiveStartDateChange', activeStartDate)
+}
   return (
     <Calendar
-      onChange={onChange}
+ //     onChange={onChange}
+ showFixedNumberOfWeeks
       value={value}
       tileClassName={tileClassName}
+      onClick={onClick}
+      onClickDay={onClickDay}
+      showNavigation={false}
+      onViewChange={false}
+      onActiveStartDateChange={onActiveStartDateChange}
+      minDetail="month" 
+   //   defaultActiveStartDate={activeStartDate}
     />
   );
 
