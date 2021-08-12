@@ -22,7 +22,10 @@ const apexData = {
         type: 'line',
         zoom: {
           enabled: false
-        }
+        },
+        toolbar: {
+            show: false
+        },
       },
       dataLabels: {
         enabled: false

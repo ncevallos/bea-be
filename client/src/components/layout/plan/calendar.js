@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Calendar from 'react-calendar';
 //import './styles.css'
 import '../../../Calendar.css'
+import moment from 'moment';
 import { format, compareAsc, isMonday } from 'date-fns'
 
 
@@ -78,12 +79,14 @@ export const CalendarPage = (props) =>  {
   }
   function onClick(value) {
   //  console.log('valeu in onclick is', value);
-  //  alert('New date is: ', value)
+  //  alert('Will send you to Plan Daily with the follow date ', value)
   }
   function onClickDay(value, event) {
     let now = new Date();
     if(value <= now){
         // code to direct user to the daily page will be inserted here
+        //need to first check if data was entered for that day, if not do nothing
+    alert('Will send you to Plan Daily with the following date ', moment(value).format('MMMM-DD-YYYY') )
     }
     else {
 

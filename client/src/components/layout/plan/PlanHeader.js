@@ -10,7 +10,9 @@ import { Link } from 'react-router-dom';
 
     const PlanHeader = ({ user, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
         useEffect(() => {
-            getResultsByIdToday(user._id);
+            const today = new Date();
+            getResultsByIdToday(user._id, today);
+           // getResultsByIdToday(user._id);
         }, [getResultsByIdToday, user._id]);
      //   console.log("plan  header new has", todayPlanResults );
     

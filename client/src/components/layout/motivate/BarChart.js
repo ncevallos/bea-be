@@ -14,6 +14,9 @@ class BarChart extends React.Component {
                     show: false
                 },
               },
+              dataLabels: {
+                enabled: false
+              },
               xaxis: {
                 categories: [">2 hr", "<10 min", "10 to 30 min", "30 min to 1 hr", "1 to 2 hr"],  
                 // labels: {
@@ -24,6 +27,9 @@ class BarChart extends React.Component {
                 labels: {
                     show: false
                 }
+              },
+              tooltip: {
+                  enabled: false
               }
             },
             // toolbar: {

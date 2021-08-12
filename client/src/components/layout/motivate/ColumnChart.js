@@ -36,7 +36,7 @@ class ColumnChart extends React.Component {
             colors: ['transparent']
           },
           xaxis: {
-            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
           },
           yaxis: {
             // title: {

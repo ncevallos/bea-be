@@ -37,7 +37,7 @@ const NoMatchPage = () => {
 const Routes = props => {
   return (
       <Switch>
-        <Route exact path='/dashboard' component={Dashboard} />
+        <PrivateRoute exact path='/dashboard' component={Dashboard} />
         {/* <Route exact path="/signup" component={Signup} /> */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/privacy" component={Privacy} />
@@ -56,6 +56,8 @@ const Routes = props => {
         <PrivateRoute exact path="/planmain" component={PlanMain} />
         <PrivateRoute exact path="/planmonthly" component={PlanMonthly} />
         <PrivateRoute exact path="/plandaily" component={PlanDaily} />
+        <PrivateRoute exact path="/plandaily/:date" component={PlanDaily} />
+        {/* <PrivateRoute exact path="/plandaily/:date" component={()=><PlanDaily/>} /> */}
         <PrivateRoute exact path="/planpastday" component={PlanPastDay} />
         <PrivateRoute exact path="/testplansubmit" component={TestPlanSubmit} />
         <PrivateRoute exact path="/testpage" component={Testpage} />

@@ -119,7 +119,8 @@ export const getResultsById = userId => async dispatch => {
       
       // const res = await api.get(`/planResults/${userId}`);
       const res = await api.get(`/planResults/today/${userId}/${date}`);
-      console.log('in try for get results for today');
+      console.log('in try for get results for today date contains', date);
+      
       dispatch({
         type: GET_TODAY_PLAN_RESULTS,
         payload: res.data

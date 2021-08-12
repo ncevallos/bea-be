@@ -214,10 +214,24 @@ router.get('/summary/:id', async (req, res) => {
 // @access   Public
 router.get('/today/:id/:date', async (req, res) => {
   try {
-    const start = new Date();
-    start.setHours(0,0,0,0);
-    const end = new Date();
-    end.setHours(23,59,59,999);
+    let start = "";
+    let end = ""
+    if(req.params.date){
+       start = new Date(req.params.date);
+      start.setHours(0,0,0,0);
+      console.log('start now has', start);
+      end = new Date(req.params.date);
+      console.log('end now has', end);
+      end.setHours(23,59,59,999);
+
+    } else {
+      start = new Date();
+      start.setHours(0,0,0,0);
+      end = new Date();
+      end.setHours(23,59,59,999);
+
+    }
+
     //const sentDate = req.params.date;
     console.log("in get today sent params are", req.params.date);
     if(req.params.date){
@@ -518,7 +532,7 @@ fillInLineGraph = (results) => {
       let daysLeft = (thirtyDayArray.length - i);
       while(daysLeft >= 0){
         finalArray[0].dates.push(thirtyDayArray[i]);
-        finalArray[0].values.push(null);
+        finalArray[0].values.push(0);
        // console.log("thirtyday array",thirtyDayArray[i])
         i++;
         daysLeft--;
@@ -540,7 +554,8 @@ fillInLineGraph = (results) => {
     else {
      //console.log('match not found in results');
       finalArray[0].dates.push(thirtyDayArray[i]);
-      finalArray[0].values.push(null);
+      finalArray[0].values.push(0);
+    //  finalArray[0].values.push(null);
      // rsltsArrayCounter++;
     }
    // let t = (delta / resolution) * i

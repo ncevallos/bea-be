@@ -44,22 +44,43 @@ class AreaChart extends React.Component {
             categories: ["Planning", "Initial Eating", "Fullness", "After Eating"],
             lines: {
                 show: false,
-            }
+            },
           },
           yaxis: {
             min: 0,
             max: 5,        
             labels: {
-                show: false
+                show: false,
+                style: {
+                    colors: [function({ value, seriesIndex, w }) {
+                        switch(value){
+                            case 5:
+                                return "#E56F06"
+                            case 4:
+                                return "#FFAD33"
+                            case 3:
+                                return "#11C5CE"
+                            case 2:
+                                return "#329CCC"
+                            case 1:
+                                return "#666666"
+                            case 0:
+                                return "#f2f2f2"
+                            default:
+                                return "#f2f2f2"
+                            }
+                      }]
+                }
             },
             lines: {
                 show: false,
             }
           },
           tooltip: {
-       //     x: {
-            //  format: 'dd/MM/yy HH:mm'
-       //     },
+            //   enabled: false,
+           x: {
+             show: true
+           },
             y: {
                     formatter: function(value, opt) {
                     switch(value){
@@ -77,6 +98,9 @@ class AreaChart extends React.Component {
                         return "No Entry"
                     }
                     }
+                },
+                marker: {
+                    show: false
                 }
           },
         },

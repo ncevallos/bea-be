@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, match } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import smileyIconRound from '../../../img/smiley-icon-round.svg';
@@ -10,14 +10,33 @@ import { connect } from 'react-redux';
 import { getResultsByIdToday } from '../../../actions/postPlanResults';
 
 
-  const PlanDaily = ({ user, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
+  const PlanDaily = ({ user, match, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
 
     useEffect(() => {
-        getResultsByIdToday(user._id);
+        console.log('match in plan daily has ', match.params.date)
+        if(match.params.date){
+            getResultsByIdToday(user._id, match.params.date);
+            console.log('reached there is a date present')
+        }
+        else{
+            const today = new Date();
+            getResultsByIdToday(user._id, today);
+            console.log('reached there isnt a date present')
+
+        }
+     //   getResultsByIdToday(user._id);
     }, [getResultsByIdToday, user._id]);
   // console.log("plan results has", planResults2);
 
    console.log("today plan results has", todayPlanResults);
+    let nextDayButton = ''
+    let today = new Date();
+    let yesterday = '/PlanDaily/' + moment(todayPlanResults.date).subtract(1, 'days').format('MMMM-DD-YYYY');
+   if(moment(todayPlanResults.date).format('MMMM Do YYYY') === moment(today).format('MMMM Do YYYY')){
+   } else {
+    nextDayButton = 
+    <Link to={'/PlanDaily' + moment(todayPlanResults.date).add(1, 'days').format('MMMM-DD-YYYY')} className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}</Link>
+   }
 
 // export const Plan3 = () => {
     return (
@@ -30,8 +49,8 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
 
                     <div className="dateHeader text-center items-center mb-3">
                         <label className="flex content-center mb-0">   
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                             <span className="align-middle pt-0.5">Today {moment(todayPlanResults.date).format('MMMM Do YYYY')}</span>
                         </label>
@@ -112,9 +131,10 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                         </ul>
                     </div>
 
-                    <Link to='/PlanMonthly' className="dateHeader mb-2">{moment(todayPlanResults.date).subtract(1, 'days').format('MMMM Do')}</Link>
-                    <Link to='/PlanMonthly' className="dateHeader mb-2">View July (Revisit to link)</Link>
-                    <Link to='/PlanMonthly' className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}</Link>
+                    <Link to={yesterday} className="dateHeader mb-2">{moment(todayPlanResults.date).subtract(1, 'days').format('MMMM Do')}</Link>
+                    <Link to='/PlanMonthly' className="dateHeader mb-2">View {moment(todayPlanResults.date).format('MMMM')}</Link>
+                    {nextDayButton}
+                    {/* <Link to='/PlanMonthly' className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}</Link> */}
 
 
                 </div>

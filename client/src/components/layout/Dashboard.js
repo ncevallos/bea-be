@@ -19,7 +19,13 @@ import GaugeChart from 'react-gauge-chart';
 import DashboardSections from './dashboard/DashboardSections';
 import Videoselection from './Videoselection';
 import { Videodata } from "./Videodata";
-
+import PlanHeader from './dashboard/PlanHeader';
+import MotivateHeader from './dashboard/MotivateHeader';
+import MeditateHeader from './dashboard/MeditateHeader';
+import PlanLineGraph from './plan/PlanLineGraph';
+const testData = [0,3,1,2]
+const testValues = 
+['01', '02', '03', '04'];
 const data = {
     labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
     datasets: [
@@ -87,39 +93,10 @@ export const Dashboard = () => {
             <div className="flex mx-auto p-4">
                 <div className="flex flex-col flex-grow">
                     <div className="flex flex-row flex-grow mb-3">
-                        <div className="flex flex-grow w-full items-center rounded-xl mr-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 bg-beaDarkBlue">
-                            <h4 className="text-base leading-6 font-bold text-white uppercase mb-4">
-                                Plan
-                            </h4>
-                            <img src={planIconWhite} className="w-14 mb-3" />
-                            <label className="text-4xl leading-6 font-bold text-white uppercase">43%</label>
-                            <label className="text-xl font-thin text-white mb-4">Complete Today</label>
-                            <button type="button" className="btn-white mt-1">
-                                Continue
-                            </button>
-                        </div>
-                        <div className="flex flex-grow w-full items-center rounded-xl mr-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 bg-beaStrongOrange">
-                            <h4 className="text-base leading-6 font-bold text-white uppercase mb-4">
-                                Motivate
-                            </h4>
-                            <img src={planIconWhite} className="w-14 mb-3" />
-                            <label className="text-4xl leading-6 font-bold text-white uppercase">43%</label>
-                            <label className="text-xl font-thin text-white mb-4">Complete Today</label>
-                            <button type="button" className="btn-white mt-1">
-                                View Results
-                            </button>
-                        </div>
-                        <div className="flex flex-grow w-full items-center rounded-xl bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 bg-beaPurple">
-                            <h4 className="text-base leading-6 font-bold text-white uppercase mb-4">
-                                Meditate
-                            </h4>
-                            <img src={planIconWhite} className="w-14 mb-3" />
-                            <label className="text-4xl leading-6 font-bold text-white uppercase">43%</label>
-                            <label className="text-xl font-thin text-white mb-4">Complete Today</label>
-                            <button type="button" className="btn-white mt-1">
-                                Meditate Now
-                            </button>
-                        </div>
+                        <PlanHeader />
+                        <MotivateHeader />
+                        <MeditateHeader />
+                        
                     </div>
                     <DashboardSections />
 
@@ -141,6 +118,8 @@ export const Dashboard = () => {
                                 Mood Eating
                             </h4>
                             <div className="w-full h-48 mb-20">
+
+                                {/* <PlanLineGraph data={testData} values={testValues} /> */}
                                 <Line
                                     data={data}
                                     width={100}

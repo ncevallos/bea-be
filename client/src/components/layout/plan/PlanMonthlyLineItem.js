@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import moment from 'moment';
 import PlanSmiley from './PlanSmiley';
 import PlanIcons from './PlanIcons';
@@ -7,12 +7,18 @@ import PlanIcons from './PlanIcons';
 
 
   class PlanMonthlyLineItem extends React.Component {
+    goToDate(date) {
+        console.log('in go to date', date);
+        let url = '/PlanDaily/' + date;
+     <Redirect push to={url}/>
+    }
     render() {
    let lineItem;
+   let today = (moment(this.props.date).format('MMMM-DD-YYYY'));
    if(this.props.userSubmission){
         lineItem =    
-        // <Link to ={`/PlanDaily/${this.props.date}`}>
-        <tr key={this.props._id}>
+        // <Link to ={'/PlanDaily/' + moment(this.props.date).format('MMMM-DD-YYYY')}>
+        <tr key={this.props._id} onClick={this.goToDate(today)}>
         <td className="px-6 py-4">
             <div className="flex items-center">
                 <div className="flex flex-col items-center">
@@ -63,7 +69,7 @@ import PlanIcons from './PlanIcons';
              <PlanSmiley mood={this.props.howdoyoufeel}/>
         </td>
     </tr>
-    // </Link>
+    //   </Link>
    } else {
     lineItem =    
         <tr key={this.props._id}>
