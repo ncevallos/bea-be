@@ -1,17 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getResultsByIdToday, getResultsById, getSummary } from '../../actions/postPlanResults';
 // import Login from '../auth/Login';
 // import planIllustration from '../../img/plan-illustration.svg';
-// import arrowRight from '../../img/arrow-right.svg';
-// import smileyIcon from '../../img/smiley-icon.svg';
-// import smileyIconExtraHappy from '../../img/smiley-icon-extrahappy.svg';
-// import smileyIconNeutral from '../../img/smiley-icon-neutral.svg';
-// import smileyIconUnhappy from '../../img/smiley-icon-unhappy.svg';
 import smileyIconRound from '../../img/smiley-icon-round.svg';
 import planIconWhite from '../../img/plan-icon-white.svg';
-// import heartIcon from '../../img/heart-icon.svg';
-// import bowlIcon from '../../img/bowl-icon.svg';
-// import newspaperIcon from '../../img/newspaper-icon.svg';
-// import smileyIconUnhappyRound from '../../img/smiley-icon-unhappy-round.svg';
 import {Line} from 'react-chartjs-2';
 import chartTrendline from "chartjs-plugin-trendline";
 import GaugeChart from 'react-gauge-chart';
@@ -86,8 +80,30 @@ const data = {
         }]
     }
   };
+  const Dashboard = ({ user, 
+    // getResultsById, 
+    getResultsByIdToday,
+     getSummary, 
+    //  planResult: { planResults }, 
+     planResult2: { planResults2 }, 
+     todayPlanResult: {todayPlanResults} 
+    }) => {
+    //planResult: { planResults }, 
+    // todayPlanResult: {todayPlanResults}
 
-export const Dashboard = () => {
+  useEffect(() => {
+    //   getResultsByIdToday(user._id);
+    //   getResultsById(user._id);
+      getSummary(user._id);
+      const today = new Date();
+      getResultsByIdToday(user._id, today);
+    //   if(planResults.length){
+    //       thisResults = planResults[0];
+    //       dataloaded = true;
+    //       console.log(thisResults);
+    //   }
+  }, [getResultsByIdToday, getResultsById, getSummary, user._id]);
+//export const Dashboard = () => {
     return (
         <section>
             <div className="flex mx-auto p-4">
@@ -224,4 +240,24 @@ export const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+Dashboard.propTypes = {
+    getResultsByIdToday: PropTypes.func.isRequired,
+    getResultsById: PropTypes.func.isRequired,
+    getSummary:  PropTypes.func.isRequired,
+    planResult: PropTypes.object.isRequired,
+    planResult2: PropTypes.object.isRequired,
+    todayPlanResult: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = (state) => ({
+    planResult: state.planResult,
+    planResult2: state.planResult2,
+    todayPlanResult: state.todayPlanResult,
+    isAuthenticated: state.auth.isAuthenticated,
+    user: state.auth.user
+  });
+  
+  export default connect(mapStateToProps, { getResultsById, getResultsByIdToday, getSummary })(Dashboard);
+
+//export default Dashboard;

@@ -18,7 +18,7 @@ class BarChart extends React.Component {
                 enabled: false
               },
               xaxis: {
-                categories: [">2 hr", "<10 min", "10 to 30 min", "30 min to 1 hr", "1 to 2 hr"],  
+                categories: ["<10 min", "10 to 30 min", "30 min to 1 hr", "1 to 2 hr", ">2 hr"],  
                 // labels: {
                 //     show: false
                 // }

@@ -17,7 +17,7 @@ class PlanMoodHeader extends React.Component {
         console.log("props has", this.props);
         let control = this.props.avgMood;
         let planmood = "";
-      if(control === 3){
+      if(control === 4){
 
         planmood = 
             <div className="bg-beaYellow plan-interactive-state">
@@ -42,7 +42,7 @@ class PlanMoodHeader extends React.Component {
             </div>
         </div>
       }
-      else if(control === 2){
+      else if(control === 3){
   
         planmood = 
           <div className="bg-beaOrange plan-interactive-state">
@@ -67,7 +67,7 @@ class PlanMoodHeader extends React.Component {
           </div>
       </div>
       }
-      else if(control === 1){
+      else if(control === 2){
   
         planmood = 
             <div className="bg-beaBlueGreen plan-interactive-state">
@@ -92,7 +92,7 @@ class PlanMoodHeader extends React.Component {
             </div>
         </div>
       }
-      else if(control === 0){
+      else if(control === 1){
         planmood = 
           <div className="bg-beaDarkBlue plan-interactive-state">
           <div className="sm:p-6 flex-grow">

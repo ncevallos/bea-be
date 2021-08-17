@@ -35,7 +35,7 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
    if(moment(todayPlanResults.date).format('MMMM Do YYYY') === moment(today).format('MMMM Do YYYY')){
    } else {
     nextDayButton = 
-    <Link to={'/PlanDaily' + moment(todayPlanResults.date).add(1, 'days').format('MMMM-DD-YYYY')} className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}</Link>
+    <Link to={'/PlanDaily/' + moment(todayPlanResults.date).add(1, 'days').format('MMMM-DD-YYYY')} className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}</Link>
    }
 
 // export const Plan3 = () => {

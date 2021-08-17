@@ -39,6 +39,7 @@ const Routes = props => {
       <Switch>
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         {/* <Route exact path="/signup" component={Signup} /> */}
+        <Route exact path="/" component={Login} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/termsconditions" component={Termsconditions} />

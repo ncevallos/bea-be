@@ -1,17 +1,19 @@
 import React, {useState} from 'react'
 import Calendar from 'react-calendar';
+//import {Navigation} from 'react-router';
+import { browserHistory, useHistory, Redirect } from 'react-router';
+//import { useHistory } from "react-router-dom";
+
 //import './styles.css'
 import '../../../Calendar.css'
 import moment from 'moment';
-import { format, compareAsc, isMonday } from 'date-fns'
-
 
 
 
 export const CalendarPage = (props) =>  {
-  console.log('props in calendar.js has', props);
+//  console.log('props in calendar.js has', props);
 //  let testString = props.dates[0].[2].toString();
- console.log('test subject will be', props.dates[2]);
+ //console.log('test subject will be', props.dates[2]);
  // console.log("test string contains", testString);
   // "2021-08-02T04:00:00.000Z"
   
@@ -23,12 +25,12 @@ export const CalendarPage = (props) =>  {
   // }
   const dates = ["2021-08-02T04:00:00.000Z", "Thu Aug 05 2021 00:00:00 GMT-0400 (Eastern Daylight Time)", "Fri Aug 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
   "Fri Aug 20 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
-  console.log('test subject2 will be', dates[2]);
+  // console.log('test subject2 will be', dates[2]);
   const [value, setValue] = useState(new Date());
 
-  function parseDate (date) {
-    let newDate;
-  }
+  // function parseDate (date) {
+  //   let newDate;
+  // }
 // Accepts a Date object or date string that is recognized by the Date.parse() method
   function getDayOfWeek(date) {
     const months = [
@@ -63,14 +65,16 @@ export const CalendarPage = (props) =>  {
       let matchLocation = props.dates.indexOf(date.toString('yyyy-MM-dd'));
       let moodValue = props.values[matchLocation];
       switch(moodValue){
-      case 3:
+      case 4:
         return 'exhappy';
-      case 2:
+      case 3:
         return 'happy';
-      case 1:
+      case 2:
         return 'notgood';
+      case 1:
+          return 'sad';
       case 0:
-        return 'sad';
+        return 
       default:
         return
       }
@@ -86,7 +90,18 @@ export const CalendarPage = (props) =>  {
     if(value <= now){
         // code to direct user to the daily page will be inserted here
         //need to first check if data was entered for that day, if not do nothing
-    alert('Will send you to Plan Daily with the following date ', moment(value).format('MMMM-DD-YYYY') )
+    //alert('Will send you to Plan Daily with the following date '+ moment(value).format('MMMM-DD-YYYY') )
+    let newLocation = 'PlanDaily/' + moment(value).format('MMMM-DD-YYYY');
+    console.log('new location has this', newLocation);
+    //browserHistory.push({newLocation});
+   // browserHistory.push('/PlanDaily');
+
+   // this.context.router.push('/PlanDaily');
+   // <Redirect to="{newLocation}" />
+  //  <Redirect push to={`/${newLocation}`} />
+      <Redirect to='/PlanDaily' />
+  //let history = useHistory();
+    //history.push('/PlanDaily')
     }
     else {
 

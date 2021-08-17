@@ -33,25 +33,25 @@ const HowDoYouFeel = (props) => {
       <div className="learning-options-container">
         <button
           className="learning-option-button"
-          onClick={() => setType1("Great", 3)}
+          onClick={() => setType1("Great", 4)}
         >
           Great 😁
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType1("Good", 2)}
+          onClick={() => setType1("Good", 3)}
         >
           Pretty Good 🙂
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType2("Not good", 1)}
+          onClick={() => setType2("Not good", 2)}
         >
           Not Good 🙁
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType2("Horrible", 0)}
+          onClick={() => setType2("Horrible", 1)}
         >
           Horrible 😩
         </button>

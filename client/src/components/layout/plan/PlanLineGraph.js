@@ -86,10 +86,30 @@ const apexData = {
       },
       yaxis: {
         min: 0,
-        max: 3,        
+        max: 4,     
+        forceNiceScale: true,
         labels: {
-            show: false
+          formatter: function(value, opt) {
+            console.log('value in y axis is', value)
+          switch(value){
+          case 4:
+              return "Great"
+            case 3:
+              return "Good"
+            case 2:
+              return "Not Good"
+            case 1:
+              return "Horrible"
+            case 0:
+              return "Skipped Day"
+            default:
+                break;
+            }   
+          }
         }
+        // labels: {
+        //     show: false
+        // }
       },
       tooltip: {
         y: {
@@ -98,16 +118,18 @@ const apexData = {
                 // console.log("value in labels formatter has", value);
                  let labelName = "";
                switch(value){
-               case 3:
-                   return "Great"
-               case 2:
-                   return "Good"
-               case 1:
-                   return "Not Good"
+                case 4:
+                    return "Great"
+                case 3:
+                    return "Good"
+                case 2:
+                    return "Not Good"
+                case 1:
+                    return "Horrible"
                case 0:
-                   return "Horrible"
+                   return "Skipped Day"
                default:
-                   return "No Entry"
+                   return "Skipped Day"
                }
              }
         }
