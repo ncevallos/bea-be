@@ -60,8 +60,8 @@ const App = () => {
       <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
               
 
-        <div className="flex flex-col w-full">
-        <div className="mb-2">
+        <div className="flex  w-full justify-center">
+        <div className="mb-2 max-w-7xl">
           <Alert />
           <Switch>
             <Route exact path='/' component={Dashboard} />
