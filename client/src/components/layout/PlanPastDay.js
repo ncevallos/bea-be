@@ -26,13 +26,10 @@ import { getPastDayResults } from '../../actions/postPlanResults';
     return (
         <section>
             <div className="flex mx-auto p-4">
-
-
                  <div className="flex flex-col flex-grow">
-
-                    <button type="button" className="btn-darkPurple text-center items-center">       
-                    Today {moment(todayPlanResults.date).format('MMMM Do YYYY')}
-                                    </button>
+                    <button type="button" className="btn-darkPurple text-center items-center">
+                        Today {moment(todayPlanResults.date).format('MMMM Do YYYY')}
+                    </button>
 
                     <div className="flex bg-white overflow-hidden border border-gray-400 rounded-xl p-4 mb-3 items-start">
                         {/* Below needs to implemented to go full width according to designs

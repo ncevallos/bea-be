@@ -31,16 +31,18 @@ const apexData = {
         enabled: false
       },
       stroke: {
-        curve: 'straight'
+        curve: 'smooth'
       },
       title: {
         text: 'PAST 30 DAYS',
         align: 'left'
       },
       grid: {
+        borderColor: '#e0e0e0',
+        strokeDashArray: 2,     
         row: {
-          colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-          opacity: 0.5
+          colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+          opacity: 0.3
         },
       },
       xaxis: {
@@ -71,20 +73,72 @@ const apexData = {
         //      // return opts.dateFormatter(new Date(timestamp), 'dd MMM')
         //   }
         // }
+        type: 'datetime',
+          labels: {
+            show: true,
+            rotate: -45,
+            rotateAlways: false,
+            hideOverlappingLabels: true,
+            showDuplicates: false,
+            trim: false,
+            minHeight: undefined,
+            maxHeight: 120,
+            style: {
+                colors: '#8f8f8f',
+                fontSize: '11px',
+                fontFamily: 'Roboto, sans-serif',
+                fontWeight: 600,
+                cssClass: 'apexcharts-xaxis-label',
+            },
+            offsetX: 0,
+            offsetY: 0,
+            /*format: undefined,
+            formatter: undefined,
+            datetimeUTC: true,
+            datetimeFormatter: {
+                year: 'yyyy',
+                month: "MMM 'yy",
+                day: 'dd MMM',
+                hour: 'HH:mm',
+            },*/
+            
+              format: 'dd'
+        },
       },
       fill: {
         type: 'gradient',
         gradient: {
           shade: 'light',
-          gradientToColors: [ '#f89a0b'],
+          //gradientToColors: [ '#329CCC', '#11C5CE', '#FF9A08' ],
+          colorStops:
+          [ 
+            [
+              {
+                offset: 0,
+                color: '#FF9A08',
+                opacity: 1
+              },
+              {
+                offset: 95,
+                color: '#11C5CE',
+                opacity: 50
+              },
+              {
+                offset: 100,
+                color: '#329CCC',
+                opacity: 1
+              }
+            ]
+          ],
           shadeIntensity: 1,
           type: 'vertical',
           opacityFrom: 1,
           opacityTo: 1,
-          stops: [0, 100, 100, 100]
+          stops: [0, 50, 100]
         },
       },
       yaxis: {
+        show: false,
         min: 0,
         max: 4,     
         forceNiceScale: true,
@@ -132,7 +186,7 @@ const apexData = {
                    return "Skipped Day"
                }
              }
-        }
+        },
       }
     }
 }
@@ -254,8 +308,9 @@ class PlanLineGraph extends React.Component {
                 height={15}
                 options={options}
                 /> */}
-                <ReactApexCharts options={apexData.options} series={apexData.series} type="line" height={350} />
-                
+                <div>
+                  <ReactApexCharts options={apexData.options} series={apexData.series} type="line" height={250} />
+                </div>
         </Fragment>
         )}
       </Fragment>
