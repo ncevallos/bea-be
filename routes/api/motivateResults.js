@@ -46,6 +46,7 @@ router.post(
         aelength,
         aeint,
         mindfultype,
+        mindfultype2,
         mindfulresult,
     } = req.body;
     // const { name, email, password } = req.body;
@@ -90,6 +91,7 @@ router.post(
             aelength,
             aeint,
             mindfultype,
+            mindfultype2,
             mindfulresult
             
         });

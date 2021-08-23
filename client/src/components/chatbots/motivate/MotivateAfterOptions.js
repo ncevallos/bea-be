@@ -11,7 +11,25 @@ const MotivateAfterOptions = (props) => {
       lastblockvisited: "Motivate After Options"
     }));
 
-    actionProvider.thankYouDemo();
+    actionProvider.afterBetter();
+  };
+  const setType2 = async (type) => {
+    setState((state) => ({
+      ...state,
+      mindfulresult: type,
+      lastblockvisited: "Motivate After Options"
+    }));
+
+    actionProvider.afterSame();
+  };
+  const setType3 = async (type) => {
+    setState((state) => ({
+      ...state,
+      mindfulresult: type,
+      lastblockvisited: "Motivate After Options"
+    }));
+
+    actionProvider.afterWorse();
   };
 
   return (
@@ -25,13 +43,13 @@ const MotivateAfterOptions = (props) => {
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType("Same")}
+          onClick={() => setType2("Same")}
         >
           Same
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType("Worse")}
+          onClick={() => setType3("Worse")}
         >
           Worse
         </button>

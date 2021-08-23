@@ -71,6 +71,9 @@ const MotivateResultsSchema = new mongoose.Schema({
   mindfultype: {
     type: String
   },
+  mindfultype2: {
+    type: String
+  },
   mindfulresult: {
     type: String
   },

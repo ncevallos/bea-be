@@ -402,69 +402,43 @@ createPlanSummary = (results) => {
   }
   //divide avgMood by number of results and round up
     avgMood = Math.round(moodTotal/numOfResults);
-    // summaryArray[0].summaryStats.avgMood = avgMood;
     summaryArray.summaryStats.avgMood = avgMood;
-  //create percentages of great, pretty good, not good, and horrible
-  // summaryArray[0].summaryStats.great = Math.round(greatCnt/numOfResults * 100)
-  // summaryArray[0].summaryStats.good = Math.round(goodCnt/numOfResults * 100)
-  // summaryArray[0].summaryStats.notgood = Math.round(notgoodCnt/numOfResults * 100)
-  // summaryArray[0].summaryStats.horrible = Math.round(horribleCnt/numOfResults * 100)
   summaryArray.summaryStats.great = Math.round(greatCnt/numOfResults * 100)
   summaryArray.summaryStats.good = Math.round(goodCnt/numOfResults * 100)
   summaryArray.summaryStats.notgood = Math.round(notgoodCnt/numOfResults * 100)
   summaryArray.summaryStats.horrible = Math.round(horribleCnt/numOfResults * 100)
   if(emotionalCnt > physicalCnt){
-    // summaryArray[0].summaryStats.stayedontrackpct = Math.round(emotionalCnt/numOfResults * 100)
-    // summaryArray[0].summaryStats.stayedontrack = "Something emotional"
     summaryArray.summaryStats.stayedontrackpct = Math.round(emotionalCnt/numOfResults * 100)
     summaryArray.summaryStats.stayedontrack = "Something emotional"
   }
   else{
     summaryArray.summaryStats.stayedontrackpct = Math.round(physicalCnt/numOfResults * 100)
     summaryArray.summaryStats.stayedontrack = "Something physical"
-    // summaryArray[0].summaryStats.stayedontrackpct = Math.round(physicalCnt/numOfResults * 100)
-    // summaryArray[0].summaryStats.stayedontrack = "Something physical"
   }
   if(smAmtCnt > diffFdCnt){
-    // summaryArray[0].summaryStats.favgoalpct = Math.round(smAmtCnt/numOfResults * 100)
-    // summaryArray[0].summaryStats.favgoal = "Smaller amounts"    
     summaryArray.summaryStats.favgoalpct = Math.round(smAmtCnt/numOfResults * 100)
     summaryArray.summaryStats.favgoal = "Smaller amounts"
   }
   else{
-    // summaryArray[0].summaryStats.favgoalpct = Math.round(diffFdCnt/numOfResults * 100)
-    // summaryArray[0].summaryStats.favgoal = "Different foods"
     summaryArray.summaryStats.favgoalpct = Math.round(diffFdCnt/numOfResults * 100)
     summaryArray.summaryStats.favgoal = "Different foods"
   }
   if(moreFilling > fewCalories){
-    // summaryArray[0].summaryStats.favgoal2pct = Math.round(moreFilling/numOfResults * 100)
-    // summaryArray[0].summaryStats.favgoal2 = "More filling foods"
     summaryArray.summaryStats.favgoal2pct = Math.round(moreFilling/numOfResults * 100)
     summaryArray.summaryStats.favgoal2 = "More filling foods"
   }
   else{
-    // summaryArray[0].summaryStats.favgoal2pct = Math.round(fewCalories/numOfResults * 100)
-    // summaryArray[0].summaryStats.favgoal2 = "Fewer Calories"
     summaryArray.summaryStats.favgoal2pct = Math.round(fewCalories/numOfResults * 100)
     summaryArray.summaryStats.favgoal2 = "Fewer Calories"
   }
 
   let xMax = Math.max(...Array.from(plangoal, o => o.x));
   let maxXObject = plangoal.find(o => o.x === xMax);
-  // summaryArray[0].summaryStats.favactionpct = Math.round(maxXObject.x/numOfResults * 100);
-  // summaryArray[0].summaryStats.favaction = maxXObject.name;
   summaryArray.summaryStats.favactionpct = Math.round(maxXObject.x/numOfResults * 100);
   summaryArray.summaryStats.favaction = maxXObject.name;
   let newArray = fillInLineGraph(results);
-  // summaryArray.push({values: newArray[0].values});
-  // summaryArray.push({dates: newArray[0].dates});
   summaryArray.dates.push(newArray[0].dates);
   summaryArray.values.push(newArray[0].values);
-  // summaryArray[values].push(newArray[0].values);
-  // let newResults = fillInDates(results);
-  // summaryArray.push({results: newResults});
- //console.log('summary array at end has', summaryArray);
   return summaryArray;
  // return results;
 }

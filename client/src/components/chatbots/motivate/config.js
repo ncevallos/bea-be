@@ -20,6 +20,20 @@ import StartMindfulness from './StartMindfulness';
 import StretchMsgorVoice from './StretchMsgorVoice';
 import Visualization from './Visualization';
 import PlanSubmit from './PlanSubmit';
+import IdentifyTriggers2 from './IdentifyTriggers2';
+import DifferentChoiceAnxious from './DifferentChoiceAnxious';
+import DifferentChoiceBored from './DifferentChoiceBored';
+import DifferentChoiceGH from './DifferentChoiceGH';
+import DifferentChoiceeSL from './DifferentChoiceSL';
+import DifferentChoiceStress from './DifferentChoiceStress';
+import DifferentChoiceUpset from './DifferentChoiceUpset';
+import OverIndulgeAnxious from './OverIndulgeAnxious';
+import OverIndulgeBored from './OverIndulgeBored';
+import OverIndulgeGH from './OverIndulgeGH';
+import OverIndulgeSL from './OverIndulgeSL';
+import OverIndulgeStress from './OverIndulgeStress';
+import OverIndulgeUpset from './OverIndulgeUpset';
+import PlanningIntro2 from './PlanningIntro2';
 
 const botName = "Bea";
 
@@ -79,6 +93,7 @@ state: {
     aelength: "",
     aeint: "",
     mindfultype: "",
+    mindfultype2: "",
     mindfulresult: ""
     // randomnum: randomnumber()
 },
@@ -92,7 +107,7 @@ widgets: [
        widgetFunc: (props) => <HowTempted {...props} />,
        mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel", "temptedlevelint","vistype","plan2eat","whyhungry","overindulgeresult", 
        "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "planphaseint", "iephasefeel", "iephaselength", "iephaseint", "fullphasefeel", "fullphaselength", 
-       "fullphaseint", "aefeel", "aelength", "aeint", "mindfultype", "mindfulresult"]
+       "fullphaseint", "aefeel", "aelength", "aeint", "mindfultype", "mindfultype2", "mindfulresult"]
     },
     {
         widgetName: "visualization",
@@ -101,6 +116,10 @@ widgets: [
     {
         widgetName: "planningIntro",
        widgetFunc: (props) => <PlanningIntro {...props} />,
+    },
+    {
+        widgetName: "planningIntro2",
+       widgetFunc: (props) => <PlanningIntro2 {...props} />,
     },
     {
         widgetName: "planningFeel",
@@ -147,6 +166,58 @@ widgets: [
        widgetFunc: (props) => <FeelBest3 {...props} />,
     },
     {
+        widgetName: "identifyTriggers2",
+       widgetFunc: (props) => <IdentifyTriggers2 {...props} />,
+    },
+    {
+        widgetName: "differentChoiceAnxious",
+       widgetFunc: (props) => <DifferentChoiceAnxious {...props} />,
+    },
+    {
+        widgetName: "differentChoiceBored",
+       widgetFunc: (props) => <DifferentChoiceBored {...props} />,
+    },
+    {
+        widgetName: "differentChoiceGH",
+       widgetFunc: (props) => <DifferentChoiceGH {...props} />,
+    },
+    {
+        widgetName: "differentChoiceSL",
+       widgetFunc: (props) => <DifferentChoiceeSL {...props} />,
+    },
+    {
+        widgetName: "differentChoiceStress",
+       widgetFunc: (props) => <DifferentChoiceStress {...props} />,
+    },
+    {
+        widgetName: "differentChoiceUpset",
+       widgetFunc: (props) => <DifferentChoiceUpset {...props} />,
+    },
+    {
+        widgetName: "overIndulgeAnxious",
+       widgetFunc: (props) => <OverIndulgeAnxious {...props} />,
+    },
+    {
+        widgetName: "overIndulgeBored",
+       widgetFunc: (props) => <OverIndulgeBored {...props} />,
+    },
+    {
+        widgetName: "overIndulgeGH",
+       widgetFunc: (props) => <OverIndulgeGH {...props} />,
+    },
+    {
+        widgetName: "overIndulgeSL",
+       widgetFunc: (props) => <OverIndulgeSL {...props} />,
+    },
+    {
+        widgetName: "overIndulgeStress",
+       widgetFunc: (props) => <OverIndulgeStress {...props} />,
+    },
+    {
+        widgetName: "overIndulgeUpset",
+       widgetFunc: (props) => <OverIndulgeUpset {...props} />,
+    },
+    {
         widgetName: "startMindfulness",
        widgetFunc: (props) => <StartMindfulness {...props} />,
     },
@@ -167,7 +238,7 @@ widgets: [
        widgetFunc: (props) => <PlanSubmit {...props} />,
        mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel", "temptedlevelint","vistype","plan2eat","whyhungry","overindulgeresult", 
        "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "planphaseint", "iephasefeel", "iephaselength", "iephaseint", "fullphasefeel", "fullphaselength", 
-       "fullphaseint", "aefeel", "aelength", "aeint", "mindfultype", "mindfulresult"]
+       "fullphaseint", "aefeel", "aelength", "aeint", "mindfultype", "mindfultype2", "mindfulresult"]
     },
     
 ],

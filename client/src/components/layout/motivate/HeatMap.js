@@ -14,7 +14,7 @@ class HeatMap extends React.Component {
         },
         {
           name: 'Slightly',
-          data: 5
+          data: [0,0,0,5]
         //   data: generateData(18, {
         //     min: 0,
         //     max: 90
@@ -22,7 +22,7 @@ class HeatMap extends React.Component {
         },
         {
           name: 'Somewhat',
-          data: 6
+          data: [0,0,0,5]
         //   data: generateData(18, {
         //     min: 0,
         //     max: 90
@@ -30,7 +30,7 @@ class HeatMap extends React.Component {
         },
         {
           name: 'Very',
-          data: '4'
+          data: [0,0,0,5]
         //   data: generateData(18, {
         //     min: 0,
         //     max: 90
@@ -38,7 +38,7 @@ class HeatMap extends React.Component {
         },
         {
           name: 'Extremely',
-          data: '4'
+          data: [0,0,0,5]
         //   data: generateData(18, {
         //     min: 0,
         //     max: 90

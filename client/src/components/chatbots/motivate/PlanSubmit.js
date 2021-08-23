@@ -68,6 +68,7 @@ import "./AreyouReady.css";
     aelength: ownProps.aelength,
     aeint: ownProps.aeint,
     mindfultype: ownProps.mindfultype,
+    mindfultype2: ownProps.mindfultype2,
 });
 const onSubmit = async (e) => {
     console.log('in on submit command');
@@ -98,7 +99,7 @@ const onSubmit = async (e) => {
           className="learning-option-button"
           onClick={() => onSubmit()}
         >
-          I'm Finished!
+          Go to Dashboard
         </button>
         {/* <button
           className="learning-option-button"

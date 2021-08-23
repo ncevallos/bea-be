@@ -2,24 +2,24 @@ import React from 'react'
 
 import "./AreyouReady.css";
 
-const StretchMsgorVoice = (props) => {
+const BreatheMsgorVoice = (props) => {
   const { setState, actionProvider } = props;
   const setType = async (type) => {
     setState((state) => ({
       ...state,
       mindfultype: type,
-      mindfultype2: "Stretch",
-      lastblockvisited: "StretchMsgorVoice"
+      mindfultype2: "Breathe",
+      lastblockvisited: "BreatheMsgorVoice"
     }));
 
-    actionProvider.stretchMessage();
+    actionProvider.breatheMessage();
   };
   const setType2 = async (type) => {
     setState((state) => ({
       ...state,
       mindfultype: type,
-      mindfultype2: "Stretch",
-      lastblockvisited: "StretchMsgorVoice"
+      mindfultype2: "Breathe",
+      lastblockvisited: "BreatheMsgorVoice"
     }));
 
     actionProvider.stretchVoice();
@@ -63,4 +63,4 @@ const StretchMsgorVoice = (props) => {
 //   return <div className="learning-options-container">{optionsMarkup}</div>;
 // };
 
-export default StretchMsgorVoice;
+export default BreatheMsgorVoice;
