@@ -53,9 +53,9 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
                         <p>below is the data to be graphed</p><br/>
 
                         <ColumnChart />
-                      {summaryMotivateResults1wk.templvl.map((item, index) => (
+                      {/* {summaryMotivateResults1wk.templvl.map((item, index) => (
                         <p key={index}>{item.date} Tempted Level was {item.temptedlevel}!</p>
-                    ))}
+                    ))} */}
                       </div>
                     <div className="w-full bg-beaOrange p-2 rounded-full flex items-center justify-between">
                         <div className="bg-gray-50 bg-opacity-50 uppercase font-bold text-beaOrange py-3 px-4 text-xl rounded-full">BEA's Tips</div>

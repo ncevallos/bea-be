@@ -195,8 +195,11 @@ createSummary = (results) => {
       thirtyToOne: 0,
       oneToTwo: 0,
       overTwoHr: 0,
+      phaseFeel: [],
+      phaseLength: []
     },
-    templvl: [],
+    temptedlvl: [],
+    temptedDates: [],
     planned2eat: [],
     // dates: [],
     // values: []
@@ -226,7 +229,9 @@ createSummary = (results) => {
     let day2push = moment(results[i].date).format('ddd MMM Do')   
    // let day2push = moment(results[i].date).format('ddd MM Do YYYY');
    // summaryArray.templvl[day2push] = templvl;
-    summaryArray.templvl.push({date:day2push, temptedlevel: templvl});    
+    //summaryArray.templvl.push({date:day2push, temptedlevel: templvl});    
+    summaryArray.temptedDates.push(day2push);    
+    summaryArray.temptedlvl.push(templvl);    
     //tempArray[day2push] = templvl;
     summaryArray.planned2eat.push(results[i].plan2eat)
 
@@ -250,8 +255,7 @@ createSummary = (results) => {
 
       }
     }
-
-
+    
     addLengths(results[i].fullphaselength);
     addLengths(results[i].iephaselength);
     addLengths(results[i].planphaselength);
@@ -262,6 +266,20 @@ createSummary = (results) => {
  // console.log("results contains", results[1].date)
   // below pushes summary statistics to summary stats array
   avgTemptationLvl = Math.round(temptationTotal/numOfResults);
+  //for phaseFeel we push the results in this Order 
+  //Planning, Initial Eating, Fullness, After Eating
+  //because that is how it will display in the graph
+  summaryArray.summaryStats.phaseFeel.push(Math.round(planPhaseAvg/numOfResults));
+  summaryArray.summaryStats.phaseFeel.push(Math.round(ieAvg/numOfResults));
+  summaryArray.summaryStats.phaseFeel.push(Math.round(fullnessAvg/numOfResults));
+  summaryArray.summaryStats.phaseFeel.push(Math.round(aeplanningAvg/numOfResults));
+
+  //we then push the length each phase lasted in ascending order 
+  summaryArray.summaryStats.phaseLength.push(lessThanTen);
+  summaryArray.summaryStats.phaseLength.push(tenToThirty);
+  summaryArray.summaryStats.phaseLength.push(thirtyToOne);
+  summaryArray.summaryStats.phaseLength.push(oneToTwo);
+  summaryArray.summaryStats.phaseLength.push(overTwoHr);
 
   summaryArray.summaryStats.planPhaseAvg = Math.round(planPhaseAvg/numOfResults);
   summaryArray.summaryStats.ieAvg = Math.round(ieAvg/numOfResults);
