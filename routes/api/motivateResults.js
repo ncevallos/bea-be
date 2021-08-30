@@ -201,9 +201,12 @@ createSummary = (results) => {
       lengthFeel: [],
       differentChoice: "",
       overindulgeresult: "",
-      whyHungry: ""
+      whyHungry: "",
+      phaseFeel: [],
+      phaseLength: []
     },
-    templvl: [],
+    temptedlvl: [],
+    temptedDates: [],
     planned2eat: [],
     plan2eat: []
     // dates: [],
@@ -244,9 +247,11 @@ createSummary = (results) => {
     let day2push = moment(results[i].date).format('ddd MMM Do')   
    // let day2push = moment(results[i].date).format('ddd MM Do YYYY');
    // summaryArray.templvl[day2push] = templvl;
-    summaryArray.templvl.push({date:day2push, temptedlevel: templvl});    
     summaryArray.summaryStats.temptedDates.push(day2push);    
     summaryArray.summaryStats.temptedlevel.push(templvl);     
+    //summaryArray.templvl.push({date:day2push, temptedlevel: templvl});    
+    summaryArray.temptedDates.push(day2push);    
+    summaryArray.temptedlvl.push(templvl);    
     //tempArray[day2push] = templvl;
     summaryArray.planned2eat.push(results[i].plan2eat)
     plan2eatAll.push(results[i].plan2eat)
@@ -308,6 +313,20 @@ createSummary = (results) => {
         summaryArray.plan2eat.push({x: key, y: value})
       }
   avgTemptationLvl = Math.round(temptationTotal/numOfResults);
+  //for phaseFeel we push the results in this Order 
+  //Planning, Initial Eating, Fullness, After Eating
+  //because that is how it will display in the graph
+  summaryArray.summaryStats.phaseFeel.push(Math.round(planPhaseAvg/numOfEvalResults));
+  summaryArray.summaryStats.phaseFeel.push(Math.round(ieAvg/numOfEvalResults));
+  summaryArray.summaryStats.phaseFeel.push(Math.round(fullnessAvg/numOfEvalResults));
+  summaryArray.summaryStats.phaseFeel.push(Math.round(aeplanningAvg/numOfEvalResults));
+
+  //we then push the length each phase lasted in ascending order 
+  summaryArray.summaryStats.phaseLength.push(lessThanTen);
+  summaryArray.summaryStats.phaseLength.push(tenToThirty);
+  summaryArray.summaryStats.phaseLength.push(thirtyToOne);
+  summaryArray.summaryStats.phaseLength.push(oneToTwo);
+  summaryArray.summaryStats.phaseLength.push(overTwoHr);
 
   // console.log('number of eval results has', numOfEvalResults);
   summaryArray.summaryStats.planPhaseAvg = Math.round(planPhaseAvg/numOfEvalResults);
@@ -326,10 +345,6 @@ createSummary = (results) => {
 
   summaryArray.summaryStats.aeplanningAvg = Math.round(aeplanningAvg/numOfEvalResults);
   //console.log('aeplanningAvg divided', Math.round(aeplanningAvg/numOfEvalResults));
-  summaryArray.summaryStats.phaseFeel.push(planPhaseAvg/numOfEvalResults);
-  summaryArray.summaryStats.phaseFeel.push(ieAvg/numOfEvalResults);
-  summaryArray.summaryStats.phaseFeel.push(fullnessAvg/numOfEvalResults);
-  summaryArray.summaryStats.phaseFeel.push(aeplanningAvg/numOfEvalResults);
 
   summaryArray.summaryStats.avgTemptationLvl = avgTemptationLvl;
   summaryArray.summaryStats.lessThanTen = lessThanTen;

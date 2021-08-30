@@ -37,15 +37,16 @@ const NoMatchPage = () => {
 const Routes = props => {
   return (
       <Switch>
-        <PrivateRoute exact path='/dashboard' component={Dashboard} />
         {/* <Route exact path="/signup" component={Signup} /> */}
-        <Route exact path="/" component={Login} />
+        {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/termsconditions" component={Termsconditions} />
         <Route exact path="/helpcenter" component={Helpcenter} />
         <Route exact path="/settings" component={Settings} />
         <Route exact path="/register" component={Register} />
+        <PrivateRoute exact path="/" component={Login} />
+        <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path="/meditate" component={Meditate} />
         <PrivateRoute exact path="/motivate" component={Motivate} />
         <PrivateRoute exact path="/motivate2" component={Motivate2} />
