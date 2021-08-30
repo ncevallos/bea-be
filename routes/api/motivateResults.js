@@ -186,22 +186,32 @@ createSummary = (results) => {
     summaryArray = 
     {summaryStats: {
       avgTemptationLvl: 0,
-      planPhaseAvg: "",
+      planPhaseAvg: 0,
       ieAvg: 0,
-      fullnessAvg: "",
+      fullnessAvg: 0,
       aeplanningAvg: 0,
       lessThanTen: 0,
       tenToThirty: 0,
       thirtyToOne: 0,
       oneToTwo: 0,
       overTwoHr: 0,
+      temptedlevel: [],
+      temptedDates: [],
+      phaseFeel: [],
+      lengthFeel: [],
+      differentChoice: "",
+      overindulgeresult: "",
+      whyHungry: ""
     },
     templvl: [],
     planned2eat: [],
+    plan2eat: []
     // dates: [],
     // values: []
   };
   let numOfResults = results.length;
+  let numOfEvalResults = 0;
+  let numOfTriggersResults = 0;
   let temptationTotal = 0;
   let avgTemptationLvl = 0.0;
   let planPhaseAvg = 0.0;
@@ -214,68 +224,160 @@ createSummary = (results) => {
   let tenToThirty = 0;
   let oneToTwo = 0;
   let tempArray = [];
+  let indulgeResults = [];
+  let differentChoiceResults = [];
+  let plan2eatAll = [];
+  let whyhungryResults = []
 
+  let differentChoice = [
+    {x: 0, name: "Take a walk"},
+    {x: 0, name: "Meditate"},
+    {x: 0, name: "Talk to a friend"},
+    {x: 0, name: "Eat something small"},
+    {x: 0, name: "Read"},
+    {x: 0, name: "Something else"}
+  ]
   for (let i = 0; i < numOfResults; i++) {
     //add in the howdoyoufeelint to avgMood
     temptationTotal += results[i].temptedlevelint;
-    planPhaseAvg += results[i].planphaseint;
-    ieAvg += results[i].iephaseint;
-    fullnessAvg += results[i].fullphaseint;
-    aeplanningAvg += results[i].aeint;
     let templvl = results[i].temptedlevelint;
     let day2push = moment(results[i].date).format('ddd MMM Do')   
    // let day2push = moment(results[i].date).format('ddd MM Do YYYY');
    // summaryArray.templvl[day2push] = templvl;
     summaryArray.templvl.push({date:day2push, temptedlevel: templvl});    
+    summaryArray.summaryStats.temptedDates.push(day2push);    
+    summaryArray.summaryStats.temptedlevel.push(templvl);     
     //tempArray[day2push] = templvl;
     summaryArray.planned2eat.push(results[i].plan2eat)
+    plan2eatAll.push(results[i].plan2eat)
 
-    addLengths = (item2check) => {
-      if(item2check === "Up to 10 minutes"){
-        lessThanTen += 1;
+    if(results[i].vistype === "Planning"){
+      numOfEvalResults++;
+      addLengths = (item2check) => {
+        if(item2check === "Up to 10 minutes"){
+          lessThanTen += 1;
 
-      } else if (item2check === "10 to 30 minutes"){
-        tenToThirty += 1;
-        
-      } else if (item2check === "30 minutes to 1 hour"){
-        thirtyToOne += 1;
-        
-      } else if (item2check === "1 to 2 hours"){
-        oneToTwo += 1;
-        
-      } else if (item2check === "More than 2 hours"){
-        overTwoHr += 1;
-        
-      } else {
+        } else if (item2check === "10 to 30 minutes"){
+          tenToThirty += 1;
+          
+        } else if (item2check === "30 minutes to 1 hour"){
+          thirtyToOne += 1;
+          
+        } else if (item2check === "1 to 2 hours"){
+          oneToTwo += 1;
+          
+        } else if (item2check === "More than 2 hours"){
+          overTwoHr += 1;
+          
+        } else {
 
-      }
-    }
+        }
+      }// end addLengths
 
+      planPhaseAvg += results[i].planphaseint;
+      ieAvg += results[i].iephaseint;
+      fullnessAvg += results[i].fullphaseint;
+      aeplanningAvg += results[i].aeint;
+    } // ends if for the planning visualization type
+    else {
+      //whyhungry overindulgeresult differentchoice
+      indulgeResults.push(results[i].overindulgeresult)
+      whyhungryResults.push(results[i].whyhungry)
+      differentChoiceResults.push(results[i].differentchoice)
+      //will push ALL into an array then after loop will summarize results to see how many each item occured and push highest appearing item
+    } // ends else for the triggers visualization type
 
     addLengths(results[i].fullphaselength);
     addLengths(results[i].iephaselength);
     addLengths(results[i].planphaselength);
     addLengths(results[i].aelength);
 
-    }
-  
- // console.log("results contains", results[1].date)
-  // below pushes summary statistics to summary stats array
+    } //ends the for loop
+    
+    summaryArray.summaryStats.overindulgeresult = mostFrequent(indulgeResults, indulgeResults.length);
+    summaryArray.summaryStats.whyHungry = mostFrequent(whyhungryResults, whyhungryResults.length);
+    summaryArray.summaryStats.differentChoice = mostFrequent(differentChoiceResults, differentChoiceResults.length);
+
+    const arr = ["Mac n Cheese", "Grilled Cheese", "Steak and Eggs", "Porter house dinner", "Eggs Benedict", "Mac n Cheese"];
+    const counts = {};
+    
+      for (const num of plan2eatAll) {
+        counts[num] = counts[num] ? counts[num] + 1 : 1;
+      }    
+      for (const [key, value] of Object.entries(counts)) {
+        summaryArray.plan2eat.push({x: key, y: value})
+      }
   avgTemptationLvl = Math.round(temptationTotal/numOfResults);
 
-  summaryArray.summaryStats.planPhaseAvg = Math.round(planPhaseAvg/numOfResults);
-  summaryArray.summaryStats.ieAvg = Math.round(ieAvg/numOfResults);
-  summaryArray.summaryStats.fullnessAvg = Math.round(fullnessAvg/numOfResults);
-  summaryArray.summaryStats.aeplanningAvg = Math.round(aeplanningAvg/numOfResults);
+  // console.log('number of eval results has', numOfEvalResults);
+  summaryArray.summaryStats.planPhaseAvg = Math.round(planPhaseAvg/numOfEvalResults);
+  //console.log('planphaseavg divided', Math.round(planPhaseAvg/numOfEvalResults));
+
+  summaryArray.summaryStats.ieAvg = Math.round(ieAvg);
+  // //summaryArray.summaryStats.ieAvg = Math.round(ieAvg/numOfEvalResults);
+  // console.log('ieAvg', ieAvg);
+  // console.log('ieAvg divided', Math.round(ieAvg/numOfEvalResults));
+
+
+  summaryArray.summaryStats.fullnessAvg = Math.round(fullnessAvg);
+  // console.log('fullnessAvg', fullnessAvg);
+ // summaryArray.summaryStats.fullnessAvg = Math.round(fullnessAvg/numOfEvalResults);
+  // console.log('fullnessAvg divided', Math.round(fullnessAvg/numOfEvalResults));
+
+  summaryArray.summaryStats.aeplanningAvg = Math.round(aeplanningAvg/numOfEvalResults);
+  //console.log('aeplanningAvg divided', Math.round(aeplanningAvg/numOfEvalResults));
+  summaryArray.summaryStats.phaseFeel.push(planPhaseAvg/numOfEvalResults);
+  summaryArray.summaryStats.phaseFeel.push(ieAvg/numOfEvalResults);
+  summaryArray.summaryStats.phaseFeel.push(fullnessAvg/numOfEvalResults);
+  summaryArray.summaryStats.phaseFeel.push(aeplanningAvg/numOfEvalResults);
+
   summaryArray.summaryStats.avgTemptationLvl = avgTemptationLvl;
   summaryArray.summaryStats.lessThanTen = lessThanTen;
   summaryArray.summaryStats.tenToThirty = tenToThirty;
   summaryArray.summaryStats.thirtyToOne = thirtyToOne;
   summaryArray.summaryStats.oneToTwo = oneToTwo;
   summaryArray.summaryStats.overTwoHr = overTwoHr;
+  summaryArray.summaryStats.lengthFeel.push(lessThanTen);
+  summaryArray.summaryStats.lengthFeel.push(tenToThirty);
+  summaryArray.summaryStats.lengthFeel.push(thirtyToOne);
+  summaryArray.summaryStats.lengthFeel.push(oneToTwo);
+  summaryArray.summaryStats.lengthFeel.push(overTwoHr);
   //summaryArray.templvl.push(tempArray);
  // console.log("summary array in motivate contains", summaryArray);
   return summaryArray
+}
+
+mostFrequent = (arr, n) => {
+       // Sort the array
+       arr.sort();
+           
+       // find the max frequency using linear
+       // traversal
+       let max_count = 1, res = arr[0];
+       let curr_count = 1;
+          
+       for (let i = 1; i < n; i++)
+       {
+           if (arr[i] == arr[i - 1])
+               curr_count++;
+           else
+           {
+               if (curr_count > max_count)
+               {
+                   max_count = curr_count;
+                   res = arr[i - 1];
+               }
+               curr_count = 1;
+           }
+       }
+      
+       // If last element is most frequent
+       if (curr_count > max_count)
+       {
+           max_count = curr_count;
+           res = arr[n - 1];
+       }
+       return res;
 }
 
 module.exports = router;

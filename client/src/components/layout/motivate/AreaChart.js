@@ -5,12 +5,12 @@ import ReactApexChart from 'react-apexcharts';
 class AreaChart extends React.Component {
     constructor(props) {
       super(props);
-
       this.state = {
           
         series: [{
           name: '',
-          data: [3, 4, 4, 4]
+    //      data: [3, 4, 4, 4]
+          data: props.data
         },
         //  {
         //   name: 'series2',
@@ -56,16 +56,18 @@ class AreaChart extends React.Component {
                 },
                 formatter: function(value) {
                     switch(value){
-                    case 4:
+                    case 5:
                         return " Great"
-                    case 3:
+                    case 4:
                         return " Good"
+                    case 3:
+                        return " Neutral"
                     case 2:
-                        return "Neutral"
-                    case 1:
                         return "Bad"
-                    case 0:
+                    case 1:
                         return "Really Bad"
+                    case 0:
+                        return ""
                     default:
                         return ""
                     }
@@ -108,16 +110,18 @@ class AreaChart extends React.Component {
             y: {
                     formatter: function(value, opt) {
                     switch(value){
-                    case 4:
+                    case 5:
                         return "Great"
-                    case 3:
+                    case 4:
                         return "Good"
-                    case 2:
+                    case 3:
                         return "Neutral"
-                    case 1:
+                    case 2:
                         return "Bad"
-                    case 0:
+                    case 1:
                         return "Really Bad"
+                    case 0:
+                        return "No Entry"
                     default:
                         return "No Entry"
                     }

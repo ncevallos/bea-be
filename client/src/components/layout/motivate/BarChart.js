@@ -5,7 +5,6 @@ import ReactApexChart from 'react-apexcharts';
 class BarChart extends React.Component {
     constructor(props) {
       super(props);
-
           this.state = {
             options: {
               chart: {
@@ -38,7 +37,8 @@ class BarChart extends React.Component {
             series: [
               {
                 name: "",
-                data: [0, 2, 0, 4, 6]
+                data: props.data
+//                data: [0, 2, 0, 4, 6]
               }
             ]
           };

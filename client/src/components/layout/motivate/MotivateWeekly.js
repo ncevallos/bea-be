@@ -12,6 +12,7 @@ import BarChart from './BarChart';
 import AreaChart from './AreaChart';
 import HeatMap from './HeatMap';
 import ColumnChart from './ColumnChart';
+import TemptedGauge from './TemptedGauge';
 
 const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summaryMotivateResults1wk } }) => {
 
@@ -33,7 +34,8 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
           {/* <div className="flex mx-auto p-4">
               <div className="flex flex-col flex-grow"> */}
                   <div className="border border-gray-200 rounded-xl p-10 my-4">
-                    <div className="w-96">
+                    <TemptedGauge avgTemptationLvl={summaryMotivateResults1wk.summaryStats.avgTemptationLvl}/>
+                    {/* <div className="w-96 items-center">
                         <GaugeChart id="gauge-chart3"
                             nrOfLevels={2} 
                             colors={["#FFAD33", "#ECEFF1"]} 
@@ -48,14 +50,13 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
                             formatTextValue={value => 'Very tempted'}
                             hideText={true}
                             />
-                        </div>
+                            <p className="text-xl">tempted</p>
+                            <p>to eat in a way not ideal</p>
+                        </div> */}
                     <div className="w-48">
-                        <p>below is the data to be graphed</p><br/>
 
-                        <ColumnChart />
-                      {summaryMotivateResults1wk.templvl.map((item, index) => (
-                        <p key={index}>{item.date} Tempted Level was {item.temptedlevel}!</p>
-                    ))}
+                        <ColumnChart level={summaryMotivateResults1wk.summaryStats.temptedlevel} dates={summaryMotivateResults1wk.summaryStats.temptedDates}/>
+            
                       </div>
                     <div className="w-full bg-beaOrange p-2 rounded-full flex items-center justify-between">
                         <div className="bg-gray-50 bg-opacity-50 uppercase font-bold text-beaOrange py-3 px-4 text-xl rounded-full">BEA's Tips</div>
@@ -69,37 +70,28 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
                     <div className="w-full border border-gray-200 rounded-xl p-10 mr-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Triggers</div>
                         <h2 className="mt-0 text-gray-700 text-3xl font-light">Favorite food you planned to eat next</h2>
-                        <TreeMap />
+                        <TreeMap data={summaryMotivateResults1wk.plan2eat}/>
                         <p>(below is the data to be graphed)</p><br/>
-                      {summaryMotivateResults1wk.planned2eat.map((item, index) => (
+                      {/* {summaryMotivateResults1wk.planned2eat.map((item, index) => (
                         <p key={index}>{item} - (one entry)</p>
-                    ))}
+                    ))} */}
                     <span className="mt-6 text-gray-700 text-sm font-thin">Reason why you chose the foods</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">Anxious</h2>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.whyHungry}</h2>
                     <SimpleGauge />
                     <span className="mt-6 text-gray-700 text-sm font-thin">If you overindulged, you felt</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">the same</h2>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.overindulgeresult}</h2>
                     <SimpleGauge />
                     <span className="mt-6 text-gray-700 text-sm font-thin">If you made a different choice, you felt</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">more anxious</h2>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.differentChoice}</h2>
                     </div>
                     <div className="w-full border border-gray-200 rounded-xl p-10 ml-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Evaluating Mood</div>
                         <h2 className="mt-0 text-gray-700 text-3xl font-light">Favorite food you planned to eat next</h2>
-                        <TreeMap />
+                        <TreeMap  data={summaryMotivateResults1wk.plan2eat}/>
                         <h2 className="mt-0 text-gray-700 text-3xl font-light">How you usually felt during each eating phase</h2>
-                        <AreaChart />
-                        Planning: {summaryMotivateResults1wk.summaryStats.planPhaseAvg}<br/>
-                        Initial Eating: {summaryMotivateResults1wk.summaryStats.ieAvg}<br/>
-                        Fullness: {summaryMotivateResults1wk.summaryStats.fullnessAvg}<br/>
-                        After Eating: {summaryMotivateResults1wk.summaryStats.aeplanningAvg}<br/>
+                        <AreaChart data={summaryMotivateResults1wk.summaryStats.phaseFeel}/>
                         <h2 className="mt-0 text-gray-700 text-3xl font-light">How long you thought each eating phase lasted</h2>
-                        <BarChart />
-                        less than ten: {summaryMotivateResults1wk.summaryStats.lessThanTen}<br/>
-                        ten to thirty: {summaryMotivateResults1wk.summaryStats.tenToThirty}<br/>
-                        thirty to one: {summaryMotivateResults1wk.summaryStats.thirtyToOne}<br/>
-                        one to two: {summaryMotivateResults1wk.summaryStats.oneToTwo}<br/>
-                        over two hour: {summaryMotivateResults1wk.summaryStats.overTwoHr}<br/>
+                        <BarChart data={summaryMotivateResults1wk.summaryStats.lengthFeel}/>
                     </div>
                   </div>
               {/* </div>

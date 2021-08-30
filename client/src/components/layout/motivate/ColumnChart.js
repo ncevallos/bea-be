@@ -10,7 +10,8 @@ class ColumnChart extends React.Component {
           
         series: [{
           name: 'Temptation Level',
-          data: [4, 5, 3, 2, 1, 4, 4,]
+          data: props.level
+       //   data: [4, 5, 3, 2, 1, 4, 4,]
         }],
         options: {
           chart: {
@@ -36,7 +37,8 @@ class ColumnChart extends React.Component {
             colors: ['transparent']
           },
           xaxis: {
-            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+            categories: props.dates
+        //    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
           },
           yaxis: {
             // title: {

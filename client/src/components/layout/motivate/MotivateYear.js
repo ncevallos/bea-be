@@ -6,6 +6,13 @@ import { getResultsByIdOneYear } from '../../../actions/postMotivateResults';
 import * as d3 from "d3";
 import GaugeChart from 'react-gauge-chart';
 import Spinner from '../../layout/Spinner';
+import TreeMap from './TreeMap';
+import SimpleGauge from './SimpleGauge';
+import BarChart from './BarChart';
+import AreaChart from './AreaChart';
+import HeatMap from './HeatMap';
+import ColumnChart from './ColumnChart';
+import TemptedGauge from './TemptedGauge';
 
 const MotivateYear = ({ user, getResultsByIdOneYear, motivateResult: { summaryMotivateResults1y } }) => {
 
@@ -27,27 +34,11 @@ const MotivateYear = ({ user, getResultsByIdOneYear, motivateResult: { summaryMo
           {/* <div className="flex mx-auto p-4">
               <div className="flex flex-col flex-grow"> */}
                   <div className="border border-gray-200 rounded-xl p-10 my-4">
-                    <div className="w-96">
-                        <GaugeChart id="gauge-chart3"
-                            nrOfLevels={2} 
-                            colors={["#FFAD33", "#ECEFF1"]} 
-                            arcsLength={[0.37, 0.63]}
-                            arcWidth={0.45} 
-                            percent={0.37} 
-                            arcPadding={0}
-                            cornerRadius={0}
-                            textColor={"#000000"}
-                            needleColor={"#58585E"}
-                            needleBaseColor={"#CFD8DC"}
-                            formatTextValue={value => 'Very tempted'}
-                            hideText={true}
-                            />
-                        </div>
+                    <TemptedGauge avgTemptationLvl={summaryMotivateResults1y.summaryStats.avgTemptationLvl}/>
                     <div className="w-48">
-                        <p>below is the data to be graphed</p><br/>
-                      {summaryMotivateResults1y.templvl.map((item, index) => (
-                        <p key={index}>{item.date} Tempted Level was {item.temptedlevel}!</p>
-                    ))}
+
+                        <ColumnChart level={summaryMotivateResults1y.summaryStats.temptedlevel} dates={summaryMotivateResults1y.summaryStats.temptedDates}/>
+            
                       </div>
                     <div className="w-full bg-beaOrange p-2 rounded-full flex items-center justify-between">
                         <div className="bg-gray-50 bg-opacity-50 uppercase font-bold text-beaOrange py-3 px-4 text-xl rounded-full">BEA's Tips</div>
@@ -60,26 +51,29 @@ const MotivateYear = ({ user, getResultsByIdOneYear, motivateResult: { summaryMo
                   <div className="flex flex-grow w-full">
                     <div className="w-full border border-gray-200 rounded-xl p-10 mr-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Triggers</div>
-                        <p>Favorite food you planned to eat next</p><br/>
+                        <h2 className="mt-0 text-gray-700 text-3xl font-light">Favorite food you planned to eat next</h2>
+                        <TreeMap data={summaryMotivateResults1y.plan2eat}/>
                         <p>(below is the data to be graphed)</p><br/>
-                      {summaryMotivateResults1y.planned2eat.map((item, index) => (
+                      {/* {summaryMotivateResults1y.planned2eat.map((item, index) => (
                         <p key={index}>{item} - (one entry)</p>
-                    ))}
+                    ))} */}
+                    <span className="mt-6 text-gray-700 text-sm font-thin">Reason why you chose the foods</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1y.summaryStats.whyHungry}</h2>
+                    <SimpleGauge />
+                    <span className="mt-6 text-gray-700 text-sm font-thin">If you overindulged, you felt</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1y.summaryStats.overindulgeresult}</h2>
+                    <SimpleGauge />
+                    <span className="mt-6 text-gray-700 text-sm font-thin">If you made a different choice, you felt</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1y.summaryStats.differentChoice}</h2>
                     </div>
                     <div className="w-full border border-gray-200 rounded-xl p-10 ml-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Evaluating Mood</div>
-                        <p>Favorite food you planned to eat next</p><br/>
-                        <p>How you usually felt during each eating phase (below is the data to be graphed)</p><br/>
-                        Planning: {summaryMotivateResults1y.summaryStats.planPhaseAvg}<br/>
-                        Initial Eating: {summaryMotivateResults1y.summaryStats.ieAvg}<br/>
-                        Fullness: {summaryMotivateResults1y.summaryStats.fullnessAvg}<br/>
-                        After Eating: {summaryMotivateResults1y.summaryStats.aeplanningAvg}<br/>
-                        <p>How long you thought each eating phase lasted (below is the data to be graphed)</p><br/>
-                        Planning: {summaryMotivateResults1y.summaryStats.lessThanTen}<br/>
-                        Initial Eating: {summaryMotivateResults1y.summaryStats.tenToThirty}<br/>
-                        Fullness: {summaryMotivateResults1y.summaryStats.thirtyToOne}<br/>
-                        Fullness: {summaryMotivateResults1y.summaryStats.oneToTwo}<br/>
-                        After Eating: {summaryMotivateResults1y.summaryStats.overTwoHr}<br/>
+                        <h2 className="mt-0 text-gray-700 text-3xl font-light">Favorite food you planned to eat next</h2>
+                        <TreeMap  data={summaryMotivateResults1y.plan2eat}/>
+                        <h2 className="mt-0 text-gray-700 text-3xl font-light">How you usually felt during each eating phase</h2>
+                        <AreaChart data={summaryMotivateResults1y.summaryStats.phaseFeel}/>
+                        <h2 className="mt-0 text-gray-700 text-3xl font-light">How long you thought each eating phase lasted</h2>
+                        <BarChart data={summaryMotivateResults1y.summaryStats.lengthFeel}/>
                     </div>
                   </div>
               {/* </div>
