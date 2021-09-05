@@ -29,13 +29,13 @@ export const Plan2 = ({user}) =>  {
             <div><h1>YOU ARE NOT LOGGED IN</h1></div>
         );
         return (
-                    <div className="block m-2">
-                        <div>
+                    <div className="block w-full h-full">
+                        <div className="fixed left-52 top-16     bottom-0 right-0">
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                         {/* { (<div>{ user ? levelone : leveltwo }</div>)} */}
                         </nav>
 
-                        <Chatbot config={config} actionProvider={ActionProvider}  messageParser={MessageParser} userid={user._id}/>
+                        <Chatbot config={config} actionProvider={ActionProvider}  messageParser={MessageParser} userid={user._id} className="h-full" />
                         {/* <button class="circle-div">HI</button> */}
                         </div>
                     </div>

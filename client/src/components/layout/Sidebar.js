@@ -48,7 +48,7 @@ export const Sidebar = () => {
           <div className="flex lg:py-0 px-0 content-center w-full">
             <div className="flex justify-between w-full">
               <div className="flex space-y-8 w-full items-center lg:items-start lg:justify-start">
-                <div className="flex lg:flex-col xl:flex-col sm:flex-row space-y-0 space-x-0 lg:space-x-0 lg:space-y-1 lg:justify-start w-full justify-between px-0 lg:px-0" >
+                <div className="flex lg:flex-col xl:flex-col sm:flex-row m-2 space-y-0 space-x-0 lg:space-x-0 lg:space-y-1 lg:justify-start w-full justify-between px-0 lg:px-0" >
                   <Link to='/Dashboard' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Dashboard") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "Dashboard" ? dashIconWhite  : dashIcon} className="w-6" alt='Dashboard'/>
@@ -61,7 +61,7 @@ export const Sidebar = () => {
                       <span className="text-sm font-medium">Plan (UI)</span>
                     </div>
                   </Link>
-                  <Link to='/Plan2' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan2") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')}>
+                  <Link to='/Plan2' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan2") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "Plan2" ? planIconWhite  : planIcon} className="w-6" alt='Plan' />
                       <span className="text-sm font-medium">Plan</span>

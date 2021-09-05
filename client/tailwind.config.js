@@ -3,8 +3,23 @@ module.exports = {
     purge: ['./src/**/*.js', './public/index.html'],
     darkMode: false, // or 'media' or 'class'
     theme: {
+      backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+       '75%': '75%',
+      },
       fontFamily: {
         'sans': ['Roboto']
+      },
+      borderWidth: {
+        DEFAULT: '1px',
+        '0': '0',
+        '2': '2px',
+        '3': '3px',
+        '4': '4px',
+        '6': '6px',
+        '8': '8px',
       },
       filter: { // defaults to {}
         'none': 'none',
@@ -21,6 +36,7 @@ module.exports = {
           beaPurple: '#AD79E2',
           beaPurpleCorrected: '#8037CA',
           beaDarkPurple: '#561D90',
+          beaLightPurple: '#7B48CB',
           beaGrey: '#F2F2F2',
           beaIconGrey: '#666666',
           beaBlue: '#E4F3FE',
@@ -40,12 +56,16 @@ module.exports = {
           purpleGradientMiddle: '#AD79E2',
           purpleGradientEnd: '#B1D0F4',
           beaBlueText: '#056895',
+          beaCyan: '#1A9FB2',
+          beaLightGrey: '#EDEDED',
+          beaBorderGrey: '#BBBABA',
         },
         transitionProperty: {
           'spacing': 'margin, padding',
          },
         backgroundImage: theme => ({
              'planIllustration': "url('./img/plan-illustration.svg')",
+             'beaLogo': "url('./img/bea-logo.png')",
         })
       },
     },

@@ -57,11 +57,11 @@ const App = () => {
         <section >
       <div className="flex-grow w-full mx-auto lg:px-0 flex">
       <div className="flex-1 min-w-0 lg:flex">
-      <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16">
+      <div className="bg-white lg:min-w-0 lg:flex-1 z-20 lg:ml-52 mt-16 min-h-screen -mb-16">
               
 
-        <div className="flex  w-full justify-center">
-        <div className="mb-2 max-w-7xl">
+        <div className="flex h-full w-full justify-center">
+        <div className="mb-2 w-full max-w-7xl h-full">
           <Alert />
           <Switch>
             <Route exact path='/' component={Dashboard} />
