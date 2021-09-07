@@ -3,6 +3,7 @@ import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdOneMonth } from '../../../actions/postMotivateResults';
+import * as d3 from "d3";
 import GaugeChart from 'react-gauge-chart';
 import Spinner from '../../layout/Spinner';
 import TreeMap from './TreeMap';

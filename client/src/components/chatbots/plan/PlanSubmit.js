@@ -39,7 +39,7 @@ export const PlanSubmit = ({props, postPlanResults, state, auth, ownProps}) => {
 //     actionProvider.foodchoices();
 //   };
 //    console.log("current entry state contains", state);
-  const [formData, setFormData] = useState({
+  const [formData] = useState({
     //user: "60217a517f2b961147d214f0",
     user: auth.user._id,
     lastblockvisited: ownProps.lastblockvisited,
@@ -115,21 +115,21 @@ const onSubmit = async (e) => {
   function mapStateToProps(state, ownProps) {
     const { auth } = state
     // ownProps would look like { "id" : 123 }
-    const { lastblockvisited,
-      howdoyoufeel,
-      howdoyoufeelint,
-      planjournal,
-      stayedontrack,
-      planbadblock,
-      what2change,
-      influencedeating,
-      whathappened,
-      somethingelsebad,
-      plangoal,
-      plangoal2,
-      plangoal3,
-      plangoal4,
-      plangoal5 } = ownProps
+    // const { lastblockvisited,
+    //   howdoyoufeel,
+    //   howdoyoufeelint,
+    //   planjournal,
+    //   stayedontrack,
+    //   planbadblock,
+    //   what2change,
+    //   influencedeating,
+    //   whathappened,
+    //   somethingelsebad,
+    //   plangoal,
+    //   plangoal2,
+    //   plangoal3,
+    //   plangoal4,
+    //   plangoal5 } = ownProps
  
    console.log("own props contains ", ownProps );
     console.log("state props contains ", state );

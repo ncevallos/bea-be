@@ -84,29 +84,20 @@ const data = {
     // getResultsById, 
     getResultsByIdToday,
      getSummary, 
-    //  planResult: { planResults }, 
      planResult2: { planResults2 }, 
      todayPlanResult: {todayPlanResults} 
     }) => {
-    //planResult: { planResults }, 
-    // todayPlanResult: {todayPlanResults}
 
-  useEffect(() => {
-    //   getResultsByIdToday(user._id);
-    //   getResultsById(user._id);
-      getSummary(user._id);
-      const today = new Date();
-      getResultsByIdToday(user._id, today);
-    //   if(planResults.length){
-    //       thisResults = planResults[0];
-    //       dataloaded = true;
-    //       console.log(thisResults);
-    //   }
-  }, [getResultsByIdToday, getResultsById, getSummary, user._id]);
+//   useEffect(() => {
+//       getSummary(user._id);
+//       const today = new Date();
+//       getResultsByIdToday(user._id, today);
+//   }, [getResultsByIdToday, getResultsById, getSummary, user._id]);
 
   let planBodyResults = "";
 //export const Dashboard = () => {
-    if(user._id){
+    // if(user._id){
+        if(user){
   
         planBodyResults = 
         <section>

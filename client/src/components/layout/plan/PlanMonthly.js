@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react'
 import { Links } from 'react-router-dom';
 import moment from 'moment';
-import {Line} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById } from '../../../actions/postPlanResults';
-import chartTrendline from "chartjs-plugin-trendline";
-import PlanMoodHeader from './PlanMoodHeader';
 import PlanMonthlyLineItem from './PlanMonthlyLineItem';
 
 

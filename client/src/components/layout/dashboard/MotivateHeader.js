@@ -1,22 +1,22 @@
 import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getResultsByIdToday } from '../../../actions/postPlanResults';
+import { getMotivResultsByIdToday } from '../../../actions/postMotivateResults';
 import planIconWhite from '../../../img/plan-icon-white.svg';
 import { Link } from 'react-router-dom';
 import RadialGraph from './RadialGraph';
 
 
-    const MotivateHeader = ({ user, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
+    const MotivateHeader = ({ user, getMotivResultsByIdToday, todayMotivateResult: { todayMotivateResults } }) => {
         useEffect(() => {
-            getResultsByIdToday(user._id);
-        }, [getResultsByIdToday, user._id]);
+          getMotivResultsByIdToday(user._id);
+        }, [getMotivResultsByIdToday, user._id]);
      //   console.log("plan  header new has", todayPlanResults );
     
-        let planHeader = "";
-      if(todayPlanResults.howdoyoufeel){
+        let motivateHeader = "";
+      if(todayMotivateResults){
   
-        planHeader = 
+        motivateHeader = 
         
 
             <div className="flex flex-grow w-full items-center rounded-xl mr-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 bg-beaStrongOrange">
@@ -31,7 +31,7 @@ import RadialGraph from './RadialGraph';
 
       }
       else {
-        planHeader = 
+        motivateHeader = 
             <div className="flex flex-grow w-full items-center rounded-xl mr-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 bg-beaStrongOrange">
                 <h4 className="text-base leading-6 font-bold text-white uppercase mb-4">
                      Motivate
@@ -45,7 +45,7 @@ import RadialGraph from './RadialGraph';
       }
     return (
         <Fragment>
-        {planHeader}
+        {motivateHeader}
         </Fragment>
 
 
@@ -53,15 +53,15 @@ import RadialGraph from './RadialGraph';
   }
 
   MotivateHeader.propTypes = {
-    getResultsByIdToday: PropTypes.func.isRequired,
-    todayPlanResult: PropTypes.object.isRequired,
+    getMotivResultsByIdToday: PropTypes.func.isRequired,
+    todayMotivateResult: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
   };
   
   const mapStateToProps = (state) => ({
-    todayPlanResult: state.todayPlanResult,
+    todayMotivateResult: state.todayPlanResult,
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user
   });
   
-  export default connect(mapStateToProps, { getResultsByIdToday })(MotivateHeader);
+  export default connect(mapStateToProps, { getMotivResultsByIdToday })(MotivateHeader);

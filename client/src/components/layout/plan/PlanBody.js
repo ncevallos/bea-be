@@ -1,25 +1,13 @@
 import React, { useEffect, Fragment } from 'react'
-import smileyIconRound from '../../../img/smiley-icon-round.svg';
-import heartIcon from '../../../img/heart-icon.svg';
-import bowlIcon from '../../../img/bowl-icon.svg';
-import newspaperIcon from '../../../img/newspaper-icon.svg';
-import smileyIconUnhappyRound from '../../../img/smiley-icon-unhappy-round.svg';
-import {Line} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
-import chartTrendline from "chartjs-plugin-trendline";
 import PlanMoodHeader from './PlanMoodHeader';
 import PlanLineGraph from './PlanLineGraph';
-import PlanMain from './/PlanMain';
-import PlanMoodHeaderFree from '../PlanMoodHeaderFree';
-import PlanHeader from '../PlanHeader';
 import CalendarPage from './calendar';
 import Spinner from '../../layout/Spinner';
-import moment from 'moment';
 import RadialGraph from './RadialGraph';
 import 'react-statusbar/dist/statusbar.css';
-import * as Statusbar from 'react-statusbar';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 
 

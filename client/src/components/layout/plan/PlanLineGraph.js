@@ -1,11 +1,4 @@
-import React, {Fragment, useState} from 'react'
-import smileyIconGreat from '../../../img/planimgs/icon-great.png';
-import smileyIconPrettyGood from '../../../img/planimgs/icon-prettygood.png';
-import smileyIconHorrible from '../../../img/planimgs/icon-horrible.png';
-import smileyIconNotGood from '../../../img/planimgs/icon-notgood.png';
-import noEntry from '../../../img/planimgs/no-entry.png';
-import {Line} from 'react-chartjs-2';
-import chartTrendline from "chartjs-plugin-trendline";
+import React, {Fragment} from 'react'
 import moment from 'moment';
 import ReactApexCharts from 'react-apexcharts';
 
@@ -48,31 +41,6 @@ const apexData = {
       xaxis: {
       //  categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
         categories: [],
-        // labels: {
-        //   formatter: function(value, opts) {
-        //       console.log("value in labels formatter has", value);
-        //     switch(value){
-        //     case 3:
-        //         apexData.series[0].data.push("Great")
-        //         break;
-        //     case 2:
-        //         apexData.series[0].data.push("Good")
-        //         break;
-        //     case 1:
-        //         apexData.series[0].data.push("Not Good")
-        //         break;
-        //     case 0:
-        //         apexData.series[0].data.push("Horrible")
-        //         break;
-        //     default:
-        //         apexData.series[0].data.push("No Entry")
-        //         break;
-        //     }
-        //       return;
-
-        //      // return opts.dateFormatter(new Date(timestamp), 'dd MMM')
-        //   }
-        // }
         type: 'datetime',
           labels: {
             show: true,
@@ -92,15 +60,6 @@ const apexData = {
             },
             offsetX: 0,
             offsetY: 0,
-            /*format: undefined,
-            formatter: undefined,
-            datetimeUTC: true,
-            datetimeFormatter: {
-                year: 'yyyy',
-                month: "MMM 'yy",
-                day: 'dd MMM',
-                hour: 'HH:mm',
-            },*/
             
               format: 'dd'
         },
@@ -274,23 +233,6 @@ class PlanLineGraph extends React.Component {
      //    console.log("temp2 in loopcount in plan body is", temp2);
         data.datasets[0].data.push(temp2)
         apexData.series[0].data.push(temp2);
-        // switch(temp2){
-        //     case 3:
-        //         apexData.series[0].data.push("Great")
-        //         break;
-        //     case 2:
-        //         apexData.series[0].data.push("Good")
-        //         break;
-        //     case 1:
-        //         apexData.series[0].data.push("Not Good")
-        //         break;
-        //     case 0:
-        //         apexData.series[0].data.push("Horrible")
-        //         break;
-        //     default:
-        //         apexData.series[0].data.push("No Entry")
-        //         break;
-        //     }
           loopCount--;
           loopincremet++;
       }

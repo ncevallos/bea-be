@@ -1,19 +1,10 @@
 import React, { useEffect, useState, Fragment } from 'react'
-import bowlIcon from '../../../img/bowl-icon.svg';
-import newspaperIcon from '../../../img/newspaper-icon.svg';
-import {Line} from 'react-chartjs-2';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
-import chartTrendline from "chartjs-plugin-trendline";
-import PlanMoodHeader from './PlanMoodHeader';
-import PlanMoodHeaderFree from './../PlanMoodHeaderFree';
 import PlanHeader from './PlanHeader';
 import PlanBody from './PlanBody';
-import CalendarPage from './calendar';
 import Spinner from '../../layout/Spinner';
-import PlanLineGraph from '../PlanLineGraph';
 
 
 const PlanMain = ({ user, 

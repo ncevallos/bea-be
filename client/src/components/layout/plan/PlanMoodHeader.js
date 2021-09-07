@@ -3,12 +3,6 @@ import smileyIcon from '../../../img/smiley-icon.svg';
 import smileyIconExtraHappy from '../../../img/smiley-icon-extrahappy.svg';
 import smileyIconNeutral from '../../../img/smiley-icon-neutral.svg';
 import smileyIconUnhappy from '../../../img/smiley-icon-unhappy.svg';
-import smileyIconRound from '../../../img/smiley-icon-round.svg';
-import differentFoods from '../../../img/planimgs/different-foods.png';
-import meditate from '../../../img/planimgs/meditate.png';
-import read from '../../../img/planimgs/read.png';
-import smallerAmounts from '../../../img/planimgs/smaller-amounts.png';
-import noEntry from '../../../img/planimgs/no-entry.png';
 import { Fragment } from 'react';
 
 class PlanMoodHeader extends React.Component {
