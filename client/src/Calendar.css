@@ -259,6 +259,7 @@ main {
 }
 .progress {
   width: 200px;
+  height: 6px !important;
   
 }
 .planprogress .progress .bg-danger {

@@ -118,30 +118,63 @@ const data = {
                     <div>
                         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                             <li className="col-span-2 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
-                                <div className="flex-1 flex flex-col p-8 items-center">
-                                    <span className="text-beaBlueText text-sm">Calendar</span> 
-                                    <CalendarPage dates={planResults2.dates[0]} values={planResults2.values[0]} />
-                                    <div className="planprogress">
-                                    Great<br/>
-                                    {planResults2.summaryStats.great}%<br/>
-                                    <ProgressBar now={planResults2.summaryStats.great}  variant="danger" />
-                                    Good<br/>
-                                    {planResults2.summaryStats.good}%<br/>
-                                    <ProgressBar now={planResults2.summaryStats.good}  variant="warning" />
-                                    Not Good<br/>
-                                    {planResults2.summaryStats.notgood}%<br/>
-                                    <ProgressBar now={planResults2.summaryStats.notgood}  variant="success" />
-                                    Horrible<br/>
-                                    {planResults2.summaryStats.horrible}%<br/>
-                                    <ProgressBar now={planResults2.summaryStats.horrible}  variant="info" />
-                                    </div>
-                                    {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
-                                        <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
-                                    </span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.stayedontrackpct}%</h2> */}
-                                    <RadialGraph percent={planResults2.summaryStats.stayedontrackpct}/>
-                                    <span className="mt-6 text-gray-700 text-sm font-thin">Why you stayed on track</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.stayedontrack}</h2>
+                                <div className="flex-initial flex flex-col p-8 items-center">
+                                    <span className="text-beaBlueText font-bold uppercase text-sm">Mood Eating</span> 
+                                        <div className="flex-initial flex flex-row items-center mt-4 px-8">
+                                            <div className="w-2/3">
+                                                <CalendarPage dates={planResults2.dates[0]} values={planResults2.values[0]} />
+                                            </div>
+                                            <div className="flex-initial flex flex-col items-center">
+                                                <div className="planprogress">
+                                                    <div className="flex-initial flex flex-row items-center">
+                                                        <div className="p-2 m-0 w-16">
+                                                            <div className="font-light text-sm">Great</div>
+                                                            <div className="font-medium text-lg">{planResults2.summaryStats.great}%</div>
+                                                        </div>
+                                                        <div className="pt-0 ml-1">
+                                                            <ProgressBar now={planResults2.summaryStats.great}  variant="danger" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex-initial flex flex-row mt-0 items-center">
+                                                        <div className="p-2 m-0 w-16">
+                                                            <div className="font-light text-sm">Good</div>
+                                                            <div className="font-medium text-lg">{planResults2.summaryStats.good}%</div>
+                                                        </div>
+                                                        <div className="pt-0 ml-1">
+                                                            <ProgressBar now={planResults2.summaryStats.good}  variant="warning" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex-initial flex flex-row mt-0 items-center">
+                                                        <div className="p-2 m-0 w-16">
+                                                            <div className="font-light text-xs">Not<br/>Good</div>
+                                                            <div className="font-medium text-lg">{planResults2.summaryStats.notgood}%</div>
+                                                        </div>
+                                                        <div className="pt-0 ml-1">
+                                                            <ProgressBar now={planResults2.summaryStats.notgood}  variant="success" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex-initial flex flex-row mt-0 items-center">
+                                                        <div className="p-2 m-0 w-16">
+                                                            <div className="font-light text-sm">Horrible</div>
+                                                            <div className="font-medium text-lg">{planResults2.summaryStats.horrible}%</div>
+                                                        </div>
+                                                        <div className="pt-0 ml-1">
+                                                            <ProgressBar now={planResults2.summaryStats.horrible}  variant="info" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
+                                                    <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
+                                                </span>
+                                                <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.stayedontrackpct}%</h2> */}
+
+                                                <div className="w-auto">
+                                                    <RadialGraph percent={planResults2.summaryStats.stayedontrackpct}/>
+                                                    <span className="mt-6 text-gray-700 text-sm font-thin pb-0">Why you stayed on track</span>
+                                                    <h2 className="mt-0 text-gray-700 text-3xl font-light leading-6">{planResults2.summaryStats.stayedontrack}</h2>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
                             </li>
                         </ul>
@@ -149,38 +182,40 @@ const data = {
 
 
                     <div>
-                        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
-                            <li className="col-span-1 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
-                                <div className="flex-1 flex flex-col p-8 items-center">
-                                    <span className="text-beaBlueText text-sm">FAVORITE GOAL</span>
-                                    {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
-                                        <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
-                                    </span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2> */}
-                                    <RadialGraph percent={planResults2.summaryStats.favgoalpct}/>
-                                    <span className="mt-6 text-gray-700 text-sm font-thin">Most important goal</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal}</h2>
- 
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
+                            <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
+                                <span className="text-beaBlueText text-sm">FAVORITE GOAL</span>
+                                <div className="flex flex-row">
+                                    <div className="flex-1 flex flex-col items-center">
+                                        {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
+                                            <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
+                                        </span>
+                                        <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2> */}
+                                        <RadialGraph percent={planResults2.summaryStats.favgoalpct}/>
+                                        <span className="mt-6 text-gray-700 text-sm font-light">Most important goal</span>
+                                        <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favgoal}</h2>
+    
+                                    </div>
+                                    <div className="flex-1 flex flex-col items-center">
+                                        {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
+                                            <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
+                                        </span>
+                                        <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal2pct}%</h2> */}
+                                        <RadialGraph percent={planResults2.summaryStats.favgoal2pct}/>
+                                        <span className="mt-6 text-gray-700 text-sm font-light">Main focus of food choice</span>
+                                        <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favgoal2}</h2>
+                                    </div>
                                 </div>
-                                <div className="flex-1 flex flex-col p-8 items-center">
-                                    {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
-                                        <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
-                                    </span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal2pct}%</h2> */}
-                                    <RadialGraph percent={planResults2.summaryStats.favgoal2pct}/>
-                                    <span className="mt-6 text-gray-700 text-sm font-thin">Main focus of food choice</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal2}</h2>
-                                </div>
-                            </li>
-                            <li className="col-span-1 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
-                                <div className="flex-1 flex flex-col p-8 items-center">
+                            </div>
+                            <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
+                                <div className="flex-1 flex flex-col items-center">
                                     <span className="text-beaBlueText text-sm">FAVORITE ACTION</span>
                                     <RadialGraph percent={planResults2.summaryStats.favactionpct}/>
-                                    <span className="mt-6 text-gray-700 text-sm font-thin">The action that stopped unmindful eating</span>
-                                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favaction}</h2>
+                                    <span className="mt-6 text-gray-700 text-sm font-light">The action that stopped unmindful eating</span>
+                                    <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favaction}</h2>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

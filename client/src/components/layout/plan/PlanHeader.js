@@ -84,7 +84,7 @@ import { Link } from 'react-router-dom';
       </div>
       }
     return (
-        <div style={{ backgroundImage: "url(" + planIllustration + "), linear-gradient(rgba(177, 201, 243, 0.9), rgba(173, 126, 227, 0.9), rgba(139, 99, 178, 0.9))" }} className="flex rounded-xl mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6">
+        <div style={{ backgroundImage: "linear-gradient(45deg, rgba(109,80,139, 1), rgba(173, 121, 226, 1), rgba(177, 208, 244, 1))" }} className="flex rounded-md mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 pb-12">
         <div className="mb-4">
             <h3 className="text-sm leading-6 font-medium text-white uppercase font-black tracking-widest mb-1">
                 Your Plan Today

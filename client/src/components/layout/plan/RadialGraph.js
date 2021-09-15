@@ -35,8 +35,9 @@ class RadialGraph extends React.Component {
                 value: {
                   show: true,
                   color: '#333',
-                  offsetY: 70,
-                  fontSize: '22px'
+                  offsetY: 50,
+                  fontSize: '19px',
+                  fontWeight: 100
                 }
               }
             }
