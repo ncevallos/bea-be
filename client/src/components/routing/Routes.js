@@ -21,6 +21,7 @@ import Settings from '../layout/Settings';
 import Termsconditions from '../layout/Termsconditions';
 import Privacy from '../layout/Privacy';
 import CalendarPage from '../layout/CalendarPage';
+import MeditateChat from '../layout/meditate/MeditateChat'
 // import NotFound from '../layout/NotFound';
 import PrivateRoute from './PrivateRoute';
 
@@ -63,6 +64,7 @@ const Routes = props => {
         <PrivateRoute exact path="/planpastday" component={PlanPastDay} />
         <PrivateRoute exact path="/testplansubmit" component={TestPlanSubmit} />
         <PrivateRoute exact path="/testpage" component={Testpage} />
+        <PrivateRoute exact path="/meditatechat" component={MeditateChat} />
         <Route component={NoMatchPage} />
       </Switch>
   );

@@ -1,7 +1,8 @@
 import React from 'react'
 import 'reactjs-popup/dist/index.css';
-import Videomodal from './Videomodal';
+import { Videodata } from "./meditate/Videodata";
 import Clouds from '../../img/meditateimgs/clouds.png';
+import Videomodal from './Videomodal';
 
 
 class Videoselection extends React.Component {

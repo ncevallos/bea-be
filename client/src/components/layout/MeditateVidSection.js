@@ -8,9 +8,9 @@ import RecentVideos from './RecentVideos';
 
 
 // class MeditateVidSection extends Component {
-    const MeditateVidSection =({}) => {
+    const MeditateVidSection =(props) => {
         const [openTab, setOpenTab] = React.useState(2);
-
+        console.log("props contains", props)
     // render() {
     return (
         <div className="flex px-6 py-6">
@@ -62,7 +62,7 @@ import RecentVideos from './RecentVideos';
 
             <div className="flex md:flex-row flex-col">
             <div className={openTab === 1 ? "block w-full mr-3" : "hidden"} id="link1">
-                    <RecentVideos /> 
+                    <RecentVideos results={props.results}/> 
                 </div>
                 <div className={openTab === 2 ? "block w-full mr-3" : "hidden"} id="link2">
                     <FeaturedVideos /> 

@@ -2,7 +2,7 @@
 import React from 'react'
 import { Component } from 'react';
 import Videoselection from './Videoselection';
-import { Videodata } from "./Videodata";
+import { Videodata } from "./meditate/Videodata";
 
 
 class FeaturedVideos extends Component {

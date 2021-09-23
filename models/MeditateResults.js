@@ -5,14 +5,15 @@ const MeditateResultsSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
-  videoswatched: {
-      video: {
-        type: String,
-        date: {
-            type: Date,
-            default: Date.now
-        }
-      },
+  videoid: {
+    type: Number,
+  },
+  videotitle: {
+    type: String,
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 

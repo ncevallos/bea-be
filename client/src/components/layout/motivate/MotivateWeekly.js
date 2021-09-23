@@ -66,15 +66,15 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
                         </svg>
                     </div>
                   </div> 
+
+                  <div className="border border-gray-200 rounded-xl p-10 my-4">
+                        <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Triggers &amp; Mood Evaluations</div>
+                        <h2 className="mt-0 text-gray-700 text-3xl font-light">Favorite food you planned to eat next</h2>
+                  <TreeMap data={summaryMotivateResults1wk.plan2eat}/>
+                    </div>
                   <div className="flex flex-grow w-full">
                     <div className="w-full border border-gray-200 rounded-xl p-10 mr-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Triggers</div>
-                        <h2 className="mt-0 text-gray-700 text-3xl font-light">Favorite food you planned to eat next</h2>
-                        <TreeMap data={summaryMotivateResults1wk.plan2eat}/>
-                        <p>(below is the data to be graphed)</p><br/>
-                      {/* {summaryMotivateResults1wk.planned2eat.map((item, index) => (
-                        <p key={index}>{item} - (one entry)</p>
-                    ))} */}
                     <span className="mt-6 text-gray-700 text-sm font-thin">Reason why you chose the foods</span><br/>
                     <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.whyHungry}</h2>
                     <SimpleGauge />
@@ -86,8 +86,6 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
                     </div>
                     <div className="w-full border border-gray-200 rounded-xl p-10 ml-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Evaluating Mood</div>
-                        <h2 className="mt-0 text-gray-700 text-3xl font-light">Favorite food you planned to eat next</h2>
-                        <TreeMap  data={summaryMotivateResults1wk.plan2eat}/>
                         <h2 className="mt-0 text-gray-700 text-3xl font-light">How you usually felt during each eating phase</h2>
                         <AreaChart data={summaryMotivateResults1wk.summaryStats.phaseFeel}/>
                         <h2 className="mt-0 text-gray-700 text-3xl font-light">How long you thought each eating phase lasted</h2>

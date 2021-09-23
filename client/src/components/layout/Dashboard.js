@@ -12,7 +12,7 @@ import GaugeChart from 'react-gauge-chart';
 
 import DashboardSections from './dashboard/DashboardSections';
 import Videoselection from './Videoselection';
-import { Videodata } from "./Videodata";
+import { Videodata } from "./meditate/Videodata";
 import PlanHeader from './dashboard/PlanHeader';
 import MotivateHeader from './dashboard/MotivateHeader';
 import MeditateHeader from './dashboard/MeditateHeader';

@@ -1,6 +1,10 @@
 import React from 'react'
 import { createChatBotMessage } from "react-chatbot-kit";
 import AreyouReady from "./AreyouReady";
+import Begin from "./Begin";
+import Begin2 from "./Begin2";
+import EndChoices from './EndChoices';
+import MoveOn from "./MoveOn";
 
 const botName = "Bea";
 
@@ -20,10 +24,33 @@ const config = {
         delay: 8000,
     }),
 ],
+state: {
+    firstvisit: false,
+    videoplayedid: "",
+    videoplayedtitle: "",
+},
 widgets: [
     {
         widgetName: "areyouReady",
-       widgetFunc: (props) => <AreyouReady {...props} />,
+        widgetFunc: (props) => <AreyouReady {...props} />,
+        mapStateToProps: ["videoplayedid", "videoplayedtitle"]
+    },
+    {
+        widgetName: "begin",
+        widgetFunc: (props) => <Begin {...props} />,
+    },
+    {
+        widgetName: "begin2",
+        widgetFunc: (props) => <Begin2 {...props} />,
+    },
+    {
+        widgetName: "moveOn",
+        widgetFunc: (props) => <MoveOn {...props} />,
+    },
+    {
+        widgetName: "endChoices",
+        widgetFunc: (props) => <EndChoices {...props} />,
+        mapStateToProps: ["videoplayedid", "videoplayedtitle"]
     },
 ],
   }

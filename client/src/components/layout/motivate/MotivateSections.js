@@ -74,7 +74,7 @@ import MotivateYear from './MotivateYear';
                     >
                         3M
                     </a>
-                    <a
+                    {/* <a
                         className={
                         "" +
                         (openTab === 4
@@ -107,7 +107,7 @@ import MotivateYear from './MotivateYear';
                         role="tablist"
                     >
                         ALL
-                    </a>
+                    </a> */}
                 </nav>
                 </div>
 
@@ -121,12 +121,12 @@ import MotivateYear from './MotivateYear';
                 <div className={openTab === 3 ? "block w-full mr-3" : "hidden"} id="link2">
                      <MotivateThreeMonth />
                 </div>
-                <div className={openTab === 4 ? "block w-full mr-3" : "hidden"} id="link2">
+                {/* <div className={openTab === 4 ? "block w-full mr-3" : "hidden"} id="link2">
                      <MotivateYear />
                 </div>
                 <div className={openTab === 5 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab five
-                </div>
+                </div> */}
             </div>
         {/* </div>
         </div> */}

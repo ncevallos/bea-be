@@ -1,12 +1,52 @@
-import React from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import mountainStream from '../../img/mountain-stream.svg';
 import MeditateVidSection from './MeditateVidSection';
+import { getResultsById } from '../../actions/meditateResults';
 import { connect } from 'react-redux';
+import PlanHeader from './plan/PlanHeader';
+import PlanBody from './plan/PlanBody';
 import PropTypes from 'prop-types';
 
 
-export const Meditate = () => {
+// export const Meditate = () => {
 
+
+    const Meditate = ({ user, 
+        getResultsById,
+         meditateResult: {meditateResults} 
+        }) => {
+        //planResult: { planResults }, 
+        // todayPlanResult: {todayPlanResults}
+    
+      useEffect(() => {
+        //   getResultsByIdToday(user._id);
+           getResultsById(user._id);
+        //  getSummary(user._id);
+        //   if(planResults.length){
+        //       thisResults = planResults[0];
+        //       dataloaded = true;
+        //       console.log(thisResults);
+        //   }
+      }, [getResultsById, user._id]);
+      console.log("meditate results has", meditateResults);
+    //   console.log("today plan results has", todayPlanResults);
+    //   console.log("sumarry plan results has", planResults2);
+    //   let planBodyResults = "";
+    //   if(planResults2.summaryStats){
+      
+    //     planBodyResults = 
+    //         <Fragment>
+    
+    //         <PlanHeader todayPlanResults={todayPlanResults}/>
+    //         {/* <PlanLineGraph planResults={planResults2} /> */}
+    //         <PlanBody planResults={planResults2}/>
+    //         </Fragment>
+    //   }
+    //   else {
+    //     planBodyResults = 
+    //         <Fragment><div>Loading</div></Fragment>
+    
+    //   }
     return (
         <section>
             <div className="flex-grow w-full mx-auto lg:px-0 flex">
@@ -46,11 +86,30 @@ export const Meditate = () => {
                 </div>
                 </div>
                 {/* //Below will be the recent/featured section */}
-                <MeditateVidSection />
+                <MeditateVidSection results={meditateResults}/>
             </div></div>
             </div>
         </section>
     )
 }
-
-export default Meditate;
+Meditate.propTypes = {
+   // getResultsByIdToday: PropTypes.func.isRequired,
+    getResultsById: PropTypes.func.isRequired,
+    // getSummary:  PropTypes.func.isRequired,
+    // planResult: PropTypes.object.isRequired,
+    // planResult2: PropTypes.object.isRequired,
+    // todayPlanResult: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = (state) => ({
+    meditateResult: state.meditateResult,
+    // planResult2: state.planResult2,
+    // todayPlanResult: state.todayPlanResult,
+    isAuthenticated: state.auth.isAuthenticated,
+    user: state.auth.user
+  });
+  
+  export default connect(mapStateToProps, { getResultsById})(Meditate);
+  
+//export default Meditate;

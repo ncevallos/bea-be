@@ -23,7 +23,8 @@ router.post(
 
     const {
         user,
-        videoswatched
+        videoid,
+        videotitle
     } = req.body;
     // const { name, email, password } = req.body;
 
@@ -45,7 +46,8 @@ router.post(
         console.log("in meditate results");
         meditateResults = new MeditateResults({
             user,
-            videoswatched
+            videoid,
+            videotitle
             
         });
         await meditateResults.save();
@@ -67,7 +69,7 @@ router.post(
 // @access   Public
 router.get('/', async (req, res) => {
   try {
-    // const results = await PlanResults.find({ user : req.user.id});
+    //const results = await MeditateResults.find({ user : req.user.id});
     const results = await MeditateResults.find({ user : "60217a517f2b961147d214f0"});
 
     if(!results){

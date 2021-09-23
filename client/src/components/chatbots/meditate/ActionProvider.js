@@ -1,4 +1,7 @@
 import React from 'react'
+import { Videodata } from "../../layout/meditate/Videodata";
+import ReactPlayer from "react-player"
+import { data } from 'autoprefixer';
 
 // ActionProvider starter code
 class ActionProvider {
@@ -7,11 +10,106 @@ class ActionProvider {
       this.setState = setStateFunc;
       this.createClientMessage = createClientMessage;
     }
+    randomnumber(){
+        //random number generator for the random response blocks
+        const min = 1;
+        const max = 8;
+        let rand = min + Math.random() * (max - min);
+        console.log("random number produces equals", rand);
+        rand = Math.floor(rand);
+        console.log("random number now contains", rand);    
+        return (rand-1);
+    }
+    randomnumber2(){
+        //random number generator for the random response blocks
+        const min = 1;
+        const max = 3;
+        let rand = min + Math.random() * (max - min);
+        console.log("random number2 produces equals", rand);
+        rand = Math.floor(rand);
+        console.log("random number2 now contains", rand);    
+        return (rand-1);
+    }
     greet() {
         const greetingMessage = this.createChatBotMessage("Hello friend");
         this.updateChatbotState(greetingMessage)
     }
+    handleLetsBegin = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`First, find a quiet place where you can sit and relax without distraction.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Make sure you’re not driving or doing anything else where it might be dangerous to be in a relaxed state.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`After you find a comfortable spot, I will ask you to press the “Play” button to hear today’s recording. `, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Upon doing that, you can gently close your eyes.`, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`Are you sitting someplace comfortably and ready to begin?`, {
+            delay: 12000,
+            widget: "begin",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
 
+    videoPlay = () => {
+        const randnum = this.randomnumber();
+        const vidData = Videodata[randnum];
+        console.log("random video data has", vidData);
+        this.setState((state) => ({
+            ...state,
+            videoplayedid: vidData.id,
+            videoplayedtitle: vidData.title,
+          }));
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Wonderful 😊`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`Go ahead and press the play button below to listen to your Meditation for today.`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`After you find a comfortable spot, I will ask you to press the “Play” button to hear today’s recording. `, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(<><div style={{textAlign: 'center'}}>Today's Video: {vidData.title} <br /></div><div style={{ width: 400, height: 300 }}><ReactPlayer
+                className="react-player"
+                controls={true}
+                width="100%"
+                height="100%"
+                url={vidData.vidurl}
+                playsinline={true} /></div></>, {
+            delay: 8000,
+        }),
+        this.createChatBotMessage(`When you’re finished listening to the recording, take some time to readjust to your surroundings.`, {
+            delay: 20000,
+        }),
+        this.createChatBotMessage(`And when you’re ready, we will mindfully move on.`, {
+            delay: 22000,
+            widget: "moveOn",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
+
+    endChoices = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`I hope you enjoyed your Meditation and that you’re feeling relaxed.`, {
+            delay: 2000,
+        }),
+        this.createChatBotMessage(`<embed image>`, {
+            delay: 4000,
+        }),
+        this.createChatBotMessage(`Tomorrow, I’ll have a different recording for you to enjoy.`, {
+            delay: 6000,
+        }),
+        this.createChatBotMessage(`Would you like to visit your Dashboard to listen to past recordings, do another Activity, or end for now?`, {
+            delay: 12000,
+            widget: "endChoices",
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
     nofoulwords() {
         const nofoulwordsMessage = 
         [this.createChatBotMessage(`I can tell by what you just wrote that you are upset, and that is of course okay.`), 

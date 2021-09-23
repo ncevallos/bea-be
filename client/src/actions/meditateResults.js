@@ -6,6 +6,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   GET_MEDITATE_RESULTS,
+  GET_TODAY_MEDITATE_RESULTS,
   MEDITATE_RESULTS_ERROR
 } from './types';
 
@@ -54,13 +55,13 @@ export const getResultsById = userId => async dispatch => {
     const res = await api.get(`/meditateResults/`);
     console.log('in try for get meditate results');
     dispatch({
-      type: GET_MOTIVATE_RESULTS,
+      type: GET_MEDITATE_RESULTS,
       payload: res.data
     });
   } catch (err) {
     console.log('error reached');
     dispatch({
-      type: MOTIVATE_RESULTS_ERROR,
+      type: MEDITATE_RESULTS_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }
     });
   }

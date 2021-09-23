@@ -11,6 +11,8 @@ import summaryMotivateResult1wk from './motivateResult';
 import summaryMotivateResult1m from './motivateResult';
 import summaryMotivateResult3m from './motivateResult';
 import summaryMotivateResult1y from './motivateResult';
+import meditateResult from './meditateResult';
+import todayMeditateResult from './meditateResult';
 export default combineReducers({
     alert,
     auth,
@@ -23,6 +25,9 @@ export default combineReducers({
     summaryMotivateResult1m,
     summaryMotivateResult3m,
     summaryMotivateResult1y,
-    todayMotivateResult
+    todayMotivateResult,
+    meditateResult,
+    todayMeditateResult
+
 });
 
