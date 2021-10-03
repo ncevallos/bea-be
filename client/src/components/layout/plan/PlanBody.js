@@ -9,6 +9,7 @@ import Spinner from '../../layout/Spinner';
 import RadialGraph from './RadialGraph';
 import 'react-statusbar/dist/statusbar.css';
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import moment from 'moment';
 
 
 const data = {
@@ -98,7 +99,21 @@ const data = {
    let headercontrol = 0;
     headercontrol = planResults2.summaryStats.avgMood;
    // console.log("today plan results has", todayPlanResults);
-
+    let monthText = ""
+    let today = new Date();
+    if(moment(today).subtract(30, 'days').format('MMMM') == moment(today).format('MMMM')){
+        //header will only show current month
+        console.log("30 days ago is same month")
+        let monthText = moment(today).format('MMMM');
+        console.log('month text has', monthText)
+    }
+    else {
+        //header will show the two months
+        console.log("30 days ago is not same month")
+        let monthText = moment(today).subtract(30, 'days').format('MMM DD') + ' - ' + moment(today).format('MMMM');
+        console.log('month text has', monthText)
+    }
+   let calendarText = moment(today).subtract(30, 'days').format('MMM DD')+ ' - ' + moment(today).format('MMM DD');
     return (
         <Fragment>
           {planResults2 === null ? (
@@ -122,6 +137,14 @@ const data = {
                                     <span className="text-beaBlueText font-bold uppercase text-sm">Mood Eating</span> 
                                         <div className="flex-initial flex flex-row items-center mt-4 px-8">
                                             <div className="w-2/3">
+                                                <div style={{
+                                                    borderColor: "#000000",
+                                                    borderWidth: '1px',
+                                                    borderStyle: 'solid',
+                                                    borderRadius: '20px',
+                                                    padding: '5px 50px',
+                                                    margin: '15px'
+                                                    }}>{calendarText}</div>
                                                 <CalendarPage dates={planResults2.dates[0]} values={planResults2.values[0]} />
                                             </div>
                                             <div className="flex-initial flex flex-col items-center">

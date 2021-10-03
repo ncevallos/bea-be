@@ -93,6 +93,7 @@ export const CalendarPage = (props) =>  {
     //alert('Will send you to Plan Daily with the following date '+ moment(value).format('MMMM-DD-YYYY') )
     let newLocation = 'PlanDaily/' + moment(value).format('MMMM-DD-YYYY');
     console.log('new location has this', newLocation);
+    alert('Redirect to ', newLocation);
     //browserHistory.push({newLocation});
    // browserHistory.push('/PlanDaily');
 
@@ -108,22 +109,26 @@ export const CalendarPage = (props) =>  {
       alert('This date has not happened yet')
     }
   }
-  function onChange(nextValue) {
+  function onChange(value, event) {
+    //  alert('in onChange ')
+     // console.log('in onchange action', arguments);
   }
-  function onActiveStartDateChange(activeStartDate, value, view)
+  function onActiveStartDateChange({ action, activeStartDate, value, view })
 {
-  console.log('onActiveStartDateChange', activeStartDate)
+  //console.log('onActiveStartDateChange args', arguments);
 }
   return (
     <Calendar
  //     onChange={onChange}
- showFixedNumberOfWeeks
+      activeStartDate={new Date(new Date().setDate(new Date().getDate() - 30))}
+      showFixedNumberOfWeeks={5}
       value={value}
       tileClassName={tileClassName}
       onClick={onClick}
       onClickDay={onClickDay}
       showNavigation={false}
       onViewChange={false}
+      onChange={onChange}
       onActiveStartDateChange={onActiveStartDateChange}
       minDetail="month" 
    //   defaultActiveStartDate={activeStartDate}

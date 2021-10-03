@@ -74,17 +74,21 @@ const config = {
     createChatBotMessage(
         <img src={reflection} alt="Workflow" title="Workflow" style={{width: "250px"}} />, {
         delay: 2000,
+        withAvatar: true
     }),
     createChatBotMessage(`This isn't a 'diet plan', but a way for us to reflect before making some general goals together.`, {
         delay: 4000,
+        withAvatar: true
     }),
     createChatBotMessage(`This Activity will involve chatting with me for the next 7 minutes.`, {
         delay: 6000,
+        withAvatar: true
     }),
     createChatBotMessage(`Are you ready to start?`, {
         // widget: "optionsblock1",
         widget: "welcomeblock1",
         delay: 8000,
+        withAvatar: true
     }),
 ],
 

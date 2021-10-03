@@ -29,3 +29,7 @@
 .react-chatbot-kit-user-chat-message {
   border-radius: 15px 15px 0px 15px !important;
 }
+
+.learning-options-container {
+  margin-left: 50px;
+}

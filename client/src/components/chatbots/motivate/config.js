@@ -50,23 +50,28 @@ const config = {
     initialMessages: [createChatBotMessage(`Welcome. It’s time to Motivate!`), 
     createChatBotMessage(`This is the Activity to do when you’re struggling to make the right food choice in the moment.`, {
         delay: 2000,
-        withAvatar: false,
+        withAvatar: true,
     }),
     createChatBotMessage(`The Activity is made up of 3 different parts and will take approximately 7 minutes to complete.`, {
         delay: 4000,
+        withAvatar: true
     }),
     createChatBotMessage(`First, I'll ask you to Rate how much you’re struggling.`, {
         delay: 6000,
+        withAvatar: true
     }),
     createChatBotMessage(`Next, I'll ask you to Visualize different scenarios to help you evaluate what to eat next.`, {
         delay: 8000,
+        withAvatar: true
     }),
     createChatBotMessage(`Lastly, I'll walk you through a 1-Minute Mindfulness Exercise to help clear your mind.`, {
         delay: 10000,
+        withAvatar: true
     }),
     createChatBotMessage(`Let me know when you’re ready to begin.`, {
         widget: "areyouReady",
         delay: 12000,
+        withAvatar: true
     }),
 ],
 state: {
