@@ -28,6 +28,10 @@
   @apply relative inline-flex items-center px-6 py-2 shadow-none text-sm font-medium rounded-full text-white hover:bg-white hover:text-beaOrange transition-all border-t border-b border-l border-r border-white group focus:outline-none;
 }
 
+.btn-white-black {
+  @apply relative inline-flex items-center px-6 py-2 shadow-none text-sm font-medium rounded-full text-white hover:bg-white hover:text-gray-600 hover:no-underline transition-all border-t border-b border-l border-r border-white group focus:outline-none;
+}
+
 .btn-darkPurple {
   @apply relative inline-flex items-center px-6 py-2 shadow-none text-sm font-medium rounded-full text-beaDarkPurple hover:bg-beaDarkPurple hover:text-white transition-all border-t border-b border-l border-r border-beaDarkPurple group focus:outline-none;
 }

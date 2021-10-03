@@ -14,9 +14,9 @@ class PlanMoodHeader extends React.Component {
       if(control === 4){
 
         planmood = 
-            <div className="bg-beaYellow plan-interactive-state">
+            <div className="bg-beaYellow plan-interactive-state mb-gutter">
             <div className="sm:p-6 flex-grow">
-                <h3 className="text-2xl leading-6 font-medium text-white">
+                <h3 className="text-3xl leading-6 font-light text-white">
                     Keep up the good work!
                 </h3>
                 <div className="mt-2 max-w-xl text-md text-white">
@@ -32,16 +32,16 @@ class PlanMoodHeader extends React.Component {
                 </div>
             </div>
             <div className="flex pr-10 align-middle">
-                <img src={smileyIconExtraHappy} alt="Extra Happy Smiley" className="w-36" />
+                <img src={smileyIconExtraHappy} alt="Extra Happy Smiley" className="w-32" />
             </div>
         </div>
       }
       else if(control === 3){
   
         planmood = 
-          <div className="bg-beaOrange plan-interactive-state">
+          <div className="bg-beaOrange plan-interactive-state mb-gutter">
           <div className="sm:p-6 flex-grow">
-              <h3 className="text-2xl leading-6 font-medium text-white">
+              <h3 className="text-3xl leading-6 font-light text-white">
                   Keep up the good work!
               </h3>
               <div className="mt-2 max-w-xl text-md text-white">
@@ -57,16 +57,16 @@ class PlanMoodHeader extends React.Component {
               </div>
           </div>
           <div className="flex pr-10 align-middle">
-              <img src={smileyIcon} alt="Smiley Icon" className="w-36" />
+              <img src={smileyIcon} alt="Smiley Icon" className="w-32" />
           </div>
       </div>
       }
       else if(control === 2){
   
         planmood = 
-            <div className="bg-beaBlueGreen plan-interactive-state">
+            <div className="bg-beaBlueGreen plan-interactive-state mb-gutter">
             <div className="sm:p-6 flex-grow">
-                <h3 className="text-2xl leading-6 font-medium text-white">
+                <h3 className="text-3xl leading-6 font-light text-white">
                     Keep up the good work!
                 </h3>
                 <div className="mt-2 max-w-xl text-md text-white">
@@ -82,15 +82,15 @@ class PlanMoodHeader extends React.Component {
                 </div>
             </div>
             <div className="flex pr-10 align-middle">
-                <img src={smileyIconNeutral} alt="Neutral Smiley Face" className="w-36" />
+                <img src={smileyIconNeutral} alt="Neutral Smiley Face" className="w-32" />
             </div>
         </div>
       }
       else if(control === 1){
         planmood = 
-          <div className="bg-beaDarkBlue plan-interactive-state">
+          <div className="bg-beaDarkBlue plan-interactive-state mb-gutter">
           <div className="sm:p-6 flex-grow">
-              <h3 className="text-2xl leading-6 font-medium text-white">
+              <h3 className="text-3xl leading-6 font-light text-white">
                   Keep up the good work!
               </h3>
               <div className="mt-2 max-w-xl text-md text-white">
@@ -106,15 +106,15 @@ class PlanMoodHeader extends React.Component {
               </div>
           </div>
           <div className="flex pr-10 align-middle">
-              <img src={smileyIconUnhappy} alt="Unhappy Smiley Icon" className="w-36" />
+              <img src={smileyIconUnhappy} alt="Unhappy Smiley Icon" className="w-32" />
           </div>
       </div>
       }
       else {
         planmood = 
-          <div className="bg-gradient-to-r from-beaLightBlue to-gray-50 plan-interactive-state">
+          <div className="bg-gradient-to-r from-beaLightBlue to-gray-50 plan-interactive-state mb-gutter">
           <div className="sm:p-6 flex-grow">
-              <h3 className="text-2xl leading-6 font-thin text-gray-700">
+              <h3 className="text-3xl leading-6 font-light text-gray-700">
                   Get your mood eating trends
               </h3>
               <div className="mt-2 max-w-xl text-md text-gray-700 font-light">

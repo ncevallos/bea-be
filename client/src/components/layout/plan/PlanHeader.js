@@ -24,14 +24,14 @@ import { Link } from 'react-router-dom';
         <div className="flex flex-row w-full justify-between">
         <div className="flex">
             <div className="flex flex-col w-48">
-                <div className="w-24 h-24 bg-opacity-50 rounded-3xl mb-2.5">
+                <div className="w-20 h-20 bg-opacity-50 rounded-3xl mb-2.5">
                     <PlanIconsDash msg={todayPlanResults.plangoal} />  
                 </div>
                 <div className="">
                     <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
                         Your main goal is to eat
                     </h4>
-                    <h5 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
+                    <h5 className="text-2xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
                     {todayPlanResults.plangoal} and {todayPlanResults.plangoal2}
                     </h5>
                 </div>
@@ -39,23 +39,23 @@ import { Link } from 'react-router-dom';
         </div>
         <div className="flex w-48">
             <div className="flex flex-col">
-                <div className="w-24 h-24 bg-opacity-50 rounded-3xl mb-2.5">
+                <div className="w-20 h-20 bg-opacity-50 rounded-3xl mb-2.5">
                     <PlanIconsDash msg={todayPlanResults.plangoal5} />  
                 </div>
                 <div className="">
                     <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
                         When you feel the urge to eat
                     </h4>
-                    <h5 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
+                    <h5 className="text-2xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
                          {todayPlanResults.plangoal5}
                     </h5> 
                 </div>
             </div>                            
         </div>
-        <div className="flex w-48 justify-end pr-10">
-            
-        <Link to='/PlanDaily'>
-            <img src={arrowRight} alt="arrow right" className="w-24" /></Link>
+        <div className="flex flex-col justify-center mr-10">
+            <Link to='/PlanDaily'>
+                <img src={arrowRight} alt="arrow right" className="w-24" />
+            </Link>
         </div>
     </div>
       }
@@ -63,28 +63,21 @@ import { Link } from 'react-router-dom';
         planHeader = 
 
             
-          <div className="flex flex-row w-full justify-between">
+          <div className="flex flex-row justify-center w-full">
           <div className="flex">
-              <div className="flex flex-col w-96">
-                  <div className="">
-                      <h4 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                          It looks like you didn't create a plan for today.
-                      </h4>
-                      <h5 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                      Chat with Bea now
-                      </h5>
-                  </div>
+              <div className="flex flex-col items-center">
+                    <h4 className="text-3xl leading-6 font-light text-white font-thin tracking-tight mb-gutter">
+                        It looks like you didn't create a plan for today.
+                    </h4>
+                    <Link to='/Plan2' className="btn-white-black mt-1" type='button'>
+                        Chat with Bea
+                    </Link>               
               </div>
-          </div>
-          <div className="flex w-48 justify-end pr-10">
-              
-          <Link to='/Plan2'>
-              <img src={arrowRight} alt="arrow right" className="w-24" /></Link>
           </div>
       </div>
       }
     return (
-        <div style={{ backgroundImage: "linear-gradient(45deg, rgba(109,80,139, 1), rgba(173, 121, 226, 1), rgba(177, 208, 244, 1))" }} className="flex rounded-md mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 pb-12">
+        <div style={{ backgroundImage: "linear-gradient(45deg, rgba(109,80,139, 1), rgba(173, 121, 226, 1), rgba(177, 208, 244, 1))" }} className="flex rounded-md mb-gutter bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 pb-12">
         <div className="mb-4">
             <h3 className="text-sm leading-6 font-medium text-white uppercase font-black tracking-widest mb-1">
                 Your Plan Today

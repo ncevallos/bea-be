@@ -106,7 +106,12 @@ const data = {
           ) : (
             <Fragment>
                 <div>
-                    <PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} />
+                    <div className="flex flex-col items-center mb-gutter">
+                        <label className="text-white text-sm bg-beaBlueText font-light rounded-full px-3 py-1.5">PAST 30 DAYS</label>
+                        <div className="w-full">
+                            <PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} />
+                        </div>
+                    </div>
                     {/* <Line
                        //     data={data}
                             data={data}
@@ -115,7 +120,7 @@ const data = {
                             options={options}
                         /> */}
                         <PlanMoodHeader avgMood={planResults2.summaryStats.avgMood} />
-                    <div>
+                    <div className="mb-gutter">
                         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                             <li className="col-span-2 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
                                 <div className="flex-initial flex flex-col p-8 items-center">
@@ -181,10 +186,10 @@ const data = {
                     </div>
 
 
-                    <div>
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
+                    <div className="mb-gutter">
+                        <div className="grid grid-cols-1 gap-gutter sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                             <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
-                                <span className="text-beaBlueText text-sm">FAVORITE GOAL</span>
+                                <span className="text-beaBlueText text-sm font-bold">FAVORITE GOAL</span>
                                 <div className="flex flex-row">
                                     <div className="flex-1 flex flex-col items-center">
                                         {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
@@ -209,13 +214,18 @@ const data = {
                             </div>
                             <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                                 <div className="flex-1 flex flex-col items-center">
-                                    <span className="text-beaBlueText text-sm">FAVORITE ACTION</span>
+                                    <span className="text-beaBlueText text-sm font-bold">FAVORITE ACTION</span>
                                     <RadialGraph percent={planResults2.summaryStats.favactionpct}/>
                                     <span className="mt-6 text-gray-700 text-sm font-light">The action that stopped unmindful eating</span>
                                     <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favaction}</h2>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="flex flex-row justify-center w-full mb-gutter">
+                        <button type="button" className="btn-darkPurpleInvert">        
+                            View Past Entries
+                        </button>
                     </div>
                 </div>
 

@@ -60,6 +60,12 @@ module.exports = {
           beaLightGrey: '#EDEDED',
           beaBorderGrey: '#BBBABA',
         },
+        spacing: {
+          'gutter': '25px',
+        },
+        width: {
+          'promo': '240px',
+        },
         transitionProperty: {
           'spacing': 'margin, padding',
          },
@@ -74,6 +80,7 @@ module.exports = {
         padding: ['group-hover'],
         transform: ['hover', 'focus', 'group-hover'],
         scale: ['hover', 'group-hover'],
+        textDecoration: ['hover'],
       }
     },
     plugins: [

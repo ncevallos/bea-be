@@ -26,10 +26,11 @@ const apexData = {
       stroke: {
         curve: 'smooth'
       },
-      title: {
+      /*title: {
+        display: false,
         text: 'PAST 30 DAYS',
         align: 'left'
-      },
+      },*/
       grid: {
         borderColor: '#e0e0e0',
         strokeDashArray: 2,     

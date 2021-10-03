@@ -43,15 +43,16 @@ class RadialGraph extends React.Component {
             }
           },
           fill: {
-            type: 'gradient',
-            gradient: {
+            type: 'solid',
+            colors: ['#056895'],
+            /*gradient: {
               shade: 'light',
               shadeIntensity: 0.4,
               inverseColors: false,
               opacityFrom: 1,
               opacityTo: 1,
               stops: [0, 50, 53, 91]
-            },
+            },*/
           },
           stroke: {
             lineCap: 'round'
