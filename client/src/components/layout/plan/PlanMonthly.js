@@ -3,87 +3,30 @@ import { Links } from 'react-router-dom';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getResultsByIdToday, getResultsById } from '../../../actions/postPlanResults';
+import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
 import PlanMonthlyLineItem from './PlanMonthlyLineItem';
+import PlanLineGraph from './PlanLineGraph';
+import PlanMonthlyHeader from './PlanMonthlyHeader';
 
-
-const data = {
-    labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
-    datasets: [
-      {
-        label: 'Mood',
-        fill: false,
-        lineTension: 0.1,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(128,128,128,1)',
-        borderCapStyle: 'butt',
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: 'rgba(75,192,192,1)',
-        pointBackgroundColor: 'rgba(75,192,192,1)',
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-        pointHoverBorderColor: 'rgba(220,220,220,1)',
-        pointHoverBorderWidth: 2,
-        pointRadius: 6,
-        pointHitRadius: 10,
-
-        trendlineLinear: {
-            style: "rgb(128, 55, 202, 1)",
-            lineStyle: "dotted|solid",
-            width: 2
-        },
-
-        data: [65, 59, null, 80, 81, 32, 56, 55, 40, 12, 45, 32, 23, 67, 32, 34, 21, 10, 8, 12, 56, null, 13, 18, 28, 64, 24, 31, 35, 19]
-      }
-    ]
-  };
-
-  const options = {
-    maintainAspectRatio: true,
-    spanGaps: false,
-    legend:
-    {
-        display: false,
-    },
-    scales:
-    {
-        yAxes: [{
-            display: false,
-            gridLines : {
-                display : false
-            }
-        }],
-        xAxes: [{
-            gridLines : {
-                display : true,
-                drawBorder: true,
-                lineWidth: 1,
-                drawOnChartArea: false
-            }
-        }]
-    }
-  };
-  const Plan3 = ({ user, getResultsById, getResultsByIdToday, planResult: { planResults } }) => {
+  const Plan3 = ({ user, getResultsById, getResultsByIdToday, getSummary, planResult: { planResults }, planResult2: { planResults2 } }) => {
       //planResult: { planResults }, 
       //todayPlanResult: {todayPlanResults}
         console.log('user in plan monthly has', user._id);
     useEffect(() => {
-        getResultsById(user._id);
-        getResultsByIdToday(user._id);
+        const today = new Date();
+        getResultsById(user._id, today);
+        getSummary(user._id);
         if(planResults.length){
             thisResults = planResults[0];
             dataloaded = true;
             console.log(thisResults);
         }
     // }, [getResultsByIdToday, user._id], [getResultsById, user._id]);
-}, [getResultsByIdToday, getResultsById, user._id]);
+}, [getResultsByIdToday, getResultsById, getSummary, user._id]);
     let dataloaded = false;
     let thisResults = [];
    console.log("plan results has", planResults);
+   console.log("plane results 2 has", planResults2)
 
    // console.log("today plan results has", todayPlanResults);
 
@@ -93,9 +36,8 @@ const data = {
             <div className="flex mx-auto p-4">
                 <div className="flex flex-col flex-grow">
                     
-
-
-
+                {/* <PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} /> */}
+                    <PlanMonthlyHeader/>
 
 
                     <div className="flex flex-col max-w-full overflow-hidden">
@@ -151,15 +93,18 @@ const data = {
     getResultsByIdToday: PropTypes.func.isRequired,
     getResultsById: PropTypes.func.isRequired,
     planResult: PropTypes.object.isRequired,
+    getSummary:  PropTypes.func.isRequired,
+    planResult2: PropTypes.object.isRequired,
     todayPlanResult: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
   };
   
   const mapStateToProps = (state) => ({
+    planResult2: state.planResult2,
     planResult: state.planResult,
     todayPlanResult: state.todayPlanResult,
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user
   });
   
-  export default connect(mapStateToProps, { getResultsById, getResultsByIdToday })(Plan3);
+  export default connect(mapStateToProps, { getResultsById, getResultsByIdToday, getSummary })(Plan3);

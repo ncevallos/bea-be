@@ -27,7 +27,7 @@ const apexData = {
         curve: 'smooth'
       },
       title: {
-        text: 'PAST 30 DAYS',
+        text: '',
         align: 'left'
       },
       grid: {

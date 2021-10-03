@@ -12,89 +12,8 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import moment from 'moment';
 
 
-const data = {
-//    labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
-    labels: [],
-    datasets: [
-      {
-        label: 'Mood',
-        fill: false,
-        lineTension: 0.1,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(128,128,128,1)',
-        borderCapStyle: 'butt',
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: 'rgba(75,192,192,1)',
-        pointBackgroundColor: 'rgba(75,192,192,1)',
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-        pointHoverBorderColor: 'rgba(220,220,220,1)',
-        pointHoverBorderWidth: 2,
-        pointRadius: 6,
-        pointHitRadius: 10,
-
-        trendlineLinear: {
-            style: "rgb(128, 55, 202, 1)",
-            lineStyle: "dotted|solid",
-            width: 2
-        },
-
-        data: []
-     //   data: [65, 59, null, 80, 81, 32, 56, 55, 40, 12, 45, 32, 23, 67, 32, 34, 21, 10, 8, 12, 56, null, 13, 18, 28, 64, 24, 31, 35, 19]
-      }
-    ]
-  };
-
-  const options = {
-    maintainAspectRatio: true,
-    spanGaps: false,
-    legend:
-    {
-        display: false,
-    },
-    scales:
-    {
-        yAxes: [{
-            display: false,
-            gridLines : {
-                display : false
-            }
-        }],
-        xAxes: [{
-            gridLines : {
-                display : true,
-                drawBorder: true,
-                lineWidth: 1,
-                drawOnChartArea: false
-            }
-        }]
-    }
-  };
- const testData = ["2021-08-06T16:28:06.927Z", "Thu Aug 12 2021 00:00:00 GMT-0400 (Eastern Daylight Time)", "Fri Aug 13 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
-  "Fri Aug 20 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"]
   const Plan3 = ({ user, getResultsById, getResultsByIdToday, planResult2: { planResults2 } }) => {
-      //planResult: { planResults }, 
-      //todayPlanResult: {todayPlanResults}
 
-    //  let loopCount = planResults2.dates[0].length;
-    //   let loopCount = 29;
-    //   console.log("loop count is equal to", loopCount)
-    //   let loopincremet = 0;
-    //   while(loopCount >= 0){
-    //         let temp = moment(planResults2.dates[0].[loopCount]).format("DD")
-    //         console.log("temp in loopcount in plan body is", temp);
-    //      data.labels.push(temp);
-
-    //      let temp2 = planResults2.values[0].[loopCount];
-    //      console.log("temp2 in loopcount in plan body is", temp2);
-    //      data.datasets[0].data.push(temp2)
-    //       loopCount--;
-    //       loopincremet++;
-    //   }
    console.log("plan results has in plan body has", planResults2);
    let headercontrol = 0;
     headercontrol = planResults2.summaryStats.avgMood;
