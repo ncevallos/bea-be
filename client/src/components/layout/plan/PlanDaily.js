@@ -118,14 +118,6 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                                     </span>
                                     <span className="mt-6 text-gray-700 text-sm font-thin">When you feel that urge to eat</span>
                                     <h2 className="mt-0 text-gray-700 text-3xl font-light">{todayPlanResults.plangoal5}</h2>
-                                    <span className="mt-6 p-2 border-2 border-beaLightBlue rounded-2xl flex items-center justify-center">
-                                        <img src={newspaperIcon} alt="Newspaper Icon" className="w-7" />
-                                    </span>
-                                    <span className="mt-1 text-gray-700 text-sm font-bold uppercase tracking-wider">BEA’S RECOMMENDED READ</span>
-                                    <span className="mt-1 mb-3 text-gray-700 text-sm font-light">Healthy Eating: Recognizing Your Hunger Signals</span>
-                                    <button type="button" className="btn-darkPurple">       
-                                        Read Article
-                                    </button>
                                 </div>
                             </li>
                         </ul>

@@ -19,34 +19,26 @@ import PropTypes from 'prop-types';
         // todayPlanResult: {todayPlanResults}
     
       useEffect(() => {
-        //   getResultsByIdToday(user._id);
            getResultsById(user._id);
-        //  getSummary(user._id);
-        //   if(planResults.length){
-        //       thisResults = planResults[0];
-        //       dataloaded = true;
-        //       console.log(thisResults);
-        //   }
+     
       }, [getResultsById, user._id]);
       console.log("meditate results has", meditateResults);
-    //   console.log("today plan results has", todayPlanResults);
-    //   console.log("sumarry plan results has", planResults2);
-    //   let planBodyResults = "";
-    //   if(planResults2.summaryStats){
-      
-    //     planBodyResults = 
-    //         <Fragment>
+
+    let meditateBodyResults = "";
+    if(meditateResults){
     
-    //         <PlanHeader todayPlanResults={todayPlanResults}/>
-    //         {/* <PlanLineGraph planResults={planResults2} /> */}
-    //         <PlanBody planResults={planResults2}/>
-    //         </Fragment>
-    //   }
-    //   else {
-    //     planBodyResults = 
-    //         <Fragment><div>Loading</div></Fragment>
+      meditateBodyResults = 
+          <Fragment>
+  
+          <MeditateVidSection results={meditateResults}/>
+          </Fragment>
+    }
+    else {
+      meditateBodyResults = 
+          <Fragment><div>Loading</div></Fragment>
+  
+    }
     
-    //   }
     return (
         <section>
             <div className="flex-grow w-full mx-auto lg:px-0 flex">
@@ -86,7 +78,8 @@ import PropTypes from 'prop-types';
                 </div>
                 </div>
                 {/* //Below will be the recent/featured section */}
-                <MeditateVidSection results={meditateResults}/>
+                {/* <MeditateVidSection results={meditateResults}/> */}
+                {meditateBodyResults}
             </div></div>
             </div>
         </section>
