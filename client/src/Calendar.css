@@ -235,25 +235,6 @@ main {
   display: block;
 }
 
-.exhappy::after {
-  content: url('img/calendarimgs/exhappy.png');
-  display: block;
-}
-
-.happy::after {
-  content: url('img/calendarimgs/happy.png');
-  display: block;
-}
-
-.notgood::after {
-  content: url('img/calendarimgs/notgood.png');
-  display: block;
-}
-
-.sad::after {
-  content: url('img/calendarimgs/bad.png');
-  display: block;
-}
 .progress-bar{
   width: 200px;
 }
@@ -278,4 +259,23 @@ main {
   background-color: #329CCC !important;    
   border-radius: .5rem;
 
+}
+
+.exhappy::after {
+  content: url('img/calendarimgs/exhappy.png') !important;
+  display: block;
+}
+.happy::after {
+  content: url('img/calendarimgs/happy.png') !important;
+  display: block;
+}
+
+.notgood::after {
+  content: url('img/calendarimgs/notgood.png') !important;
+  display: block;
+}
+
+.sad::after {
+  content: url('img/calendarimgs/bad.png') !important;
+  display: block;
 }

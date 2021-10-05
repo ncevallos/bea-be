@@ -74,12 +74,11 @@ export const CalendarPage = (props) =>  {
       case 1:
           return 'sad';
       case 0:
-        return 
+        return  'horrible'
       default:
         return
       }
     }
-   
   }
   function onClick(value) {
   //  console.log('valeu in onclick is', value);
