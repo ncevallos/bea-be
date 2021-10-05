@@ -21,7 +21,7 @@ import PlanIcons from './PlanIcons';
         <tr key={this.props._id} onClick={this.goToDate(today)}>
         <td className="px-6 py-4">
             <div className="flex items-center">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center w-12">
                         <div className="text-xs font-light text-gray-700">
                             {/* Need to implement a check for if today write today */}
                         {moment(this.props.date).format('ddd')}
@@ -32,7 +32,7 @@ import PlanIcons from './PlanIcons';
                 </div>
                 <div className="flex ml-4 items-center justify-center">
                     <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                            <PlanIcons msg={this.props.plangoal} />
+                        <div className="w-12"><PlanIcons msg={this.props.plangoal} /></div>
                     </span>
                     <div>
                         <div className="text-sm font-light text-gray-700">
@@ -50,7 +50,7 @@ import PlanIcons from './PlanIcons';
             <div className="flex items-center">
                 <div className="flex ml-4 items-center justify-center">
                     <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                            <PlanIcons msg={this.props.plangoal5} />
+                        <div className="w-12"><PlanIcons msg={this.props.plangoal5} /></div>
                     </span>
                     <div>
                         <div className="text-sm font-light text-gray-700">
@@ -66,7 +66,7 @@ import PlanIcons from './PlanIcons';
         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
             {/* <img src={smileyIconUnhappyRound} alt="Unhappy Smiley Icon" className="w-14" />
              */}
-             <PlanSmiley mood={this.props.howdoyoufeel}/>
+             <div className="w-12"><PlanSmiley mood={this.props.howdoyoufeel}/></div>
         </td>
     </tr>
     //   </Link>
@@ -75,7 +75,7 @@ import PlanIcons from './PlanIcons';
         <tr key={this.props._id}>
         <td className="px-6 py-4">
             <div className="flex items-center">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center w-12">
                         <div className="text-xs font-light text-gray-700">
                             {/* Need to implement a check for if today write today */}
                         {moment(this.props.date).format('ddd')}
@@ -86,7 +86,7 @@ import PlanIcons from './PlanIcons';
                 </div>
                 <div className="flex ml-4 items-center justify-center">
                     <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                            <PlanIcons msg={this.props.plangoal} />
+                        <div className="w-12"><PlanIcons msg={this.props.plangoal} /></div>
                     </span>
                     <div>
                         <div className="text-sm font-light text-gray-700">

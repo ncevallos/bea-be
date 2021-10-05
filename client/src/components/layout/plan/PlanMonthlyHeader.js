@@ -3,6 +3,9 @@ import { getResultsByIdToday, getResultsById, getSummary } from '../../../action
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PlanLineGraph from './PlanLineGraph';
+import PlanSmiley from './PlanSmiley';
+import PlanIcons from './PlanIcons';
+import heartIcon from '../../../img/heart-icon.svg';
 
 
 const PlanMonthlyHeader = ({ user, 
@@ -21,47 +24,76 @@ const PlanMonthlyHeader = ({ user,
     
         planBodyResults = 
           <Fragment>
-            <PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} />
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
-                 <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
-                    <span className="text-beaBlueText text-sm">FAVORITE GOAL</span>
-                                <div className="flex flex-row">
-                                    <div className="flex-1 flex flex-col items-center">
-                                        {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
-                                            <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
-                                        </span>
-                                        <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2> */}
-                                        Mood eating was: <br/>
-                                        {planResults2.summaryStats.great} % Great <br/>
-                                        {planResults2.summaryStats.good} % Good <br/>
-                                        {planResults2.summaryStats.notgood} % Not Good <br/>
-                                        {planResults2.summaryStats.horrible} % Horrible <br/>
-                                        {planResults2.summaryStats.stayedontrack} <br/>
-                                        helped you stay on track
-                                        {planResults2.summaryStats.stayedontrackpct}%
-                                    </div>
-                                </div>
+            <div className="mb-gutter"><PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} /></div>
+            <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 mb-gutter">
+                 <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
+                    <div className="flex flex-row w-full justify-between mb-gutter">
+                        <div className="w-8"><PlanSmiley mood="Good" /></div>
+                        <div className="font-bold">{planResults2.summaryStats.stayedontrackpct}%</div>
+                    </div>
+                    <div className="flex flex-row">
+                        <div className="flex-1 flex flex-col items-start text-left">
+                            {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
+                                <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
+                            </span>
+                            <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2> */}
+                            <span className="text-sm leading-snug">Mood eating was</span>
+                            <span className="text-2xl leading-snug mb-2.5">Pretty Good</span>
+                            <div className="flex flex-row items-center mb-0.5">
+                                <div className="w-3 h-3 bg-beaOrange rounded-full mr-1.5"></div>
+                                <span className="text-sm leading-snug text-gray-600"><strong>{planResults2.summaryStats.great}%</strong> Great</span>
                             </div>
-                            <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
-                                <div className="flex-1 flex flex-col items-center">
-                                    <span className="text-beaBlueText text-sm">Favorite Goal</span>
-                                    <span className="mt-6 text-gray-700 text-sm font-light">
+                            <div className="flex flex-row items-center mb-0.5">
+                                <div className="w-3 h-3 bg-beaYellow rounded-full mr-1.5"></div>
+                                <span className="text-sm leading-snug text-gray-600"><strong>{planResults2.summaryStats.good}%</strong> Good</span>
+                            </div>
+                            <div className="flex flex-row items-center mb-0.5">
+                                <div className="w-3 h-3 bg-beaDarkBlue rounded-full mr-1.5"></div>
+                                <span className="text-sm leading-snug text-gray-600"><strong>{planResults2.summaryStats.notgood}%</strong> Not Good</span>
+                            </div>
+                            <div className="flex flex-row items-center mb-3">
+                                <div className="w-3 h-3 bg-beaBlueGreen rounded-full mr-1.5"></div>
+                                <span className="text-sm leading-snug text-gray-600"><strong>{planResults2.summaryStats.horrible}%</strong> Horrible</span>
+                            </div>
 
-                                        <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favgoal} </h2>
-                                        {planResults2.summaryStats.favgoalpct} % <br/>
-                                        with {planResults2.summaryStats.favgoal2}</span>
+                            <div className="flex flex-row items-center mb-1.5">
+                                <div className="flex flex-none rounded-2xl bg-beaLightBlue p-2.5">
+                                    <img src={heartIcon} alt="Heart Icon" className="w-5" />
+                                </div>
+                                <div className="ml-2.5 flex-1 md:flex md:justify-between">
+                                    <p className="text-sm text-gray-500 mb-0 leading-snug">
+                                        <strong>{planResults2.summaryStats.stayedontrack}</strong><br/>helped you stay on track
+                                    </p>
                                 </div>
                             </div>
-                            <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
-                                <div className="flex-1 flex flex-col items-center">
-                                    <span className="text-beaBlueText text-sm">Favorite Action</span>
-                                    <span className="mt-6 text-gray-700 text-sm font-light">
-                                    <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favaction}</h2>
-                                    anytime you have an urge to eat <br/>
-                                        {planResults2.summaryStats.favactionpct} %</span>
-                                </div>
-                            </div>
+                            
                         </div>
+                    </div>
+                </div>
+                <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
+                    <div className="flex flex-row w-full justify-between mb-gutter">
+                        <div className="w-8"><PlanIcons msg="Different foods" /></div>
+                        <div className="font-bold">{planResults2.summaryStats.favgoalpct}%</div>
+                    </div>
+
+                    <div className="flex-1 flex flex-col items-start text-left">
+                        <span className="text-sm leading-medium">Favorite goal</span>
+                        <h2 className="mt-0 text-gray-700 text-xl font-medium mb-0 leading-medium">{planResults2.summaryStats.favgoal} </h2>
+                        <span className="font-bold text-gray-500 text-sm leading-medium">with {planResults2.summaryStats.favgoal2}</span>
+                    </div>
+                </div>
+                <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
+                    <div className="flex flex-row w-full justify-between mb-gutter">
+                        <div className="w-8"><PlanIcons msg="Smaller Amounts" /></div>
+                        <div className="font-bold">{planResults2.summaryStats.favactionpct}%</div>
+                    </div>
+                    <div className="flex-1 flex flex-col items-start text-left">
+                        <span className="text-sm leading-medium">Favorite action</span>
+                        <h2 className="mt-0 text-gray-700 text-xl font-medium mb-0 leading-medium">{planResults2.summaryStats.favaction}</h2>
+                        <span className="font-bold text-gray-500 text-sm leading-medium">anytime you have an urge to eat</span>
+                    </div>
+                </div>
+            </div>
           </Fragment>
     }
     else {

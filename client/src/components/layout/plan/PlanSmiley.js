@@ -12,29 +12,29 @@ class PlanSmiley extends React.Component {
     if(this.props.mood === "Great" || this.props.mood === "great" ){
 
         iconurl = 
-        <img src={smileyIconGreat} alt="Great Smiley Icon" title="Great Smiley Icon" className="w-100" />
+        <img src={smileyIconGreat} alt="Great Smiley Icon" title="Great Smiley Icon" className="w-full" />
     }
     else if(this.props.mood === "Good" || this.props.mood === "good"){
 
         iconurl = 
-        <img src={smileyIconPrettyGood} alt="Pretty Good Smiley Icon" title="Pretty Good Smiley Icon" className="w-100" />
+        <img src={smileyIconPrettyGood} alt="Pretty Good Smiley Icon" title="Pretty Good Smiley Icon" className="w-full" />
     }
     else if(this.props.mood === "Not good" || this.props.mood === "not good"){
 
         iconurl = 
-        <img src={smileyIconNotGood} alt="Not Good Smiley Icon" title="Not Good Smiley Icon" className="w-100" />
+        <img src={smileyIconNotGood} alt="Not Good Smiley Icon" title="Not Good Smiley Icon" className="w-full" />
     }
     else if(this.props.mood === "Horrible" || this.props.mood === "horrible"){
         iconurl = 
-        <img src={smileyIconHorrible} alt="Horrible Smiley Icon" title="Horrible Smiley Icon" className="w-100" />
+        <img src={smileyIconHorrible} alt="Horrible Smiley Icon" title="Horrible Smiley Icon" className="w-full" />
     }
     else {
         iconurl = 
-        <img src={noEntry} alt="No Entry Icon" title="No Entry Icon" className="w-100" />
+        <img src={noEntry} alt="No Entry Icon" title="No Entry Icon" className="w-full" />
     }
     
     return (
-        <div>
+        <div className="w-full">
             {iconurl}
         </div>
 
