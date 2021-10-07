@@ -15,7 +15,7 @@ import PlanIcons from './PlanIcons';
       }
       GoToDate = (date) => {
         console.log('in go to date', date);
-        alert("you clicked on", date)
+      //  alert("you clicked on", date)
         let url = '/PlanDaily/' + date;
         console.log("url contains", url);
         // let history = useHistory();
