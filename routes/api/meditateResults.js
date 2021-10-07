@@ -67,10 +67,10 @@ router.post(
 // @route    GET api/meditateResults
 // @desc     Get all meditate results for associated user
 // @access   Public
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    //const results = await MeditateResults.find({ user : req.user.id});
-    const results = await MeditateResults.find({ user : "60217a517f2b961147d214f0"});
+    console.log("request in meditate results has", req.params.id);
+    const results = await MeditateResults.find({ user : req.params.id});
 
     if(!results){
       return res.status(400).json({msg: "There are no results for this user"});
@@ -83,6 +83,37 @@ router.get('/', async (req, res) => {
   }
 });
 
+// @route    GET api/motivateResults/today
+// @desc     Get today's motivate results for associated user
+// @access   Public
+router.get('/today/:id/', async (req, res) => {
+  console.log('reached get meditate results today', req.params)
+  try {
+    const start = new Date();
+    start.setHours(0,0,0,0);
+    const end = new Date();
+    end.setHours(23,59,59,999);
+    //const sentDate = req.params.date;
+    // console.log("in get today sent params are", req.params.date);
+    // if(req.params.date){
+    //   console.log("date was sent")
+    // } else{
+    //   console.log("date was not sent")
+    // }
+    // const results = await PlanResults.find({ user : req.user.id});
+    //user : "60217a517f2b961147d214f0", 
+    const results = await MotivateResults.findOne({ user : req.params.id, date : {"$gte": start, $lt: end}}
+    );    
 
+    if(!results){
+      return res.status(400).json({msg: "There are no results for this user"});
+    }
+
+    res.json(results);
+  } catch(err){
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 module.exports = router;

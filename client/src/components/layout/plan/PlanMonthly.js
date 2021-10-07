@@ -5,6 +5,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
+import PlanMonthlyLineItem2 from './PlanMonthlyLineItem2';
 import PlanMonthlyLineItem from './PlanMonthlyLineItem';
 import PlanLineGraph from './PlanLineGraph';
 import PlanMonthlyHeader from './PlanMonthlyHeader';
@@ -56,7 +57,7 @@ import PlanMonthlyHeader from './PlanMonthlyHeader';
                                 <tbody className="bg-white divide-y divide-gray-200">
                                      {planResults.map((planResult) => (
 
-                                            <PlanMonthlyLineItem 
+                                            <PlanMonthlyLineItem
                                             userSubmission={planResult.userSubmission}
                                             date = {planResult.date}
                                             _id = {planResult._id}
@@ -68,6 +69,7 @@ import PlanMonthlyHeader from './PlanMonthlyHeader';
                                 ))} 
                                 </tbody>
                                 </table>
+                                {/* <PlanMonthlyLineItem2 /> */}
                             </div>
                             </div>
                         </div>

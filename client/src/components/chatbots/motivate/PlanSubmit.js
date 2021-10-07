@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { postMotivateResults } from '../../../actions/postMotivateResults';
 import axios from 'axios';
 
@@ -19,6 +20,7 @@ import "./AreyouReady.css";
   export const PlanSubmit = ({ postMotivateResults, auth, ownProps}) => {
     console.log("USer contains", auth.user);
     console.log("user is found", auth.user._id);
+    let history = useHistory();
 
 //   console.log("plan goal2 contains ", props.plangoal2);
 //   console.log("Spread state operator", ...state)
@@ -70,7 +72,7 @@ import "./AreyouReady.css";
     mindfultype: ownProps.mindfultype,
     mindfultype2: ownProps.mindfultype2,
 });
-const onSubmit = async (e) => {
+const OnSubmit = async (e) => {
     console.log('in on submit command');
 
 
@@ -87,6 +89,7 @@ const onSubmit = async (e) => {
         }
         const body = JSON.stringify(formData)
         const res = await axios.post('/api/motivateResults', body, config)
+        history.push('/MotivateMain')
       } catch(err){
         console.log("In catch block");
         console.log("error contains ", err);
@@ -97,7 +100,7 @@ const onSubmit = async (e) => {
       <div className="learning-options-container">
         <button
           className="learning-option-button"
-          onClick={() => onSubmit()}
+          onClick={() => OnSubmit()}
         >
           Go to Dashboard
         </button>

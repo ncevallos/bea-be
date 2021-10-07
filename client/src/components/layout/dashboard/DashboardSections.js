@@ -66,7 +66,7 @@ import peskyPatterns from '../../../img/pesky-patterns.svg';
                     >
                         3M
                     </a>
-                    <a
+                    {/* <a
                         className={
                         "" +
                         (openTab === 4
@@ -99,7 +99,7 @@ import peskyPatterns from '../../../img/pesky-patterns.svg';
                         role="tablist"
                     >
                         ALL
-                    </a>
+                    </a> */}
                 </nav>
                 </div>
 
@@ -113,12 +113,12 @@ import peskyPatterns from '../../../img/pesky-patterns.svg';
                 <div className={openTab === 3 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab 3M
                 </div>
-                <div className={openTab === 4 ? "block w-full mr-3" : "hidden"} id="link2">
+                {/* <div className={openTab === 4 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab 1Y
                 </div>
                 <div className={openTab === 5 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab ALL
-                </div>
+                </div> */}
             </div>
         {/* </div>
         </div> */}

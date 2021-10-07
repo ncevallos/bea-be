@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import Calendar from 'react-calendar';
 //import {Navigation} from 'react-router';
-import { browserHistory, useHistory, Redirect } from 'react-router';
+import { browserHistory, useHistory, Redirect } from 'react-router-dom';
+// import {useRoutes, useRedirect} from 'hookrouter';
 //import { useHistory } from "react-router-dom";
 
 //import './styles.css'
@@ -27,7 +28,7 @@ export const CalendarPage = (props) =>  {
   "Fri Aug 20 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
   // console.log('test subject2 will be', dates[2]);
   const [value, setValue] = useState(new Date());
-
+  let history = useHistory();
   // function parseDate (date) {
   //   let newDate;
   // }
@@ -58,10 +59,11 @@ export const CalendarPage = (props) =>  {
     return 'lit';
   }
 
+     // console.log("Match found!!!!!");
+
   function tileClassName({date, view}) {
 
     if (props.dates.find(dDate => dDate === date.toString('yyyy-MM-dd'))) {
-     // console.log("Match found!!!!!");
       let matchLocation = props.dates.indexOf(date.toString('yyyy-MM-dd'));
       let moodValue = props.values[matchLocation];
       switch(moodValue){
@@ -84,24 +86,16 @@ export const CalendarPage = (props) =>  {
   //  console.log('valeu in onclick is', value);
   //  alert('Will send you to Plan Daily with the follow date ', value)
   }
-  function onClickDay(value, event) {
+  function OnClickDay(value, event) {
     let now = new Date();
     if(value <= now){
         // code to direct user to the daily page will be inserted here
         //need to first check if data was entered for that day, if not do nothing
-    //alert('Will send you to Plan Daily with the following date '+ moment(value).format('MMMM-DD-YYYY') )
     let newLocation = 'PlanDaily/' + moment(value).format('MMMM-DD-YYYY');
-    console.log('new location has this', newLocation);
-    alert('Redirect to ', newLocation);
-    //browserHistory.push({newLocation});
-   // browserHistory.push('/PlanDaily');
+    //console.log('new location has this', newLocation);
+    //alert('Redirect to ', newLocation);
 
-   // this.context.router.push('/PlanDaily');
-   // <Redirect to="{newLocation}" />
-  //  <Redirect push to={`/${newLocation}`} />
-      <Redirect to='/PlanDaily' />
-  //let history = useHistory();
-    //history.push('/PlanDaily')
+      history.push(newLocation)
     }
     else {
 
@@ -120,11 +114,11 @@ export const CalendarPage = (props) =>  {
     <Calendar
  //     onChange={onChange}
       activeStartDate={new Date(new Date().setDate(new Date().getDate() - 30))}
-      showFixedNumberOfWeeks={5}
+      showFixedNumberOfWeeks={true}
       value={value}
       tileClassName={tileClassName}
       onClick={onClick}
-      onClickDay={onClickDay}
+      onClickDay={OnClickDay}
       showNavigation={false}
       onViewChange={false}
       onChange={onChange}

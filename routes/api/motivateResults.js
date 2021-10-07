@@ -283,6 +283,10 @@ createSummary = (results) => {
       ieAvg += results[i].iephaseint;
       fullnessAvg += results[i].fullphaseint;
       aeplanningAvg += results[i].aeint;
+      addLengths(results[i].fullphaselength);
+      addLengths(results[i].iephaselength);
+      addLengths(results[i].planphaselength);
+      addLengths(results[i].aelength);
     } // ends if for the planning visualization type
     else {
       //whyhungry overindulgeresult differentchoice
@@ -292,10 +296,10 @@ createSummary = (results) => {
       //will push ALL into an array then after loop will summarize results to see how many each item occured and push highest appearing item
     } // ends else for the triggers visualization type
 
-    addLengths(results[i].fullphaselength);
-    addLengths(results[i].iephaselength);
-    addLengths(results[i].planphaselength);
-    addLengths(results[i].aelength);
+    // addLengths(results[i].fullphaselength);
+    // addLengths(results[i].iephaselength);
+    // addLengths(results[i].planphaselength);
+    // addLengths(results[i].aelength);
 
     } //ends the for loop
     

@@ -48,11 +48,12 @@ export const postMeditateResults = formData => async dispatch => {
   };
 
   // Get motivate resuts for 30 days
-export const getResultsById = userId => async dispatch => {
-  console.log("get results by id is called");
+export const getMeditateResultsById = userId => async dispatch => {
+  console.log("get results by id in meditate is called", userId);
   try {
     
-    const res = await api.get(`/meditateResults/`);
+    const res = await api.get(`/meditateResults/${userId}`);
+    // const res = await api.get(`/meditateResults/${userId}`);
     console.log('in try for get meditate results');
     dispatch({
       type: GET_MEDITATE_RESULTS,

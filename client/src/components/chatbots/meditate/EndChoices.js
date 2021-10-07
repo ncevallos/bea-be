@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { postMeditateResults } from '../../../actions/meditateResults';
 import axios from 'axios';
 
@@ -10,6 +11,7 @@ import "./AreyouReady.css";
 export const EndChoices = ({props, postMeditateResults, state, auth, ownProps}) => {
      console.log("USer contains", auth.user);
      console.log("user is found", auth.user._id);
+     let history = useHistory();
 
 
 
@@ -33,6 +35,8 @@ const onSubmit = async (e) => {
         }
         const body = JSON.stringify(formData)
         const res = await axios.post('/api/meditateResults', body, config)
+
+        history.push('/Meditate')
       } catch(err){
         console.log("In catch block");
       }

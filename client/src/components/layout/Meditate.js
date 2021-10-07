@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import mountainStream from '../../img/mountain-stream.svg';
 import MeditateVidSection from './MeditateVidSection';
-import { getResultsById } from '../../actions/meditateResults';
+import { getMeditateResultsById } from '../../actions/meditateResults';
 import { connect } from 'react-redux';
 import PlanHeader from './plan/PlanHeader';
 import PlanBody from './plan/PlanBody';
@@ -12,16 +12,16 @@ import PropTypes from 'prop-types';
 
 
     const Meditate = ({ user, 
-        getResultsById,
+        getMeditateResultsById,
          meditateResult: {meditateResults} 
         }) => {
         //planResult: { planResults }, 
         // todayPlanResult: {todayPlanResults}
     
       useEffect(() => {
-           getResultsById(user._id);
+        getMeditateResultsById(user._id);
      
-      }, [getResultsById, user._id]);
+      }, [getMeditateResultsById, user._id]);
       console.log("meditate results has", meditateResults);
 
     let meditateBodyResults = "";
@@ -87,7 +87,7 @@ import PropTypes from 'prop-types';
 }
 Meditate.propTypes = {
    // getResultsByIdToday: PropTypes.func.isRequired,
-    getResultsById: PropTypes.func.isRequired,
+   getMeditateResultsById: PropTypes.func.isRequired,
     // getSummary:  PropTypes.func.isRequired,
     // planResult: PropTypes.object.isRequired,
     // planResult2: PropTypes.object.isRequired,
@@ -103,6 +103,6 @@ Meditate.propTypes = {
     user: state.auth.user
   });
   
-  export default connect(mapStateToProps, { getResultsById})(Meditate);
+  export default connect(mapStateToProps, { getMeditateResultsById})(Meditate);
   
 //export default Meditate;

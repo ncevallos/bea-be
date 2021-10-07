@@ -1,24 +1,46 @@
 import React, {Fragment, useEffect } from 'react'
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import moment from 'moment';
 import PlanSmiley from './PlanSmiley';
 import PlanIcons from './PlanIcons';
 
 
-
+// export const PlanMonthlyLineItem = (props) => {
   class PlanMonthlyLineItem extends React.Component {
-    goToDate(date) {
+    constuctor() {
+        this.GoToDate = this.GoToDate.bind(this);
+      }
+      state = {
+          redirect: false
+      }
+      GoToDate = (date) => {
         console.log('in go to date', date);
+        alert("you clicked on", date)
         let url = '/PlanDaily/' + date;
-     <Redirect push to={url}/>
+        console.log("url contains", url);
+        // let history = useHistory();
+    //  <Redirect to={url}/>
+     <Redirect to='/PlanMain'/>
+     this.setState({redirect: true })
     }
+
+
     render() {
    let lineItem;
    let today = (moment(this.props.date).format('MMMM-DD-YYYY'));
+   const { redirect } = this.state;
+       
+   if (redirect) {
+    let url = '/PlanDaily/' + today;
+       return <Redirect push to={url}/>
+    //    return <Redirect push to="/PlanDaily"/>
+   }
    if(this.props.userSubmission){
         lineItem =    
         // <Link to ={'/PlanDaily/' + moment(this.props.date).format('MMMM-DD-YYYY')}>
-        <tr key={this.props._id} onClick={this.goToDate(today)}>
+        // <div onClick={this.GoToDate(today)}>
+      //  <tr key={this.props._id} onClick={e => this.GoToDate(today)}>
+        <tr key={this.props._id} onClick={e => this.GoToDate(today)}>
         <td className="px-6 py-4">
             <div className="flex items-center">
                 <div className="flex flex-col items-center w-12">
@@ -69,6 +91,7 @@ import PlanIcons from './PlanIcons';
              <div className="w-12"><PlanSmiley mood={this.props.howdoyoufeel}/></div>
         </td>
     </tr>
+    // </div>
     //   </Link>
    } else {
     lineItem =    
@@ -100,8 +123,7 @@ import PlanIcons from './PlanIcons';
         </td>
     </tr>
 
-   }
-    
+    }
     return (
             <Fragment>
                 {lineItem}

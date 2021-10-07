@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { postPlanResults } from '../../../actions/postPlanResults';
 import axios from 'axios';
 
@@ -10,35 +11,12 @@ import "./Options.css";
 export const PlanSubmit = ({props, postPlanResults, state, auth, ownProps}) => {
      console.log("USer contains", auth.user);
      console.log("user is found", auth.user._id);
+     let history = useHistory();
 
 
+  // console.log("own props in plan submit contains ", ownProps);
+  // console.log("auth in plan submit contains ", auth);
 
-// const PlanSubmit = (props) => {
-//   const { setState, actionProvider } = props;
-//  console.log("props in plan submit contains ", props);
-  console.log("own props in plan submit contains ", ownProps);
-  console.log("auth in plan submit contains ", auth);
-//   console.log("plan goal2 contains ", props.plangoal2);
-//   console.log("Spread state operator", ...state)
-//   const setType1 = async (type) => {
-//     setState((state) => ({
-//       ...state,
-//       plangoal: type,
-//       lastblockvisited: "Plan Goal"
-//     }));
-
-//     actionProvider.smallerportions();
-//   };
-//   const setType2 = async (type) => {
-//     setState((state) => ({
-//       ...state,
-//       plangoal: type,
-//       lastblockvisited: "Plan Goal"
-//     }));
-
-//     actionProvider.foodchoices();
-//   };
-//    console.log("current entry state contains", state);
   const [formData] = useState({
     //user: "60217a517f2b961147d214f0",
     user: auth.user._id,
@@ -58,7 +36,7 @@ export const PlanSubmit = ({props, postPlanResults, state, auth, ownProps}) => {
     plangoal4: ownProps.plangoal4,
     plangoal5: ownProps.plangoal5
 });
-const onSubmit = async (e) => {
+const OnSubmit = async (e) => {
     console.log('in on submit command');
 
 
@@ -75,6 +53,8 @@ const onSubmit = async (e) => {
         }
         const body = JSON.stringify(formData)
         const res = await axios.post('/api/planResults', body, config)
+
+        history.push('/PlanMain')
       } catch(err){
         console.log("In catch block");
       }
@@ -84,7 +64,7 @@ const onSubmit = async (e) => {
       <div className="learning-options-container">
         <button
           className="learning-option-button"
-          onClick={() => onSubmit()}
+          onClick={() => OnSubmit()}
         >
           I'm Finished!
         </button>

@@ -88,6 +88,12 @@ export const Sidebar = () => {
                   <Link to='/Meditate' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "Meditate" ? meditateIconWhite  : meditateIcon} className="w-6" alt='Meditate'/>
+                      <span className="text-sm font-medium">Meditate (UI)</span>
+                    </div>
+                  </Link>
+                  <Link to='/MeditateChat' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
+                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
+                      <img src={activePage === "Meditate" ? meditateIconWhite  : meditateIcon} className="w-6" alt='Meditate'/>
                       <span className="text-sm font-medium">Meditate</span>
                     </div>
                   </Link>
