@@ -280,7 +280,7 @@ class ActionProvider {
             delay: 6000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.mottchildren.org/health-library/zx3292' style={{color: "white"}} target="_blank" rel="noreferrer">Read Article</a>, {
+        this.createChatBotMessage(<a href='https://www.mottchildren.org/health-library/zx3292' style={{color: "black"}} target="_blank" rel="noreferrer">Read Article</a>, {
             delay: 8000,
             withAvatar: true
         }),
@@ -331,7 +331,7 @@ class ActionProvider {
             withAvatar: true
         }),
         this.createChatBotMessage(
-            <a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "white"}} target="_blank" rel="noreferrer">15 Filling Foods</a>, {
+            <a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "black"}} target="_blank" rel="noreferrer">15 Filling Foods</a>, {
             // `15 Filling Foods`
             delay: 10000,
             withAvatar: true
@@ -382,7 +382,7 @@ class ActionProvider {
             delay: 6000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.psychologytoday.com/us/blog/your-brain-food/201201/why-does-fat-taste-so-good' style={{color: "white"}} target="_blank" rel="noreferrer">Why Fat Tastes So Good </a>, {
+        this.createChatBotMessage(<a href='https://www.psychologytoday.com/us/blog/your-brain-food/201201/why-does-fat-taste-so-good' style={{color: "black"}} target="_blank" rel="noreferrer">Why Fat Tastes So Good </a>, {
             delay: 8000,
             withAvatar: true
         }),
@@ -398,7 +398,7 @@ class ActionProvider {
             delay: 14000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-health-foods-that-taste-better-than-junk-foods#section10' style={{color: "white"}} target="_blank" rel="noreferrer">15 Healthy Foods </a>, {
+        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-health-foods-that-taste-better-than-junk-foods#section10' style={{color: "black"}} target="_blank" rel="noreferrer">15 Healthy Foods </a>, {
             delay: 16000,
             withAvatar: true
         }),
@@ -461,7 +461,7 @@ class ActionProvider {
             delay: 8000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "white"}} target="_blank" rel="noreferrer">Sugar Addiction Tips</a>, {
+        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "black"}} target="_blank" rel="noreferrer">Sugar Addiction Tips</a>, {
             delay: 10000,
             withAvatar: true
         }),
@@ -516,7 +516,7 @@ class ActionProvider {
             delay: 6000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.bhg.com/recipes/healthy/snacks/20-sweet-snacks-for-50-calories-or-less/' style={{color: "white"}} target="_blank" rel="noreferrer">Find Sweet Snacks</a>, {
+        this.createChatBotMessage(<a href='https://www.bhg.com/recipes/healthy/snacks/20-sweet-snacks-for-50-calories-or-less/' style={{color: "black"}} target="_blank" rel="noreferrer">Find Sweet Snacks</a>, {
             delay: 8000,
             withAvatar: true
         }),
@@ -566,7 +566,7 @@ class ActionProvider {
             delay: 8000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.verywellfit.com/low-carb-substitutes-for-high-carb-food-2242524' style={{color: "white"}} target="_blank" rel="noreferrer">Low Carb Foods</a>, {
+        this.createChatBotMessage(<a href='https://www.verywellfit.com/low-carb-substitutes-for-high-carb-food-2242524' style={{color: "black"}} target="_blank" rel="noreferrer">Low Carb Foods</a>, {
             delay: 10000,
             withAvatar: true
         }),
@@ -616,7 +616,7 @@ class ActionProvider {
             delay: 8000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/how-many-calories-per-day' style={{color: "white"}} target="_blank" rel="noreferrer">Calorie Calculator</a>, {
+        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/how-many-calories-per-day' style={{color: "black"}} target="_blank" rel="noreferrer">Calorie Calculator</a>, {
             delay: 10000,
             withAvatar: true
         }),

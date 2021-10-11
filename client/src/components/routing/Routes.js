@@ -46,7 +46,7 @@ const Routes = props => {
         <Route exact path="/helpcenter" component={Helpcenter} />
         <Route exact path="/settings" component={Settings} />
         <Route exact path="/register" component={Register} />
-        <PrivateRoute exact path="/" component={Dashboard} />
+        <PrivateRoute exact path="/" component={Login} />
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path="/meditate" component={Meditate} />
         <PrivateRoute exact path="/motivate" component={Motivate} />

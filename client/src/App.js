@@ -4,22 +4,7 @@ import './App.css';
 import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
 import Footer from './components/layout/Footer';
-import Dashboard from './components/layout/Dashboard';
-import Meditate from './components/layout/Meditate';
-import Motivate from './components/layout/Motivate';
-import Motivate2 from './components/layout/Motivate2';
-import Plan from './components/layout/Plan';
-import Plan2 from './components/layout/Plan2';
-import TestPlanSubmit from './components/layout/TestPlanSubmit';
-import Helpcenter from './components/layout/Helpcenter';
-import Settings from './components/layout/Settings';
-import Termsconditions from './components/layout/Termsconditions';
-import Privacy from './components/layout/Privacy';
 import Alert from './components/layout/Alert';
-import Login from './components/auth/Login';
-import Signup from './components/auth/Signup';
-import Register from './components/auth/Register';
-import CalendarPage from './components/layout/CalendarPage';
 import Routes from './components/routing/Routes';
 import { LOGOUT } from './actions/types';
 // Redux
@@ -64,22 +49,8 @@ const App = () => {
         <div className="mb-2 w-full max-w-7xl h-full">
           <Alert />
           <Switch>
-            <Route exact path='/' component={Dashboard} />
+            {/* <Route exact path='/' component={Login} /> */}
             <Route component={Routes} />
-            {/* <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/meditate" component={Meditate} />
-            <Route exact path="/motivate" component={Motivate} />
-            <Route exact path="/calendarpage" component={CalendarPage} />
-            <Route exact path="/plan" component={Plan} onClick={() => setColor("#2898ec")} />
-            <Route exact path="/plan2" component={Plan2} />
-            <Route exact path="/testplansubmit" component={TestPlanSubmit} />
-            <Route exact path="/privacy" component={Privacy} />
-            <Route exact path="/termsconditions" component={Termsconditions} />
-            <Route exact path="/helpcenter" component={Helpcenter} />
-            <Route exact path="/settings" component={Settings} />
-            <Route exact path="/register" component={Register} /> */}
           </Switch>
           </div>
               </div>

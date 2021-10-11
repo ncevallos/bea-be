@@ -92,7 +92,7 @@ export const CalendarPage = (props) =>  {
     if(value <= now){
         // code to direct user to the daily page will be inserted here
         //need to first check if data was entered for that day, if not do nothing
-    let newLocation = 'PlanDaily/' + moment(value).format('MMMM-DD-YYYY');
+    let newLocation = 'PlanDaily/' + moment(value).format('MM-DD-YYYY');
     //console.log('new location has this', newLocation);
     //alert('Redirect to ', newLocation);
 

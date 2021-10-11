@@ -1,4 +1,5 @@
 import React, { useEffect, Fragment } from 'react'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
@@ -165,9 +166,13 @@ import moment from 'moment';
                         </div>
                     </div>
                     <div className="flex flex-row justify-center w-full mb-gutter">
-                        <button type="button" className="btn-darkPurpleInvert">        
+
+                    <Link to='/PlanMonthly' className="btn-darkPurpleInvert">
+                        View Past Entries
+                        </Link>
+                        {/* <button type="button" className="btn-darkPurpleInvert">        
                             View Past Entries
-                        </button>
+                        </button> */}
                     </div>
                 </div>
 

@@ -16,26 +16,29 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
         console.log('match in plan daily has ', match.params.date)
         if(match.params.date){
             getResultsByIdToday(user._id, match.params.date);
-            console.log('reached there is a date present')
+          //  console.log('reached there is a date present')
         }
         else{
             const today = new Date();
             getResultsByIdToday(user._id, today);
-            console.log('reached there isnt a date present')
+           // console.log('reached there isnt a date present')
 
         }
-     //   getResultsByIdToday(user._id);
-    }, [getResultsByIdToday, user._id]);
-  // console.log("plan results has", planResults2);
+    }, [ match.params.date]);
 
    console.log("today plan results has", todayPlanResults);
     let nextDayButton = ''
     let today = new Date();
-    let yesterday = '/PlanDaily/' + moment(todayPlanResults.date).subtract(1, 'days').format('MMMM-DD-YYYY');
-   if(moment(todayPlanResults.date).format('MMMM Do YYYY') === moment(today).format('MMMM Do YYYY')){
+    let yesterday = '/PlanDaily/' + moment(todayPlanResults.date).subtract(1, 'days').format('MM-DD-YYYY');
+   if(moment(todayPlanResults.date).format('MM Do YYYY') === moment(today).format('MM Do YYYY')){
    } else {
     nextDayButton = 
-    <Link to={'/PlanDaily/' + moment(todayPlanResults.date).add(1, 'days').format('MMMM-DD-YYYY')} className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}</Link>
+    <Link to={'/PlanDaily/' + moment(todayPlanResults.date).add(1, 'days').format('MM-DD-YYYY')}  className="flex flex-row items-center navigateButton px-3">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}
+    <svg className="w-4 ml-1.5" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.45043 7.78955L14.4104 7.78955" stroke="#7B48CB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.95047 2.03955L14.7529 7.76625L8.95047 13.5396" stroke="#7B48CB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+    </Link>
    }
 
 // export const Plan3 = () => {
@@ -135,14 +138,12 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                         </Link>
                         <Link to='/PlanMonthly' className="flex flex-row items-center navigateButton px-3">
                             View {moment(todayPlanResults.date).format('MMMM')}
-                            <svg className="w-4 ml-1.5" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.45043 7.78955L14.4104 7.78955" stroke="#7B48CB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M8.95047 2.03955L14.7529 7.76625L8.95047 13.5396" stroke="#7B48CB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
                         </Link>
-                    </div>
 
                     {nextDayButton}
+                    </div>
+
+                    {/* {nextDayButton} */}
                     {/* <Link to='/PlanMonthly' className="dateHeader">{moment(todayPlanResults.date).add(1, 'days').format('MMMM Do')}</Link> */}
 
 
