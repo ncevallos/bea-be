@@ -22,26 +22,7 @@ import "./AreyouReady.css";
     console.log("user is found", auth.user._id);
     let history = useHistory();
 
-//   console.log("plan goal2 contains ", props.plangoal2);
-//   console.log("Spread state operator", ...state)
-//   const setType1 = async (type) => {
-//     setState((state) => ({
-//       ...state,
-//       plangoal: type,
-//       lastblockvisited: "Plan Goal"
-//     }));
 
-//     actionProvider.smallerportions();
-//   };
-//   const setType2 = async (type) => {
-//     setState((state) => ({
-//       ...state,
-//       plangoal: type,
-//       lastblockvisited: "Plan Goal"
-//     }));
-
-//     actionProvider.foodchoices();
-//   };
     console.log("current entry state contains", ownProps);
   const [formData, setFormData] = useState({
    // user: "60217a517f2b961147d214f0",

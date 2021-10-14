@@ -10,7 +10,7 @@ import SmallerPortions from './SmallerPortions';
 import EmotionalBehavioral from './EmotionalBehavioral';
 import DifferentFoods from './DifferentFoods';
 import PlanGoal from './PlanGoal';
-import LessSugar from './LessSugar';
+// import LessSugar from './LessSugar';
 import FoodChoices from './FoodChoices';
 import PlanSubmit from './PlanSubmit';
 // import SomethingElse from './SomethingElse';
@@ -26,6 +26,8 @@ import {
     LessFat2,
     AvoidSugar,
     AvoidSugar2,
+    LessSugar,
+    LessSugar2,
     SweetFoods,
     SweetFoods2,
     FewerCarbs,

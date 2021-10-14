@@ -80,7 +80,7 @@ const FoodChoices = (props) => {
         </button>
         <button
           className="learning-option-button"
-          onClick={() => setType5("Something else")}
+          onClick={() => setType5("Something Else")}
         >
           Something else
         </button>

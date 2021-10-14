@@ -117,7 +117,7 @@ import moment from 'moment';
                                                 <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.stayedontrackpct}%</h2> */}
 
                                                 <div className="w-auto">
-                                                    <RadialGraph percent={planResults2.summaryStats.stayedontrackpct}/>
+                                                    <RadialGraph percent={planResults2.summaryStats.stayedontrackpct} icon={planResults2.summaryStats.stayedontrack}/>
                                                     <span className="mt-6 text-gray-700 text-sm font-thin pb-0">Why you stayed on track</span>
                                                     <h2 className="mt-0 text-gray-700 text-3xl font-light leading-6">{planResults2.summaryStats.stayedontrack}</h2>
                                                 </div>
@@ -139,7 +139,7 @@ import moment from 'moment';
                                             <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
                                         </span>
                                         <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2> */}
-                                        <RadialGraph percent={planResults2.summaryStats.favgoalpct}/>
+                                        <RadialGraph percent={planResults2.summaryStats.favgoalpct} icon={planResults2.summaryStats.favgoal}/> 
                                         <span className="mt-6 text-gray-700 text-sm font-light">Most important goal</span>
                                         <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favgoal}</h2>
     
@@ -149,7 +149,7 @@ import moment from 'moment';
                                             <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
                                         </span>
                                         <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal2pct}%</h2> */}
-                                        <RadialGraph percent={planResults2.summaryStats.favgoal2pct}/>
+                                        <RadialGraph percent={planResults2.summaryStats.favgoal2pct} icon={planResults2.summaryStats.favgoal2}/>
                                         <span className="mt-6 text-gray-700 text-sm font-light">Main focus of food choice</span>
                                         <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favgoal2}</h2>
                                     </div>
@@ -158,7 +158,7 @@ import moment from 'moment';
                             <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                                 <div className="flex-1 flex flex-col items-center">
                                     <span className="text-beaBlueText text-sm font-bold">FAVORITE ACTION</span>
-                                    <RadialGraph percent={planResults2.summaryStats.favactionpct}/>
+                                    <RadialGraph percent={planResults2.summaryStats.favactionpct}  icon={planResults2.summaryStats.favaction}/>
                                     <span className="mt-6 text-gray-700 text-sm font-light">The action that stopped unmindful eating</span>
                                     <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favaction}</h2>
                                 </div>

@@ -228,8 +228,7 @@ const WelcomeBlock2 = (props) => {
   };
   const LessSugar = (props) => {
     const options = [
-      { text: "Avoid Sugar", handler: props.actionProvider.avoidsugar, id: 1 },
-      { text: "Find healthy sweets", handler: props.actionProvider.sweetfoods, id: 2 }
+      { text: "Let's continue", handler: props.actionProvider.lesssugar2, id: 1 }
     ];
   
     const optionsMarkup = options.map((option) => (
@@ -245,6 +244,23 @@ const WelcomeBlock2 = (props) => {
     return <div className="learning-options-container">{optionsMarkup}</div>;
   };
 
+  const LessSugar2 = (props) => {
+    const options = [
+      { text: "I'm ready", handler: props.actionProvider.takeaction, id: 1 }
+    ];
+  
+    const optionsMarkup = options.map((option) => (
+      <button
+        className="learning-option-button"
+        key={option.id}
+        onClick={option.handler}
+      >
+        {option.text}
+      </button>
+    ));
+  
+    return <div className="learning-options-container">{optionsMarkup}</div>;
+  };
   const AvoidSugar = (props) => {
     const options = [
       { text: "Let's continue", handler: props.actionProvider.avoidsugar2, id: 1 }

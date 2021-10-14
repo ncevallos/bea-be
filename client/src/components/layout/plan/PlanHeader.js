@@ -5,6 +5,7 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
 import planIllustration from '../../../img/plan-illustration.svg';
 import arrowRight from '../../../img/arrow-right.svg';
 import PlanIconsDash from './PlanIconsDash';
+import PlanIcons from './PlanIcons';
 import { Link } from 'react-router-dom';
 
 
@@ -25,7 +26,7 @@ import { Link } from 'react-router-dom';
         <div className="flex">
             <div className="flex flex-col w-48">
                 <div className="w-20 h-20 bg-opacity-50 rounded-3xl mb-2.5">
-                    <PlanIconsDash msg={todayPlanResults.plangoal} />  
+                    <PlanIcons msg={todayPlanResults.plangoal} />  
                 </div>
                 <div className="">
                     <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
@@ -40,7 +41,7 @@ import { Link } from 'react-router-dom';
         <div className="flex w-48">
             <div className="flex flex-col">
                 <div className="w-20 h-20 bg-opacity-50 rounded-3xl mb-2.5">
-                    <PlanIconsDash msg={todayPlanResults.plangoal5} />  
+                    <PlanIcons msg={todayPlanResults.plangoal5} />  
                 </div>
                 <div className="">
                     <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">

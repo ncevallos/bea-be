@@ -58,9 +58,9 @@ const Routes = props => {
         <PrivateRoute exact path="/plan3" component={Plan3} />
         <PrivateRoute exact path="/planmain" component={PlanMain} />
         <PrivateRoute exact path="/planmonthly" component={PlanMonthly} />
+        <PrivateRoute exact path="/planmonthly/:date" component={PlanMonthly} />
         <PrivateRoute exact path="/plandaily" component={PlanDaily} />
         <PrivateRoute exact path="/plandaily/:date" component={PlanDaily} />
-        {/* <PrivateRoute exact path="/plandaily/:date" component={()=><PlanDaily/>} /> */}
         <PrivateRoute exact path="/planpastday" component={PlanPastDay} />
         <PrivateRoute exact path="/testplansubmit" component={TestPlanSubmit} />
         <PrivateRoute exact path="/testpage" component={Testpage} />

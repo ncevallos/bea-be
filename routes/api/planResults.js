@@ -246,7 +246,9 @@ router.get('/today/:id/:date', async (req, res) => {
 
 
     if(!results){
-      return res.status(400).json({msg: "There are no results for this user"});
+      // return res.status(400).json({msg: "There are no results for this user"});
+      return res.json([])
+      // return res.status(400).json({msg: "There are no results for this user"});
     }
 
     res.json(results);

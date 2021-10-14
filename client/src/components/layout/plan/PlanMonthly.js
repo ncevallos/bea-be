@@ -5,9 +5,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
-import PlanMonthlyLineItem2 from './PlanMonthlyLineItem2';
 import PlanMonthlyLineItem from './PlanMonthlyLineItem';
-import PlanLineGraph from './PlanLineGraph';
 import PlanMonthlyHeader from './PlanMonthlyHeader';
 
   const Plan3 = ({ user, getResultsById, getResultsByIdToday, getSummary, planResult: { planResults }, planResult2: { planResults2 } }) => {
@@ -46,7 +44,6 @@ import PlanMonthlyHeader from './PlanMonthlyHeader';
                             </label>
                     </div>
 
-                {/* <PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} /> */}
                     <PlanMonthlyHeader/>
 
                     <div className="flex flex-col max-w-full overflow-hidden mb-gutter">
@@ -69,7 +66,6 @@ import PlanMonthlyHeader from './PlanMonthlyHeader';
                                 ))} 
                                 </tbody>
                                 </table>
-                                {/* <PlanMonthlyLineItem2 /> */}
                             </div>
                             </div>
                         </div>

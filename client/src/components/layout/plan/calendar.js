@@ -114,7 +114,8 @@ export const CalendarPage = (props) =>  {
   return (
     <Calendar
  //     onChange={onChange}
-      activeStartDate={new Date(new Date().setDate(new Date().getDate() - 30))}
+     // defaultactiveStartDate={new Date(new Date().setDate(new Date().getDate() - 31))}
+      activeStartDate={new Date(new Date().setDate(new Date().getDate() - 14))}
       showFixedNumberOfWeeks={true}
       value={value}
       tileClassName={tileClassName}
@@ -125,6 +126,7 @@ export const CalendarPage = (props) =>  {
       onChange={onChange}
       onActiveStartDateChange={onActiveStartDateChange}
       minDetail="month" 
+      view="week"
    //   defaultActiveStartDate={activeStartDate}
     />
   );

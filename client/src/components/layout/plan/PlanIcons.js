@@ -1,12 +1,31 @@
 import React from 'react';
-import differentFoods from '../../../img/planimgs/different-foods.png';
-import meditate from '../../../img/planimgs/meditate.png';
-import read from '../../../img/planimgs/read.png';
-import smallerAmounts from '../../../img/planimgs/smaller-amounts.png';
+// import differentFoods from '../../../img/planimgs/different-foods.png';
+// import meditate from '../../../img/planimgs/meditate.png';
+// import read from '../../../img/planimgs/read.png';
+// import smallerAmounts from '../../../img/planimgs/smaller-amounts.png';
+// import noEntry from '../../../img/planimgs/no-entry.png';
+// import somethingElse from '../../../img/planimgs/something-else.png';
+// import somethingSmall from '../../../img/planimgs/somethingsmall.png';
+// import takeAWalk from '../../../img/planimgs/take-a-walk.png';
+import differentFoods from '../../../img/planimgs/differentFoods.png';
+import meditate from '../../../img/planimgs/MeditateN.png';
+import read from '../../../img/planimgs/readN.png';
+import smallerAmounts from '../../../img/planimgs/smallerAmount.png';
 import noEntry from '../../../img/planimgs/no-entry.png';
-import somethingElse from '../../../img/planimgs/something-else.png';
-import somethingSmall from '../../../img/planimgs/somethingsmall.png';
+import somethingElse from '../../../img/planimgs/somethingElse.png';
+import somethingElse2 from '../../../img/planimgs/somethingElse.png';
+import somethingSmall from '../../../img/planimgs/EatSomethingSmall.png';
 import takeAWalk from '../../../img/planimgs/take-a-walk.png';
+
+import fewerCalories from '../../../img/planimgs/fewerCalories.png';
+import somethingEmotional from '../../../img/planimgs/somethingEmotional.png';
+import somethingPhysical from '../../../img/planimgs/somethingPhysical.png';
+import talkToAFriend from '../../../img/planimgs/talkToAFriend.png';
+import StopWhenFull from '../../../img/planimgs/StopWhenFull.png';
+import MoreFillingFoods from '../../../img/planimgs/MoreFillingFoods.png';
+import lessFat from '../../../img/planimgs/lessFat.png';
+import lessSugar from '../../../img/planimgs/lessSugar.png';
+import lessCarbs from '../../../img/planimgs/lessCarbs.png';
 
 class PlanSmiley extends React.Component {
 
@@ -15,35 +34,75 @@ class PlanSmiley extends React.Component {
     if(this.props.msg === "Different foods"){
 
         iconurl = 
-        <img src={differentFoods} alt="Different foods" title="Different foods" className="w-full" />
-    }
-    else if(this.props.msg === "Meditate"){
-
-        iconurl = 
-        <img src={meditate} alt="Meditate" title="Meditate" className="w-full" />
-    }
-    else if(this.props.msg === "Read"){
-
-        iconurl = 
-        <img src={read} alt="Read" title="Read" className="w-full" />
+        <img src={differentFoods} alt="Different foods" title="Different foods" />
     }
     else if(this.props.msg === "Smaller Amounts"){
         iconurl = 
-        <img src={smallerAmounts} alt="Smaller Amounts" title="Smaller Amounts" className="w-full" />
+        <img src={smallerAmounts} alt="Smaller Amounts" title="Smaller Amounts" />
     }
-    else if(this.props.msg === "Eat something small"){
 
+    else if(this.props.msg === "Stop when full"){
         iconurl = 
-        <img src={somethingSmall} alt="Eat something small" title="Eat something small" className="w-full" />
+        <img src={StopWhenFull} alt="Stop when full" title="Stop when full" />
     }
-    else if(this.props.msg === "Something else"){
-
+    else if(this.props.msg === "More filling foods"){
         iconurl = 
-        <img src={somethingElse} alt="Something else" title="Something else" className="w-full" />
+        <img src={MoreFillingFoods} alt="More filling foods" title="More filling foods" />
+    }
+    else if(this.props.msg === "Less fat"){
+        iconurl = 
+        <img src={lessFat} alt="Less fat" title="Less fat" />
+    }
+    else if(this.props.msg === "Less sugar"){
+        iconurl = 
+        <img src={lessSugar} alt="Less sugar" title="Less sugar"  />
+    }
+    else if(this.props.msg === "Fewer carbs"){
+        iconurl = 
+        <img src={lessCarbs} alt="Fewer carbs" title="Fewer carbs"  />
+    }
+    else if(this.props.msg === "Fewer Calories"){
+        iconurl = 
+        <img src={fewerCalories} alt="Fewer Calories" title="Fewer Calories" />
+    }
+
+
+
+    else if(this.props.msg === "Something Else"){
+        iconurl = 
+        <img src={somethingElse2} alt="Something else" title="Something else"  />
     }
     else if(this.props.msg === "Take a walk"){
         iconurl = 
         <img src={takeAWalk} alt="Take a walk" title="Take a walk" className="w-full" />
+    }
+    else if(this.props.msg === "Meditate"){
+        iconurl = 
+        <img src={meditate} alt="Meditate" title="Meditate" className="w-full" />
+    }
+    else if(this.props.msg === "Talk to a friend"){
+        iconurl = 
+        <img src={talkToAFriend} alt="Talk to a friend" title="Talk to a friend" className="w-full" />
+    }
+    else if(this.props.msg === "Eat something small"){
+        iconurl = 
+        <img src={somethingSmall} alt="Eat something small" title="Eat something small" />
+    }
+    else if(this.props.msg === "Read"){
+        iconurl = 
+        <img src={read} alt="Read" title="Read" className="w-full" />
+    }
+    else if(this.props.msg === "Something else"){
+        iconurl = 
+        <img src={somethingElse} alt="Something else" title="Something else" className="w-full" />
+    }
+    else if(this.props.msg === "Something emotional"){
+        iconurl = 
+        <img src={somethingEmotional} alt="Something emotional" title="Something emotional" className="w-full" />
+    }
+    else if(this.props.msg === "Something pysical"){
+        iconurl = 
+        <img src={somethingPhysical} alt="Something pysical" title="Something pysical" className="w-full" />
     }
     else {
         iconurl = 

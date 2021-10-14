@@ -19,6 +19,16 @@ class ActionProvider {
         console.log("random number now contains", rand);    
         return (rand-1);
     }
+    randomnumber2(){
+        //random number generator for the random response blocks this has max 5
+        const min = 1;
+        const max = 5;
+        let rand = min + Math.random() * (max - min);
+        console.log("random number produces equals", rand);
+        rand = Math.floor(rand);
+        console.log("random number now contains", rand);    
+        return (rand-1);
+    }
     greet() {
         const greetingMessage = this.createChatBotMessage("Hello friend");
         this.updateChatbotState(greetingMessage)
@@ -267,6 +277,17 @@ class ActionProvider {
         this.addMessageToBotState(letsBeginMessage)
     }
     stopfull = () => {
+        const randnum = this.randomnumber2();
+        const randblock = ["https://www.intuitiveeating.org/10-principles-of-intuitive-eating/",
+         "https://www.wikihow.com/Know-when-You%27re-Full", 
+         "https://www.eatingrecoverycenter.com/blog/signs-symptoms/I-Cant-Tell-When-Im-Full",
+        "https://www.health.harvard.edu/blog/how-to-stop-eating-all-that-tasty-but-unhealthy-stuff-202109212597",
+        "https://www.rachelmmolenda.com/blog/recognizing-hunger-signals"]
+        const randblock2 = ["10 principles of intuitive eating/",
+         "How to know when you're full", 
+         "I Cant Tell When I'm Full",
+        "Listen to your hunger cues",
+        "Recognizing hunger signals"]
         const letsBeginMessage = 
         [this.createChatBotMessage(`I know - it can be hard to stop when it tastes so good!`, {
             delay: 2000,
@@ -280,7 +301,7 @@ class ActionProvider {
             delay: 6000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.mottchildren.org/health-library/zx3292' style={{color: "black"}} target="_blank" rel="noreferrer">Read Article</a>, {
+        this.createChatBotMessage(<a href={randblock[randnum]} style={{color: "black"}} target="_blank" rel="noreferrer">{randblock2[randnum]}</a>, {
             delay: 8000,
             withAvatar: true
         }),
@@ -313,6 +334,17 @@ class ActionProvider {
         this.addMessageToBotState(letsBeginMessage)
     }
     morefilling = () => {
+        const randnum = this.randomnumber2();
+        const randblock = ["https://www.medicalnewstoday.com/articles/324078#:~:text=Eating%20foods%20that%20satisfy%20hunger,unhealthful%20foods%20are%20not%20satiating",
+         "https://www.everydayhealth.com/weight-loss-pictures/foods-that-help-to-lose-weight.aspx", 
+         "https://www.verywellfit.com/what-to-eat-if-always-hungry-4077290",
+        "https://www.webmd.com/diet/obesity/features/foods-that-curb-hunger#1",
+        "https://time.com/84888/the-food-the-mysteriously-makes-you-feel-full-explained/"]
+        const randblock2 = ["What are the most filling foods",
+         "8 Foods that help you lose weight and satisfy your stomach", 
+         "Foods to eat if you're always hungry",
+        "High-Water, High-Fiber Foods that Curb Hunger",
+        "The food that mysteriously makes you feel full, explained"]
         const letsBeginMessage = 
         [this.createChatBotMessage(`That's always a great choice!`, {
             delay: 2000,
@@ -326,18 +358,22 @@ class ActionProvider {
             delay: 6000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`Luckily, I've located a great article that can help you find more filling foods.`, {
+        this.createChatBotMessage(`Luckily, I have found some information to help you along your journey.`, {
             delay: 8000,
             withAvatar: true
         }),
-        this.createChatBotMessage(
-            <a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "black"}} target="_blank" rel="noreferrer">15 Filling Foods</a>, {
-            // `15 Filling Foods`
+        this.createChatBotMessage(`I’ve selected one at random today, but you can always come back to read a different one later!`, {
             delay: 10000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`Let me know when you’re done reading and we can continue.`, {
+        this.createChatBotMessage(
+            <a href={randblock[randnum]}  style={{color: "black"}} target="_blank" rel="noreferrer">1{randblock2[randnum]}</a>, {
+            // `15 Filling Foods`
             delay: 12000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`Let me know when you’re done reading and we can continue.`, {
+            delay: 14000,
             widget: "morefilling",
             withAvatar: true
         })];
@@ -369,37 +405,44 @@ class ActionProvider {
         this.addMessageToBotState(letsBeginMessage)
     }
     lessfat = () => {
+        const randnum = this.randomnumber2();
+        const randblock = ["https://www.nhs.uk/live-well/eat-well/eat-less-saturated-fat/#:~:text=trim%20visible%20fat%20and%20take,on%20olive%20or%20sunflower%20oils",
+         "https://www.healthline.com/nutrition/healthy-low-fat-foods", 
+         "https://www.medicinenet.com/script/main/art.asp?articlekey=56665",
+        "https://www.healthline.com/nutrition/low-calorie-foods",
+        "https://www.prevention.com/food-nutrition/healthy-eating/a20473168/the-best-spices-to-make-low-fat-food-tastier/"]
+        const randblock2 = ["How to eat less saturated fat",
+         "13 Low-Fat Foods That Are Good For Your Health", 
+         "How to make low-calorie, low-fat food taste like high-fat food",
+        "13 Low-Calorie Foods that are surprisingly filling",
+        "How to make low-fat food tastier"]
         const letsBeginMessage = 
-        [this.createChatBotMessage(`Why do fattening foods taste so good?`, {
+        [this.createChatBotMessage(`Great choice!`, {
             delay: 2000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`I know, you thought I was asking a rhetorical question . . . 😉`, {
+        this.createChatBotMessage(` It’s important to note that some fats are healthy, so we don’t want to eliminate anything`, {
             delay: 4000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`But there's actually a good reason!`, {
+        this.createChatBotMessage(`But, if you find that you are reaching for fatty foods more than you would like…`, {
             delay: 6000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.psychologytoday.com/us/blog/your-brain-food/201201/why-does-fat-taste-so-good' style={{color: "black"}} target="_blank" rel="noreferrer">Why Fat Tastes So Good </a>, {
+        this.createChatBotMessage(` Then let’s work together to find a way to moderate.`, {
             delay: 8000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`This article tells us that we can’t trick our bodies.`, {
+        this.createChatBotMessage(` Education is the key to change, so I’ve located some articles to help!`, {
             delay: 10000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`But we can choose less fattening foods that still taste great!`, {
+        this.createChatBotMessage(`Please click below for your daily article!`, {
             delay: 12000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`Here’s an article that can give you some ideas for foods that taste good and are healthy!`, {
+        this.createChatBotMessage(<a href={randblock[randnum]}  style={{color: "black"}} target="_blank" rel="noreferrer">{randblock2[randnum]}</a>, {
             delay: 14000,
-            withAvatar: true
-        }),
-        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-health-foods-that-taste-better-than-junk-foods#section10' style={{color: "black"}} target="_blank" rel="noreferrer">15 Healthy Foods </a>, {
-            delay: 16000,
             withAvatar: true
         }),
         this.createChatBotMessage(`Let me know when you’re ready and we can continue.`, {
@@ -431,64 +474,110 @@ class ActionProvider {
         this.addMessageToBotState(letsBeginMessage)
     }
     lesssugar = () => {
+        const randnum = this.randomnumber2();
+        const randblock = ["https://nutritiouslife.com/eat-empowered/4-reasons-why-you-have-sugar-cravings/",
+         "https://www.webmd.com/diet/ss/slideshow-sugar-addiction", 
+         "https://www.everydayhealth.com/diet-nutrition/foods-that-can-help-fight-sugar-cravings/",
+        "https://www.healthline.com/health/food-nutrition/why-am-i-craving-sweets#stop-the-craving",
+        "https://www.fitnessbash1.com/low-calorie-snacks/"]
+        const randblock2 = ["4 Reasons why you have sugar cravings",
+         "The Truth about Sugar Addictions", 
+         "20 Foods That Help Fight Sugar Cravings",
+        "Why am I craving Sweets",
+        "15 Low Calorie Snacks"]
         const letsBeginMessage = 
         [this.createChatBotMessage(`I know it can be tough to cut down on sugar if you have a sweet tooth, but it's a great Goal for today! 😊`, {
             delay: 2000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`Would you prefer to avoid sugar altogether, or to find healthy foods that taste sweet but are low in sugar?`, {
-            delay: 4000,
-            widget: "lesssugar",
-            withAvatar: true
-        })];
-        this.addMessageToBotState(letsBeginMessage)
-    }
-    avoidsugar = () => {
-        const letsBeginMessage = 
-        [this.createChatBotMessage(`Avoiding sugar altogether can be tough!`, {
-            delay: 2000,
-            withAvatar: true
-        }),
-        this.createChatBotMessage(`But . . .`, {
+        this.createChatBotMessage(`Remember, the goal is never to eliminate anything altogether, but I have a lot of education about sugar that can help you move towards your goal of moderation.`, {
             delay: 4000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`If sugar sets you off on a bad cycle, it's a great temporary goal to get you out of the habit of eating sweets.`, {
-            delay: 6000,
+        this.createChatBotMessage(`I’ve chosen one at random today, but you can come back and read a different one later.`, {
+            delay: 4000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`I've found an article that can help you transform your sugar addiction.`, {
-            delay: 8000,
-            withAvatar: true
-        }),
-        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "black"}} target="_blank" rel="noreferrer">Sugar Addiction Tips</a>, {
+        this.createChatBotMessage(<a href={randblock[randnum]} style={{color: "black"}} target="_blank" rel="noreferrer">{randblock2[randnum]}</a>, {
             delay: 10000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`When you’re done reading, let me know and we can continue.`, {
-            delay: 12000,
-            widget: "avoidsugar",
-            withAvatar: true
-        })];
+        this.createChatBotMessage(`Let me know when you’re done reading and we can continue.`, {
+            delay: 4000,
+            withAvatar: true,
+            widget: "lesssugar",
+        }),
+    ];
         this.addMessageToBotState(letsBeginMessage)
     }
-    avoidsugar2 = () => {
+    lesssugar2 = () => {
         const letsBeginMessage = 
-        [this.createChatBotMessage(`Now that you’ve chosen avoiding sugar as your main Goal, take a moment to imagine feeling peaceful and whole without it.`, {
+        [this.createChatBotMessage(`ake a moment to think about what foods you’d like to eat today that taste sweet but don't have a lot of sugar. `, {
             delay: 2000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`Tomorrow, we can choose again to avoid sugar, or try a different Goal for the day.`, {
+        this.createChatBotMessage(`Eating some of these foods instead of sugary foods is your main Goal for today.`, {
             delay: 4000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`Let me know when you’re ready to move on to your Action for today.`, {
-            delay: 6000,
-            widget: "avoidsugar2",
+        this.createChatBotMessage(`Tomorrow, we can expand on this same Goal, or choose a new one for the day.`, {
+            delay: 4000,
             withAvatar: true
-        })];
+        }),
+        this.createChatBotMessage(`Next, we’ll make an Action plan for what to do if the urge strikes. Let me know when you’re ready to move on.`, {
+            delay: 4000,
+            withAvatar: true,
+            widget: "lesssugar2",
+        }),
+    ];
         this.addMessageToBotState(letsBeginMessage)
     }
+    // avoidsugar = () => {
+    //     const letsBeginMessage = 
+    //     [this.createChatBotMessage(`Avoiding sugar altogether can be tough!`, {
+    //         delay: 2000,
+    //         withAvatar: true
+    //     }),
+    //     this.createChatBotMessage(`But . . .`, {
+    //         delay: 4000,
+    //         withAvatar: true
+    //     }),
+    //     this.createChatBotMessage(`If sugar sets you off on a bad cycle, it's a great temporary goal to get you out of the habit of eating sweets.`, {
+    //         delay: 6000,
+    //         withAvatar: true
+    //     }),
+    //     this.createChatBotMessage(`I've found an article that can help you transform your sugar addiction.`, {
+    //         delay: 8000,
+    //         withAvatar: true
+    //     }),
+    //     this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/15-incredibly-filling-foods' style={{color: "black"}} target="_blank" rel="noreferrer">Sugar Addiction Tips</a>, {
+    //         delay: 10000,
+    //         withAvatar: true
+    //     }),
+    //     this.createChatBotMessage(`When you’re done reading, let me know and we can continue.`, {
+    //         delay: 12000,
+    //         widget: "avoidsugar",
+    //         withAvatar: true
+    //     })];
+    //     this.addMessageToBotState(letsBeginMessage)
+    // }
+    // avoidsugar2 = () => {
+    //     const letsBeginMessage = 
+    //     [this.createChatBotMessage(`Now that you’ve chosen avoiding sugar as your main Goal, take a moment to imagine feeling peaceful and whole without it.`, {
+    //         delay: 2000,
+    //         withAvatar: true
+    //     }),
+    //     this.createChatBotMessage(`Tomorrow, we can choose again to avoid sugar, or try a different Goal for the day.`, {
+    //         delay: 4000,
+    //         withAvatar: true
+    //     }),
+    //     this.createChatBotMessage(`Let me know when you’re ready to move on to your Action for today.`, {
+    //         delay: 6000,
+    //         widget: "avoidsugar2",
+    //         withAvatar: true
+    //     })];
+    //     this.addMessageToBotState(letsBeginMessage)
+    // }
     foodchoices = () => {
         const letsBeginMessage = 
         [this.createChatBotMessage(`Our food choices don't need to be perfect, but it's great to start out with a general plan.`, {
@@ -549,24 +638,39 @@ class ActionProvider {
         this.addMessageToBotState(letsBeginMessage)
     }
     fewercarbs = () => {
+        const randnum = this.randomnumber2();
+        const randblock = ["https://www.verywellfit.com/low-carb-substitutes-for-high-carb-food-2242524",
+         "https://trueyouweightloss.com/blog/refined-and-complex-carbs-how-to-make-the-right-choice/", 
+         "https://share.upmc.com/2018/10/what-are-healthy-carbs/",
+        "https://www.healthline.com/nutrition/12-healthy-high-carb-foods#TOC_TITLE_HDR_2",
+        "https://www.verywellfit.com/do-carbs-make-you-gain-weight-4047400"]
+        const randblock2 = ["High Protein and Low Carb Vegetarian Foods",
+         "Refined and Complex Carbs: How to make the right choice", 
+         "What are healthy Carbs",
+        "12 High Carb Foods that are actually super healthy",
+        "Do Carbs make you gain weight"]
         const letsBeginMessage = 
         [this.createChatBotMessage(`Remember, no foods are bad, including carbohydrates.`, {
             delay: 2000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`However, if you find that you don’t feel great when you eat too many carbs, then gradually cutting back is a great Goal!`, {
+        this.createChatBotMessage(`However, if you find that you don’t feel great when you eat too many carbs...`, {
             delay: 4000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`So let's find some foods that make you feel better than indulging in those high in carbohydrates.`, {
+        this.createChatBotMessage(`... then gradually cutting back is a great Goal!`, {
+            delay: 4000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`So let's get some more information about carbs to help you on your journey.`, {
             delay: 6000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`Here is a great article of great low-carb substitutes for your favorite full-carb foods!`, {
+        this.createChatBotMessage(`Read below for your article of the day!`, {
             delay: 8000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.verywellfit.com/low-carb-substitutes-for-high-carb-food-2242524' style={{color: "black"}} target="_blank" rel="noreferrer">Low Carb Foods</a>, {
+        this.createChatBotMessage(<a href={randblock[randnum]} style={{color: "black"}} target="_blank" rel="noreferrer">{randblock2[randnum]}</a>, {
             delay: 10000,
             withAvatar: true
         }),
@@ -599,6 +703,17 @@ class ActionProvider {
         this.addMessageToBotState(letsBeginMessage)
     }
     fewercalories = () => {
+        const randnum = this.randomnumber2();
+        const randblock = ["https://www.everydayhealth.com/weight/fewer-calories-stalls-metabolism.aspx",
+         "https://www.healthline.com/nutrition/how-many-calories-per-day#average-calorie-needs", 
+         "https://www.verywellfit.com/how-many-calories-to-lose-weight-3495659",
+        "https://discovergoodnutrition.com/2016/09/cutting-calories/",
+        "https://www.verywellfit.com/how-to-cut-calories-for-weight-loss-3495810"]
+        const randblock2 = ["Can Eating Too Few Calories Stall Your Metabolism",
+         "How Many Calories Should You Eat per Day to Lose Weight?", 
+         "How Many Calories Should I Eat in a Day",
+        "Why Drastic Calorie Cutting May Backfire",
+        "How to cut calories for weight loss"]
         const letsBeginMessage = 
         [this.createChatBotMessage(`Great! Let's take a more specific look at how much less you should aim to eat.`, {
             delay: 2000,
@@ -612,11 +727,11 @@ class ActionProvider {
             delay: 6000,
             withAvatar: true
         }),
-        this.createChatBotMessage(`This interactive article will help you find out how many calories you should consume based on your current weight.`, {
+        this.createChatBotMessage(`I have found some articles to help you decide what’s right for you and how to stay on track.`, {
             delay: 8000,
             withAvatar: true
         }),
-        this.createChatBotMessage(<a href='https://www.healthline.com/nutrition/how-many-calories-per-day' style={{color: "black"}} target="_blank" rel="noreferrer">Calorie Calculator</a>, {
+        this.createChatBotMessage(<a href={randblock[randnum]} style={{color: "black"}} target="_blank" rel="noreferrer">{randblock2[randnum]}</a>, {
             delay: 10000,
             withAvatar: true
         }),
