@@ -4,6 +4,7 @@ import moment from 'moment';
 import smileyIconRound from '../../../img/smiley-icon-round.svg';
 import heartIcon from '../../../img/heart-icon.svg';
 import bowlIcon from '../../../img/bowl-icon.svg';
+import PlanIconsSmall from './PlanIconsSmall';
 import PlanIcons from './PlanIcons';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -34,6 +35,7 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
     let nextDayButton = ''
     let today = new Date();
     let planDailyBody =''
+    let secondCondition = ''
     let yesterday = '/PlanDaily/' + moment(match.params.date).subtract(1, 'days').format('MM-DD-YYYY');
         if(moment(match.params.date).format('MM Do YYYY') === moment(today).format('MM Do YYYY')){
         } else {
@@ -44,6 +46,45 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                                         <path d="M8.95047 2.03955L14.7529 7.76625L8.95047 13.5396" stroke="#7B48CB" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
             </Link>
+        }
+        if(todayPlanResults.stayedontrack === "Smaller Amounts" || todayPlanResults.stayedontrack === "Different foods"){
+            console.log("was a bad day add the second bar for content")
+            secondCondition = 
+            <Fragment>
+                <div className="flex flex-row items-center mb-1.5">
+                <div className="flex flex-none rounded-full bg-beaLightBlue p-2">
+                <PlanIconsSmall msg={todayPlanResults.stayedontrack} />  
+                </div>
+                <div className="ml-3 flex-1 md:flex md:justify-between">
+                    <p className="text-sm text-gray-500 mb-0">
+                        <strong>Eating {todayPlanResults.stayedontrack} ({todayPlanResults.plangoal2}) is something that you would have done differently.</strong> 
+                    </p>
+                </div>
+            </div>
+                <div className="flex flex-row items-center mb-1.5">
+                <div className="flex flex-none rounded-full bg-beaLightBlue p-2">
+                <PlanIconsSmall msg={todayPlanResults.influencedeating} />  
+                </div>
+                <div className="ml-3 flex-1 md:flex md:justify-between">
+                    <p className="text-sm text-gray-500 mb-0">
+                        <strong>{todayPlanResults.influencedeating} influenced your eating. </strong> 
+                    </p>
+                </div>
+            </div>
+            </Fragment>
+        }
+        else {
+            secondCondition = 
+            <div className="flex flex-row items-center mb-1.5">
+            <div className="flex flex-none rounded-full bg-beaLightBlue p-2">
+                <PlanIconsSmall msg={todayPlanResults.stayedontrack} />  
+            </div>
+            <div className="ml-3 flex-1 md:flex md:justify-between">
+                <p className="text-sm text-gray-500 mb-0">
+                    <strong>{todayPlanResults.stayedontrack} influenced your eating.</strong> 
+                </p>
+                </div>
+            </div>
         }
         if(todayPlanResults.howdoyoufeel){
         
@@ -62,7 +103,8 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                     <h3 className="text-4xl font-light text-gray-900 font-extralight mb-3">
                         {todayPlanResults.howdoyoufeel}
                     </h3>
-                    <div className="flex flex-row items-center mb-1.5">
+                    {secondCondition}
+                    {/* <div className="flex flex-row items-center mb-1.5">
                         <div className="flex flex-none rounded-full bg-beaLightBlue p-2">
                             <img src={heartIcon} alt="Heart Icon" className="w-5" />
                         </div>
@@ -71,8 +113,9 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                                 <strong>{todayPlanResults.stayedontrack}</strong> helped you stay on track for the following reason:
                             </p>
                         </div>
-                    </div>
+                    </div> */}
                     <p className="mt-1 text-sm text-gray-700 leading-6">
+                        <strong>What happened?</strong><br/>
                         {todayPlanResults.planjournal}
                     </p>
                 </div>

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import PlanLineGraph from './PlanLineGraph';
 import PlanSmiley from './PlanSmiley';
 import PlanIcons from './PlanIcons';
+import PlanIconsSmall from './PlanIconsSmall';
 import heartIcon from '../../../img/heart-icon.svg';
 
 
@@ -67,7 +68,7 @@ render() {
                 </div>
                 <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                     <div className="flex flex-row w-full justify-between mb-gutter">
-                        <div className="w-8"><PlanIcons msg="Different foods" /></div>
+                        <div className="w-8"><PlanIcons msg={planResults2.summaryStats.favgoal} /></div>
                         <div className="font-bold">{planResults2.summaryStats.favgoalpct}%</div>
                     </div>
 
@@ -79,7 +80,7 @@ render() {
                 </div>
                 <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                     <div className="flex flex-row w-full justify-between mb-gutter">
-                        <div className="w-8"><PlanIcons msg="Smaller Amounts" /></div>
+                        <div className="w-8"><PlanIcons msg={planResults2.summaryStats.favaction} /></div>
                         <div className="font-bold">{planResults2.summaryStats.favactionpct}%</div>
                     </div>
                     <div className="flex-1 flex flex-col items-start text-left">

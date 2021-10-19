@@ -15,39 +15,39 @@ class PlanIconsDash extends React.Component {
     if(this.props.msg === "Different foods"){
 
         iconurl = 
-        <img src={differentFoods} alt="Different foods" title="Different foods" className="w-100" />
+        <img src={differentFoods} alt="Different foods" title="Different foods" className="w-5" />
     }
     else if(this.props.msg === "Meditate"){
 
         iconurl = 
-        <img src={meditate} alt="Meditate" title="Meditate" className="w-100" />
+        <img src={meditate} alt="Meditate" title="Meditate" className="w-5" />
     }
     else if(this.props.msg === "Read"){
 
         iconurl = 
-        <img src={read} alt="Read" title="Read" className="w-100" />
+        <img src={read} alt="Read" title="Read" className="w-5" />
     }
     else if(this.props.msg === "Smaller Amounts"){
         iconurl = 
-        <img src={smallerAmounts} alt="Smaller Amounts" title="Smaller Amounts" className="w-100" />
+        <img src={smallerAmounts} alt="Smaller Amounts" title="Smaller Amounts" className="w-5" />
     }
     else if(this.props.msg === "Eat something small"){
 
         iconurl = 
-        <img src={somethingSmall} alt="Eat something small" title="Eat something small" className="w-100" />
+        <img src={somethingSmall} alt="Eat something small" title="Eat something small" className="w-5" />
     }
     else if(this.props.msg === "Something else"){
 
         iconurl = 
-        <img src={somethingElse} alt="Something else" title="Something else" className="w-100" />
+        <img src={somethingElse} alt="Something else" title="Something else" className="w-5" />
     }
     else if(this.props.msg === "Take a walk"){
         iconurl = 
-        <img src={takeAWalk} alt="Take a walk" title="Take a walk" className="w-100" />
+        <img src={takeAWalk} alt="Take a walk" title="Take a walk" className="w-5" />
     }
     else {
         iconurl = 
-        <img src={noEntry} alt="No Entry" title="No Entry" className="w-100" />
+        <img src={noEntry} alt="No Entry" title="No Entry" className="w-5" />
     }
     
     return (
