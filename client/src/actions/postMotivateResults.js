@@ -2,7 +2,6 @@ import api from '../utils/api';
 import axios from 'axios';
 import { setAlert } from './alert';
 import {
-  REGISTER_FAIL,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   GET_MOTIVATE_RESULTS,

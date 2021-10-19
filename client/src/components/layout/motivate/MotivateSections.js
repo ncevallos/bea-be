@@ -1,12 +1,9 @@
 
 import React from 'react';
-import { Component } from 'react';
-import { Link } from 'react-router-dom';
-import peskyPatterns from '../../../img/pesky-patterns.svg';
 import MotivateWeekly from './MotivateWeekly';
 import MotivateMonth from './MotivateMonth';
 import MotivateThreeMonth from './MotivateThreeMonth';
-import MotivateYear from './MotivateYear';
+// import MotivateYear from './MotivateYear';
 
 
 

@@ -1,9 +1,6 @@
 import React, {useState} from 'react'
 import Calendar from 'react-calendar';
-//import {Navigation} from 'react-router';
-import { browserHistory, useHistory, Redirect } from 'react-router-dom';
-// import {useRoutes, useRedirect} from 'hookrouter';
-//import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 //import './styles.css'
 import '../../../Calendar.css'
@@ -12,27 +9,14 @@ import moment from 'moment';
 
 
 export const CalendarPage = (props) =>  {
-//  console.log('props in calendar.js has', props);
-//  let testString = props.dates[0].[2].toString();
- //console.log('test subject will be', props.dates[2]);
- // console.log("test string contains", testString);
-  // "2021-08-02T04:00:00.000Z"
-  
-  // const dates2 = []
-  // for (let i = 0; i < props.dates[0].length; i++) {
 
-  //   dates2.push(props.dates[0].[i]);
-  // //  console.log("this was pushed", props.dates[0].[i]);
-  // }
 
   let history = useHistory();
-  const dates = ["2021-08-02T04:00:00.000Z", "Thu Aug 05 2021 00:00:00 GMT-0400 (Eastern Daylight Time)", "Fri Aug 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
-  "Fri Aug 20 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
-  // console.log('test subject2 will be', dates[2]);
+  // const dates = ["2021-08-02T04:00:00.000Z", "Thu Aug 05 2021 00:00:00 GMT-0400 (Eastern Daylight Time)", "Fri Aug 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
+  // "Fri Aug 20 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
+
   const [value, setValue] = useState(new Date());
-  // function parseDate (date) {
-  //   let newDate;
-  // }
+
 // Accepts a Date object or date string that is recognized by the Date.parse() method
   function getDayOfWeek(date) {
     const months = [
@@ -85,7 +69,6 @@ export const CalendarPage = (props) =>  {
   }
   function onClick(value) {
   //  console.log('valeu in onclick is', value);
-  //  alert('Will send you to Plan Daily with the follow date ', value)
   }
   function onClickDay(value, event) {
     let now = new Date();
@@ -114,7 +97,6 @@ export const CalendarPage = (props) =>  {
   return (
     <Calendar
  //     onChange={onChange}
-     // defaultactiveStartDate={new Date(new Date().setDate(new Date().getDate() - 31))}
       activeStartDate={new Date(new Date().setDate(new Date().getDate() - 14))}
       showFixedNumberOfWeeks={true}
       value={value}

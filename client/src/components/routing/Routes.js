@@ -12,6 +12,7 @@ import Plan2 from '../layout/Plan2';
 import Plan3 from '../layout/Plan3';
 import PlanMain from '../layout/plan/PlanMain';
 import PlanMonthly from '../layout/plan/PlanMonthly';
+import PlanMonthly2 from '../layout/plan/PlanMonthly2';
 import PlanDaily from '../layout/plan/PlanDaily';
 import PlanPastDay from '../layout/PlanPastDay';
 import TestPlanSubmit from '../layout/TestPlanSubmit';
@@ -59,6 +60,8 @@ const Routes = props => {
         <PrivateRoute exact path="/planmain" component={PlanMain} />
         <PrivateRoute exact path="/planmonthly" component={PlanMonthly} />
         <PrivateRoute exact path="/planmonthly/:date" component={PlanMonthly} />
+        <PrivateRoute exact path="/planmonthly2" component={PlanMonthly2} />
+        <PrivateRoute exact path="/planmonthly2/:date" component={PlanMonthly2} />
         <PrivateRoute exact path="/plandaily" component={PlanDaily} />
         <PrivateRoute exact path="/plandaily/:date" component={PlanDaily} />
         <PrivateRoute exact path="/planpastday" component={PlanPastDay} />

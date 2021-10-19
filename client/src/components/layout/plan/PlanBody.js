@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -19,9 +19,10 @@ import moment from 'moment';
    let headercontrol = 0;
     headercontrol = planResults2.summaryStats.avgMood;
    // console.log("today plan results has", todayPlanResults);
-    let monthText = ""
+   // POSSIBLY  DELETE BELOW
+   // let monthText = ""
     let today = new Date();
-    if(moment(today).subtract(30, 'days').format('MMMM') == moment(today).format('MMMM')){
+    if(moment(today).subtract(30, 'days').format('MMMM') === moment(today).format('MMMM')){
         //header will only show current month
         console.log("30 days ago is same month")
         let monthText = moment(today).format('MMMM');

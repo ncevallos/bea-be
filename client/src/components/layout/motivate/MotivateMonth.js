@@ -34,7 +34,7 @@ const MotivateMonth = ({ user, getResultsByIdOneMonth, motivateResult: { summary
           {/* <div className="flex mx-auto p-4">
               <div className="flex flex-col flex-grow"> */}
                   <div className="border border-gray-200 rounded-xl p-10 my-4">
-                    <TemptedGauge avgTemptationLvl={summaryMotivateResults1m.summaryStats.avgTemptationLvl}/>
+                    <TemptedGauge avgTemptationLvl={summaryMotivateResults1m.summaryStats.avgTemptationLvl} id={"gauge-chart08"}/>
                     {/* <div className="w-96 items-center">
                         <GaugeChart id="gauge-chart3"
                             nrOfLevels={2} 
@@ -53,6 +53,7 @@ const MotivateMonth = ({ user, getResultsByIdOneMonth, motivateResult: { summary
                             <p className="text-xl">tempted</p>
                             <p>to eat in a way not ideal</p>
                         </div> */}
+                        {/* Comment above here */}
                     <div className="w-48">
 
                         <ColumnChart level={summaryMotivateResults1m.summaryStats.temptedlevel} dates={summaryMotivateResults1m.summaryStats.temptedDates}/>

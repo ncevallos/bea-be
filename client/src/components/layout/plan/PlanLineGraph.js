@@ -130,7 +130,7 @@ const apexData = {
         //  formatter: function(value, { series, seriesIndex, dataPointIndex, w }) {
             formatter: function(value, opt) {
                 // console.log("value in labels formatter has", value);
-                 let labelName = "";
+               // DELETE  let labelName = "";
                switch(value){
                 case 4:
                     return "Great"
@@ -186,56 +186,27 @@ const data = {
     ]
   };
 
-  const options = {
-    maintainAspectRatio: true,
-    spanGaps: false,
-    legend:
-    {
-        display: false,
-    },
-    scales:
-    {
-        yAxes: [{
-            display: false,
-            gridLines : {
-                display : false
-            }
-        }],
-        xAxes: [{
-            gridLines : {
-                display : true,
-                drawBorder: true,
-                lineWidth: 1,
-                drawOnChartArea: false
-            }
-        }]
-    }
-  };
 
 class PlanLineGraph extends React.Component {
   render() {
-      console.log("props in Plan Line graph contains", this.props)
+
+    //below is used to push the data to the options for the charts
       let loopCount = 29;
-      console.log("loop count is equal to", loopCount)
-      let loopincremet = 0;
+   //   let loopincremet = 0;
       data.labels = []
       data.datasets[0].data = []
       apexData.options.xaxis.categories = []
       apexData.series[0].data = []
- //     console.log("apex series data has", apexData.series[0].data);
- //     console.log("apex xaxis series data has", apexData.options.xaxis.categories);
       while(loopCount >= 0){
             let temp = moment(this.props.data[loopCount]).format("MMM DD")
-            //console.log("temp in loopcount in plan body is", temp);
         data.labels.push(temp);
         apexData.options.xaxis.categories.push(temp)
          let temp2 = this.props.values[loopCount];
 
-     //    console.log("temp2 in loopcount in plan body is", temp2);
         data.datasets[0].data.push(temp2)
         apexData.series[0].data.push(temp2);
           loopCount--;
-          loopincremet++;
+      //    loopincremet++;
       }
       let control = "";
     return (
@@ -244,13 +215,7 @@ class PlanLineGraph extends React.Component {
           <div></div>
         ) : (
         <Fragment>
-            {/* <Line
-                // data={this.props.passedData}
-                data={data}
-                width={100}
-                height={15}
-                options={options}
-                /> */}
+
                 <div>
                   <ReactApexCharts options={apexData.options} series={apexData.series} type="line" height={250} />
                 </div>

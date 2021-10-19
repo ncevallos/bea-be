@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
-import { format, compareAsc } from 'date-fns'
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Spinner from '../layout/Spinner';
 import { getResultsById } from '../../actions/postPlanResults';
 
 const DisplayPlanResults = ({ user, getResultsById, planResult: { planResults } }) => {

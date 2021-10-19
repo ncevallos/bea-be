@@ -1,5 +1,5 @@
-import React, { useEffect, useState, Fragment } from 'react'
-import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
+import React, { useEffect, Fragment } from 'react'
+import { getSummary } from '../../../actions/postPlanResults';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PlanLineGraph from './PlanLineGraph';
@@ -8,13 +8,16 @@ import PlanIcons from './PlanIcons';
 import heartIcon from '../../../img/heart-icon.svg';
 
 
-const PlanMonthlyHeader = ({ user, 
+const PlanMonthlyHeader = ({ 
+        props,
+        user, 
         getSummary,
         planResult2: { planResults2 }
         }) => {
     
       useEffect(() => {
         getSummary(user._id);
+        console.log("props in get summary has ", props)
      
       }, [getSummary, user._id]);
       console.log("plan monthly header results has", planResults2);
@@ -118,10 +121,10 @@ PlanMonthlyHeader.propTypes = {
     // todayPlanResult: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
   };
-  
-  const mapStateToProps = (state) => ({
+
+  const mapStateToProps = (state, ownProps) => ({
+    //old code below
     planResult2: state.planResult2,
-    // todayPlanResult: state.todayPlanResult,
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user
   });

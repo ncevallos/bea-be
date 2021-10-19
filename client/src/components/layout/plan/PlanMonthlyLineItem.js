@@ -1,5 +1,5 @@
-import React, {Fragment, useEffect } from 'react'
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import React, {Fragment } from 'react'
+import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 import PlanSmiley from './PlanSmiley';
 import PlanIcons from './PlanIcons';

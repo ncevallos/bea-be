@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react'
+import * as d3 from "d3";
 import GaugeChart from 'react-gauge-chart';
 
 
@@ -13,7 +14,7 @@ class SimpleGauge extends React.Component {
     render() {
         return (
             <Fragment>
-             <GaugeChart id="gauge-chart3"
+             <GaugeChart id="gauge-chart4"
                             nrOfLevels={2} 
                             colors={["#eeeeee", "#ECEFF1"]} 
                             arcsLength={[0.37, 0.63]}

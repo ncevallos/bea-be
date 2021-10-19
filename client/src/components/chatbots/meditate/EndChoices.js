@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { postMeditateResults } from '../../../actions/meditateResults';
 import axios from 'axios';

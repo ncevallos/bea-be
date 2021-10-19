@@ -1,10 +1,8 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import mountainStream from '../../img/mountain-stream.svg';
 import MeditateVidSection from './MeditateVidSection';
 import { getMeditateResultsById } from '../../actions/meditateResults';
 import { connect } from 'react-redux';
-import PlanHeader from './plan/PlanHeader';
-import PlanBody from './plan/PlanBody';
 import PropTypes from 'prop-types';
 
 

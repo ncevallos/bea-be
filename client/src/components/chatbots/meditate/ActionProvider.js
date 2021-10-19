@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Videodata } from "../../layout/meditate/Videodata";
-import ReactPlayer from "react-player"
-import { data } from 'autoprefixer';
+import ReactPlayer from "react-player";
 
 // ActionProvider starter code
 class ActionProvider {

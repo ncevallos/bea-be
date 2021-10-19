@@ -2,11 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Calendar from 'react-calendar';
-import { differenceInCalendarDays, format } from 'date-fns';
+import { differenceInCalendarDays } from 'date-fns';
 import parseISO from 'date-fns/parseISO';
 
 const datesToAddClassTo = ["Sun May 02 2021 00:00:00 GMT-0400"];
-const dateFormat = "yyyy";
+// const dateFormat = "yyyy";
 function isSameDay(a, b) {
     console.log("a contains", a);
     // format(a, dateFormat);

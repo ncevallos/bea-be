@@ -2,9 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getMotivResultsByIdToday } from '../../../actions/postMotivateResults';
-import planIllustration from '../../../img/plan-illustration.svg';
 import arrowRight from '../../../img/arrow-right.svg';
-import PlanIconsDash from '../plan/PlanIconsDash';
 import { Link } from 'react-router-dom';
 import appleIcon from '../../../img/apple-icon.svg';
 import calendarIcon from '../../../img/calendar-icon.svg';
@@ -19,7 +17,7 @@ import hungryIcon from '../../../img/hungry-icon.svg';
         console.log("motivate header has", todayMotivateResults );
     
 //   render() {
-    let tempcheck = true;
+   // let tempcheck = true;
         let motivateHeader = "";
     //    console.log("plan header props has", this.props.results)
       if(todayMotivateResults.plan2eat){

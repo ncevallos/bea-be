@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch, useLocation, withRouter } from 'react-router-dom';
+import React, { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';

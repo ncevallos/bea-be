@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React from 'react'
 import { createChatBotMessage } from "react-chatbot-kit";
 import reflection from '../../../img/plan-reflection.png';
 import HowDoYouFeel from './HowDoYouFeel';
@@ -27,7 +27,7 @@ import {
     AvoidSugar,
     AvoidSugar2,
     LessSugar,
-    LessSugar2,
+    // LessSugar2,
     SweetFoods,
     SweetFoods2,
     FewerCarbs,
@@ -35,7 +35,7 @@ import {
     FewerCalories,
     FewerCalories2,
     SomethingElse,
-    TakeAction,
+    // TakeAction,
     EndActivity } from "./Options";
 
 const botName = "Bea";
