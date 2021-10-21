@@ -73,42 +73,44 @@ import moment from 'moment';
                                                     }}>{calendarText}</div>
                                                 <CalendarPage dates={planResults2.dates[0]} values={planResults2.values[0]} />
                                             </div>
-                                            <div className="flex-initial flex flex-col items-center">
-                                                <div className="planprogress">
-                                                    <div className="flex-initial flex flex-row items-center">
-                                                        <div className="p-2 m-0 w-16">
-                                                            <div className="font-light text-sm">Great</div>
-                                                            <div className="font-medium text-lg">{planResults2.summaryStats.great}%</div>
+                                            <div className="flex-initial flex flex-col items-center ml-2">
+                                                <div className="flex w-full justify-start">
+                                                    <div className="planprogress">
+                                                        <div className="flex-initial flex flex-row items-center">
+                                                            <div className="p-2 m-0 w-16">
+                                                                <div className="font-light text-sm">Great</div>
+                                                                <div className="font-medium text-lg">{planResults2.summaryStats.great}%</div>
+                                                            </div>
+                                                            <div className="pt-0 ml-1">
+                                                                <ProgressBar now={planResults2.summaryStats.great}  variant="danger" />
+                                                            </div>
                                                         </div>
-                                                        <div className="pt-0 ml-1">
-                                                            <ProgressBar now={planResults2.summaryStats.great}  variant="danger" />
+                                                        <div className="flex-initial flex flex-row mt-0 items-center">
+                                                            <div className="p-2 m-0 w-16">
+                                                                <div className="font-light text-sm">Good</div>
+                                                                <div className="font-medium text-lg">{planResults2.summaryStats.good}%</div>
+                                                            </div>
+                                                            <div className="pt-0 ml-1">
+                                                                <ProgressBar now={planResults2.summaryStats.good}  variant="warning" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="flex-initial flex flex-row mt-0 items-center">
-                                                        <div className="p-2 m-0 w-16">
-                                                            <div className="font-light text-sm">Good</div>
-                                                            <div className="font-medium text-lg">{planResults2.summaryStats.good}%</div>
+                                                        <div className="flex-initial flex flex-row mt-0 items-center">
+                                                            <div className="p-2 m-0 w-16">
+                                                                <div className="font-light text-xs">Not<br/>Good</div>
+                                                                <div className="font-medium text-lg">{planResults2.summaryStats.notgood}%</div>
+                                                            </div>
+                                                            <div className="pt-0 ml-1">
+                                                                <ProgressBar now={planResults2.summaryStats.notgood}  variant="success" />
+                                                            </div>
                                                         </div>
-                                                        <div className="pt-0 ml-1">
-                                                            <ProgressBar now={planResults2.summaryStats.good}  variant="warning" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex-initial flex flex-row mt-0 items-center">
-                                                        <div className="p-2 m-0 w-16">
-                                                            <div className="font-light text-xs">Not<br/>Good</div>
-                                                            <div className="font-medium text-lg">{planResults2.summaryStats.notgood}%</div>
-                                                        </div>
-                                                        <div className="pt-0 ml-1">
-                                                            <ProgressBar now={planResults2.summaryStats.notgood}  variant="success" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex-initial flex flex-row mt-0 items-center">
-                                                        <div className="p-2 m-0 w-16">
-                                                            <div className="font-light text-sm">Horrible</div>
-                                                            <div className="font-medium text-lg">{planResults2.summaryStats.horrible}%</div>
-                                                        </div>
-                                                        <div className="pt-0 ml-1">
-                                                            <ProgressBar now={planResults2.summaryStats.horrible}  variant="info" />
+                                                        <div className="flex-initial flex flex-row mt-0 items-center">
+                                                            <div className="p-2 m-0 w-16">
+                                                                <div className="font-light text-sm">Horrible</div>
+                                                                <div className="font-medium text-lg">{planResults2.summaryStats.horrible}%</div>
+                                                            </div>
+                                                            <div className="pt-0 ml-1">
+                                                                <ProgressBar now={planResults2.summaryStats.horrible}  variant="info" />
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -116,8 +118,7 @@ import moment from 'moment';
                                                     <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
                                                 </span>
                                                 <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.stayedontrackpct}%</h2> */}
-
-                                                <div className="w-auto">
+                                                <div>
                                                     <RadialGraph percent={planResults2.summaryStats.stayedontrackpct} icon={planResults2.summaryStats.stayedontrack}/>
                                                     <span className="mt-6 text-gray-700 text-sm font-thin pb-0">Why you stayed on track</span>
                                                     <h2 className="mt-0 text-gray-700 text-3xl font-light leading-6">{planResults2.summaryStats.stayedontrack}</h2>
