@@ -20,7 +20,7 @@ import React from 'react';
                         "" +
                         (openTab === 1
                             ? "bg-beaGreenBlue text-white py-2 px-4 rounded-full"
-                            : "py-2 px-4 rounded-full")
+                            : "py-2 px-4 text-gray-900 rounded-full")
                         }
                         onClick={e => {
                         e.preventDefault();
@@ -37,7 +37,7 @@ import React from 'react';
                         "" +
                         (openTab === 2
                             ? "bg-beaGreenBlue text-white py-2 px-4 rounded-full"
-                            : "py-2 px-4 rounded-full")
+                            : "py-2 px-4 text-gray-900 rounded-full")
                         }
                         onClick={e => {
                         e.preventDefault();
@@ -54,7 +54,7 @@ import React from 'react';
                         "" +
                         (openTab === 3
                             ? "bg-beaGreenBlue text-white py-2 px-4 rounded-full"
-                            : "py-2 px-4 rounded-full")
+                            : "py-2 px-4 text-gray-900 rounded-full")
                         }
                         onClick={e => {
                         e.preventDefault();
@@ -105,13 +105,13 @@ import React from 'react';
 
             <div className="flex md:flex-row flex-col">
             <div className={openTab === 1 ? "block w-full mr-3" : "hidden"} id="link1">
-                    This will display the content within tab 1W
+                    {/*This will display the content within tab 1W*/}
                 </div>
                 <div className={openTab === 2 ? "block w-full mr-3" : "hidden"} id="link2">
-                    This will display the content within tab 1M
+                    {/*This will display the content within tab 1M*/}
                 </div>
                 <div className={openTab === 3 ? "block w-full mr-3" : "hidden"} id="link2">
-                    This will display the content within tab 3M
+                    {/*This will display the content within tab 3M*/}
                 </div>
                 {/* <div className={openTab === 4 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab 1Y
