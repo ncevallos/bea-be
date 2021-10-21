@@ -123,7 +123,7 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
             <ul className="grid grid-cols-1 gap-gutter sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 mb-gutter">
                 <li className="col-span-1 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
                     <div className="flex-1 flex flex-col p-8 items-center">
-                        <span className="text-beaBlueText text-sm">Goal</span>
+                        <span className="text-beaBlueText font-bold uppercase text-sm">Goal</span>
                         <span className="mt-6 p-4 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                             <PlanIcons msg={todayPlanResults.plangoal} />  
                         </span>
@@ -142,7 +142,7 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
                 </li>
                 <li className="col-span-1 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
                     <div className="flex-1 flex flex-col p-8 items-center">
-                        <span className="text-beaBlueText text-sm">Action</span>
+                        <span className="text-beaBlueText font-bold uppercase text-sm">Action</span>
                         <span className="mt-6 p-4 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                             <PlanIcons msg={todayPlanResults.plangoal5} />  
                         </span>
