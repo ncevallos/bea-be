@@ -30,7 +30,7 @@ export const Plan2 = ({user}) =>  {
         );
         return (
                     <div className="block w-full h-full">
-                        <div className="fixed left-52 top-16     bottom-0 right-0">
+                        <div className="fixed left-52 top-16 bottom-0 right-0">
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                         {/* { (<div>{ user ? levelone : leveltwo }</div>)} */}
                         </nav>
