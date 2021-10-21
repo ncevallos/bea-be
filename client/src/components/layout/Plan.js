@@ -11,7 +11,7 @@ import bowlIcon from '../../img/bowl-icon.svg';
 import newspaperIcon from '../../img/newspaper-icon.svg';
 import smileyIconUnhappyRound from '../../img/smiley-icon-unhappy-round.svg';
 import {Line} from 'react-chartjs-2';
-import chartTrendline from "chartjs-plugin-trendline";
+// import chartTrendline from "chartjs-plugin-trendline";
 
 
 const data = {

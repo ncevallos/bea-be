@@ -1,11 +1,11 @@
-import React, { useEffect, Fragment } from 'react'
-import { getSummary } from '../../../actions/postPlanResults';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React, { Fragment } from 'react'
+// import { getSummary } from '../../../actions/postPlanResults';
+// import { connect } from 'react-redux';
+// import PropTypes from 'prop-types';
+// import PlanIconsSmall from './PlanIconsSmall';
 import PlanLineGraph from './PlanLineGraph';
 import PlanSmiley from './PlanSmiley';
 import PlanIcons from './PlanIcons';
-import PlanIconsSmall from './PlanIconsSmall';
 import heartIcon from '../../../img/heart-icon.svg';
 
 

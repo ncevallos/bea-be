@@ -2,9 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday } from '../../../actions/postPlanResults';
-import planIllustration from '../../../img/plan-illustration.svg';
 import arrowRight from '../../../img/arrow-right.svg';
-import PlanIconsDash from './PlanIconsDash';
 import PlanIcons from './PlanIcons';
 import { Link } from 'react-router-dom';
 

@@ -19,7 +19,7 @@ const PlanMonthlyHeader = ({
         getSummary(user._id);
         console.log("props in get summary has ", props)
      
-      }, [getSummary, user._id]);
+      }, [getSummary, user._id, props]);
       console.log("plan monthly header results has", planResults2);
 
     let planBodyResults = "";

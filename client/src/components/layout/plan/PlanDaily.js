@@ -2,8 +2,6 @@ import React, { useEffect, match, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import smileyIconRound from '../../../img/smiley-icon-round.svg';
-import heartIcon from '../../../img/heart-icon.svg';
-import bowlIcon from '../../../img/bowl-icon.svg';
 import PlanIconsSmall from './PlanIconsSmall';
 import PlanIcons from './PlanIcons';
 import PropTypes from 'prop-types';

@@ -15,34 +15,34 @@ export const CalendarPage = (props) =>  {
   // const dates = ["2021-08-02T04:00:00.000Z", "Thu Aug 05 2021 00:00:00 GMT-0400 (Eastern Daylight Time)", "Fri Aug 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
   // "Fri Aug 20 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
 
-  const [value, setValue] = useState(new Date());
+  const [value] = useState(new Date());
 
 // Accepts a Date object or date string that is recognized by the Date.parse() method
-  function getDayOfWeek(date) {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ]
+  // function getDayOfWeek(date) {
+  //   const months = [
+  //     'January',
+  //     'February',
+  //     'March',
+  //     'April',
+  //     'May',
+  //     'June',
+  //     'July',
+  //     'August',
+  //     'September',
+  //     'October',
+  //     'November',
+  //     'December'
+  //   ]
 
-    let month = parseInt(date.substring(6,8), 10)-1;
+  //   let month = parseInt(date.substring(6,8), 10)-1;
     
-    let year = date.substring(1,5);
-    let day = date.substring(9,11).concat(',');
-    let d = months[month]+ " " + day + " " + year;
-    const dateTemp = new Date(d);
-    console.log("what is date temp log for", dateTemp);
-    return 'lit';
-  }
+  //   let year = date.substring(1,5);
+  //   let day = date.substring(9,11).concat(',');
+  //   let d = months[month]+ " " + day + " " + year;
+  //   const dateTemp = new Date(d);
+  //   console.log("what is date temp log for", dateTemp);
+  //   return 'lit';
+  // }
 
      // console.log("Match found!!!!!");
 
@@ -75,7 +75,7 @@ export const CalendarPage = (props) =>  {
     if(value <= now){
         // code to direct user to the daily page will be inserted here
         //need to first check if data was entered for that day, if not do nothing
-    let newLocation = 'PlanDaily/' + moment(value).format('MM-DD-YYYY');
+    let newLocation = 'PlanDaily/' + moment(value).format('LL');
     //console.log('new location has this', newLocation);
     //alert('Redirect to ', newLocation);
 
@@ -108,7 +108,6 @@ export const CalendarPage = (props) =>  {
       onChange={onChange}
       onActiveStartDateChange={onActiveStartDateChange}
       minDetail="month" 
-      view="week"
    //   defaultActiveStartDate={activeStartDate}
     />
   );

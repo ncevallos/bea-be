@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { render } from 'react-dom';
-import { Link, Nav, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import dashIcon from '../../img/dashboard-icon.svg';
 import dashIconWhite from '../../img/dashboard-icon-white.svg';
 import meditateIcon from '../../img/meditate-icon.svg';

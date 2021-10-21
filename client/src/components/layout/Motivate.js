@@ -1,8 +1,5 @@
 import React from 'react'
 import { Component } from 'react';
-import Testpopuptwo from "./Testpopuptwo"; 
-import Videomodal from './Videomodal';
-import Videoselection from './Videoselection';
 import Chatbot from 'react-chatbot-kit'
 
 

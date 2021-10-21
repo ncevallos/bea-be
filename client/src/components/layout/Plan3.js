@@ -5,9 +5,9 @@ import {Line} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../actions/postPlanResults';
-import chartTrendline from "chartjs-plugin-trendline";
-import PlanMoodHeader from './plan/PlanMoodHeader';
-import PlanMoodHeaderFree from './PlanMoodHeaderFree';
+// import chartTrendline from "chartjs-plugin-trendline";
+// import PlanMoodHeader from './plan/PlanMoodHeader';
+// import PlanMoodHeaderFree from './PlanMoodHeaderFree';
 import PlanHeader from './plan/PlanHeader';
 import CalendarPage from './plan/calendar';
 import Spinner from '../layout/Spinner';
@@ -81,14 +81,9 @@ const data = {
         getResultsByIdToday(user._id);
         getResultsById(user._id);
         getSummary(user._id);
-        // if(planResults.length){
-        //     thisResults = planResults[0];
-        //     dataloaded = true;
-        //     console.log(thisResults);
-        // }
+
     }, [getResultsByIdToday, getResultsById, user._id]);
-    let dataloaded = false;
-    let thisResults = [];
+
    console.log("plan results has", planResults);
 
    // console.log("today plan results has", todayPlanResults);

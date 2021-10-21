@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import DisplayPlanResults from './DisplayPlanResults';
-import DisplayMotivateResults from './DisplayMotivateResults';
+// import DisplayPlanResults from './DisplayPlanResults';
+// import DisplayMotivateResults from './DisplayMotivateResults';
 import { postPlanResults } from '../../actions/postPlanResults';
-import { Link, Redirect } from 'react-router-dom';
-import axios from 'axios';
+// import { Link, Redirect } from 'react-router-dom';
+// import axios from 'axios';
 export const Testpage = () => {
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect, match, Fragment } from 'react'
+import React, { useEffect, match } from 'react'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary, getMonthSummary, getPlanMonthResults } from '../../../actions/postPlanResults';
 import PlanMonthlyLineItem from './PlanMonthlyLineItem';
 import PlanMonthlyHeader2 from './PlanMonthlyHeader2';
-import PlanLineGraph from './PlanLineGraph';
-import PlanSmiley from './PlanSmiley';
-import PlanIcons from './PlanIcons';
-import heartIcon from '../../../img/heart-icon.svg';
+// import PlanLineGraph from './PlanLineGraph';
+// import PlanSmiley from './PlanSmiley';
+// import PlanIcons from './PlanIcons';
+// import heartIcon from '../../../img/heart-icon.svg';
 
   const PlanMonthly = ({ user, match, 
     getResultsById, 
@@ -26,11 +26,11 @@ import heartIcon from '../../../img/heart-icon.svg';
         // const today = new Date();
         // getPlanMonthSummary(user._id, today);
         // getSummary(user._id);
-        if(planResults.length){
-            thisResults = planResults[0];
-            dataloaded = true;
-            console.log(thisResults);
-        }
+        // if(planResults.length){
+        //     thisResults = planResults[0];
+        //     dataloaded = true;
+        //     console.log(thisResults);
+        // }
         if(match.params.date){
             MonthofPlan = moment().format(match.params.date);
             getPlanMonthResults(user._id, match.params.date);
@@ -49,8 +49,8 @@ import heartIcon from '../../../img/heart-icon.svg';
         }
     }, [ match.params.date]);
 // }, [getResultsByIdToday, getResultsById, getSummary, user._id]);
-    let dataloaded = false;
-    let thisResults = [];
+    // let dataloaded = false;
+    // let thisResults = [];
    console.log("plan results has", planResults);
    console.log("plan results2 has", planResults2)
 

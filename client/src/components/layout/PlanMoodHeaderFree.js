@@ -1,9 +1,9 @@
 import React from 'react'
-import smileyIcon from '../../img/smiley-icon.svg';
-import smileyIconExtraHappy from '../../img/smiley-icon-extrahappy.svg';
-import smileyIconNeutral from '../../img/smiley-icon-neutral.svg';
-import smileyIconUnhappy from '../../img/smiley-icon-unhappy.svg';
-import smileyIconRound from '../../img/smiley-icon-round.svg';
+// import smileyIcon from '../../img/smiley-icon.svg';
+// import smileyIconExtraHappy from '../../img/smiley-icon-extrahappy.svg';
+// import smileyIconNeutral from '../../img/smiley-icon-neutral.svg';
+// import smileyIconUnhappy from '../../img/smiley-icon-unhappy.svg';
+// import smileyIconRound from '../../img/smiley-icon-round.svg';
 
 class PlanMoodHeaderFree extends React.Component {
 

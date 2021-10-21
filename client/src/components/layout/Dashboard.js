@@ -1,27 +1,15 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../actions/postPlanResults';
 import { getMeditateResultsById } from '../../actions/meditateResults';
-// import Login from '../auth/Login';
-// import planIllustration from '../../img/plan-illustration.svg';
 import smileyIconRound from '../../img/smiley-icon-round.svg';
-import planIconWhite from '../../img/plan-icon-white.svg';
 import {Line} from 'react-chartjs-2';
-import chartTrendline from "chartjs-plugin-trendline";
 import GaugeChart from 'react-gauge-chart';
-
 import DashboardSections from './dashboard/DashboardSections';
-import Videoselection from './Videoselection';
-import { Videodata } from "./meditate/Videodata";
 import PlanHeader from './dashboard/PlanHeader';
 import MotivateHeader from './dashboard/MotivateHeader';
 import MeditateHeader from './dashboard/MeditateHeader';
-import PlanLineGraph from './plan/PlanLineGraph';
-import RecentVideos from './RecentVideos';
-const testData = [0,3,1,2]
-const testValues = 
-['01', '02', '03', '04'];
 const data = {
     labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
     datasets: [
@@ -97,7 +85,7 @@ const data = {
         getSummary(user._id);
       const today = new Date();
        getResultsByIdToday(user._id, today);
-   }, [getResultsByIdToday, getResultsById, getMeditateResultsById, getSummary, user._id]);
+   }, [getResultsByIdToday, getMeditateResultsById, getSummary, user._id]);
     console.log("meditate results has this in it", meditateResult)
   let planBodyResults = "";
 //export const Dashboard = () => {

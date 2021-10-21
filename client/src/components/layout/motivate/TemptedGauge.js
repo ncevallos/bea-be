@@ -1,7 +1,5 @@
 import React from 'react'
-import noEntry from '../../../img/planimgs/no-entry.png';
 import { Fragment } from 'react';
-import * as d3 from "d3";
 import GaugeChart from 'react-gauge-chart';
 
 class TemptedGauge extends React.Component {
