@@ -58,11 +58,11 @@ import heartIcon from '../../../img/heart-icon.svg';
 
    let nextMonthButton = '';
    let today = new Date();
-   let lastMonthButton = '/PlanMonthly/' + moment(match.params.date).subtract(1, 'month').format('MM-DD-YYYY');
+   let lastMonthButton = '/PlanMonthly/' + moment(match.params.date).subtract(1, 'month').format('LL');
    if(moment(match.params.date).format('MM Do YYYY') === moment(today).format('MM Do YYYY')){
     } else {
         nextMonthButton = 
-        <Link to={'/PlanMonthly/' + moment(match.params.date).add(1, 'month').format('MM-DD-YYYY')}  className="flex flex-row items-center navigateButton px-3">{moment(match.params.date).add(1, 'month').format('MMMM YYYY')}
+        <Link to={'/PlanMonthly/' + moment(match.params.date).add(1, 'month').format('LL')}  className="flex flex-row items-center navigateButton px-3">{moment(match.params.date).add(1, 'month').format('MMMM YYYY')}
         <svg className="w-4 ml-1.5" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.45043 7.78955L14.4104 7.78955" stroke="#7B48CB" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                                     <path d="M8.95047 2.03955L14.7529 7.76625L8.95047 13.5396" stroke="#7B48CB" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
