@@ -116,7 +116,7 @@ import hungryIcon from '../../../img/hungry-icon.svg';
     //   </div>
       }
     return (
-        <div style={{ backgroundImage: "linear-gradient(to right, rgba(109, 80, 139, 1), rgba(173, 121, 226, 1), rgba(177, 208, 244, 1))" }} className="flex rounded-xl mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6">
+        <div style={{ backgroundImage: "linear-gradient(to right, rgba(109, 80, 139, 1), rgba(173, 121, 226, 1), rgba(177, 208, 244, 1))" }} className="flex rounded-lg mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6">
         <div className="mb-4">
             <h3 className="text-sm leading-6 font-medium text-white uppercase font-black tracking-widest mb-1">
             Your motivate summary today

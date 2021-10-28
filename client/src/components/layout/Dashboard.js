@@ -233,7 +233,7 @@ const data = {
                         <div className="flex justify-center">
                             <button type="button" className="btn-darkPurpleInvert">        
                                 More Motivate Results
-                            </button>   
+                            </button>
                         </div>   
                     </div>
                 </div>

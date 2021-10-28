@@ -9,12 +9,12 @@ class TemptedGauge extends React.Component {
         console.log("tempted gauage contains", this.props)
         let iconurl = "";
         const chartStyle={
-            height: 250,
+            //height: 250,
         }
         if(this.props.avgTemptationLvl === 0 ){
 
             iconurl = 
-            <div className="w-96 items-center">
+            <div className="w-96 items-center flex flex-col">
                 <GaugeChart id={this.props.id}
                             nrOfLevels={1} 
                             colors={["#FFAD33", "#ECEFF1"]} 
@@ -30,14 +30,14 @@ class TemptedGauge extends React.Component {
                             hideText={true}
                             style={chartStyle}
                             />
-                            <p className="text-xl">Not at all tempted</p>
-                            <p>to eat in a way not ideal</p>
+                            <p className="text-3xl font-extralight mb-0">Not at all tempted</p>
+                            <p className="font-light">to eat in a way not ideal</p>
             </div>
         }
         else if(this.props.avgTemptationLvl === 1){
 
             iconurl = 
-            <div className="w-96 items-center">
+            <div className="w-96 items-center flex flex-col">
                 <GaugeChart id={this.props.id}
                             nrOfLevels={2} 
                             colors={["#FFAD33", "#ECEFF1"]} 
@@ -53,14 +53,14 @@ class TemptedGauge extends React.Component {
                             hideText={true}
                             style={chartStyle}
                             />
-                            <p className="text-xl">Slightly tempted</p>
-                            <p>to eat in a way not ideal</p>
+                            <p className="text-3xl font-extralight mb-0">Slightly tempted</p>
+                            <p className="font-light">to eat in a way not ideal</p>
             </div>
         }
         else if(this.props.avgTemptationLvl === 2){
 
             iconurl = 
-            <div className="w-96 items-center">
+            <div className="w-96 items-center flex flex-col">
                 <GaugeChart id={this.props.id}
                             nrOfLevels={2} 
                             colors={["#FFAD33", "#ECEFF1"]} 
@@ -76,13 +76,13 @@ class TemptedGauge extends React.Component {
                             hideText={true}
                             style={chartStyle}
                             />
-                            <p className="text-xl">Somewhat tempted</p>
-                            <p>to eat in a way not ideal</p>
+                            <p className="text-3xl font-extralight mb-0">Somewhat tempted</p>
+                            <p className="font-light">to eat in a way not ideal</p>
             </div>
         }
         else if(this.props.avgTemptationLvl === 3){
             iconurl = 
-            <div className="w-96 items-center">
+            <div className="w-96 items-center flex flex-col">
                 <GaugeChart id={this.props.id}
                             nrOfLevels={2} 
                             colors={["#FFAD33", "#ECEFF1"]} 
@@ -98,13 +98,13 @@ class TemptedGauge extends React.Component {
                             hideText={true}
                             style={chartStyle}
                             />
-                            <p className="text-xl">Very tempted</p>
-                            <p>to eat in a way not ideal</p>
+                            <p className="text-3xl font-extralight mb-0">Very tempted</p>
+                            <p className="font-light">to eat in a way not ideal</p>
             </div>
         }
         else if(this.props.avgTemptationLvl === 4){
             iconurl = 
-            <div className="w-96 items-center">
+            <div className="w-96 items-center flex flex-col">
                 <GaugeChart id={this.props.id}
                                 nrOfLevels={1} 
                                 colors={["#FFAD33", "#ECEFF1"]} 
@@ -120,13 +120,13 @@ class TemptedGauge extends React.Component {
                                 hideText={true}
                                 style={chartStyle}
                                 />
-                                <p className="text-xl">Extremely - Help! tempted</p>
-                                <p>to eat in a way not ideal</p>
+                                <p className="text-3xl font-extralight mb-0">Extremely - Help! tempted</p>
+                                <p className="font-light">to eat in a way not ideal</p>
             </div>
         }
         else {
             iconurl = 
-            <div className="w-96 items-center">
+            <div className="w-96 items-center flex flex-col">
                 {/* <GaugeChart id="gauge-chart05" */}
                 <GaugeChart id={this.props.id}
                                 nrOfLevels={1} 
@@ -143,7 +143,7 @@ class TemptedGauge extends React.Component {
                                 hideText={true}
                                 style={chartStyle}
                                 />
-                                <p className="text-xl">No data</p>
+                                <p className="text-3xl font-extralight mb-0">No data</p>
             </div>
         }
         
