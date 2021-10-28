@@ -70,7 +70,7 @@ router.post(
 router.get('/:id', async (req, res) => {
   try {
     console.log("request in meditate results has", req.params.id);
-    const results = await MeditateResults.find({ user : req.params.id});
+    const results = await MeditateResults.find({ user : req.params.id}).sort( { date: -1 });
 
     if(!results){
       return res.status(400).json({msg: "There are no results for this user"});
@@ -102,7 +102,7 @@ router.get('/today/:id/', async (req, res) => {
     // }
     // const results = await PlanResults.find({ user : req.user.id});
     //user : "60217a517f2b961147d214f0", 
-    const results = await MotivateResults.findOne({ user : req.params.id, date : {"$gte": start, $lt: end}}
+    const results = await MeditateResults.findOne({ user : req.params.id, date : {"$gte": start, $lt: end}}
     );    
 
     if(!results){

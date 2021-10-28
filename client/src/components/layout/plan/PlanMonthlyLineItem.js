@@ -27,7 +27,7 @@ import PlanIcons from './PlanIcons';
 
     render() {
    let lineItem;
-   let today = (moment(this.props.date).format('MMMM-DD-YYYY'));
+   let today = (moment(this.props.date).format('LL'));
    const { redirect } = this.state;
        
    if (redirect) {

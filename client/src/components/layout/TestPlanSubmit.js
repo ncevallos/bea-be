@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import DisplayPlanResults from './DisplayPlanResults';
 import DisplayMotivateResults from './DisplayMotivateResults';
 import { postPlanResults } from '../../actions/postPlanResults';
-import { Link, Redirect } from 'react-router-dom';
-import axios from 'axios';
+// import { Link, Redirect } from 'react-router-dom';
+// import axios from 'axios';
 export const TestPlanSubmit = ({postPlanResults, user}) => {
   console.log("USer contains", user);
   console.log("user is found", user._id);

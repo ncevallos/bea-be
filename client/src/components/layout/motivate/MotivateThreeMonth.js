@@ -3,14 +3,14 @@ import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdThreeMonths } from '../../../actions/postMotivateResults';
-import * as d3 from "d3";
-import GaugeChart from 'react-gauge-chart';
+// import * as d3 from "d3";
+// import GaugeChart from 'react-gauge-chart';
+// import HeatMap from './HeatMap';
 import Spinner from '../../layout/Spinner';
 import TreeMap from './TreeMap';
 import SimpleGauge from './SimpleGauge';
 import BarChart from './BarChart';
 import AreaChart from './AreaChart';
-import HeatMap from './HeatMap';
 import ColumnChart from './ColumnChart';
 import TemptedGauge from './TemptedGauge';
 

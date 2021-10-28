@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.c8e911da.chunk.css",
-    "main.js": "/static/js/main.f56b8960.chunk.js",
-    "main.js.map": "/static/js/main.f56b8960.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d5615410.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d5615410.js.map",
+    "main.css": "/static/css/main.7dba36d1.chunk.css",
+    "main.js": "/static/js/main.0a94affc.chunk.js",
+    "main.js.map": "/static/js/main.0a94affc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f275573f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f275573f.js.map",
     "static/css/2.d375b901.chunk.css": "/static/css/2.d375b901.chunk.css",
-    "static/js/2.5bcd2f4f.chunk.js": "/static/js/2.5bcd2f4f.chunk.js",
-    "static/js/2.5bcd2f4f.chunk.js.map": "/static/js/2.5bcd2f4f.chunk.js.map",
-    "static/js/3.494bd717.chunk.js": "/static/js/3.494bd717.chunk.js",
-    "static/js/3.494bd717.chunk.js.map": "/static/js/3.494bd717.chunk.js.map",
+    "static/js/2.3359db2d.chunk.js": "/static/js/2.3359db2d.chunk.js",
+    "static/js/2.3359db2d.chunk.js.map": "/static/js/2.3359db2d.chunk.js.map",
+    "static/js/3.d3e29478.chunk.js": "/static/js/3.d3e29478.chunk.js",
+    "static/js/3.d3e29478.chunk.js.map": "/static/js/3.d3e29478.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.d375b901.chunk.css.map": "/static/css/2.d375b901.chunk.css.map",
-    "static/css/main.c8e911da.chunk.css.map": "/static/css/main.c8e911da.chunk.css.map",
-    "static/js/2.5bcd2f4f.chunk.js.LICENSE.txt": "/static/js/2.5bcd2f4f.chunk.js.LICENSE.txt",
+    "static/css/main.7dba36d1.chunk.css.map": "/static/css/main.7dba36d1.chunk.css.map",
+    "static/js/2.3359db2d.chunk.js.LICENSE.txt": "/static/js/2.3359db2d.chunk.js.LICENSE.txt",
     "static/media/apple-icon.59aa66a6.svg": "/static/media/apple-icon.59aa66a6.svg",
     "static/media/arrow-right.34a2e747.svg": "/static/media/arrow-right.34a2e747.svg",
     "static/media/bowl-icon.ae91fe3c.svg": "/static/media/bowl-icon.ae91fe3c.svg",
@@ -26,7 +26,6 @@
     "static/media/hungry-icon.64a3118e.svg": "/static/media/hungry-icon.64a3118e.svg",
     "static/media/lazyafternoon.6738f57d.png": "/static/media/lazyafternoon.6738f57d.png",
     "static/media/logo.57dd6dae.svg": "/static/media/logo.57dd6dae.svg",
-    "static/media/meditate-icon-large.632c57dc.svg": "/static/media/meditate-icon-large.632c57dc.svg",
     "static/media/meditate-icon-white.5dbbec2f.svg": "/static/media/meditate-icon-white.5dbbec2f.svg",
     "static/media/meditate-icon.d9e41478.svg": "/static/media/meditate-icon.d9e41478.svg",
     "static/media/monks.f2ba32e1.png": "/static/media/monks.f2ba32e1.png",
@@ -34,7 +33,6 @@
     "static/media/motivate-icon-white.9e60638c.svg": "/static/media/motivate-icon-white.9e60638c.svg",
     "static/media/motivate-icon.99d2fdb2.svg": "/static/media/motivate-icon.99d2fdb2.svg",
     "static/media/mountain-stream.cb3d9efc.svg": "/static/media/mountain-stream.cb3d9efc.svg",
-    "static/media/mountainstream.623e86fc.png": "/static/media/mountainstream.623e86fc.png",
     "static/media/newspaper-icon.c9563f85.svg": "/static/media/newspaper-icon.c9563f85.svg",
     "static/media/orangegrove.8824e9b3.png": "/static/media/orangegrove.8824e9b3.png",
     "static/media/pesky-patterns.90b3f16e.svg": "/static/media/pesky-patterns.90b3f16e.svg",
@@ -53,10 +51,10 @@
     "static/media/woods.c291fec7.png": "/static/media/woods.c291fec7.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d5615410.js",
+    "static/js/runtime-main.f275573f.js",
     "static/css/2.d375b901.chunk.css",
-    "static/js/2.5bcd2f4f.chunk.js",
-    "static/css/main.c8e911da.chunk.css",
-    "static/js/main.f56b8960.chunk.js"
+    "static/js/2.3359db2d.chunk.js",
+    "static/css/main.7dba36d1.chunk.css",
+    "static/js/main.0a94affc.chunk.js"
   ]
 }

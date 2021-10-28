@@ -1,4 +1,4 @@
-import React, { useEffect, match, Fragment } from 'react'
+import React, { useEffect, match } from 'react'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary, getMonthSummary, getPlanMonthResults } from '../../../actions/postPlanResults';
 import PlanMonthlyLineItem from './PlanMonthlyLineItem';
 import PlanMonthlyHeader2 from './PlanMonthlyHeader2';
-import PlanLineGraph from './PlanLineGraph';
-import PlanSmiley from './PlanSmiley';
-import PlanIcons from './PlanIcons';
-import heartIcon from '../../../img/heart-icon.svg';
+// import PlanLineGraph from './PlanLineGraph';
+// import PlanSmiley from './PlanSmiley';
+// import PlanIcons from './PlanIcons';
+// import heartIcon from '../../../img/heart-icon.svg';
 
   const PlanMonthly = ({ user, match, 
     getResultsById, 
@@ -26,11 +26,11 @@ import heartIcon from '../../../img/heart-icon.svg';
         // const today = new Date();
         // getPlanMonthSummary(user._id, today);
         // getSummary(user._id);
-        if(planResults.length){
-            thisResults = planResults[0];
-            dataloaded = true;
-            console.log(thisResults);
-        }
+        // if(planResults.length){
+        //     thisResults = planResults[0];
+        //     dataloaded = true;
+        //     console.log(thisResults);
+        // }
         if(match.params.date){
             MonthofPlan = moment().format(match.params.date);
             getPlanMonthResults(user._id, match.params.date);
@@ -49,8 +49,8 @@ import heartIcon from '../../../img/heart-icon.svg';
         }
     }, [ match.params.date]);
 // }, [getResultsByIdToday, getResultsById, getSummary, user._id]);
-    let dataloaded = false;
-    let thisResults = [];
+    // let dataloaded = false;
+    // let thisResults = [];
    console.log("plan results has", planResults);
    console.log("plan results2 has", planResults2)
 
@@ -58,11 +58,11 @@ import heartIcon from '../../../img/heart-icon.svg';
 
    let nextMonthButton = '';
    let today = new Date();
-   let lastMonthButton = '/PlanMonthly/' + moment(match.params.date).subtract(1, 'month').format('MM-DD-YYYY');
+   let lastMonthButton = '/PlanMonthly/' + moment(match.params.date).subtract(1, 'month').format('LL');
    if(moment(match.params.date).format('MM Do YYYY') === moment(today).format('MM Do YYYY')){
     } else {
         nextMonthButton = 
-        <Link to={'/PlanMonthly/' + moment(match.params.date).add(1, 'month').format('MM-DD-YYYY')}  className="flex flex-row items-center navigateButton px-3">{moment(match.params.date).add(1, 'month').format('MMMM YYYY')}
+        <Link to={'/PlanMonthly/' + moment(match.params.date).add(1, 'month').format('LL')}  className="flex flex-row items-center navigateButton px-3">{moment(match.params.date).add(1, 'month').format('MMMM YYYY')}
         <svg className="w-4 ml-1.5" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.45043 7.78955L14.4104 7.78955" stroke="#7B48CB" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                                     <path d="M8.95047 2.03955L14.7529 7.76625L8.95047 13.5396" stroke="#7B48CB" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>

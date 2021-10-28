@@ -2,8 +2,6 @@ import React, { useEffect, match, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import smileyIconRound from '../../../img/smiley-icon-round.svg';
-import heartIcon from '../../../img/heart-icon.svg';
-import bowlIcon from '../../../img/bowl-icon.svg';
 import PlanIconsSmall from './PlanIconsSmall';
 import PlanIcons from './PlanIcons';
 import PropTypes from 'prop-types';
@@ -36,11 +34,11 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
     let today = new Date();
     let planDailyBody =''
     let secondCondition = ''
-    let yesterday = '/PlanDaily/' + moment(match.params.date).subtract(1, 'days').format('MM-DD-YYYY');
+    let yesterday = '/PlanDaily/' + moment(match.params.date).subtract(1, 'days').format('LL');
         if(moment(match.params.date).format('MM Do YYYY') === moment(today).format('MM Do YYYY')){
         } else {
             nextDayButton = 
-            <Link to={'/PlanDaily/' + moment(match.params.date).add(1, 'days').format('MM-DD-YYYY')}  className="flex flex-row items-center navigateButton px-3">{moment(match.params.date).add(1, 'days').format('MMMM Do')}
+            <Link to={'/PlanDaily/' + moment(match.params.date).add(1, 'days').format('LL')}  className="flex flex-row items-center navigateButton px-3">{moment(match.params.date).add(1, 'days').format('MMMM Do')}
             <svg className="w-4 ml-1.5" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2.45043 7.78955L14.4104 7.78955" stroke="#7B48CB" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                                         <path d="M8.95047 2.03955L14.7529 7.76625L8.95047 13.5396" stroke="#7B48CB" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>

@@ -5,7 +5,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   GET_MEDITATE_RESULTS,
-  // GET_TODAY_MEDITATE_RESULTS,
+  GET_TODAY_MEDITATE_RESULTS,
   MEDITATE_RESULTS_ERROR
 } from './types';
 
@@ -68,3 +68,25 @@ export const getMeditateResultsById = userId => async dispatch => {
 };
 
 
+  // Get motivate resuts for 30 days
+  export const getTodayMeditateResultsById = userId => async dispatch => {
+    console.log("get results by id in meditate is called", userId);
+    try {
+      
+      const res = await api.get(`/meditateResults/today/${userId}`);
+      // const res = await api.get(`/meditateResults/${userId}`);
+      console.log('in try for get today meditate results');
+      dispatch({
+        type: GET_TODAY_MEDITATE_RESULTS,
+        payload: res.data
+      });
+    } catch (err) {
+      console.log('error reached');
+      dispatch({
+        type: MEDITATE_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
+  
+  

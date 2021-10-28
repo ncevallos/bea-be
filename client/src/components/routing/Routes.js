@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Register from '../auth/Register';
 import Login from '../auth/Login';
 import Dashboard from '../layout/Dashboard';
-import Meditate from '../layout/Meditate';
+import Meditate from '../layout/meditate/Meditate';
 import Motivate from '../layout/Motivate';
 import Motivate2 from '../layout/Motivate2';
 import MotivateMain from '../layout/motivate/MotivateMain';
@@ -21,7 +21,6 @@ import Helpcenter from '../layout/Helpcenter';
 import Settings from '../layout/Settings';
 import Termsconditions from '../layout/Termsconditions';
 import Privacy from '../layout/Privacy';
-import CalendarPage from '../layout/CalendarPage';
 import MeditateChat from '../layout/meditate/MeditateChat'
 // import NotFound from '../layout/NotFound';
 import PrivateRoute from './PrivateRoute';
@@ -53,7 +52,6 @@ const Routes = props => {
         <PrivateRoute exact path="/motivate" component={Motivate} />
         <PrivateRoute exact path="/motivate2" component={Motivate2} />
         <PrivateRoute exact path="/motivatemain" component={MotivateMain} />
-        <PrivateRoute exact path="/calendarpage" component={CalendarPage} />
         <PrivateRoute exact path="/plan" component={Plan} />
         <PrivateRoute exact path="/plan2" component={Plan2} />
         <PrivateRoute exact path="/plan3" component={Plan3} />

@@ -16,18 +16,18 @@ export const Plan2 = ({user}) =>  {
         if(user.userlevel === 0){
             console.log("Free User");
         }
-        const levelone = (
-            //Should print if userlevel is 0 - only checks to see if user variable exists not which level it is
-            //this should print if free but changed for demo
-            // <div><h1>YOU ARE A FREE USER</h1></div>
-            <div><h1>YOU ARE A PAID USER</h1></div>
-        );
-        const leveltwo = (
-            //Should print if userlevel is 1 
-            //this should print if free but changed for demo
-            // <div><h1>YOU ARE A PAID USER</h1></div>            
-            <div><h1>YOU ARE NOT LOGGED IN</h1></div>
-        );
+        // const levelone = (
+        //     //Should print if userlevel is 0 - only checks to see if user variable exists not which level it is
+        //     //this should print if free but changed for demo
+        //     // <div><h1>YOU ARE A FREE USER</h1></div>
+        //     <div><h1>YOU ARE A PAID USER</h1></div>
+        // );
+        // const leveltwo = (
+        //     //Should print if userlevel is 1 
+        //     //this should print if free but changed for demo
+        //     // <div><h1>YOU ARE A PAID USER</h1></div>            
+        //     <div><h1>YOU ARE NOT LOGGED IN</h1></div>
+        // );
         return (
                     <div className="block w-full h-full">
                         <div className="fixed left-52 top-16 bottom-0 right-0">

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../img/logo.svg';
 import Popup from 'reactjs-popup';
-import wave from '../../img/dashboard-navbarwave.jpg';
-import meditateIconLarge from '../../img/meditate-icon-large.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -32,64 +30,64 @@ const NavBar = ({auth: {isAuthenticated, loading }, logout}) => {
         setBGColor("2898ec");
       }
     }, [location]);
-    const authLinks = (
-        <Popup trigger={<button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
-        <span className="sr-only">Open user menu</span>
-        <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <g id="Designs-for-Development" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                <g id="Meditate-Landing-(Paid-Member---recent)" transform="translate(-1383.000000, -31.000000)">
-                    <path d="M0,-1 L1440,-1 L1440,66 C1174.88262,66 1016.78219,66 965.698713,66 C889.073495,66 870.259441,23.70292 816,23.70292 C761.740559,23.70292 748.575215,66 653.741049,66 C590.518272,66 372.271256,66 -1,66 L0,-1 Z" id="header" fill="#AD79E2"></path>
-                    <g id="more" transform="translate(1383.000000, 31.000000)" fill="#FFFFFF">
-                        <circle id="Oval" cx="2" cy="2" r="2"></circle>
-                        <circle id="Oval-Copy" cx="10" cy="2" r="2"></circle>
-                        <circle id="Oval-Copy-2" cx="18" cy="2" r="2"></circle>
-                    </g>
-                </g>
-            </g>
-        </svg>
+    // const authLinks = (
+    //     <Popup trigger={<button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
+    //     <span className="sr-only">Open user menu</span>
+    //     <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    //         <g id="Designs-for-Development" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+    //             <g id="Meditate-Landing-(Paid-Member---recent)" transform="translate(-1383.000000, -31.000000)">
+    //                 <path d="M0,-1 L1440,-1 L1440,66 C1174.88262,66 1016.78219,66 965.698713,66 C889.073495,66 870.259441,23.70292 816,23.70292 C761.740559,23.70292 748.575215,66 653.741049,66 C590.518272,66 372.271256,66 -1,66 L0,-1 Z" id="header" fill="#AD79E2"></path>
+    //                 <g id="more" transform="translate(1383.000000, 31.000000)" fill="#FFFFFF">
+    //                     <circle id="Oval" cx="2" cy="2" r="2"></circle>
+    //                     <circle id="Oval-Copy" cx="10" cy="2" r="2"></circle>
+    //                     <circle id="Oval-Copy-2" cx="18" cy="2" r="2"></circle>
+    //                 </g>
+    //             </g>
+    //         </g>
+    //     </svg>
 
 
-        </button>} position="bottom right">
-        <div className="px-2 pt-2 pb-3">
-            <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</Link>
-            <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</Link>
-        </div>
-        <div className="pt-4 pb-3 border-t border-indigo-800">
-            <div className="px-2">
-            <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Your Profile</Link>
-            <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Settings</Link>
-            {/* <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign out</Link> */}
-            <a onClick={logout} href='#!' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign Out</a>
-            </div>
-        </div>
-        </Popup>
-        );
-        const guestLinks = (
-            <Popup trigger={<button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
-            <span className="sr-only">Open user menu</span>
-            <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <g id="Designs-for-Development" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                    <g id="Meditate-Landing-(Paid-Member---recent)" transform="translate(-1383.000000, -31.000000)">
-                        <path d="M0,-1 L1440,-1 L1440,66 C1174.88262,66 1016.78219,66 965.698713,66 C889.073495,66 870.259441,23.70292 816,23.70292 C761.740559,23.70292 748.575215,66 653.741049,66 C590.518272,66 372.271256,66 -1,66 L0,-1 Z" id="header" fill="#AD79E2"></path>
-                        <g id="more" transform="translate(1383.000000, 31.000000)" fill="#FFFFFF">
-                            <circle id="Oval" cx="2" cy="2" r="2"></circle>
-                            <circle id="Oval-Copy" cx="10" cy="2" r="2"></circle>
-                            <circle id="Oval-Copy-2" cx="18" cy="2" r="2"></circle>
-                        </g>
-                    </g>
-                </g>
-            </svg>
+    //     </button>} position="bottom right">
+    //     <div className="px-2 pt-2 pb-3">
+    //         <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</Link>
+    //         <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</Link>
+    //     </div>
+    //     <div className="pt-4 pb-3 border-t border-indigo-800">
+    //         <div className="px-2">
+    //         <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Your Profile</Link>
+    //         <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Settings</Link>
+    //         {/* <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign out</Link> */}
+    //         <a onClick={logout} href='#!' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign Out</a>
+    //         </div>
+    //     </div>
+    //     </Popup>
+    //     );
+    //     const guestLinks = (
+    //         <Popup trigger={<button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white" id="user-menu" aria-haspopup="true">
+    //         <span className="sr-only">Open user menu</span>
+    //         <svg width="20px" height="4px" viewBox="0 0 20 4" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    //             <g id="Designs-for-Development" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+    //                 <g id="Meditate-Landing-(Paid-Member---recent)" transform="translate(-1383.000000, -31.000000)">
+    //                     <path d="M0,-1 L1440,-1 L1440,66 C1174.88262,66 1016.78219,66 965.698713,66 C889.073495,66 870.259441,23.70292 816,23.70292 C761.740559,23.70292 748.575215,66 653.741049,66 C590.518272,66 372.271256,66 -1,66 L0,-1 Z" id="header" fill="#AD79E2"></path>
+    //                     <g id="more" transform="translate(1383.000000, 31.000000)" fill="#FFFFFF">
+    //                         <circle id="Oval" cx="2" cy="2" r="2"></circle>
+    //                         <circle id="Oval-Copy" cx="10" cy="2" r="2"></circle>
+    //                         <circle id="Oval-Copy-2" cx="18" cy="2" r="2"></circle>
+    //                     </g>
+    //                 </g>
+    //             </g>
+    //         </svg>
     
     
-            </button>} position="bottom right">
-            <div className="px-2 pt-2 pb-3">
-                <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</Link>
-                <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</Link>
-                <Link to='/login' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Log In</Link>
-                <Link to='/register' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign Up</Link>
-            </div>
-            </Popup>
-            );
+    //         </button>} position="bottom right">
+    //         <div className="px-2 pt-2 pb-3">
+    //             <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</Link>
+    //             <Link to='/' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</Link>
+    //             <Link to='/login' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Log In</Link>
+    //             <Link to='/register' className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign Up</Link>
+    //         </div>
+    //         </Popup>
+    //         );
     return ( 
         <nav className="fixed w-screen top-0 flex-shrink-0 backdrop-blur bg-opacity-60 z-40 px-6 " style={{backgroundColor:bgcolor}} >
         {/* <nav className="fixed w-screen top-0 flex-shrink-0 bg-beaPurpleCorrected backdrop-blur bg-opacity-60 z-40 px-6 {bgcolor}" style={{backgroundColor:bgcolor}}> */}

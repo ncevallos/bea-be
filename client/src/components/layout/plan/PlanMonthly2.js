@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import moment from 'moment';
+// import moment from 'moment';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary } from '../../../actions/postPlanResults';
@@ -15,15 +15,15 @@ import PlanMonthlyHeader from './PlanMonthlyHeader';
         const today = new Date();
         getResultsById(user._id, today);
         getSummary(user._id);
-        if(planResults.length){
-            thisResults = planResults[0];
-            dataloaded = true;
-            console.log(thisResults);
-        }
+        // if(planResults.length){
+        //     thisResults = planResults[0];
+        //     dataloaded = true;
+        //     console.log(thisResults);
+        // }
     // }, [getResultsByIdToday, user._id], [getResultsById, user._id]);
 }, [getResultsByIdToday, getResultsById, getSummary, user._id]);
-    let dataloaded = false;
-    let thisResults = [];
+    // let dataloaded = false;
+    // let thisResults = [];
    console.log("plan results has", planResults);
    console.log("plane results 2 has", planResults2)
 
