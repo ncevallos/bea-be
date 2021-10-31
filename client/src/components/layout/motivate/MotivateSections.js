@@ -16,7 +16,7 @@ import MotivateThreeMonth from './MotivateThreeMonth';
         {/* <div className="flex px-6 py-6">
         <div className="flex flex-col w-full"> */}
 
-          <div className="flex flex-shrink">
+          <div className="flex flex-shrink w-full justify-center">
                 <nav className="bg-gray-200 rounded-full p-0 flex flex-shrink" aria-label="Tabs">
                     <a
                         className={

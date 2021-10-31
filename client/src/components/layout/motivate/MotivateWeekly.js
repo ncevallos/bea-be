@@ -15,6 +15,7 @@ import TemptedGauge from './TemptedGauge';
 import ChoiceGauge from './ChoiceGauge';
 import OverindulgeGauge from './OverindulgeGauge';
 import WhyChose from './WhyChose';
+import MotivateIcons from './MotivateIcons';
 
 const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summaryMotivateResults1wk } }) => {
 
@@ -62,6 +63,7 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
                   <div className="flex flex-grow w-full">
                     <div className="w-full border border-gray-200 rounded-xl p-10 mr-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Triggers</div>
+                        
                     <WhyChose whyHungry={summaryMotivateResults1wk.summaryStats.whyHungry} />
                     {/* <span className="mt-6 text-gray-700 text-sm font-thin">Reason why you chose the foods</span><br/>
                     <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.whyHungry}</h2> */}
