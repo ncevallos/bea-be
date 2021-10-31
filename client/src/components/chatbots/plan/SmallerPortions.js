@@ -5,6 +5,7 @@ import "./Options.css";
 const SmallerPortions = (props) => {
   const { setState, actionProvider } = props;
   const setType1 = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       plangoal2: type,
@@ -14,6 +15,7 @@ const SmallerPortions = (props) => {
     actionProvider.stopfull();
   };
   const setType2 = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       plangoal2: type,
@@ -23,17 +25,20 @@ const SmallerPortions = (props) => {
     actionProvider.morefilling();
   };
 
+  const [disable, setDisable] = React.useState(false);
   return (
     <div>
       <div className="learning-options-container">
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType1("Stop when full")}
         >
           Stop when full
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType2("More filling foods")}
         >
           More filling foods

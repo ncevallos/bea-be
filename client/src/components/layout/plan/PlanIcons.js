@@ -1,12 +1,4 @@
 import React from 'react';
-// import differentFoods from '../../../img/planimgs/different-foods.png';
-// import meditate from '../../../img/planimgs/meditate.png';
-// import read from '../../../img/planimgs/read.png';
-// import smallerAmounts from '../../../img/planimgs/smaller-amounts.png';
-// import noEntry from '../../../img/planimgs/no-entry.png';
-// import somethingElse from '../../../img/planimgs/something-else.png';
-// import somethingSmall from '../../../img/planimgs/somethingsmall.png';
-// import takeAWalk from '../../../img/planimgs/take-a-walk.png';
 import differentFoods from '../../../img/planimgs/differentFoods.png';
 import meditate from '../../../img/planimgs/MeditateN.png';
 import read from '../../../img/planimgs/readN.png';
@@ -15,8 +7,7 @@ import noEntry from '../../../img/planimgs/no-entry.png';
 import somethingElse from '../../../img/planimgs/somethingElse.png';
 import somethingElse2 from '../../../img/planimgs/somethingElse.png';
 import somethingSmall from '../../../img/planimgs/EatSomethingSmall.png';
-import takeAWalk from '../../../img/planimgs/take-a-walk.png';
-
+import takeAWalk from '../../../img/planimgs/TakeAWalk.png';
 import fewerCalories from '../../../img/planimgs/fewerCalories.png';
 import somethingEmotional from '../../../img/planimgs/somethingEmotional.png';
 import somethingPhysical from '../../../img/planimgs/somethingPhysical.png';
@@ -74,15 +65,15 @@ class PlanSmiley extends React.Component {
     }
     else if(this.props.msg === "Take a walk"){
         iconurl = 
-        <img src={takeAWalk} alt="Take a walk" title="Take a walk" className="w-full" />
+        <img src={takeAWalk} alt="Take a walk" title="Take a walk" />
     }
     else if(this.props.msg === "Meditate"){
         iconurl = 
-        <img src={meditate} alt="Meditate" title="Meditate" className="w-full" />
+        <img src={meditate} alt="Meditate" title="Meditate" />
     }
     else if(this.props.msg === "Talk to a friend"){
         iconurl = 
-        <img src={talkToAFriend} alt="Talk to a friend" title="Talk to a friend" className="w-full" />
+        <img src={talkToAFriend} alt="Talk to a friend" title="Talk to a friend" />
     }
     else if(this.props.msg === "Eat something small"){
         iconurl = 
@@ -90,23 +81,23 @@ class PlanSmiley extends React.Component {
     }
     else if(this.props.msg === "Read"){
         iconurl = 
-        <img src={read} alt="Read" title="Read" className="w-full" />
+        <img src={read} alt="Read" title="Read" />
     }
     else if(this.props.msg === "Something else"){
         iconurl = 
-        <img src={somethingElse} alt="Something else" title="Something else" className="w-full" />
+        <img src={somethingElse} alt="Something else" title="Something else" />
     }
     else if(this.props.msg === "Something emotional"){
         iconurl = 
-        <img src={somethingEmotional} alt="Something emotional" title="Something emotional" className="w-full" />
+        <img src={somethingEmotional} alt="Something emotional" title="Something emotional" />
     }
-    else if(this.props.msg === "Something pysical"){
+    else if(this.props.msg === "Something physical"){
         iconurl = 
-        <img src={somethingPhysical} alt="Something pysical" title="Something pysical" className="w-full" />
+        <img src={somethingPhysical} alt="Something physical" title="Something pyhsical" />
     }
     else {
         iconurl = 
-        <img src={noEntry} alt="No Entry" title="No Entry" className="w-full" />
+        <img src={noEntry} alt="No Entry" title="No Entry" />
     }
     
     return (

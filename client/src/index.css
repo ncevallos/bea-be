@@ -55,11 +55,17 @@
 }
 
 .react-chatbot-kit-chat-btn-send {
-  @apply mb-3 bg-transparent w-16 mr-2 ml-0 outline-none !important;
+  @apply mb-3 bg-transparent w-6 mr-2 ml-0 outline-none !important;
 }
-
+.react-chatbot-kit-chat-bot-message-container {
+  padding: 10px 0px;
+}
 .react-chatbot-kit-chat-bot-message {
   border-radius: 15px 15px 15px 0px !important;
+  display: inline-block;
+  text-align: left;
+  padding: 10px;
+  position: relative;
   @apply w-auto ml-1 bg-transparent shadow-md text-gray-600 border-3 border-beaCyan !important;
 }
 
@@ -77,26 +83,36 @@
   padding: 0.5rem;
   @apply bg-beaLightPurple rounded-full text-white font-bold px-4 border-3 mr-0 border-beaLightPurple outline-none !important;
 }
+.button-disabled {
+  background-color: gray !important;
+  border-color: gray !important;
+}
 
 .react-chatbot-kit-chat-input {
+  width: 90%;
+  padding: 10px;
   @apply rounded-full ml-4 mr-1 mb-3 bg-beaLightGrey outline-none !important;
 }
 
 .react-chatbot-kit-chat-bot-avatar {
-  @apply m-0 p-0 flex items-center !important;
+  @apply m-0 p-0 items-center !important;
+  display: inline-block;
 }
 
 .react-chatbot-kit-chat-bot-avatar-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   @apply bg-beaLightPurple bg-beaLogo bg-75% bg-no-repeat bg-center shadow-md border-2 border-white !important;
 }
 
 .react-chatbot-kit-chat-bot-avatar-letter {
   @apply hidden !important;
-}
+} 
 
 .react-chatbot-kit-user-avatar {
   @apply hidden !important;
-}
+} 
 
 .react-chatbot-kit-user-chat-message-arrow {
   @apply hidden !important;
@@ -105,7 +121,13 @@
 .react-chatbot-kit-user-chat-message {
   @apply bg-transparent border border-beaBorderGrey shadow-md !important;
 }
-
+.items-center {
+  text-align: center;
+}
+/*implemented the below so the graphs/charts would center-align properly */
+svg {
+  display: inline-block;
+}
 /* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

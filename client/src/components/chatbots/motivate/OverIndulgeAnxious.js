@@ -5,6 +5,7 @@ import "./AreyouReady.css";
 const OverIndulgeAnxious = (props) => {
   const { setState, actionProvider } = props;
   const setType = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       overindulgeresult: type,
@@ -13,36 +14,42 @@ const OverIndulgeAnxious = (props) => {
 
     actionProvider.anxious2();
   };
+  const [disable, setDisable] = React.useState(false);
 
   return (
     <div>
       <div className="learning-options-container">
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Much more anxious")}
         >
           Much more anxious
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("More anxious")}
         >
           More anxious
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("The same")}
         >
           The same
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Less anxious")}
         >
           Less anxious
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Much less anxious")}
         >
           Much less anxious

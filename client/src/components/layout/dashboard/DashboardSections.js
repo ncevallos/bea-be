@@ -1,5 +1,11 @@
 
 import React from 'react';
+import MiniMotivateWeekly from './MiniMotivateWeekly';
+import MiniMotivateMonth from './MiniMotivateMonth';
+import MiniMotivateThreeMonth from './MiniMotivateThreeMonth';
+import MiniPlanWeekly from './MiniPlanWeekly';
+import MiniPlanMonth from './MiniPlanMonth'
+import MiniPlanThreeMonth from './MiniPlanThreeMonth';
 // import { Component } from 'react';
 // import { Link } from 'react-router-dom';
 // import peskyPatterns from '../../../img/pesky-patterns.svg';
@@ -12,8 +18,7 @@ import React from 'react';
     // render() {
     return (
         <div>
-
-          <div className="flex flex-shrink  mb-3">
+                <div className="flex justify-center w-full mb-3">
                 <nav className="bg-gray-200 rounded-full p-0 flex flex-shrink" aria-label="Tabs">
                     <a
                         className={
@@ -102,16 +107,24 @@ import React from 'react';
                     </a> */}
                 </nav>
                 </div>
-
-            <div className="flex md:flex-row flex-col">
+                
+                <div>
+                    {/* Trying to comment out to see for spacing */}
+            {/* <div className="flex md:flex-row flex-col"> */}
             <div className={openTab === 1 ? "block w-full mr-3" : "hidden"} id="link1">
+                <MiniPlanWeekly />
+                <MiniMotivateWeekly />
                     {/*This will display the content within tab 1W*/}
                 </div>
                 <div className={openTab === 2 ? "block w-full mr-3" : "hidden"} id="link2">
+                <MiniPlanMonth />
+                <MiniMotivateMonth />
                     {/*This will display the content within tab 1M*/}
                 </div>
                 <div className={openTab === 3 ? "block w-full mr-3" : "hidden"} id="link2">
-                    {/*This will display the content within tab 3M*/}
+                    {/*This will display the content within tab 3M*/}             
+                <MiniPlanThreeMonth />
+                <MiniMotivateThreeMonth />
                 </div>
                 {/* <div className={openTab === 4 ? "block w-full mr-3" : "hidden"} id="link2">
                     This will display the content within tab 1Y

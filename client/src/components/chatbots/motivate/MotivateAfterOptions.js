@@ -5,6 +5,7 @@ import "./AreyouReady.css";
 const MotivateAfterOptions = (props) => {
   const { setState, actionProvider } = props;
   const setType = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       mindfulresult: type,
@@ -14,6 +15,7 @@ const MotivateAfterOptions = (props) => {
     actionProvider.afterBetter();
   };
   const setType2 = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       mindfulresult: type,
@@ -23,6 +25,7 @@ const MotivateAfterOptions = (props) => {
     actionProvider.afterSame();
   };
   const setType3 = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       mindfulresult: type,
@@ -31,24 +34,28 @@ const MotivateAfterOptions = (props) => {
 
     actionProvider.afterWorse();
   };
+  const [disable, setDisable] = React.useState(false);
 
   return (
     <div>
       <div className="learning-options-container">
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Better")}
         >
           Better
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType2("Same")}
         >
           Same
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType3("Worse")}
         >
           Worse
@@ -57,25 +64,5 @@ const MotivateAfterOptions = (props) => {
     </div>
   );
 };
-
-// const MotivateAfterOptions = (props) => {
-//   const options = [
-//     { text: "Better", handler: props.actionProvider.thankYouDemo, id: 1 },
-//     { text: "Same", handler: props.actionProvider.thankYouDemo, id: 2 },
-//     { text: "Worse", handler: props.actionProvider.thankYouDemo, id: 3 }
-//   ];
-
-//   const optionsMarkup = options.map((option) => (
-//     <button
-//       className="learning-option-button"
-//       key={option.id}
-//       onClick={option.handler}
-//     >
-//       {option.text}
-//     </button>
-//   ));
-
-//   return <div className="learning-options-container">{optionsMarkup}</div>;
-// };
 
 export default MotivateAfterOptions;

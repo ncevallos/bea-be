@@ -13,6 +13,10 @@ import BarChart from './BarChart';
 import AreaChart from './AreaChart';
 import ColumnChart from './ColumnChart';
 import TemptedGauge from './TemptedGauge';
+import ChoiceGauge from './ChoiceGauge';
+import OverindulgeGauge from './OverindulgeGauge';
+import WhyChose from './WhyChose';
+
 
 const MotivateThreeMonth = ({ user, getResultsByIdThreeMonths, motivateResult: { summaryMotivateResults3m } }) => {
 
@@ -35,25 +39,7 @@ const MotivateThreeMonth = ({ user, getResultsByIdThreeMonths, motivateResult: {
               <div className="flex flex-col flex-grow"> */}
                   <div className="border border-gray-200 rounded-xl p-10 my-4">
                     <TemptedGauge avgTemptationLvl={summaryMotivateResults3m.summaryStats.avgTemptationLvl} id={"gauge-chart07"}/>
-                    {/* <div className="w-96 items-center">
-                        <GaugeChart id="gauge-chart3"
-                            nrOfLevels={2} 
-                            colors={["#FFAD33", "#ECEFF1"]} 
-                            arcsLength={[0.37, 0.63]}
-                            arcWidth={0.45} 
-                            percent={0.80} 
-                            arcPadding={0}
-                            cornerRadius={0}
-                            textColor={"#000000"}
-                            needleColor={"#58585E"}
-                            needleBaseColor={"#CFD8DC"}
-                            formatTextValue={value => 'Very tempted'}
-                            hideText={true}
-                            />
-                            <p className="text-xl">tempted</p>
-                            <p>to eat in a way not ideal</p>
-                        </div> */}
-                        {/* Comment above here */}
+
 
                     <div className="w-48">
 
@@ -76,14 +62,15 @@ const MotivateThreeMonth = ({ user, getResultsByIdThreeMonths, motivateResult: {
                   <div className="flex flex-grow w-full">
                     <div className="w-full border border-gray-200 rounded-xl p-10 mr-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Triggers</div>
-                    <span className="mt-6 text-gray-700 text-sm font-thin">Reason why you chose the foods</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults3m.summaryStats.whyHungry}</h2>
-                    <SimpleGauge />
-                    <span className="mt-6 text-gray-700 text-sm font-thin">If you overindulged, you felt</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults3m.summaryStats.overindulgeresult}</h2>
-                    <SimpleGauge />
-                    <span className="mt-6 text-gray-700 text-sm font-thin">If you made a different choice, you felt</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults3m.summaryStats.differentChoice}</h2>
+                    <WhyChose whyHungry={summaryMotivateResults3m.summaryStats.whyHungry} />
+                    {/* <span className="mt-6 text-gray-700 text-sm font-thin">Reason why you chose the foods</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults3m.summaryStats.whyHungry}</h2> */}
+                    <OverindulgeGauge overindulgeresult={summaryMotivateResults3m.summaryStats.overindulgeresult} id={"gauge-chart01"}/>
+                    {/* <span className="mt-6 text-gray-700 text-sm font-thin">If you overindulged, you felt</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults3m.summaryStats.overindulgeresult}</h2> */}
+                    <ChoiceGauge differentChoice={summaryMotivateResults3m.summaryStats.differentChoice} id={"gauge-chart02"}/>
+                    {/* <span className="mt-6 text-gray-700 text-sm font-thin">If you made a different choice, you felt</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults3m.summaryStats.differentChoice}</h2> */}
                     </div>
                     <div className="w-full border border-gray-200 rounded-xl p-10 ml-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Evaluating Mood</div>

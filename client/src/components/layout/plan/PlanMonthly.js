@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { getResultsByIdToday, getResultsById, getSummary, getMonthSummary, getPlanMonthResults } from '../../../actions/postPlanResults';
 import PlanMonthlyLineItem from './PlanMonthlyLineItem';
 import PlanMonthlyHeader2 from './PlanMonthlyHeader2';
+import PlanLineGraph from './PlanLineGraph';
 // import PlanLineGraph from './PlanLineGraph';
 // import PlanSmiley from './PlanSmiley';
 // import PlanIcons from './PlanIcons';

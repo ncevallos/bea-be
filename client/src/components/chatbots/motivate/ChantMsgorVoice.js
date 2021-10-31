@@ -5,6 +5,7 @@ import "./AreyouReady.css";
 const ChantMsgorVoice = (props) => {
   const { setState, actionProvider } = props;
   const setType = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       mindfultype: type,
@@ -15,6 +16,7 @@ const ChantMsgorVoice = (props) => {
     actionProvider.chantMessage();
   };
   const setType2 = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       mindfultype: type,
@@ -24,17 +26,20 @@ const ChantMsgorVoice = (props) => {
 
     actionProvider.stretchVoice();
   };
+  const [disable, setDisable] = React.useState(false);
   return (
     <div>
       <div className="learning-options-container">
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Message")}
         >
           Message
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType2("Voice")}
         >
           Voice

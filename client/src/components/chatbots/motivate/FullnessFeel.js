@@ -5,6 +5,7 @@ import "./AreyouReady.css";
 const FullnessFeel = (props) => {
   const { setState, actionProvider } = props;
   const setType = async (type, type2) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       fullphasefeel: type,
@@ -14,36 +15,42 @@ const FullnessFeel = (props) => {
 
     actionProvider.fullnessLength();
   };
+  const [disable, setDisable] = React.useState(false);
 
   return (
     <div>
       <div className="learning-options-container">
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Great", 5)}
         >
           Great 😁
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Good", 4)}
         >
           Good 🙂
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Neutral", 3)}
         >
           Neutral 😐
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Bad", 2)}
         >
           Bad 🙁
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Really bad", 1)}
         >
           Really bad 😩
@@ -52,27 +59,5 @@ const FullnessFeel = (props) => {
     </div>
   );
 };
-
-// const FullnessFeel = (props) => {
-//   const options = [
-//     { text: "Great 😁", handler: props.actionProvider.fullnessLength, id: 1 },
-//     { text: "Good 🙂", handler: props.actionProvider.fullnessLength, id: 2 },
-//     { text: "Neutral 😐", handler: props.actionProvider.fullnessLength, id: 3 },
-//     { text: "Bad 🙁", handler: props.actionProvider.fullnessLength, id: 4 },
-//     { text: "Really bad 😩", handler: props.actionProvider.fullnessLength, id: 5 }
-//   ];
-
-//   const optionsMarkup = options.map((option) => (
-//     <button
-//       className="learning-option-button"
-//       key={option.id}
-//       onClick={option.handler}
-//     >
-//       {option.text}
-//     </button>
-//   ));
-
-//   return <div className="learning-options-container">{optionsMarkup}</div>;
-// };
 
 export default FullnessFeel;

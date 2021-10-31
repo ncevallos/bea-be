@@ -3,21 +3,24 @@ import React from "react";
 import "./AreyouReady.css";
 
 const MoveOn = (props) => {
-  const options = [
-    { text: "Move On", handler: props.actionProvider.endChoices, id: 1 },
-  ];
+  const { actionProvider } = props;
+  const setType = async () => {
+    setDisable(true)
+    actionProvider.endChoices();
+  };
+  const [disable, setDisable] = React.useState(false);
 
-  const optionsMarkup = options.map((option) => (
-    <button
-      className="learning-option-button"
-      key={option.id}
-      onClick={option.handler}
-    >
-      {option.text}
-    </button>
-  ));
 
-  return <div className="learning-options-container">{optionsMarkup}</div>;
+  return <div className="learning-options-container">
+  <button
+    className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+    disabled={disable}
+    onClick={() => setType()}
+  >
+    Move On
+  </button>
+    </div>;
+
 };
 
 export default MoveOn;

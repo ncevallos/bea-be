@@ -7,10 +7,14 @@ import { Link } from 'react-router-dom';
 import appleIcon from '../../../img/apple-icon.svg';
 import calendarIcon from '../../../img/calendar-icon.svg';
 import hungryIcon from '../../../img/hungry-icon.svg';
+import MotivateIcons from './MotivateIcons';
 
 
 //class MotivateHeader extends React.Component {
-    const MotivateHeader = ({ user, getMotivResultsByIdToday, todayMotivateResult: { todayMotivateResults } }) => {
+    const MotivateHeader = ({ 
+        user, 
+        getMotivResultsByIdToday, 
+        todayMotivateResult: { todayMotivateResults } }) => {
         useEffect(() => {
             getMotivResultsByIdToday(user._id);
         }, [getMotivResultsByIdToday, user._id]);
@@ -58,7 +62,8 @@ import hungryIcon from '../../../img/hungry-icon.svg';
                 <div className="flex w-48">
                     <div className="flex flex-col">
                         <div className="flex w-16 h-16 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5 items-center">
-                        <img className="w-1/2 flex-shrink-0 mx-auto" src={hungryIcon} alt="" />
+                        {/* <img className="w-1/2 flex-shrink-0 mx-auto" src={hungryIcon} alt="" /> */}
+                        <MotivateIcons msg={todayMotivateResults.whyhungry} />
                         </div>
                         <div className="">
                             <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">

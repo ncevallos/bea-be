@@ -223,10 +223,11 @@ router.get('/monthsummary/:id/:date', async (req, res) => {
 // @access   Public
 // will be plan 30 days back, after coding is done.
 
-router.get('/summary/:id', async (req, res) => {
+router.get('/summary/:id/:days', async (req, res) => {
   console.log("made it to summary");
   try {
-        let end = moment().subtract(30, 'days');
+        // let end = moment().subtract(30, 'days');
+        let end = moment().subtract(req.params.days, 'days');
       // console.log("in the summary request of try in plan results");
       //  console.log('end contains ', end);
        const results = await PlanResults.find({ user : req.params.id, date : {$gte: end}}

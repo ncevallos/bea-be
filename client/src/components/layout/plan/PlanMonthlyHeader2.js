@@ -7,6 +7,8 @@ import PlanLineGraph from './PlanLineGraph';
 import PlanSmiley from './PlanSmiley';
 import PlanIcons from './PlanIcons';
 import heartIcon from '../../../img/heart-icon.svg';
+import PlanLineGraph45 from './PlanLineGraph45';
+import PlanLineGraph2 from './PlanLineGraph2';
 
 
 class PlanMonthlyHeader2 extends React.Component {

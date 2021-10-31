@@ -12,8 +12,6 @@ export const CalendarPage = (props) =>  {
 
 
   let history = useHistory();
-  // const dates = ["2021-08-02T04:00:00.000Z", "Thu Aug 05 2021 00:00:00 GMT-0400 (Eastern Daylight Time)", "Fri Aug 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
-  // "Fri Aug 20 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"];
 
   const [value] = useState(new Date());
 
@@ -68,7 +66,7 @@ export const CalendarPage = (props) =>  {
     }
   }
   function onClick(value) {
-  //  console.log('valeu in onclick is', value);
+  //  console.log('value in onclick is', value);
   }
   function onClickDay(value, event) {
     let now = new Date();
@@ -104,7 +102,7 @@ export const CalendarPage = (props) =>  {
       onClick={onClick}
       onClickDay={onClickDay}
       showNavigation={false}
-      onViewChange={false}
+      // onViewChange={false}
       onChange={onChange}
       onActiveStartDateChange={onActiveStartDateChange}
       minDetail="month" 
@@ -112,21 +110,6 @@ export const CalendarPage = (props) =>  {
     />
   );
 
-
-
-
-    //     return (
-    //                 <div className="block">
-    //                     <div>
-    //                     Test if page working
-    //                     <Calendar
-    //                     tileClassName={tileClassName}
-    //                     />
-    //                     {/* <button class="circle-div">HI</button> */}
-    //                     </div>
-    //                 </div>
-
-    // )
 }
 
 

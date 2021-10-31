@@ -24,6 +24,7 @@ import Privacy from '../layout/Privacy';
 import MeditateChat from '../layout/meditate/MeditateChat'
 // import NotFound from '../layout/NotFound';
 import PrivateRoute from './PrivateRoute';
+import Chat from '../layout/chat/Chat';
 
 const NoMatchPage = () => {
   return (
@@ -48,6 +49,8 @@ const Routes = props => {
         <Route exact path="/register" component={Register} />
         <PrivateRoute exact path="/" component={Login} />
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
+        <PrivateRoute exact path="/chat" component={Chat} />
+        <PrivateRoute exact path="/chat/:chatbot" component={Chat} />
         <PrivateRoute exact path="/meditate" component={Meditate} />
         <PrivateRoute exact path="/motivate" component={Motivate} />
         <PrivateRoute exact path="/motivate2" component={Motivate2} />

@@ -30,10 +30,14 @@ export const Sidebar = () => {
       setActivePage("Motivate");
     } else if (location.pathname.startsWith('/Meditate')) {
       setActivePage("Meditate");
-    } else if (location.pathname === '/') {
+    } else if (location.pathname.startsWith('/Chat')) {
+      setActivePage("Chat");
+    }  else if (location.pathname.startsWith('/Dashboard')) {
+      setActivePage("Dashboard");
+    }else if (location.pathname === '/') {
       setActivePage("Dashboard");
     } else {
-      setActivePage("Dashboard");
+      // setActivePage("Dashboard");
     }
   }, [location]);
     // const active = {
@@ -57,51 +61,45 @@ export const Sidebar = () => {
                   <Link to='/PlanMain' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "Plan" ? planIconWhite  : planIcon} className="w-6" alt='Plan' />
-                      <span className="text-sm font-medium">Plan (UI)</span>
+                      <span className="text-sm font-medium">Plan</span>
                     </div>
                   </Link>
-                  <Link to='/Plan2' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan2") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')}>
+                  {/* <Link to='/Plan2' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Plan2") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "Plan2" ? planIconWhite  : planIcon} className="w-6" alt='Plan' />
                       <span className="text-sm font-medium">Plan</span>
                     </div>
-                  </Link>
-                  {/* <Link to='/TestPlanSubmit' className={"group lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "TestPlanSubmit") ? "bg-beaDarkBlue text-white" : 'text-beaTextGrey')} >
-                    <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-transform lg:transform lg:group-hover:scale-105">
-                      <img src={planicon} className="w-6" alt='TestPlanSubmit' />
-                      <span className="text-sm font-medium">Test Plan Results</span>
-                    </div>
-                  </Link> */} 
-                  <Link to='/Motivate' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate") ? "bg-beaPurple text-white" : 'text-beaTextGrey')}>
+                  </Link> */}
+                  {/* <Link to='/Motivate' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Motivate") ? "bg-beaPurple text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "Motivate" ? motivateIconWhite  : motivateIcon} className="w-6" alt='Motivate'/>
                       <span className="text-sm font-medium">Motivate </span>
                     </div>
-                  </Link>
+                  </Link> */}
                   <Link to='/MotivateMain' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "MotivateMain") ? "bg-beaDarkOrange text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "MotivateMain" ? motivateIconWhite  : motivateIcon} className="w-6" alt='Motivate2'/>
-                      <span className="text-sm font-medium">Motivate (UI)</span>
+                      <span className="text-sm font-medium">Motivate</span>
                     </div>
                   </Link>
                   <Link to='/Meditate' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "Meditate" ? meditateIconWhite  : meditateIcon} className="w-6" alt='Meditate'/>
-                      <span className="text-sm font-medium">Meditate (UI)</span>
+                      <span className="text-sm font-medium">Meditate</span>
                     </div>
                   </Link>
-                  <Link to='/MeditateChat' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
+                  {/* <Link to='/MeditateChat' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
                       <img src={activePage === "Meditate" ? meditateIconWhite  : meditateIcon} className="w-6" alt='Meditate'/>
                       <span className="text-sm font-medium">Meditate</span>
                     </div>
-                  </Link>
+                  </Link> */}
                 </div>
                 <div className="flex lg:flex-col xl:flex-col sm:flex-row p-2 space-y-0 space-x-0 lg:space-x-0 lg:space-y-1 lg:justify-start w-full justify-between px-0 lg:px-0">
-                  <Link to='/Meditate' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg bg-gray-200 hover:no-underline " + ((activePage === "Meditate") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
+                  <Link to='/Chat' className={"group rounded-2xl lg:w-full p-3 lg:px-5 px-2.5 transition-bg bg-gray-200 hover:no-underline " + ((activePage === "Chat") ? "bg-beaPurpleCorrected text-white" : 'text-beaTextGrey')}>
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-2 lg:transition-spacing lg:transform lg:group-hover:pl-2">
-                      <svg className={activePage === "Meditate" ? "w-6 h-6 text-white"  : "w-6 h-6 text-beaPurpleCorrected"} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                      <span className={"text-sm font-medium text-beaPurpleCorrected " + ((activePage === "Meditate") ? "text-white" : 'text-beaPurpleCorrected')}>Chat with Bea</span>
+                      <svg className={activePage === "Chat" ? "w-6 h-6 text-white"  : "w-6 h-6 text-beaPurpleCorrected"} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                      <span className={"text-sm font-medium text-beaPurpleCorrected " + ((activePage === "Chat") ? "text-white" : 'text-beaPurpleCorrected')}>Chat with Bea</span>
                     </div>
                   </Link>                  
                 </div>

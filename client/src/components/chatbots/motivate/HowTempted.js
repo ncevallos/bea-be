@@ -6,6 +6,7 @@ const HowTempted = (props) => {
  // console.log(props);
   const { setState, actionProvider } = props;
   const setType1 = async (type, type2) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       temptedlevel: type,
@@ -16,6 +17,7 @@ const HowTempted = (props) => {
     actionProvider.notAtAll();
   };
   const setType2 = async (type, type2) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       temptedlevel: type,
@@ -26,6 +28,7 @@ const HowTempted = (props) => {
     actionProvider.slightSomewhat();
   };
   const setType3 = async (type, type2) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       temptedlevel: type,
@@ -36,36 +39,42 @@ const HowTempted = (props) => {
 
     actionProvider.veryExtremely();
   };
+  const [disable, setDisable] = React.useState(false);
 
   return (
     <div>
       <div className="learning-options-container">
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType1("Not at all", 0)}
         >
           Not at all
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType2("Slightly", 1)}
         >
           Slightly
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType2("Somewhat", 2)}
         >
           Somewhat
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType3("Very", 3)}
         >
           Very
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType3("Extremely - Help!", 4)}
         >
           Extremely - Help!
@@ -75,26 +84,6 @@ const HowTempted = (props) => {
   );
 };
 
-// const HowTempted = (props) => {
-//   const options = [
-//     { text: "Not at all", handler: props.actionProvider.notAtAll, id: 1 },
-//     { text: "Slightly", handler: props.actionProvider.slightSomewhat, id: 2 },
-//     { text: "Somewhat", handler: props.actionProvider.slightSomewhat, id: 3 },
-//     { text: "Very", handler: props.actionProvider.veryExtremely, id: 4 },
-//     { text: "Extremely - Help!", handler: props.actionProvider.veryExtremely, id: 5 }
-//   ];
 
-//   const optionsMarkup = options.map((option) => (
-//     <button
-//       className="learning-option-button"
-//       key={option.id}
-//       onClick={option.handler}
-//     >
-//       {option.text}
-//     </button>
-//   ));
-
-//   return <div className="learning-options-container">{optionsMarkup}</div>;
-// };
 
 export default HowTempted;

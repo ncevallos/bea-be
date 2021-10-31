@@ -185,11 +185,11 @@ router.get('/:id/:days', async (req, res) => {
 createSummary = (results) => {
     summaryArray = 
     {summaryStats: {
+      aeplanningAvg: 0,
       avgTemptationLvl: 0,
+      fullnessAvg: 0,
       planPhaseAvg: 0,
       ieAvg: 0,
-      fullnessAvg: 0,
-      aeplanningAvg: 0,
       lessThanTen: 0,
       tenToThirty: 0,
       thirtyToOne: 0,
@@ -199,9 +199,9 @@ createSummary = (results) => {
       temptedDates: [],
       phaseFeel: [],
       lengthFeel: [],
-      differentChoice: "",
-      overindulgeresult: "",
-      whyHungry: "",
+      differentChoice: "1",
+      overindulgeresult: "2",
+      whyHungry: "3",
       phaseFeel: [],
       phaseLength: []
     },
@@ -303,6 +303,7 @@ createSummary = (results) => {
 
     } //ends the for loop
     
+
     summaryArray.summaryStats.overindulgeresult = mostFrequent(indulgeResults, indulgeResults.length);
     summaryArray.summaryStats.whyHungry = mostFrequent(whyhungryResults, whyhungryResults.length);
     summaryArray.summaryStats.differentChoice = mostFrequent(differentChoiceResults, differentChoiceResults.length);

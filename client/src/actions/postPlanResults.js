@@ -7,7 +7,10 @@ import {
   GET_PLAN_RESULTS,
   GET_TODAY_PLAN_RESULTS,
   GET_PREVIOUSDAY_PLAN_RESULTS,
-  GET_SUMMARY_PLAN_RESULTS,
+  GET_SUMMARY_PLAN_RESULTS,  
+  GET_SUMMARY_PLAN_RESULTS_1WK,
+  GET_SUMMARY_PLAN_RESULTS_1M,
+  GET_SUMMARY_PLAN_RESULTS_3M,
   PLAN_RESULTS_ERROR
 } from './types';
 
@@ -69,18 +72,18 @@ export const postPlanResults = formData => async dispatch => {
 
   // Get results by ID
 export const getResultsById = userId => async dispatch => {
-  console.log("get results by id is called", userId);
+  // console.log("get results by id is called", userId);
   try {
     
     // const res = await api.get(`/planResults/${userId}`);
     const res = await api.get(`/planResults/${userId}`);
-    console.log('in try for get results');
+    // console.log('in try for get results');
     dispatch({
       type: GET_PLAN_RESULTS,
       payload: res.data
     });
   } catch (err) {
-    console.log('error reached', err.response);
+    // console.log('error reached', err.response);
     dispatch({
       type: PLAN_RESULTS_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }
@@ -88,15 +91,15 @@ export const getResultsById = userId => async dispatch => {
   }
 };
 
-  // Get results by ID
-  // export const getSummary = userId => async dispatch => {
+  // Get summary by ID
   export const getSummary = (userId) => async dispatch => {
     console.log("get summary by id is called", userId);
     // let date = new Date();
+    let days = 30;
     try {
       
       // const res = await api.get(`/planResults/${userId}`);
-      const res = await api.get(`/planResults/summary/${userId}/`);
+      const res = await api.get(`/planResults/summary/${userId}/${days}`);
       console.log('in summary try for get results in postPlanResults');
       dispatch({
         type: GET_SUMMARY_PLAN_RESULTS,
@@ -111,6 +114,72 @@ export const getResultsById = userId => async dispatch => {
     }
   };
 
+    // Get summary by ID
+    export const getOneWeekSummary = (userId) => async dispatch => {
+      console.log("get summary by id is called", userId);
+      // let date = new Date();
+      let days = 7;
+      try {
+        
+        // const res = await api.get(`/planResults/${userId}`);
+        const res = await api.get(`/planResults/summary/${userId}/${days}`);
+        console.log('in summary try for get results in postPlanResults');
+        dispatch({
+          type: GET_SUMMARY_PLAN_RESULTS_1WK,
+          payload: res.data
+        });
+      } catch (err) {
+        //console.log('error reached', err.response.statusText);
+        dispatch({
+          type: PLAN_RESULTS_ERROR,
+          payload: { msg: err.response.statusText, status: err.response.status }
+        });
+      }
+    };
+  // Get summary by ID
+  export const getOneMonthSummary = (userId) => async dispatch => {
+    console.log("get summary by id is called", userId);
+    // let date = new Date();
+    let days = 30;
+    try {
+      
+      // const res = await api.get(`/planResults/${userId}`);
+      const res = await api.get(`/planResults/summary/${userId}/${days}`);
+      console.log('in summary try for get results in postPlanResults');
+      dispatch({
+        type: GET_SUMMARY_PLAN_RESULTS_1M,
+        payload: res.data
+      });
+    } catch (err) {
+      //console.log('error reached', err.response.statusText);
+      dispatch({
+        type: PLAN_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
+  // Get summary by ID
+  export const getThreeMonthSummary = (userId) => async dispatch => {
+    console.log("get summary by id is called", userId);
+    // let date = new Date();
+    let days = 90;
+    try {
+      
+      // const res = await api.get(`/planResults/${userId}`);
+      const res = await api.get(`/planResults/summary/${userId}/${days}`);
+      console.log('in summary try for get results in postPlanResults');
+      dispatch({
+        type: GET_SUMMARY_PLAN_RESULTS_3M,
+        payload: res.data
+      });
+    } catch (err) {
+      //console.log('error reached', err.response.statusText);
+      dispatch({
+        type: PLAN_RESULTS_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
    // Get results by ID
     export const getMonthSummary = (userId, date) => async dispatch => {
       console.log("get summary by id is called", userId);

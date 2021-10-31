@@ -7,8 +7,6 @@ import MotivateThreeMonth from './MotivateThreeMonth';
 
 
 
-
-// class MeditateVidSection extends Component {
     const MotivateSections =({}) => {
         const [openTab, setOpenTab] = React.useState(1);
 

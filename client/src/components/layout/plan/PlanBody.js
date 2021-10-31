@@ -24,15 +24,13 @@ import moment from 'moment';
     let today = new Date();
     if(moment(today).subtract(30, 'days').format('MMMM') === moment(today).format('MMMM')){
         //header will only show current month
-        console.log("30 days ago is same month")
         let monthText = moment(today).format('MMMM');
-        console.log('month text has', monthText)
+        // console.log('month text has', monthText)
     }
     else {
         //header will show the two months
-        console.log("30 days ago is not same month")
         let monthText = moment(today).subtract(30, 'days').format('MMM DD') + ' - ' + moment(today).format('MMMM');
-        console.log('month text has', monthText)
+        // console.log('month text has', monthText)
     }
    let calendarText = moment(today).subtract(30, 'days').format('MMM DD')+ ' - ' + moment(today).format('MMM DD');
     return (

@@ -8,11 +8,13 @@ import { getResultsByIdOneWeek } from '../../../actions/postMotivateResults';
 // import HeatMap from './HeatMap';
 import Spinner from '../../layout/Spinner';
 import TreeMap from './TreeMap';
-import SimpleGauge from './SimpleGauge';
 import BarChart from './BarChart';
 import AreaChart from './AreaChart';
 import ColumnChart from './ColumnChart';
 import TemptedGauge from './TemptedGauge';
+import ChoiceGauge from './ChoiceGauge';
+import OverindulgeGauge from './OverindulgeGauge';
+import WhyChose from './WhyChose';
 
 const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summaryMotivateResults1wk } }) => {
 
@@ -24,36 +26,20 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
   let motivateBodyResults = "";
   if(summaryMotivateResults1wk.summaryStats){
   
+    let speedometerInt = summaryMotivateResults1wk.summaryStats.avgTemptationLvl;
     motivateBodyResults = 
     <Fragment>
     {summaryMotivateResults1wk === null ? (
       <Spinner />
     ) : (
+
       <Fragment>
         <section>
           {/* <div className="flex mx-auto p-4">
               <div className="flex flex-col flex-grow"> */}
                   <div className="border border-gray-200 rounded-xl p-10 my-4">
+
                     <TemptedGauge avgTemptationLvl={summaryMotivateResults1wk.summaryStats.avgTemptationLvl} id={"gauge-chart05"}/>
-                    {/* <div className="w-96 items-center">
-                        <GaugeChart id="gauge-chart3"
-                            nrOfLevels={2} 
-                            colors={["#FFAD33", "#ECEFF1"]} 
-                            arcsLength={[0.37, 0.63]}
-                            arcWidth={0.45} 
-                            percent={0.80} 
-                            arcPadding={0}
-                            cornerRadius={0}
-                            textColor={"#000000"}
-                            needleColor={"#58585E"}
-                            needleBaseColor={"#CFD8DC"}
-                            formatTextValue={value => 'Very tempted'}
-                            hideText={true}
-                            />
-                            <p className="text-xl">tempted</p>
-                            <p>to eat in a way not ideal</p>
-                        </div> */}
-                        {/* Comment above here */}
                     <div className="w-48">
 
                         <ColumnChart level={summaryMotivateResults1wk.summaryStats.temptedlevel} dates={summaryMotivateResults1wk.summaryStats.temptedDates}/>
@@ -76,14 +62,15 @@ const MotivateWeekly = ({ user, getResultsByIdOneWeek, motivateResult: { summary
                   <div className="flex flex-grow w-full">
                     <div className="w-full border border-gray-200 rounded-xl p-10 mr-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Triggers</div>
-                    <span className="mt-6 text-gray-700 text-sm font-thin">Reason why you chose the foods</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.whyHungry}</h2>
-                    <SimpleGauge />
-                    <span className="mt-6 text-gray-700 text-sm font-thin">If you overindulged, you felt</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.overindulgeresult}</h2>
-                    <SimpleGauge />
-                    <span className="mt-6 text-gray-700 text-sm font-thin">If you made a different choice, you felt</span><br/>
-                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.differentChoice}</h2>
+                    <WhyChose whyHungry={summaryMotivateResults1wk.summaryStats.whyHungry} />
+                    {/* <span className="mt-6 text-gray-700 text-sm font-thin">Reason why you chose the foods</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.whyHungry}</h2> */}
+                    <OverindulgeGauge overindulgeresult={summaryMotivateResults1wk.summaryStats.overindulgeresult} id={"gauge-chart04"}/>
+                    {/* <span className="mt-6 text-gray-700 text-sm font-thin">If you overindulged, you felt</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.overindulgeresult}</h2> */}
+                    <ChoiceGauge differentChoice={summaryMotivateResults1wk.summaryStats.differentChoice} id={"gauge-chart05"}/>
+                    {/* <span className="mt-6 text-gray-700 text-sm font-thin">If you made a different choice, you felt</span><br/>
+                    <h2 className="mt-0 text-gray-700 text-3xl font-light">{summaryMotivateResults1wk.summaryStats.differentChoice}</h2> */}
                     </div>
                     <div className="w-full border border-gray-200 rounded-xl p-10 ml-2">
                         <div className="text-beaDarkBlue uppercase text-center font-bold">Visualizations: Evaluating Mood</div>

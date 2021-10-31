@@ -6,6 +6,8 @@ import PlanLineGraph from './PlanLineGraph';
 import PlanSmiley from './PlanSmiley';
 import PlanIcons from './PlanIcons';
 import heartIcon from '../../../img/heart-icon.svg';
+import PlanLineGraph45 from './PlanLineGraph45';
+import PlanLineGraph2 from './PlanLineGraph2';
 
 
 const PlanMonthlyHeader = ({ 
@@ -27,7 +29,7 @@ const PlanMonthlyHeader = ({
     
         planBodyResults = 
           <Fragment>
-            <div className="mb-gutter"><PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} /></div>
+            <div className="mb-gutter"><PlanLineGraph2 data={planResults2.dates[0]} values={planResults2.values[0]} /></div>
             <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 mb-gutter">
                  <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                     <div className="flex flex-row w-full justify-between mb-gutter">

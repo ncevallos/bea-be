@@ -5,6 +5,7 @@ import "./AreyouReady.css";
 const BreatheMsgorVoice = (props) => {
   const { setState, actionProvider } = props;
   const setType = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       mindfultype: type,
@@ -15,6 +16,7 @@ const BreatheMsgorVoice = (props) => {
     actionProvider.breatheMessage();
   };
   const setType2 = async (type) => {
+    setDisable(true)
     setState((state) => ({
       ...state,
       mindfultype: type,
@@ -24,17 +26,20 @@ const BreatheMsgorVoice = (props) => {
 
     actionProvider.stretchVoice();
   };
+  const [disable, setDisable] = React.useState(false);
   return (
     <div>
       <div className="learning-options-container">
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType("Message")}
         >
           Message
         </button>
         <button
-          className="learning-option-button"
+          className={disable ? 'learning-option-button button-disabled' : 'learning-option-button'}
+          disabled={disable}
           onClick={() => setType2("Voice")}
         >
           Voice
@@ -44,23 +49,5 @@ const BreatheMsgorVoice = (props) => {
   );
 };
 
-// const StretchMsgorVoice = (props) => {
-//   const options = [
-//     { text: "Message", handler: props.actionProvider.stretchMessage, id: 1 },
-//     // { text: "Voice", handler: props.actionProvider.handleLetsBegin, id: 1 },
-//   ];
-
-//   const optionsMarkup = options.map((option) => (
-//     <button
-//       className="learning-option-button"
-//       key={option.id}
-//       onClick={option.handler}
-//     >
-//       {option.text}
-//     </button>
-//   ));
-
-//   return <div className="learning-options-container">{optionsMarkup}</div>;
-// };
 
 export default BreatheMsgorVoice;

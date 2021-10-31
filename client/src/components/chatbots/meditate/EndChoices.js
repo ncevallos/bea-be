@@ -8,14 +8,11 @@ import "./AreyouReady.css";
 
 //this code is for once it is understood how to merge global and local props
 export const EndChoices = ({props, postMeditateResults, state, auth, ownProps}) => {
-     console.log("USer contains", auth.user);
-     console.log("user is found", auth.user._id);
+    //  console.log("USer contains", auth.user);
+    //  console.log("user is found", auth.user._id);
      let history = useHistory();
-
-
-
-  console.log("own props in plan submit contains ", ownProps);
-  console.log("auth in plan submit contains ", auth);
+  // console.log("own props in plan submit contains ", ownProps);
+  // console.log("auth in plan submit contains ", auth);
   const [formData] = useState({
     //user: "60217a517f2b961147d214f0",
     user: auth.user._id,
@@ -58,10 +55,9 @@ const onSubmit = async (e) => {
   function mapStateToProps(state, ownProps) {
     const { auth } = state
  
-   console.log("own props contains ", ownProps );
-    console.log("state props contains ", state );
-    // console.log("own props contains ", props );
-     console.log("state props contains ", auth );
+  //  console.log("own props contains ", ownProps );
+  //   console.log("state props contains ", state );
+  //    console.log("state props contains ", auth );
   
     // component receives additionally:
     return { ownProps, auth }

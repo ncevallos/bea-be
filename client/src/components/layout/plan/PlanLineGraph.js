@@ -188,6 +188,7 @@ const data = {
 
 
 class PlanLineGraph extends React.Component {
+
   render() {
 
 
@@ -209,6 +210,8 @@ class PlanLineGraph extends React.Component {
           loopCount--;
       //    loopincremet++;
       }
+      console.log("apexdata options has", apexData.options)
+      console.log("apexdata series has ", apexData.series)
       let control = "";
     return (
       <Fragment>

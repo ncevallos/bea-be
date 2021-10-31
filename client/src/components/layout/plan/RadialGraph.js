@@ -80,7 +80,7 @@ class RadialGraph extends React.Component {
         else if(this.props.icon === "Something emotional"){
             iconurl = somethingEmotional
         }
-        else if(this.props.icon === "Something pysical"){
+        else if(this.props.icon === "Something physical"){
             iconurl = somethingPhysical
         }
         else {
