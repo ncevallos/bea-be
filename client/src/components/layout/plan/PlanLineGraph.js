@@ -11,7 +11,7 @@ const apexData = {
     }],
     options: {
       chart: {
-        height: 350,
+        height: 300,
         type: 'line',
         zoom: {
           enabled: false
@@ -45,13 +45,15 @@ const apexData = {
         type: 'datetime',
           labels: {
             show: true,
+            // rotate: -45,
             rotate: -45,
-            rotateAlways: false,
-            hideOverlappingLabels: true,
+            rotateAlways: true,
+            hideOverlappingLabels: false,
             showDuplicates: false,
             trim: false,
-            minHeight: undefined,
-            maxHeight: 120,
+            // minHeight: undefined,
+            minHeight: 65,
+            maxHeight: 75,
             style: {
                 colors: '#8f8f8f',
                 fontSize: '11px',
@@ -62,7 +64,7 @@ const apexData = {
             offsetX: 0,
             offsetY: 0,
             
-              format: 'dd'
+              format: 'MMM dd'
         },
       },
       fill: {
@@ -205,7 +207,7 @@ class PlanLineGraph extends React.Component {
         apexData.options.xaxis.categories.push(temp)
          let temp2 = this.props.values[loopCount];
 
-        data.datasets[0].data.push(temp2)
+        data.datasets[0].data.push(temp)
         apexData.series[0].data.push(temp2);
           loopCount--;
       //    loopincremet++;
@@ -221,7 +223,7 @@ class PlanLineGraph extends React.Component {
         <Fragment>
 
                 <div>
-                  <ReactApexCharts options={apexData.options} series={apexData.series} type="line" height={250} />
+                  <ReactApexCharts options={apexData.options} series={apexData.series} type="line" height={300} />
                 </div>
         </Fragment>
         )}

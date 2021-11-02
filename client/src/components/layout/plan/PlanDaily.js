@@ -7,6 +7,7 @@ import PlanIcons from './PlanIcons';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getResultsByIdToday } from '../../../actions/postPlanResults';
+import Quotes from './Quotes.json';
 
 
   const PlanDaily = ({ user, match, getResultsByIdToday, todayPlanResult: { todayPlanResults } }) => {
@@ -30,6 +31,9 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
     }, [ match.params.date]);
 
    console.log("today plan results has", todayPlanResults);
+    let randNum = Math.floor(0 + Math.random() * (9 - 0));
+    let quoteText = Quotes[randNum].quoteText
+    let quoteAuthor = Quotes[randNum].author
     let nextDayButton = ''
     let today = new Date();
     let planDailyBody =''
@@ -164,7 +168,11 @@ import { getResultsByIdToday } from '../../../actions/postPlanResults';
             <div className="flex flex-row items-start w-full">
                 <div className="flex flex-col items-baseline px-4 py-3 sm:px-6">
                     <p className="mt-1 max-w-2xl text-sm text-gray-500 mb-0">
-                        Quote text here
+                        You didn't chat with Bea on this day.
+                        <br/>
+                        "{quoteText}"
+                        <br/>
+                        - {quoteAuthor}
                     </p>
                 </div>
             </div>
