@@ -83,8 +83,8 @@ export const Plan = () => {
                     <div style={{ backgroundImage: "url(" + planIllustration + "), linear-gradient(rgba(177, 201, 243, 0.9), rgba(173, 126, 227, 0.9), rgba(139, 99, 178, 0.9))" }} className="flex rounded-xl mb-3 bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6">
                         <div className="mb-4">
                             <h3 className="text-sm leading-6 font-medium text-white uppercase font-black tracking-widest mb-1">
-                                Your Plan Today
-                            </h3>                        
+                                Today's Plan
+                            </h3> 
                         </div>
                         <div className="flex flex-row w-full justify-between">
                             <div className="flex">
@@ -92,7 +92,7 @@ export const Plan = () => {
                                     <div className="w-24 h-24 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5"></div>
                                     <div className="">
                                         <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                                            Your main goal is to eat
+                                            Main goal
                                         </h4>
                                         <h5 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
                                             smaller amounts and to stop eating when full
@@ -105,7 +105,7 @@ export const Plan = () => {
                                     <div className="w-24 h-24 bg-gray-100 bg-opacity-50 rounded-3xl mb-2.5"></div>
                                     <div className="">
                                         <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                                            When you feel the urge to eat
+                                            Your action
                                         </h4>
                                         <h5 className="text-xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
                                             take a walk
@@ -137,10 +137,10 @@ export const Plan = () => {
                             </p>
                             </div>
                             <div className="mt-5">
-                                <button type="button" className="btn-white">
+                                {/*<button type="button" className="btn-white">
                                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>       
                                     Stay on Track Tips
-                                </button>
+                                </button>*/}
                             </div>
                         </div>
                         <div className="flex pr-10 align-middle">
@@ -160,10 +160,10 @@ export const Plan = () => {
                             </p>
                             </div>
                             <div className="mt-5">
-                                <button type="button" className="btn-white">
+                                {/*<button type="button" className="btn-white">
                                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>       
                                     Stay on Track Tips
-                                </button>
+                                </button>*/}
                             </div>
                         </div>
                         <div className="flex pr-10 align-middle">
@@ -337,7 +337,7 @@ export const Plan = () => {
                                                     </span>
                                                     <div>
                                                         <div className="text-sm font-light text-gray-700">
-                                                        Your main goal is to eat
+                                                        Main goal
                                                         </div>
                                                         <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
                                                             smaller amounts and<br/>
@@ -355,7 +355,7 @@ export const Plan = () => {
                                                     </span>
                                                     <div>
                                                         <div className="text-sm font-light text-gray-700">
-                                                            When you feel the urge to eat
+                                                            Your action
                                                         </div>
                                                         <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
                                                             take a walk
@@ -385,7 +385,7 @@ export const Plan = () => {
                                                     </span>
                                                     <div>
                                                         <div className="text-sm font-light text-gray-700">
-                                                        Your main goal is to eat
+                                                        Main goal
                                                         </div>
                                                         <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
                                                             smaller amounts and<br/>
@@ -403,7 +403,7 @@ export const Plan = () => {
                                                     </span>
                                                     <div>
                                                         <div className="text-sm font-light text-gray-700">
-                                                            When you feel the urge to eat
+                                                            Your action
                                                         </div>
                                                         <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
                                                             take a walk

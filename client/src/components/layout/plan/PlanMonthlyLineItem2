@@ -71,7 +71,7 @@ export const PlanMonthlyLineItem2 = () => {
 //                     </span>
 //                     <div>
 //                         <div className="text-sm font-light text-gray-700">
-//                             When you feel the urge to eat
+//                             Your action
 //                         </div>
 //                         <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
 //                         {this.props.plangoal5}

@@ -91,7 +91,7 @@ import { getPastDayResults } from '../../actions/postPlanResults';
                                     <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                                         <img src={bowlIcon}  alt="Bowl Icon" className="w-11" />
                                     </span>
-                                    <span className="mt-6 text-gray-700 text-sm font-thin">When you feel that urge to eat</span>
+                                    <span className="mt-6 text-gray-700 text-sm font-thin">Your action</span>
                                     <h2 className="mt-0 text-gray-700 text-3xl font-light">{todayPlanResults.plangoal5}</h2>
                                     <span className="mt-6 p-2 border-2 border-beaLightBlue rounded-2xl flex items-center justify-center">
                                         <img src={newspaperIcon} alt="Newspaper Icon" className="w-7" />

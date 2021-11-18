@@ -28,7 +28,7 @@ import { Link } from 'react-router-dom';
                 </div>
                 <div className="">
                     <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                        Your main goal is to eat
+                        Main goal
                     </h4>
                     <h5 className="text-2xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
                     {todayPlanResults.plangoal} and {todayPlanResults.plangoal2}
@@ -43,7 +43,7 @@ import { Link } from 'react-router-dom';
                 </div>
                 <div className="">
                     <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                        When you feel the urge to eat
+                        Your action
                     </h4>
                     <h5 className="text-2xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
                          {todayPlanResults.plangoal5}
@@ -52,9 +52,9 @@ import { Link } from 'react-router-dom';
             </div>                            
         </div>
         <div className="flex flex-col justify-center mr-10">
-            <Link to='/PlanDaily'>
+            {/*<Link to='/PlanDaily'>
                 <img src={arrowRight} alt="arrow right" className="w-24" />
-            </Link>
+            </Link>*/}
         </div>
     </div>
       }
@@ -76,13 +76,20 @@ import { Link } from 'react-router-dom';
       </div>
       }
     return (
-        <div style={{ backgroundImage: "linear-gradient(45deg, rgba(109,80,139, 1), rgba(173, 121, 226, 1), rgba(177, 208, 244, 1))" }} className="flex rounded-md mb-gutter bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 pb-12">
-        <div className="mb-4">
-            <h3 className="text-sm leading-6 font-medium text-white uppercase font-black tracking-widest mb-1">
-                Your Plan Today
+        <div style={{ backgroundImage: "linear-gradient(45deg, rgba(109,80,139, 1), rgba(173, 121, 226, 1), rgba(177, 208, 244, 1))" }} className="flex rounded-md mb-gutter bg-contain bg-no-repeat bg-right-bottom flex flex-col p-6 pt-9 pb-9">
+        <div className="flex mb-4 justify-center w-full">
+            <h3 className="text-sm leading-6 font-medium text-white uppercase font-black tracking-widest mb-3">
+                Today's Plan
             </h3>                        
         </div>
         {planHeader}
+        <div className="flex w-full mt-4 justify-center">
+            <Link to='/PlanDaily'>
+                <button type="button" className="btn-white">
+                    Read Today's Journal
+                </button>
+            </Link>
+        </div>
 
         </div>
 

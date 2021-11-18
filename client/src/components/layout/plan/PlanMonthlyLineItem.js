@@ -44,11 +44,11 @@ import PlanIcons from './PlanIcons';
         <td className="px-6 py-4">
             <div className="flex items-center">
                 <div className="flex flex-col items-center w-12">
-                        <div className="text-xs font-light text-gray-700">
+                        <div className="text-xs text-left font-light text-gray-700">
                             {/* Need to implement a check for if today write today */}
                         {moment(this.props.date).format('ddd')}
                         </div>
-                        <div className="text-3xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
+                        <div className="text-3xl text-left text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
                         {moment(this.props.date).format('D')}
                         </div>
                 </div>
@@ -57,10 +57,10 @@ import PlanIcons from './PlanIcons';
                         <div className="w-12"><PlanIcons msg={this.props.plangoal} /></div>
                     </span>
                     <div>
-                        <div className="text-sm font-light text-gray-700">
-                        Your main goal is to eat
+                        <div className="text-sm text-left font-light text-gray-700">
+                        Main goal
                         </div>
-                        <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
+                        <div className="text-xl text-left text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
                         {this.props.plangoal} and<br/>
                         {this.props.plangoal2}
                         </div>
@@ -75,10 +75,10 @@ import PlanIcons from './PlanIcons';
                         <div className="w-12"><PlanIcons msg={this.props.plangoal5} /></div>
                     </span>
                     <div>
-                        <div className="text-sm font-light text-gray-700">
-                            When you feel the urge to eat
+                        <div className="text-sm font-light text-gray-700 text-left">
+                            Your action
                         </div>
-                        <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
+                        <div className="text-xl text-left text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
                         {this.props.plangoal5}
                         </div>
                     </div>
@@ -96,7 +96,7 @@ import PlanIcons from './PlanIcons';
    } else {
     lineItem =    
         <tr key={this.props._id}>
-        <td className="px-6 py-4">
+        <td className="px-6 py-4 bg-beaLightGrey">
             <div className="flex items-center">
                 <div className="flex flex-col items-center w-12">
                         <div className="text-xs font-light text-gray-700">
@@ -108,19 +108,21 @@ import PlanIcons from './PlanIcons';
                         </div>
                 </div>
                 <div className="flex ml-4 items-center justify-center">
-                    <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
+                    <span className="p-1 mr-3 border rounded-xl flex items-center justify-center">
                         <div className="w-12"><PlanIcons msg={this.props.plangoal} /></div>
                     </span>
                     <div>
                         <div className="text-sm font-light text-gray-700">
                         </div>
-                        <div className="text-xl text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
-                        Skipped Day
+                        <div className="text-xl text-gray-500 font-italic overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
+                        skipped day
                         </div>
                     </div>
                 </div>
             </div>
         </td>
+        <td className="bg-beaLightGrey"></td>
+        <td className="bg-beaLightGrey"></td>
     </tr>
 
     }

@@ -43,7 +43,7 @@ import moment from 'moment';
                     <div className="flex flex-col items-center mb-gutter">
                         <label className="text-white text-sm bg-beaBlueText font-light rounded-full px-3 py-1.5">PAST 30 DAYS</label>
                         <div className="w-full">
-                            <PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} />
+                            {/*<PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} />*/}
                         </div>
                     </div>
                     {/* <Line
@@ -58,7 +58,7 @@ import moment from 'moment';
                         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                             <li className="col-span-2 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
                                 <div className="flex-initial flex flex-col p-8 items-center">
-                                    <span className="text-beaBlueText font-bold uppercase text-sm">Mood Eating</span> 
+                                    <span className="text-beaBlueText font-bold uppercase text-sm">How You Felt The Past 30 Days</span> 
                                         <div className="flex-initial flex flex-row items-center mt-4 px-8">
                                             <div className="w-2/3">
                                                 <div style={{
@@ -73,7 +73,7 @@ import moment from 'moment';
                                             </div>
                                             <div className="flex-initial flex flex-col items-center ml-2">
                                                 <div className="flex w-full justify-start">
-                                                    <div className="planprogress">
+                                                    {/*<div className="planprogress">
                                                         <div className="flex-initial flex flex-row items-center">
                                                             <div className="p-2 m-0 w-16">
                                                                 <div className="font-light text-sm">Great</div>
@@ -110,7 +110,7 @@ import moment from 'moment';
                                                                 <ProgressBar now={planResults2.summaryStats.horrible}  variant="info" />
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div>*/}
                                                 </div>
                                                 {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                                                     <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
@@ -132,7 +132,7 @@ import moment from 'moment';
                     <div className="mb-gutter">
                         <div className="grid grid-cols-1 gap-gutter sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                             <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
-                                <span className="text-beaBlueText text-sm font-bold">FAVORITE GOAL</span>
+                                <span className="text-beaBlueText text-sm font-bold uppercase">Favorite Goal The Past 30 Days</span>
                                 <div className="flex flex-row">
                                     <div className="flex-1 flex flex-col items-center">
                                         {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
@@ -140,7 +140,7 @@ import moment from 'moment';
                                         </span>
                                         <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2> */}
                                         <RadialGraph percent={planResults2.summaryStats.favgoalpct} icon={planResults2.summaryStats.favgoal}/> 
-                                        <span className="mt-6 text-gray-700 text-sm font-light">Most important goal</span>
+                                        <span className="mt-6 text-gray-700 text-sm font-light">Main goal</span>
                                         <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favgoal}</h2>
     
                                     </div>
@@ -150,14 +150,14 @@ import moment from 'moment';
                                         </span>
                                         <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoal2pct}%</h2> */}
                                         <RadialGraph percent={planResults2.summaryStats.favgoal2pct} icon={planResults2.summaryStats.favgoal2}/>
-                                        <span className="mt-6 text-gray-700 text-sm font-light">Main focus of food choice</span>
+                                        <span className="mt-6 text-gray-700 text-sm font-light">Main focus</span>
                                         <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favgoal2}</h2>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                                 <div className="flex-1 flex flex-col items-center">
-                                    <span className="text-beaBlueText text-sm font-bold">FAVORITE ACTION</span>
+                                    <span className="text-beaBlueText text-sm font-bold uppercase">Favorite Action The Past 30 Days</span>
                                     <RadialGraph percent={planResults2.summaryStats.favactionpct}  icon={planResults2.summaryStats.favaction}/>
                                     <span className="mt-6 text-gray-700 text-sm font-light">The action that stopped unmindful eating</span>
                                     <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favaction}</h2>
@@ -168,7 +168,7 @@ import moment from 'moment';
                     <div className="flex flex-row justify-center w-full mb-gutter">
 
                     <Link to='/PlanMonthly' className="btn-darkPurpleInvert">
-                        View Past Entries
+                        Monthly View
                         </Link>
                         {/* <button type="button" className="btn-darkPurpleInvert">        
                             View Past Entries

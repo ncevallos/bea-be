@@ -150,7 +150,7 @@ import Quotes from './Quotes.json';
                         <span className="mt-6 p-4 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                             <PlanIcons msg={todayPlanResults.plangoal5} />  
                         </span>
-                        <span className="mt-6 text-gray-700 text-sm font-light">When you feel that urge to eat</span>
+                        <span className="mt-6 text-gray-700 text-sm font-light">Your action</span>
                         <h2 className="mt-0 text-gray-700 text-3xl font-light">{todayPlanResults.plangoal5}</h2>
                     </div>
                 </li>
