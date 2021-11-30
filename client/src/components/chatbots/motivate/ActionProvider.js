@@ -895,6 +895,19 @@ class ActionProvider {
         })];
         this.addMessageToBotState(thankYouDemoMessage)
     }
+    otheractivity = () => {
+        const letsBeginMessage = 
+        [this.createChatBotMessage(`Since you just finished Motivating, let's do a different Activity.`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`What would you like to Plan or Meditate?`, {
+            delay: 4000,
+            widget: "activitieschoices",
+            withAvatar: true
+        })];
+        this.addMessageToBotState(letsBeginMessage)
+    }
     nofoulwords() {
         const nofoulwordsMessage = 
         [this.createChatBotMessage(`I can tell by what you just wrote that you are upset, and that is of course okay.`), 
@@ -966,6 +979,180 @@ class ActionProvider {
         this.addMessageToBotState(therapyMessage)
         // this.createChatBotMessage("I'm glad you’re ready to take that step!");
         // this.updateChatbotState(therapyMessage)
+    }
+    endBlocks = () => {
+        //this block can happen one out of two ways, so both ways are defined and then as a result of
+        //random number, user is sentto eitehr Identifying trigger or evaluating moods visualization
+    
+        const randnum = this.randomnumber2();
+        const block1 = 
+        [this.createChatBotMessage(`If at any time you’d like me to help you find a therapist, you can type the word "Therapist" in the chat or press the button below.`, {
+            delay: 2000,
+            widget: "therapist",
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`Otherwise, come back when you're ready and we can get started again!`, {
+            delay: 4000,
+            widget: "mainBranching2",
+            withAvatar: true
+        })];
+        const block2 = 
+        [this.createChatBotMessage(`Life is full of ups and downs, but the fact that you’re showing up to work toward your goal means that you’re on the right path.`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I'm here whenever you need me, so come back when you’re ready.`, {
+            delay: 4000,
+            widget: "mainBranching",
+            withAvatar: true
+        })];
+        const block3 = 
+        [this.createChatBotMessage(`In the words of Albert Einstein, "A person who never made a mistake never tried anything new."`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I'll be here when you’re ready to try again!`, {
+            delay: 4000,
+            widget: "mainBranching",
+            withAvatar: true
+        })];
+        const block4 = 
+        [this.createChatBotMessage(`"In any given moment we have two options: to step forward into growth or step back into safety." - B.F. Skinner`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I look forward to helping you continue on your path to growth.`, {
+            delay: 4000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`When you’re ready to do more, let me know.`, {
+            delay: 6000,
+            widget: "mainBranching",
+            withAvatar: true
+        })];
+        const block5 = 
+        [this.createChatBotMessage(`You’ve done great so far!`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`In the words of Sayadaw U Tejaniya, "When you climb a mountain, you do it step by step; what is important is the step you are taking now."`, {
+            delay: 4000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I'm just here to remind you to keep taking steps.`, {
+            delay: 6000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`😉`, {
+            delay: 8000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`When you’re ready to get started again, I’ll be right here for you.`, {
+            delay: 10000,
+            widget: "mainBranching2",
+            withAvatar: true
+        })];
+        const block6 = 
+        [this.createChatBotMessage(`In the words of Margaret Thatcher, "You may have to fight a battle more than once to win it."`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`Let's win this together!`, {
+            delay: 4000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I'm here any time you’re ready to work together again.`, {
+            delay: 6000,
+            widget: "mainBranching2",
+            withAvatar: true
+        })];
+        const block7 = 
+        [this.createChatBotMessage(`If you have a moment, close your eyes and take a few deep breaths before moving on with your day.`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`Just a few breaths can clear the mind.`, {
+            delay: 4000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I'll be here whenever you’re ready to get started again.`, {
+            delay: 6000,
+            widget: "mainBranching3",
+            withAvatar: true
+        })];
+        const block8 = 
+        [this.createChatBotMessage(`It can be hard to stay on track, but it’s easier if your track allows for some breaks or sways from time to time.`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`In the words of Sam Levenson, “Don’t watch the clock; do what it does. Keep going.”`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I'll be here whenever you’re ready to keep going again!`, {
+            delay: 4000,
+            widget: "mainBranching2",
+            withAvatar: true
+        })];
+        const block9 = 
+        [this.createChatBotMessage(`In the words of H. G. Wells, “If you fell down yesterday, stand up today.”`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`Or perhaps you can still stand up today even if you didn’t fall yesterday ;-)`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I'll be here whenever you want to work on standing again!`, {
+            delay: 4000,
+            widget: "mainBranching2",
+            withAvatar: true
+        })];
+        const block10 = 
+        [this.createChatBotMessage(`In the words of Walter Elliot, “Perseverance is not a long race; it is many short races one after the other.”`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`While eating isn’t a race, staying on track can be thought of as many races, not one long race from which you fail if not perfect.`, {
+            delay: 2000,
+            withAvatar: true
+        }),
+        this.createChatBotMessage(`I'll be here whenever you want to continue moving forward!`, {
+            delay: 4000,
+            widget: "mainBranching2",
+            withAvatar: true
+        })];
+        if(randnum === 1){
+            this.addMessageToBotState(block1)
+        }
+        else if(randnum === 2){
+            this.addMessageToBotState(block2)
+        }
+        else if(randnum === 3){
+            this.addMessageToBotState(block3)
+        }
+        else if(randnum === 4){
+            this.addMessageToBotState(block4)
+        }
+        else if(randnum === 5){
+            this.addMessageToBotState(block5)
+        }
+        else if(randnum === 6){
+            this.addMessageToBotState(block6)
+        }
+        else if(randnum === 7){
+            this.addMessageToBotState(block7)
+        }
+        else if(randnum === 8){
+            this.addMessageToBotState(block8)
+        }
+        else if(randnum === 9){
+            this.addMessageToBotState(block9)
+        }
+        else{
+            this.addMessageToBotState(block10)
+        }
+       // this.addMessageToBotState(visualizationMessage)
     }
     updateChatbotState(message) {
  

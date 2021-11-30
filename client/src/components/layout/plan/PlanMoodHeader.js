@@ -17,11 +17,11 @@ class PlanMoodHeader extends React.Component {
             <div className="bg-beaYellow plan-interactive-state mb-gutter">
             <div className="sm:p-6 flex-grow">
                 <h3 className="text-3xl leading-6 font-light text-white">
-                    Keep up the good work!
+                    Wow! You are doing fantastic!
                 </h3>
                 <div className="mt-2 max-w-xl text-md text-white">
                 <p>
-                    Your mood eating has on average been great for the past 30 days.
+                  You felt GREAT about your eating more than any other for the past 30 days.
                 </p>
                 </div>
                 <div className="mt-5">
@@ -46,7 +46,7 @@ class PlanMoodHeader extends React.Component {
               </h3>
               <div className="mt-2 max-w-xl text-md text-white">
               <p>
-                  Your mood eating has on average been pretty good for the past 30 days.
+                  You felt PRETTY GOOD about your eating more than any other for the past 30 days.
               </p>
               </div>
               <div className="mt-5">
@@ -67,11 +67,11 @@ class PlanMoodHeader extends React.Component {
             <div className="bg-beaBlueGreen plan-interactive-state mb-gutter">
             <div className="sm:p-6 flex-grow">
                 <h3 className="text-3xl leading-6 font-light text-white">
-                    Keep up the good work!
+                    We have some work to do, but that's okay!
                 </h3>
                 <div className="mt-2 max-w-xl text-md text-white">
                 <p>
-                    Your mood eating has on average been not good for the past 30 days.
+                  You felt NOT GOOD about your eating more than any other for the past 30 days.
                 </p>
                 </div>
                 <div className="mt-5">
@@ -91,11 +91,11 @@ class PlanMoodHeader extends React.Component {
           <div className="bg-beaDarkBlue plan-interactive-state mb-gutter">
           <div className="sm:p-6 flex-grow">
               <h3 className="text-3xl leading-6 font-light text-white">
-                  Keep up the good work!
+                  I see that you are struggling, but we are here to help!
               </h3>
               <div className="mt-2 max-w-xl text-md text-white">
               <p>
-                  Your mood eating has on average been horrible for the past 30 days.
+                  You felt HORRIBLE about your eating more than any other for the past 30 days.
               </p>
               </div>
               <div className="mt-5">

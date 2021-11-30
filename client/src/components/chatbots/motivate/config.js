@@ -34,6 +34,11 @@ import OverIndulgeSL from './OverIndulgeSL';
 import OverIndulgeStress from './OverIndulgeStress';
 import OverIndulgeUpset from './OverIndulgeUpset';
 import PlanningIntro2 from './PlanningIntro2';
+import ActivitiesChoices from './ActivitiesChoices';
+import AllActivitiesChoices from './AllActivitiesChoices';
+import MainBranching from './MainBranching';
+import MainBranching2 from './MainBranching2';
+import Therapist from './Therapist';
 
 const botName = "Bea";
 
@@ -244,6 +249,26 @@ widgets: [
        mapStateToProps: ["waitingformsgflag", "lastblockvisited", "temptedlevel", "temptedlevelint","vistype","plan2eat","whyhungry","overindulgeresult", 
        "differentchoice", "differentchoice2", "planphasefeel", "planphaselength", "planphaseint", "iephasefeel", "iephaselength", "iephaseint", "fullphasefeel", "fullphaselength", 
        "fullphaseint", "aefeel", "aelength", "aeint", "mindfultype", "mindfultype2", "mindfulresult"]
+    },
+    {
+        widgetName: "activitieschoices",
+       widgetFunc: (props) => <ActivitiesChoices {...props} />,
+    },
+    {
+        widgetName: "allactivitieschoices",
+       widgetFunc: (props) => <AllActivitiesChoices {...props} />,
+    },
+    {
+        widgetName: "mainBranching",
+       widgetFunc: (props) => <MainBranching {...props} />,
+    },
+    {
+        widgetName: "mainBranching2",
+       widgetFunc: (props) => <MainBranching2 {...props} />,
+    },
+    {
+        widgetName: "therapist",
+       widgetFunc: (props) => <Therapist {...props} />,
     },
     
 ],

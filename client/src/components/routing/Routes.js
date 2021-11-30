@@ -25,6 +25,7 @@ import MeditateChat from '../layout/meditate/MeditateChat'
 // import NotFound from '../layout/NotFound';
 import PrivateRoute from './PrivateRoute';
 import Chat from '../layout/chat/Chat';
+import Therapist from '../layout/Therapist';
 
 const NoMatchPage = () => {
   return (
@@ -69,6 +70,7 @@ const Routes = props => {
         <PrivateRoute exact path="/testplansubmit" component={TestPlanSubmit} />
         <PrivateRoute exact path="/testpage" component={Testpage} />
         <PrivateRoute exact path="/meditatechat" component={MeditateChat} />
+        <PrivateRoute exact path="/therapist" component={Therapist} />
         <Route component={NoMatchPage} />
       </Switch>
   );

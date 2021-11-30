@@ -53,7 +53,7 @@ import Quotes from './Quotes.json';
             console.log("was a bad day add the second bar for content")
             secondCondition = 
             <Fragment>
-                <div className="flex flex-row items-center mb-1.5">
+                {/* <div className="flex flex-row items-center mb-1.5">
                 <div className="flex flex-none rounded-full bg-beaLightBlue p-2">
                 <PlanIconsSmall msg={todayPlanResults.stayedontrack} />  
                 </div>
@@ -62,7 +62,7 @@ import Quotes from './Quotes.json';
                         <strong>Eating {todayPlanResults.stayedontrack} ({todayPlanResults.plangoal2}) is something that you would have done differently.</strong> 
                     </p>
                 </div>
-            </div>
+            </div> */}
                 <div className="flex flex-row items-center mb-1.5">
                 <div className="flex flex-none rounded-full bg-beaLightBlue p-2">
                 <PlanIconsSmall msg={todayPlanResults.influencedeating} />  
@@ -94,14 +94,15 @@ import Quotes from './Quotes.json';
             <Fragment>
             <div className="flex flex-col bg-white overflow-hidden border border-gray-400 rounded-xl p-4 mb-gutter items-start">
             <div className="flex justify-center w-full">
-                <span className="text-beaBlueText font-bold uppercase text-sm">Mood Eating</span>
+                <span className="text-beaBlueText font-bold uppercase text-sm">HOW YOU FELT</span>
             </div>
             <div className="flex flex-row items-start w-full">
+                {/* ADD IN HERE DYNAMIC SMILIE ICONS */}
                 <img src={smileyIconRound} alt="Round Smiley Icon" className="w-24" />
                 <div className="flex flex-col items-baseline px-4 py-3 sm:px-6">
-                    <p className="mt-1 max-w-2xl text-sm text-gray-500 mb-0">
+                    {/* <p className="mt-1 max-w-2xl text-sm text-gray-500 mb-0">
                         How you felt about what you ate in the past day
-                    </p>
+                    </p> */}
                     <h3 className="text-4xl font-light text-gray-900 font-extralight mb-3">
                         {todayPlanResults.howdoyoufeel}
                     </h3>
@@ -129,10 +130,10 @@ import Quotes from './Quotes.json';
                     <div className="flex-1 flex flex-col p-8 items-center">
                         <span className="text-beaBlueText font-bold uppercase text-sm">Goal</span>
                         <span className="mt-6 p-4 bg-beaLightBlue rounded-3xl flex items-center justify-center">
-                            <PlanIcons msg={todayPlanResults.plangoal} />  
+                            <PlanIcons msg={todayPlanResults.plangoal2} />  
                         </span>
-                        <span className="mt-6 text-gray-700 text-sm font-light">The most important goal for you to have today</span>
-                        <h2 className="mt-0 text-gray-700 text-3xl font-light mb-3">{todayPlanResults.plangoal} and {todayPlanResults.plangoal2}</h2>
+                        <span className="mt-6 text-gray-700 text-sm font-light">Main goal</span>
+                        <h2 className="mt-0 text-gray-700 text-3xl font-light mb-3">{todayPlanResults.plangoal2}</h2>
                         <div className="flex flex-col items-center bg-beaStrongOrange w-full rounded-3xl p-1.5">
                             <div className="bg-opacity-60 bg-gray-100 w-full rounded-3xl p-3 uppercase text-beaStrongOrange font-bold text-lg mb-3">Bea's Tips</div>
                             <span className="text-white text-md mb-1.5"><strong>You may find this article helpful:</strong> Healthy Eating: Recognizing Your Hunger Signals.</span>
@@ -150,7 +151,7 @@ import Quotes from './Quotes.json';
                         <span className="mt-6 p-4 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                             <PlanIcons msg={todayPlanResults.plangoal5} />  
                         </span>
-                        <span className="mt-6 text-gray-700 text-sm font-light">Your action</span>
+                        <span className="mt-6 text-gray-700 text-sm font-light">Activity to curb cravings</span>
                         <h2 className="mt-0 text-gray-700 text-3xl font-light">{todayPlanResults.plangoal5}</h2>
                     </div>
                 </li>
@@ -163,7 +164,7 @@ import Quotes from './Quotes.json';
             <Fragment>
             <div className="flex flex-col bg-white overflow-hidden border border-gray-400 rounded-xl p-4 mb-gutter items-start">
             <div className="flex justify-center w-full">
-                <span className="text-beaBlueText font-bold uppercase text-sm">Mood Eating</span>
+                <span className="text-beaBlueText font-bold uppercase text-sm">HOW YOU FELT</span>
             </div>
             <div className="flex flex-row items-start w-full">
                 <div className="flex flex-col items-baseline px-4 py-3 sm:px-6">
@@ -181,20 +182,20 @@ import Quotes from './Quotes.json';
             <ul className="grid grid-cols-1 gap-gutter sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 mb-gutter">
                 <li className="col-span-1 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
                     <div className="flex-1 flex flex-col p-8 items-center">
-                        <span className="text-beaBlueText text-sm">Goal</span>
+                <span className="text-beaBlueText font-bold uppercase text-sm">GOAL</span>
                         <span className="mt-6 p-4 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                             <PlanIcons msg={todayPlanResults.plangoal} />  
                         </span>
-                        <span className="mt-6 text-gray-700 text-sm font-light">skipped activity</span>
+                        <span className="mt-6 text-gray-700 text-sm font-light">Goal skipped</span>
                     </div>
                 </li>
                 <li className="col-span-1 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
                     <div className="flex-1 flex flex-col p-8 items-center">
-                        <span className="text-beaBlueText text-sm">Action</span>
+                <span className="text-beaBlueText font-bold uppercase text-sm">ACTION</span>
                         <span className="mt-6 p-4 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                             <PlanIcons msg={todayPlanResults.plangoal5} />  
                         </span>
-                        <span className="mt-6 text-gray-700 text-sm font-light">skipped activity</span>
+                        <span className="mt-6 text-gray-700 text-sm font-light">Action skipped</span>
                     </div>
                 </li>
             </ul>
@@ -210,11 +211,11 @@ import Quotes from './Quotes.json';
 
                     <div className="dateHeader text-center items-center mb-gutter">
                         <label className="flex content-center mb-0">   
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
+                            </svg> */}
                             {/* <span className="align-middle pt-0.5">Today {moment(todayPlanResults.date).format('MMMM Do YYYY')}</span> */}
-                            <span className="align-middle pt-0.5">Today {moment(match.params.date).format('MMMM Do YYYY')}</span>
+                            <span className="align-middle pt-0.5"> {moment(match.params.date).format('MMMM DD YYYY')}</span>
                         </label>
                     </div>
                     {planDailyBody}                    
@@ -229,9 +230,8 @@ import Quotes from './Quotes.json';
                             {/* {moment(todayPlanResults.date).subtract(1, 'days').format('MMMM Do')} */}
                         </Link>
                         <Link to='/PlanMonthly' className="flex flex-row items-center navigateButton px-3">
-
-                            View {moment(match.params.date).format('MMMM')}
-                            {/* View {moment(todayPlanResults.date).format('MMMM')} */}
+                            Monthly View
+                            {/* View {moment(match.params.date).format('MMMM')} */}
                         </Link>
 
                     {nextDayButton}

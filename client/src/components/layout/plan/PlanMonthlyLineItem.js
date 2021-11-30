@@ -54,14 +54,14 @@ import PlanIcons from './PlanIcons';
                 </div>
                 <div className="flex ml-4 items-center justify-center">
                     <span className="p-1 mr-3 bg-beaLightBlue rounded-xl flex items-center justify-center">
-                        <div className="w-12"><PlanIcons msg={this.props.plangoal} /></div>
+                        <div className="w-12"><PlanIcons msg={this.props.plangoal2} /></div>
                     </span>
                     <div>
                         <div className="text-sm text-left font-light text-gray-700">
                         Main goal
                         </div>
                         <div className="text-xl text-left text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
-                        {this.props.plangoal} and<br/>
+                        {/* {this.props.plangoal} and<br/> */}
                         {this.props.plangoal2}
                         </div>
                     </div>
@@ -76,7 +76,7 @@ import PlanIcons from './PlanIcons';
                     </span>
                     <div>
                         <div className="text-sm font-light text-gray-700 text-left">
-                            Your action
+                            Activity to curb cravings
                         </div>
                         <div className="text-xl text-left text-gray-700 overflow-hidden break-words max-w-xl overflow-hidden leading-tight">
                         {this.props.plangoal5}

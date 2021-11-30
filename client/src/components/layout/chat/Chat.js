@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, Component, match } from 'react'
 import { Link } from 'react-router-dom';
 import Chatbot from 'react-chatbot-kit'
 
@@ -23,6 +23,10 @@ import {
 
     let { path, url } = useRouteMatch();
     let chatbotId = url;
+    // useEffect(() => {
+    //     console.log('use effect was run in chat.js',  match.params.chatbot)
+    //     chatbotId = match.params.chatbot;
+    // }, [  match.params.chatbot]);
     let chatdisplay = ''
     if(chatbotId === '/chat/plan'){
         chatdisplay = 

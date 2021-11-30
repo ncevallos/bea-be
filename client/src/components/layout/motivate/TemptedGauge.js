@@ -121,9 +121,9 @@ class TemptedGauge extends React.Component {
                 <ReactSpeedometer 
                                 maxValue={100}
                                 minValue={0}
-                                value={30}
+                                value={0}
                                 height={175}
-                                customSegmentStops={[0, 30, 100]}
+                                customSegmentStops={[0, 0.5, 100]}
                                 segmentColors={["#FFAD33", "#eeeeee"]}
                                 customSegmentLabels = {[" ", " "]}
                                 needleColor="#000000"

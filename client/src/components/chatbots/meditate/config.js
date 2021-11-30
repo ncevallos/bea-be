@@ -5,6 +5,11 @@ import Begin from "./Begin";
 import Begin2 from "./Begin2";
 import EndChoices from './EndChoices';
 import MoveOn from "./MoveOn";
+import ActivitiesChoices from './ActivitiesChoices';
+import AllActivitiesChoices from './AllActivitiesChoices';
+import MainBranching from './MainBranching';
+import MainBranching2 from './MainBranching2';
+import Therapist from './Therapist';
 
 const botName = "Bea";
 
@@ -56,6 +61,26 @@ widgets: [
         widgetName: "endChoices",
         widgetFunc: (props) => <EndChoices {...props} />,
         mapStateToProps: ["videoplayedid", "videoplayedtitle"]
+    },
+    {
+        widgetName: "activitieschoices",
+       widgetFunc: (props) => <ActivitiesChoices {...props} />,
+    },
+    {
+        widgetName: "allactivitieschoices",
+       widgetFunc: (props) => <AllActivitiesChoices {...props} />,
+    },
+    {
+        widgetName: "mainBranching",
+       widgetFunc: (props) => <MainBranching {...props} />,
+    },
+    {
+        widgetName: "mainBranching2",
+       widgetFunc: (props) => <MainBranching2 {...props} />,
+    },
+    {
+        widgetName: "therapist",
+       widgetFunc: (props) => <Therapist {...props} />,
     },
 ],
   }

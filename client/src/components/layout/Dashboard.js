@@ -127,7 +127,9 @@ const data = {
                     <circle cx="13.2709" cy="13.6939" r="11.2085" stroke="white" stroke-width="3"/>
                 </svg>
             </div>
-            <div className="text-sm text-white">Meditate with Bea</div>
+            <Link to='/chat/meditate' className="text-sm text-white">
+            Meditate with Bea</Link>
+            {/* <div className="text-sm text-white">Meditate with Bea</div> */}
         </div>
             }
             if(todayMotivateResults.plan2eat){
@@ -149,7 +151,9 @@ const data = {
                         <circle cx="13.2709" cy="13.6939" r="11.2085" stroke="white" stroke-width="3"/>
                     </svg>
                 </div>
-                <div className="text-sm text-white">Do motivational activities to stay on track</div>
+                <Link to='/chat/motivate' className="text-sm text-white">
+                  Do motivational activities to stay on track</Link>
+                {/* <div className="text-sm text-white">Do motivational activities to stay on track</div> */}
             </div>
                 }
         if(todayPlanResults.howdoyoufeel){
@@ -171,7 +175,9 @@ const data = {
                     <circle cx="13.2709" cy="13.6939" r="11.2085" stroke="white" stroke-width="3"/>
                 </svg>
                 </div>
-                <div className="text-sm text-white ">Create your Plan for the day</div>
+                <Link to='/chat/plan' className="text-sm text-white">
+                    Create your Plan for the day</Link>
+                {/* <div className="text-sm text-white ">Create your Plan for the day</div> */}
             </div>
 
               

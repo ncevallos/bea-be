@@ -13,6 +13,11 @@ import PlanGoal from './PlanGoal';
 // import LessSugar from './LessSugar';
 import FoodChoices from './FoodChoices';
 import PlanSubmit from './PlanSubmit';
+import ActivitiesChoices from './ActivitiesChoices';
+import AllActivitiesChoices from './AllActivitiesChoices';
+import MainBranching from './MainBranching';
+import MainBranching2 from './MainBranching2';
+import Therapist from './Therapist';
 // import SomethingElse from './SomethingElse';
 import {
     WelcomeBlock1,
@@ -27,7 +32,7 @@ import {
     AvoidSugar,
     AvoidSugar2,
     LessSugar,
-    // LessSugar2,
+    LessSugar2,
     SweetFoods,
     SweetFoods2,
     FewerCarbs,
@@ -197,6 +202,10 @@ widgets: [
        widgetFunc: (props) => <LessSugar {...props} />,
     },
     {
+        widgetName: "lesssugar2",
+       widgetFunc: (props) => <LessSugar2 {...props} />,
+    },
+    {
         widgetName: "avoidsugar",
        widgetFunc: (props) => <AvoidSugar {...props} />,
     },
@@ -245,6 +254,26 @@ widgets: [
        widgetFunc: (props) => <PlanSubmit {...props} />,
        mapStateToProps: ["waitingformsgflag", "lastblockvisited","howdoyoufeel","howdoyoufeelint","planjournal","stayedontrack","planbadblock", 
        "what2change", "influencedeating", "whathappened", "somethingelsebad", "plangoal", "plangoal2", "plangoal3", "plangoal4", "plangoal5"]
+    },
+    {
+        widgetName: "activitieschoices",
+       widgetFunc: (props) => <ActivitiesChoices {...props} />,
+    },
+    {
+        widgetName: "allactivitieschoices",
+       widgetFunc: (props) => <AllActivitiesChoices {...props} />,
+    },
+    {
+        widgetName: "mainBranching",
+       widgetFunc: (props) => <MainBranching {...props} />,
+    },
+    {
+        widgetName: "mainBranching2",
+       widgetFunc: (props) => <MainBranching2 {...props} />,
+    },
+    {
+        widgetName: "therapist",
+       widgetFunc: (props) => <Therapist {...props} />,
     },
 ]
   }

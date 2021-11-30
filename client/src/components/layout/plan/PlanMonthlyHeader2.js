@@ -22,7 +22,7 @@ render() {
     
         planBodyResults = 
           <Fragment>
-            <div className="mb-gutter"><PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} /></div>
+            {/* <div className="mb-gutter"><PlanLineGraph data={planResults2.dates[0]} values={planResults2.values[0]} /></div> */}
             <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 mb-gutter">
                  <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                     <div className="flex flex-row w-full justify-between mb-gutter">
@@ -35,9 +35,9 @@ render() {
                                 <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
                             </span>
                             <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2> */}
-                            <span className="text-sm leading-snug">Mood eating was</span>
+                            <span className="text-sm leading-snug">You felt</span>
                             <span className="text-2xl leading-snug mb-2.5">Pretty Good</span>
-                            <div className="flex flex-row items-center mb-0.5">
+                            {/* <div className="flex flex-row items-center mb-0.5">
                                 <div className="w-3 h-3 bg-beaOrange rounded-full mr-1.5"></div>
                                 <span className="text-sm leading-snug text-gray-600"><strong>{planResults2.summaryStats.great}%</strong> Great</span>
                             </div>
@@ -52,7 +52,7 @@ render() {
                             <div className="flex flex-row items-center mb-3">
                                 <div className="w-3 h-3 bg-beaBlueGreen rounded-full mr-1.5"></div>
                                 <span className="text-sm leading-snug text-gray-600"><strong>{planResults2.summaryStats.horrible}%</strong> Horrible</span>
-                            </div>
+                            </div> */}
 
                             <div className="flex flex-row items-center mb-1.5">
                                 <div className="flex flex-none rounded-2xl bg-beaLightBlue p-2.5">
@@ -70,14 +70,13 @@ render() {
                 </div>
                 <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                     <div className="flex flex-row w-full justify-between mb-gutter">
-                        <div className="w-8"><PlanIcons msg={planResults2.summaryStats.favgoal} /></div>
-                        <div className="font-bold">{planResults2.summaryStats.favgoalpct}%</div>
+                        <div className="w-8"><PlanIcons msg={planResults2.summaryStats.favgoal2} /></div>
+                        <div className="font-bold">{planResults2.summaryStats.favgoal2pct}%</div>
                     </div>
 
                     <div className="flex-1 flex flex-col items-start text-left">
                         <span className="text-sm leading-medium">Favorite goal</span>
-                        <h2 className="mt-0 text-gray-700 text-xl font-medium mb-0 leading-medium">{planResults2.summaryStats.favgoal} </h2>
-                        <span className="font-bold text-gray-500 text-sm leading-medium">with {planResults2.summaryStats.favgoal2}</span>
+                        <span className="font-bold text-gray-500 text-sm leading-medium">{planResults2.summaryStats.favgoal2}</span>
                     </div>
                 </div>
                 <div className="flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
@@ -86,9 +85,8 @@ render() {
                         <div className="font-bold">{planResults2.summaryStats.favactionpct}%</div>
                     </div>
                     <div className="flex-1 flex flex-col items-start text-left">
-                        <span className="text-sm leading-medium">Favorite action</span>
+                        <span className="text-sm leading-medium">Favorite action to curb cravings</span>
                         <h2 className="mt-0 text-gray-700 text-xl font-medium mb-0 leading-medium">{planResults2.summaryStats.favaction}</h2>
-                        <span className="font-bold text-gray-500 text-sm leading-medium">anytime you have an urge to eat</span>
                     </div>
                 </div>
             </div>

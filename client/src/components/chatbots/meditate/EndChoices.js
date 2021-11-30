@@ -19,7 +19,7 @@ export const EndChoices = ({props, postMeditateResults, state, auth, ownProps}) 
     videoid: ownProps.videoplayedid,
     videotitle: ownProps.videoplayedtitle,
 });
-const onSubmit = async (e) => {
+const onSubmit = async (goto) => {
     console.log('in on submit command');
 
           try {
@@ -31,8 +31,22 @@ const onSubmit = async (e) => {
         }
         const body = JSON.stringify(formData)
         const res = await axios.post('/api/meditateResults', body, config)
+        if(goto === "dashboard"){
+          history.push('/Meditate')
 
-        history.push('/Meditate')
+        }
+        else if(goto === "activity"){
+
+          // history.push('/PlanMain')
+          ownProps.actionProvider.otheractivity();
+        }
+        else if(goto === "endSesh"){
+          ownProps.actionProvider.endBlocks();
+        }
+        else {
+          history.push('/Meditate')
+
+        }
       } catch(err){
         console.log("In catch block");
       }
@@ -40,11 +54,26 @@ const onSubmit = async (e) => {
   return (
     <div>
       <div className="learning-options-container">
+      <button
+          className="learning-option-button"
+          id="dashboard"
+          onClick={() => onSubmit("dashboard")}
+        >
+          Visit Dashboard
+        </button>
         <button
           className="learning-option-button"
-          onClick={() => onSubmit()}
+          id="activity"
+          onClick={() => onSubmit("activity")}
         >
-          I'm Finished!
+          Do another Activity
+        </button>
+        <button
+          id="endSesh"
+          className="learning-option-button"
+          onClick={() => onSubmit("endSesh")}
+        >
+          End Session
         </button>
       </div>
     </div>

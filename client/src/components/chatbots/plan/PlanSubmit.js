@@ -11,6 +11,7 @@ import "./Options.css";
 export const PlanSubmit = ({props, postPlanResults, state, auth, ownProps}) => {
      console.log("USer contains", auth.user);
      console.log("user is found", auth.user._id);
+     console.log("own props contains", ownProps)
      let history = useHistory();
 
 
@@ -36,9 +37,9 @@ export const PlanSubmit = ({props, postPlanResults, state, auth, ownProps}) => {
     plangoal4: ownProps.plangoal4,
     plangoal5: ownProps.plangoal5
 });
-const OnSubmit = async (e) => {
-    console.log('in on submit command');
-
+const OnSubmit = async (goto) => {
+    console.log('in on submit command', );
+    console.log("goto in onsubmit contains", goto)
 
     // e.preventDefault();
     // postPlanResults(
@@ -54,7 +55,25 @@ const OnSubmit = async (e) => {
         const body = JSON.stringify(formData)
         const res = await axios.post('/api/planResults', body, config)
 
-        history.push('/PlanMain')
+        if(goto === "dashboard"){
+          history.push('/PlanMain')
+
+        }
+        else if(goto === "endSesh"){
+          console.log("in end sesh plan submit")
+          ownProps.actionProvider.endBlocks();
+
+        }
+        else if(goto === "activity"){
+
+          console.log("in activity plan submit")
+          // history.push('/PlanMain')
+          ownProps.actionProvider.otheractivity();
+        }
+        else {
+          history.push('/PlanMain')
+
+        }
       } catch(err){
         console.log("In catch block");
       }
@@ -64,52 +83,35 @@ const OnSubmit = async (e) => {
       <div className="learning-options-container">
         <button
           className="learning-option-button"
-          onClick={() => OnSubmit()}
+          id="dashboard"
+          onClick={() => OnSubmit("dashboard")}
         >
-          I'm Finished!
+          Visit Dashboard
         </button>
-        {/* <button
+        <button
           className="learning-option-button"
-          onClick={() => setType2("Different foods")}
+          id="activity"
+          onClick={() => OnSubmit("activity")}
         >
-          I'm Finished!
-        </button> */}
+          Do another Activity
+        </button>
+        <button
+          id="endSesh"
+          className="learning-option-button"
+          onClick={() => OnSubmit("endSesh")}
+        >
+          End Session
+        </button>
       </div>
     </div>
   );
 };
 
 
-// export default PlanSubmit;
 
-// PlanSubmit.propTypes = {
-//     user: PropTypes.object.isRequired
-//   };
-  // const mapStateToProps = (state, ownProps) => ({
-  //   isAuthenticated: state.auth.isAuthenticated,
-  //   user: state.auth.user
-    
-  // },
-  // console.log("own props contains ", ownProps ),
-  // console.log("state props contains ", state ));
   function mapStateToProps(state, ownProps) {
     const { auth } = state
-    // ownProps would look like { "id" : 123 }
-    // const { lastblockvisited,
-    //   howdoyoufeel,
-    //   howdoyoufeelint,
-    //   planjournal,
-    //   stayedontrack,
-    //   planbadblock,
-    //   what2change,
-    //   influencedeating,
-    //   whathappened,
-    //   somethingelsebad,
-    //   plangoal,
-    //   plangoal2,
-    //   plangoal3,
-    //   plangoal4,
-    //   plangoal5 } = ownProps
+ 
  
    console.log("own props contains ", ownProps );
     console.log("state props contains ", state );

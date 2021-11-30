@@ -53,7 +53,7 @@ import "./AreyouReady.css";
     mindfultype: ownProps.mindfultype,
     mindfultype2: ownProps.mindfultype2,
 });
-const OnSubmit = async (e) => {
+const OnSubmit = async (goto) => {
     console.log('in on submit command');
 
 
@@ -70,7 +70,25 @@ const OnSubmit = async (e) => {
         }
         const body = JSON.stringify(formData)
         const res = await axios.post('/api/motivateResults', body, config)
-        history.push('/MotivateMain')
+        // history.push('/MotivateMain')
+        if(goto === "dashboard"){
+          history.push('/MotivateMain')
+
+        }
+        else if(goto === "endSesh"){
+          console.log()
+          ownProps.actionProvider.endBlocks();
+
+        }
+        else if(goto === "activity"){
+
+          // history.push('/PlanMain')
+          ownProps.actionProvider.otheractivity();
+        }
+        else {
+          history.push('/MotivateMain')
+
+        }
       } catch(err){
         console.log("In catch block");
         console.log("error contains ", err);
@@ -79,18 +97,27 @@ const OnSubmit = async (e) => {
   return (
     <div>
       <div className="learning-options-container">
+      <button
+          className="learning-option-button"
+          id="dashboard"
+          onClick={() => OnSubmit("dashboard")}
+        >
+          Visit Dashboard
+        </button>
         <button
           className="learning-option-button"
-          onClick={() => OnSubmit()}
+          id="activity"
+          onClick={() => OnSubmit("activity")}
         >
-          Go to Dashboard
+          Do another Activity
         </button>
-        {/* <button
+        <button
+          id="endSesh"
           className="learning-option-button"
-          onClick={() => setType2("Different foods")}
+          onClick={() => OnSubmit("endSesh")}
         >
-          I'm Finished!
-        </button> */}
+          End Session
+        </button>
       </div>
     </div>
   );

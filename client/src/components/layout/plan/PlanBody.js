@@ -134,16 +134,12 @@ import moment from 'moment';
                             <div className="col-span-1 flex flex-col text-center bg-white rounded-xl border border-gray-400 p-4">
                                 <span className="text-beaBlueText text-sm font-bold uppercase">Favorite Goal The Past 30 Days</span>
                                 <div className="flex flex-row">
-                                    <div className="flex-1 flex flex-col items-center">
-                                        {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
-                                            <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
-                                        </span>
-                                        <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.favgoalpct}%</h2> */}
+                                    {/* <div className="flex-1 flex flex-col items-center">
                                         <RadialGraph percent={planResults2.summaryStats.favgoalpct} icon={planResults2.summaryStats.favgoal}/> 
                                         <span className="mt-6 text-gray-700 text-sm font-light">Main goal</span>
                                         <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favgoal}</h2>
     
-                                    </div>
+                                    </div> */}
                                     <div className="flex-1 flex flex-col items-center">
                                         {/* <span className="mt-6 p-3 bg-beaLightBlue rounded-3xl flex items-center justify-center">
                                             <img src={bowlIcon} alt="Bowl Icon" className="w-11" />
@@ -159,7 +155,7 @@ import moment from 'moment';
                                 <div className="flex-1 flex flex-col items-center">
                                     <span className="text-beaBlueText text-sm font-bold uppercase">Favorite Action The Past 30 Days</span>
                                     <RadialGraph percent={planResults2.summaryStats.favactionpct}  icon={planResults2.summaryStats.favaction}/>
-                                    <span className="mt-6 text-gray-700 text-sm font-light">The action that stopped unmindful eating</span>
+                                    <span className="mt-6 text-gray-700 text-sm font-light">What helped curb cravings</span>
                                     <h2 className="mt-0 text-gray-700 text-xl leading-6 font-medium">{planResults2.summaryStats.favaction}</h2>
                                 </div>
                             </div>

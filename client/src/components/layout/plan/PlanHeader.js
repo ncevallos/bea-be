@@ -24,14 +24,14 @@ import { Link } from 'react-router-dom';
         <div className="flex">
             <div className="flex flex-col w-48">
                 <div className="w-20 h-20 bg-opacity-50 rounded-3xl mb-2.5">
-                    <PlanIcons msg={todayPlanResults.plangoal} />  
+                    <PlanIcons msg={todayPlanResults.plangoal2} />  
                 </div>
                 <div className="">
                     <h4 className="text-sm leading-6 font-medium text-white font-thin tracking-tight mb-1">
                         Main goal
                     </h4>
                     <h5 className="text-2xl leading-6 font-medium text-white font-thin tracking-tight mb-1">
-                    {todayPlanResults.plangoal} and {todayPlanResults.plangoal2}
+                    {todayPlanResults.plangoal2}
                     </h5>
                 </div>
             </div>

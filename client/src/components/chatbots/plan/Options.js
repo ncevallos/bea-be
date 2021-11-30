@@ -471,6 +471,7 @@ export {
     LessFat,
     LessFat2,
     LessSugar,
+    LessSugar2,
     AvoidSugar,
     AvoidSugar2,
     SweetFoods,
