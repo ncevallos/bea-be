@@ -53,7 +53,6 @@ import moment from 'moment';
                             height={15}
                             options={options}
                         /> */}
-                        <PlanMoodHeader avgMood={planResults2.summaryStats.avgMood} />
                     <div className="mb-gutter">
                         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                             <li className="col-span-2 flex flex-col text-center bg-white rounded-xl divide-y divide-gray-200 border border-gray-400">
@@ -117,6 +116,7 @@ import moment from 'moment';
                                                 </span>
                                                 <h2 className="mt-0 text-gray-700 text-3xl font-light">{planResults2.summaryStats.stayedontrackpct}%</h2> */}
                                                 <div>
+                                                    <PlanMoodHeader avgMood={planResults2.summaryStats.avgMood} />
                                                     <RadialGraph percent={planResults2.summaryStats.stayedontrackpct} icon={planResults2.summaryStats.stayedontrack}/>
                                                     <span className="mt-6 text-gray-700 text-sm font-thin pb-0">Why you stayed on track</span>
                                                     <h2 className="mt-0 text-gray-700 text-3xl font-light leading-6">{planResults2.summaryStats.stayedontrack}</h2>

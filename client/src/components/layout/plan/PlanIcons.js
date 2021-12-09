@@ -8,15 +8,15 @@ import somethingElse from '../../../img/planimgs/somethingElse.png';
 import somethingElse2 from '../../../img/planimgs/somethingElse.png';
 import somethingSmall from '../../../img/planimgs/EatSomethingSmall.png';
 import takeAWalk from '../../../img/planimgs/TakeAWalk.png';
-import fewerCalories from '../../../img/planimgs/fewercalories.png';
-import somethingEmotional from '../../../img/planimgs/somethingemotional.png';
-import somethingPhysical from '../../../img/planimgs/somethingphysical.png';
+import fewerCalories from '../../../img/planimgs/fewerCalories.png';
+import somethingEmotional from '../../../img/planimgs/somethingEmotional.png';
+import somethingPhysical from '../../../img/planimgs/somethingPhysical.png';
 import talkToAFriend from '../../../img/planimgs/talkToAFriend.png';
-import StopWhenFull from '../../../img/planimgs/stopwhenfull.png';
-import MoreFillingFoods from '../../../img/planimgs/morefillingfoods.png';
-import lessFat from '../../../img/planimgs/lessfat.png';
-import lessSugar from '../../../img/planimgs/lesssugar.png';
-import lessCarbs from '../../../img/planimgs/lesscarbs.png';
+import StopWhenFull from '../../../img/planimgs/StopWhenFull.png';
+import MoreFillingFoods from '../../../img/planimgs/MoreFillingFoods.png';
+import lessFat from '../../../img/planimgs/lessFat.png';
+import lessSugar from '../../../img/planimgs/lessSugar.png';
+import lessCarbs from '../../../img/planimgs/lessCarbs.png';
 
 class PlanSmiley extends React.Component {
 
@@ -101,7 +101,7 @@ class PlanSmiley extends React.Component {
     }
     
     return (
-        <div className="w-full">
+        <div className="flex">
             {iconurl}
         </div>
 

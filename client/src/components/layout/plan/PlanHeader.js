@@ -21,9 +21,9 @@ import { Link } from 'react-router-dom';
         planHeader = 
 
         <div className="flex flex-row w-full justify-between">
-        <div className="flex">
-            <div className="flex flex-col w-48">
-                <div className="w-20 h-20 bg-opacity-50 rounded-3xl mb-2.5">
+        <div className="flex w-1/3 mr-40">
+            <div className="flex flex-row">
+                <div className="flex items-center justify-center w-24 h-24 bg-beaLightBlue bg-opacity-100 rounded-3xl mr-3">
                     <PlanIcons msg={todayPlanResults.plangoal2} />  
                 </div>
                 <div className="">
@@ -36,9 +36,9 @@ import { Link } from 'react-router-dom';
                 </div>
             </div>
         </div>
-        <div className="flex w-48">
-            <div className="flex flex-col">
-                <div className="w-20 h-20 bg-opacity-50 rounded-3xl mb-2.5">
+        <div className="flex w-1/3">
+            <div className="flex flex-row">
+                <div className="flex items-center justify-center w-24 h-24 bg-beaLightBlue bg-opacity-100 rounded-3xl mr-3">
                     <PlanIcons msg={todayPlanResults.plangoal5} />  
                 </div>
                 <div className="">
@@ -51,7 +51,7 @@ import { Link } from 'react-router-dom';
                 </div>
             </div>                            
         </div>
-        <div className="flex flex-col justify-center mr-10">
+        <div className="flex w-1/3">
             {/*<Link to='/PlanDaily'>
                 <img src={arrowRight} alt="arrow right" className="w-24" />
             </Link>*/}
