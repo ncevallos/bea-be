@@ -69,6 +69,20 @@
   @apply w-auto ml-1 bg-transparent shadow-md text-gray-600 border-3 border-beaCyan !important;
 }
 
+.react-chatbot-kit-chat-input-container {
+  margin-right: 20px !important;
+}
+
+.react-chatbot-kit-chat-input-form {
+  width: 100% !important;
+  display: flex !important;
+}
+
+.react-chatbot-kit-chat-input {
+  width: 100% !important;
+  display:flex !important;
+}
+
 .react-chatbot-kit-chat-bot-message-arrow {
   @apply hidden !important;
 }

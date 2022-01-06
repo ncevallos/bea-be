@@ -51,7 +51,7 @@ const MiniPlanWeekly = ({ user, getOneWeekSummary, planResult: { summaryPlanResu
                             <div className="flex flex-col flex-grow mb-3 px-4 py-3 sm:px-6 items-center">
                                 <div className="w-full h-48 mb-20">
 
-                                <PlanLineGraph data={summaryPlanResult1wk.dates[0]} values={summaryPlanResult1wk.values[0]} />
+                                {/*<PlanLineGraph data={summaryPlanResult1wk.dates[0]} values={summaryPlanResult1wk.values[0]} /> */}
                                     {/* <Line
                                         data={data}
                                         width={100}

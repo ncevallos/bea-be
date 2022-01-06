@@ -145,7 +145,7 @@ const data = {
               }
               else {
                 motivateHeader = 
-                <div className="flex flex-row items-center pb-2">
+                <div className="flex flex-row items-center pb-2 border-b border-gray-50 border-opacity-50">
                 <div className="mr-2">
                     <svg width="23" height="22" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="13.2709" cy="13.6939" r="11.2085" stroke="white" stroke-width="3"/>

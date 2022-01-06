@@ -32,8 +32,11 @@ import {
         chatdisplay = 
         <div>
         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
-            <Chatbot config={Planconfig} actionProvider={PlanActionProvider} 	    messageParser={PlanMessageParser} />
-      
+            <div className="block w-full h-full">
+                <div className="fixed left-52 pl-3 pb-2 top-16 bottom-0 right-0">
+                    <Chatbot config={Planconfig} actionProvider={PlanActionProvider} 	    messageParser={PlanMessageParser} />
+                </div>
+            </div>
         </nav>
         </div>
     }

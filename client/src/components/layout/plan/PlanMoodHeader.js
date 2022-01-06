@@ -14,9 +14,12 @@ class PlanMoodHeader extends React.Component {
       if(control === 4){
 
         planmood = 
-            <div className="bg-beaYellow plan-interactive-state mb-gutter">
-            <div className="sm:p-6 flex-grow">
-                <h3 className="text-3xl leading-6 font-light text-white">
+            <div className="flex flex-col bg-beaYellow plan-interactive-state mb-gutter ml-4 mr-4">
+            <div className="flex align-middle justify-center mt-4 mb-2">
+                <img src={smileyIconExtraHappy} alt="Extra Happy Smiley" className="w-32" />
+            </div>
+            <div className="sm:p-4 flex-grow">
+                <h3 className="text-3xl leading-10 font-light text-white">
                     Wow! You are doing fantastic!
                 </h3>
                 <div className="mt-2 max-w-xl text-md text-white">
@@ -24,15 +27,10 @@ class PlanMoodHeader extends React.Component {
                   You felt GREAT about your eating more than any other for the past 30 days.
                 </p>
                 </div>
-                <div className="mt-5">
                     {/*<button type="button" className="btn-white">
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>       
                         Stay on Track Tips
                     </button>*/}
-                </div>
-            </div>
-            <div className="flex pr-10 align-middle">
-                <img src={smileyIconExtraHappy} alt="Extra Happy Smiley" className="w-32" />
             </div>
         </div>
       }
@@ -40,7 +38,7 @@ class PlanMoodHeader extends React.Component {
   
         planmood = 
           <div className="flex flex-col bg-beaOrange plan-interactive-state mb-gutter ml-4 mr-4">
-          <div className="flex  align-middle justify-center mt-4 mb-2">
+          <div className="flex align-middle justify-center mt-4 mb-2">
               <img src={smileyIcon} alt="Smiley Icon" className="w-24" />
           </div>
           <div className="sm:p-4 flex-grow">
