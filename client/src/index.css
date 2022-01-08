@@ -71,11 +71,13 @@
 
 .react-chatbot-kit-chat-input-container {
   margin-right: 20px !important;
+  background: transparent !important;
 }
 
 .react-chatbot-kit-chat-input-form {
   width: 100% !important;
   display: flex !important;
+  background: transparent !important;
 }
 
 .react-chatbot-kit-chat-input {
